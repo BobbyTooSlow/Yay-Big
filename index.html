@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yay Big</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <h1>Yay Big</h1>
+        <p class="tagline">How close can you get?</p>
+      </div>
+      <div class="progress" id="progress">1 / 10</div>
+    </header>
+
+    <section class="card" id="gameCard">
+      <p class="eyebrow">ESTIMATE</p>
+      <h2 id="question">Loading question…</h2>
+      <p class="hint" id="hint"></p>
+
+      <form id="guessForm">
+        <div class="guess-row">
+          <label class="field grow">
+            <span>Your guess</span>
+            <input
+              id="guessInput"
+              type="number"
+              inputmode="decimal"
+              step="any"
+              min="0"
+              autocomplete="off"
+              placeholder="7.2"
+              required
+            >
+          </label>
+
+          <label class="field unit-field">
+            <span>Unit</span>
+            <select id="unitSelect">
+              <option value="in">inches</option>
+              <option value="ft">feet</option>
+              <option value="cm">cm</option>
+              <option value="m">meters</option>
+              <option value="mm">mm</option>
+            </select>
+          </label>
+        </div>
+
+        <p id="validation" class="validation" role="alert"></p>
+        <button class="primary" type="submit">Submit guess</button>
+      </form>
+
+      <div id="resultPanel" class="result hidden" aria-live="polite">
+        <div class="result-grid">
+          <div>
+            <span class="result-label">Actual</span>
+            <strong id="actualValue"></strong>
+          </div>
+          <div>
+            <span class="result-label">Your guess</span>
+            <strong id="guessValue"></strong>
+          </div>
+          <div>
+            <span class="result-label">Error</span>
+            <strong id="errorValue"></strong>
+          </div>
+          <div>
+            <span class="result-label">Score</span>
+            <strong id="scoreValue"></strong>
+          </div>
+        </div>
+
+        <p id="verdict" class="verdict"></p>
+        <button id="nextButton" class="primary" type="button">Next question</button>
+      </div>
+    </section>
+
+    <section id="summaryCard" class="card hidden">
+      <p class="eyebrow">ROUND COMPLETE</p>
+      <h2>Your results</h2>
+
+      <div class="summary-grid">
+        <div>
+          <span>Average error</span>
+          <strong id="averageError"></strong>
+        </div>
+        <div>
+          <span>Total score</span>
+          <strong id="totalScore"></strong>
+        </div>
+        <div>
+          <span>Best guess</span>
+          <strong id="bestGuess"></strong>
+        </div>
+      </div>
+
+      <button id="restartButton" class="primary" type="button">Play again</button>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
