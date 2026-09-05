@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yay Big Dashboard</title>
+<style>
+:root{
+  --bg:#000;
+  --panel:#0a0f14;
+  --panel2:#101820;
+  --text:#fff;
+  --blue:#7dd3fc;
+  --muted:#9aa8b5;
+  --border:#26343f;
+  --red:#ff8f8f;
+  --green:#86efac;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+main{width:min(1200px,calc(100% - 24px));margin:auto;padding:18px 0 60px}
+h1{margin:0;color:var(--blue);font-size:2.2rem;letter-spacing:-.03em}
+.sub{margin:5px 0 16px;color:var(--muted)}
+.score-note{color:#fff;font-weight:700}
+.stats,.tools,.add{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.pill{border:1px solid var(--border);background:var(--panel);padding:8px 11px;border-radius:999px;font-size:.85rem}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.btn{border:1px solid var(--blue);background:var(--blue);color:#001018;font-weight:800;padding:9px 12px;border-radius:8px}
+.btn.secondary{background:transparent;color:var(--blue)}
+input,select{background:#05080a;color:#fff;border:1px solid var(--border);border-radius:7px;padding:8px}
+#search{flex:1;min-width:230px}
+.note{color:var(--muted);font-size:.84rem;line-height:1.45;margin:12px 0}
+.add{padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--panel)}
+.add input{flex:1;min-width:150px}
+.tablewrap{overflow:auto;border:1px solid var(--border);border-radius:10px}
+table{width:100%;border-collapse:collapse;min-width:1000px}
+th,td{padding:8px;border-bottom:1px solid #17212a;text-align:left;vertical-align:middle;font-size:.84rem}
+th{position:sticky;top:0;background:var(--panel2);color:var(--blue);z-index:1}
+td input,td select{width:100%}
+.item{min-width:180px}
+.measure{min-width:180px}
+.answer{min-width:130px}
+.source{min-width:220px}
+.status-Approved{color:var(--green)}
+.status-Rejected{color:var(--red)}
+.status-Candidate{color:var(--blue)}
+.delete{background:transparent;color:var(--red);border:1px solid #5b2b2b;border-radius:6px;padding:6px 8px}
+.footer-note{margin-top:12px;color:var(--muted);font-size:.78rem}
+@media(max-width:600px){
+  main{width:calc(100% - 10px);padding-top:8px}
+  h1{font-size:1.65rem}
+  .sub{font-size:.88rem}
+  .pill{font-size:.76rem;padding:6px 8px}
+  .tools,.add{gap:6px}
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Yay Big Dashboard</h1>
+  <p class="sub">Question pool editor · <span class="score-note">1 Easy + 3 Medium + 1 Hard = 1000 maximum points</span></p>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="tools">
+    <input id="search" placeholder="Search items, measurements, answers, sources…">
+    <select id="statusFilter">
+      <option>All statuses</option>
+      <option>Approved</option>
+      <option>Candidate</option>
+      <option>Rejected</option>
+    </select>
+    <select id="difficultyFilter">
+      <option>All difficulties</option>
+      <option>Easy</option>
+      <option>Medium</option>
+      <option>Hard</option>
+    </select>
+    <button class="btn secondary" id="reset">Reset original 100</button>
+  </div>
+
+  <p class="note"><b>Eligibility rule:</b> Approved items should have one fixed, defensible measurement defined by an authoritative specification, regulation, or precisely named model. If a rule allows a range, minimum, maximum, tolerance, “typical” size, or manufacturer variation, it should stay Candidate or be Rejected.</p>
+
+  <div class="add">
+    <input id="newItem" placeholder="New item">
+    <input id="newMeasurement" placeholder="Measurement">
+    <input id="newAnswer" placeholder="Answer">
+    <select id="newDifficulty">
+      <option>Easy</option>
+      <option selected>Medium</option>
+      <option>Hard</option>
+    </select>
+    <button class="btn" id="add">Add candidate</button>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Item</th>
+          <th>Measurement</th>
+          <th>Answer</th>
+          <th>Difficulty</th>
+          <th>Status</th>
+          <th>Source / note</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <p class="footer-note">Edits auto-save in your browser on this device using local storage.</p>
+</main>
+
+<script>
+const ORIGINAL = [{"id": 1, "item": "U.S. Federal Reserve note", "measurement": "Length", "answer": "6.14 in", "difficulty": "Easy", "status": "Approved", "source": "U.S. Currency Education Program"}, {"id": 2, "item": "U.S. Federal Reserve note", "measurement": "Width", "answer": "2.61 in", "difficulty": "Easy", "status": "Approved", "source": "U.S. Currency Education Program"}, {"id": 3, "item": "ISO ID-1 card", "measurement": "Length", "answer": "85.60 mm", "difficulty": "Easy", "status": "Approved", "source": "ISO/IEC 7810"}, {"id": 4, "item": "ISO ID-1 card", "measurement": "Width", "answer": "53.98 mm", "difficulty": "Easy", "status": "Approved", "source": "ISO/IEC 7810"}, {"id": 5, "item": "NBA basketball rim", "measurement": "Inside diameter", "answer": "18 in", "difficulty": "Easy", "status": "Approved", "source": "NBA Official Rules"}, {"id": 6, "item": "NBA basketball rim", "measurement": "Height above floor", "answer": "10 ft", "difficulty": "Easy", "status": "Approved", "source": "NBA Official Rules"}, {"id": 7, "item": "NBA court", "measurement": "Length", "answer": "94 ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 8, "item": "NBA court", "measurement": "Width", "answer": "50 ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 9, "item": "NFL field of play", "measurement": "Length", "answer": "100 yd", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 10, "item": "NFL field", "measurement": "Width", "answer": "160 ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 11, "item": "NFL goalpost crossbar", "measurement": "Height", "answer": "10 ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 12, "item": "Soccer goal", "measurement": "Width", "answer": "7.32 m", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 13, "item": "Soccer goal", "measurement": "Height", "answer": "2.44 m", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 14, "item": "Ice hockey goal", "measurement": "Width", "answer": "6 ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 15, "item": "Ice hockey goal", "measurement": "Height", "answer": "4 ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 16, "item": "Baseball home plate", "measurement": "Front edge width", "answer": "17 in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 17, "item": "MLB base", "measurement": "Side length", "answer": "18 in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 18, "item": "MLB pitching distance", "measurement": "Pitcher's plate to rear point of home plate", "answer": "60 ft 6 in", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 19, "item": "Tennis court", "measurement": "Length", "answer": "78 ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 20, "item": "Tennis singles court", "measurement": "Width", "answer": "27 ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 21, "item": "Tennis doubles court", "measurement": "Width", "answer": "36 ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 22, "item": "Tennis net", "measurement": "Center height", "answer": "3 ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 23, "item": "Table-tennis table", "measurement": "Length", "answer": "2.74 m", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 24, "item": "Table-tennis table", "measurement": "Width", "answer": "1.525 m", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 25, "item": "Table-tennis table", "measurement": "Height", "answer": "0.76 m", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 26, "item": "Table-tennis net", "measurement": "Height", "answer": "15.25 cm", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 27, "item": "Men's volleyball net", "measurement": "Height", "answer": "2.43 m", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 28, "item": "Women's volleyball net", "measurement": "Height", "answer": "2.24 m", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 29, "item": "Olympic long-course pool", "measurement": "Length", "answer": "50 m", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 30, "item": "Olympic long-course pool", "measurement": "Width", "answer": "25 m", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 31, "item": "Olympic high diving platform", "measurement": "Height", "answer": "10 m", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 32, "item": "Golf hole", "measurement": "Diameter", "answer": "4.25 in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 33, "item": "Cornhole board", "measurement": "Length", "answer": "48 in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 34, "item": "Cornhole board", "measurement": "Width", "answer": "24 in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 35, "item": "Cornhole hole", "measurement": "Diameter", "answer": "6 in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 36, "item": "Dartboard bullseye", "measurement": "Height from floor", "answer": "1.73 m", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 37, "item": "Pool ball", "measurement": "Diameter", "answer": "2.25 in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 38, "item": "Poker-size playing card", "measurement": "Width", "answer": "2.5 in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 39, "item": "Poker-size playing card", "measurement": "Height", "answer": "3.5 in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 40, "item": "Compact Disc", "measurement": "Diameter", "answer": "120 mm", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 41, "item": "DVD", "measurement": "Diameter", "answer": "120 mm", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 42, "item": "12-inch LP record", "measurement": "Nominal diameter", "answer": "12 in", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 43, "item": "3.5-inch floppy disk", "measurement": "Nominal width", "answer": "3.5 in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 44, "item": "AA battery (IEC R6)", "measurement": "Height", "answer": "50.5 mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 45, "item": "AAA battery (IEC R03)", "measurement": "Height", "answer": "44.5 mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 46, "item": "Nano-SIM (4FF)", "measurement": "Length", "answer": "12.3 mm", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 47, "item": "Nano-SIM (4FF)", "measurement": "Width", "answer": "8.8 mm", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 48, "item": "LEGO minifigure", "measurement": "Height", "answer": "Varies by parts", "difficulty": "Medium", "status": "Rejected", "source": "Not one invariant dimension"}, {"id": 49, "item": "Rubik's Cube", "measurement": "Side length", "answer": "Varies by manufacturer/model", "difficulty": "Easy", "status": "Rejected", "source": "Not a universal fixed dimension"}, {"id": 50, "item": "No. 2 pencil", "measurement": "Length", "answer": "Varies", "difficulty": "Easy", "status": "Rejected", "source": "No invariant length"}, {"id": 51, "item": "Golf ball", "measurement": "Diameter", "answer": "Minimum 1.680 in", "difficulty": "Easy", "status": "Rejected", "source": "Rule sets a minimum, not one exact diameter"}, {"id": 52, "item": "Tennis ball", "measurement": "Diameter", "answer": "Allowed range", "difficulty": "Easy", "status": "Rejected", "source": "Specification permits a range"}, {"id": 53, "item": "Baseball", "measurement": "Diameter", "answer": "Allowed range", "difficulty": "Easy", "status": "Rejected", "source": "Specification permits a range"}, {"id": 54, "item": "Softball", "measurement": "Diameter", "answer": "Allowed range", "difficulty": "Medium", "status": "Rejected", "source": "Specification permits a range"}, {"id": 55, "item": "Basketball", "measurement": "Diameter", "answer": "Varies within circumference range", "difficulty": "Easy", "status": "Rejected", "source": "Specification permits a range"}, {"id": 56, "item": "Soccer ball", "measurement": "Diameter", "answer": "Varies within circumference range", "difficulty": "Easy", "status": "Rejected", "source": "Specification permits a range"}, {"id": 57, "item": "Bowling ball", "measurement": "Diameter", "answer": "Specification/tolerance dependent", "difficulty": "Medium", "status": "Rejected", "source": "Not guaranteed one exact dimension"}, {"id": 58, "item": "Bowling pin", "measurement": "Height", "answer": "Specification/tolerance dependent", "difficulty": "Medium", "status": "Rejected", "source": "Manufacturing tolerances"}, {"id": 59, "item": "Hockey puck", "measurement": "Diameter", "answer": "3 in nominal", "difficulty": "Medium", "status": "Candidate", "source": "Needs exact-rule verification"}, {"id": 60, "item": "Hockey puck", "measurement": "Thickness", "answer": "1 in nominal", "difficulty": "Medium", "status": "Candidate", "source": "Needs exact-rule verification"}, {"id": 61, "item": "U.S. quarter", "measurement": "Diameter", "answer": "24.26 mm", "difficulty": "Easy", "status": "Candidate", "source": "Needs U.S. Mint verification"}, {"id": 62, "item": "U.S. dime", "measurement": "Diameter", "answer": "17.91 mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs U.S. Mint verification"}, {"id": 63, "item": "U.S. nickel", "measurement": "Diameter", "answer": "21.21 mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs U.S. Mint verification"}, {"id": 64, "item": "U.S. cent", "measurement": "Diameter", "answer": "19.05 mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs U.S. Mint verification"}, {"id": 65, "item": "U.S. letter paper", "measurement": "Width", "answer": "8.5 in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 66, "item": "U.S. letter paper", "measurement": "Length", "answer": "11 in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 67, "item": "U.S. legal paper", "measurement": "Length", "answer": "14 in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 68, "item": "Queen mattress", "measurement": "Width", "answer": "60 in nominal", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 69, "item": "Queen mattress", "measurement": "Length", "answer": "80 in nominal", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 70, "item": "King mattress", "measurement": "Width", "answer": "76 in nominal", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 71, "item": "Twin mattress", "measurement": "Width", "answer": "38 in nominal", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 72, "item": "2×4 lumber", "measurement": "Actual width", "answer": "3.5 in nominal dressed size", "difficulty": "Medium", "status": "Candidate", "source": "Needs lumber-standard verification"}, {"id": 73, "item": "2×4 lumber", "measurement": "Actual thickness", "answer": "1.5 in nominal dressed size", "difficulty": "Medium", "status": "Candidate", "source": "Needs lumber-standard verification"}, {"id": 74, "item": "GMA pallet", "measurement": "Length", "answer": "48 in", "difficulty": "Medium", "status": "Candidate", "source": "Needs standards verification"}, {"id": 75, "item": "GMA pallet", "measurement": "Width", "answer": "40 in", "difficulty": "Medium", "status": "Candidate", "source": "Needs standards verification"}, {"id": 76, "item": "Standard railroad gauge", "measurement": "Distance between rails", "answer": "1435 mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs standards verification"}, {"id": 77, "item": "20-ft ISO shipping container", "measurement": "External length", "answer": "20 ft nominal", "difficulty": "Medium", "status": "Candidate", "source": "Needs ISO verification"}, {"id": 78, "item": "20-ft ISO shipping container", "measurement": "External width", "answer": "8 ft nominal", "difficulty": "Medium", "status": "Candidate", "source": "Needs ISO verification"}, {"id": 79, "item": "40-ft ISO shipping container", "measurement": "External length", "answer": "40 ft nominal", "difficulty": "Medium", "status": "Candidate", "source": "Needs ISO verification"}, {"id": 80, "item": "40-ft ISO shipping container", "measurement": "External width", "answer": "8 ft nominal", "difficulty": "Medium", "status": "Candidate", "source": "Needs ISO verification"}, {"id": 81, "item": "Olympic athletics track", "measurement": "One lap, lane 1", "answer": "400 m", "difficulty": "Easy", "status": "Candidate", "source": "Needs World Athletics verification"}, {"id": 82, "item": "Track lane", "measurement": "Standard width", "answer": "1.22 m", "difficulty": "Hard", "status": "Candidate", "source": "Needs World Athletics verification"}, {"id": 83, "item": "Badminton court", "measurement": "Length", "answer": "13.4 m", "difficulty": "Medium", "status": "Candidate", "source": "Needs BWF verification"}, {"id": 84, "item": "Badminton doubles court", "measurement": "Width", "answer": "6.1 m", "difficulty": "Medium", "status": "Candidate", "source": "Needs BWF verification"}, {"id": 85, "item": "Badminton net", "measurement": "Height at posts", "answer": "1.55 m", "difficulty": "Hard", "status": "Candidate", "source": "Needs BWF verification"}, {"id": 86, "item": "Pickleball court", "measurement": "Length", "answer": "44 ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs USA Pickleball verification"}, {"id": 87, "item": "Pickleball court", "measurement": "Width", "answer": "20 ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs USA Pickleball verification"}, {"id": 88, "item": "Pickleball net", "measurement": "Center height", "answer": "34 in", "difficulty": "Hard", "status": "Candidate", "source": "Needs USA Pickleball verification"}, {"id": 89, "item": "Snooker table", "measurement": "Playing area length", "answer": "11 ft 8.5 in", "difficulty": "Hard", "status": "Candidate", "source": "Needs WPBSA verification"}, {"id": 90, "item": "Snooker table", "measurement": "Playing area width", "answer": "5 ft 10 in", "difficulty": "Hard", "status": "Candidate", "source": "Needs WPBSA verification"}, {"id": 91, "item": "Soccer penalty mark", "measurement": "Distance from goal line", "answer": "11 m", "difficulty": "Medium", "status": "Candidate", "source": "Needs IFAB verification"}, {"id": 92, "item": "Soccer goal area", "measurement": "Depth", "answer": "5.5 m", "difficulty": "Hard", "status": "Candidate", "source": "Needs IFAB verification"}, {"id": 93, "item": "Soccer penalty area", "measurement": "Depth", "answer": "16.5 m", "difficulty": "Medium", "status": "Candidate", "source": "Needs IFAB verification"}, {"id": 94, "item": "Baseball batter's box", "measurement": "Length", "answer": "6 ft", "difficulty": "Hard", "status": "Candidate", "source": "Needs MLB verification"}, {"id": 95, "item": "Baseball batter's box", "measurement": "Width", "answer": "4 ft", "difficulty": "Hard", "status": "Candidate", "source": "Needs MLB verification"}, {"id": 96, "item": "NBA backboard", "measurement": "Width", "answer": "6 ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs NBA verification"}, {"id": 97, "item": "NBA backboard", "measurement": "Height", "answer": "3.5 ft", "difficulty": "Hard", "status": "Candidate", "source": "Needs NBA verification"}, {"id": 98, "item": "NBA free-throw line", "measurement": "Distance from backboard plane", "answer": "15 ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs NBA verification"}, {"id": 99, "item": "Table-tennis ball", "measurement": "Diameter", "answer": "40 mm nominal/spec", "difficulty": "Medium", "status": "Candidate", "source": "Needs ITTF exactness verification"}, {"id": 100, "item": "Olympic archery target", "measurement": "Face diameter", "answer": "122 cm", "difficulty": "Hard", "status": "Candidate", "source": "Needs World Archery verification"}];
+let items = JSON.parse(localStorage.getItem("yayBigDashboardV1") || "null") || structuredClone(ORIGINAL);
+
+const $ = id => document.getElementById(id);
+
+function escapeHtml(value){
+  return String(value).replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[c]));
+}
+
+function persist(){
+  localStorage.setItem("yayBigDashboardV1", JSON.stringify(items));
+}
+
+function updateStats(){
+  const count = status => items.filter(x => x.status === status).length;
+  const approved = items.filter(x => x.status === "Approved");
+  const e = approved.filter(x => x.difficulty === "Easy").length;
+  const m = approved.filter(x => x.difficulty === "Medium").length;
+  const h = approved.filter(x => x.difficulty === "Hard").length;
+
+  $("stats").innerHTML = `
+    <span class="pill">${items.length} total</span>
+    <span class="pill">${count("Approved")} approved</span>
+    <span class="pill">${count("Candidate")} candidates</span>
+    <span class="pill">${count("Rejected")} rejected</span>
+    <span class="pill">Approved: ${e} Easy · ${m} Medium · ${h} Hard</span>
+  `;
+}
+
+function render(){
+  updateStats();
+
+  const q = $("search").value.trim().toLowerCase();
+  const sf = $("statusFilter").value;
+  const df = $("difficultyFilter").value;
+
+  const filtered = items.filter(x => {
+    const haystack = [x.item,x.measurement,x.answer,x.difficulty,x.status,x.source].join(" ").toLowerCase();
+    return (!q || haystack.includes(q))
+      && (sf === "All statuses" || x.status === sf)
+      && (df === "All difficulties" || x.difficulty === df);
+  });
+
+  $("rows").innerHTML = filtered.map(x => `
+    <tr data-id="${x.id}">
+      <td>${x.id}</td>
+      <td><input class="item" data-k="item" value="${escapeHtml(x.item)}"></td>
+      <td><input class="measure" data-k="measurement" value="${escapeHtml(x.measurement)}"></td>
+      <td><input class="answer" data-k="answer" value="${escapeHtml(x.answer)}"></td>
+      <td>
+        <select data-k="difficulty">
+          ${["Easy","Medium","Hard"].map(v => `<option ${x.difficulty===v ? "selected" : ""}>${v}</option>`).join("")}
+        </select>
+      </td>
+      <td>
+        <select class="status-${x.status}" data-k="status">
+          ${["Approved","Candidate","Rejected"].map(v => `<option ${x.status===v ? "selected" : ""}>${v}</option>`).join("")}
+        </select>
+      </td>
+      <td><input class="source" data-k="source" value="${escapeHtml(x.source)}"></td>
+      <td><button class="delete">Remove</button></td>
+    </tr>
+  `).join("");
+}
+
+$("rows").addEventListener("change", e => {
+  const tr = e.target.closest("tr");
+  const key = e.target.dataset.k;
+  if (!tr || !key) return;
+
+  const item = items.find(x => x.id == tr.dataset.id);
+  if (!item) return;
+
+  item[key] = e.target.value;
+  persist();
+  render();
+});
+
+$("rows").addEventListener("click", e => {
+  if (!e.target.classList.contains("delete")) return;
+  const id = Number(e.target.closest("tr").dataset.id);
+  items = items.filter(x => x.id !== id);
+  persist();
+  render();
+});
+
+$("search").addEventListener("input", render);
+$("statusFilter").addEventListener("change", render);
+$("difficultyFilter").addEventListener("change", render);
+
+$("add").addEventListener("click", () => {
+  const itemName = $("newItem").value.trim();
+  if (!itemName) return;
+
+  items.push({
+    id: Math.max(0, ...items.map(x => x.id)) + 1,
+    item: itemName,
+    measurement: $("newMeasurement").value.trim(),
+    answer: $("newAnswer").value.trim(),
+    difficulty: $("newDifficulty").value,
+    status: "Candidate",
+    source: "Needs verification"
+  });
+
+  $("newItem").value = "";
+  $("newMeasurement").value = "";
+  $("newAnswer").value = "";
+
+  persist();
+  render();
+});
+
+$("reset").addEventListener("click", () => {
+  if (!confirm("Reset all edits and return to the original 100-item list?")) return;
+  items = structuredClone(ORIGINAL);
+  persist();
+  render();
+});
+
+render();
+</script>
+</body>
+</html>
