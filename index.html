@@ -151,3 +151,60 @@ build();show();
   .score-percent{font-size:clamp(2.7rem,14vw,4rem)}
 }
 </style>
+
+<style>
+/* Latest gameplay refinements */
+.unit-section{
+  margin-top:0;
+  display:flex;
+  align-items:stretch;
+}
+.unit-grid{
+  width:100%;
+  height:100%;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:repeat(4,1fr);
+  gap:8px 14px;
+}
+.unit-btn{
+  width:100%;
+  height:auto;
+  min-height:0;
+  border-radius:13px;
+  font-size:1.15rem;
+}
+.unit-grid::after{
+  top:4px;
+  bottom:4px;
+}
+
+/* Reserve enough room for 100% and keep the score well inside the card. */
+.result-layout{
+  grid-template-columns:minmax(0,1fr) 132px !important;
+  gap:4px !important;
+}
+.score-side{
+  width:132px;
+  padding:0 12px 0 8px !important;
+  overflow:visible !important;
+}
+.score-percent{
+  font-size:3.25rem !important;
+  letter-spacing:-.07em;
+  white-space:nowrap;
+  transform:translateX(-5px);
+}
+@media(max-width:430px){
+  .result-layout{
+    grid-template-columns:minmax(0,1fr) 126px !important;
+  }
+  .score-side{
+    width:126px;
+    padding-right:12px !important;
+  }
+  .score-percent{
+    font-size:3rem !important;
+    transform:translateX(-7px);
+  }
+}
+</style>
