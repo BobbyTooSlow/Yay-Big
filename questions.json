@@ -54,7 +54,7 @@
       "value": 94,
       "unit": "ft",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -65,7 +65,7 @@
       "value": 50,
       "unit": "ft",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -76,7 +76,7 @@
       "value": 100,
       "unit": "yd",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -87,7 +87,7 @@
       "value": 160,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -98,7 +98,7 @@
       "value": 10,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -109,7 +109,7 @@
       "value": 7.32,
       "unit": "m",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -120,7 +120,7 @@
       "value": 2.44,
       "unit": "m",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -131,7 +131,7 @@
       "value": 6,
       "unit": "ft",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -142,7 +142,7 @@
       "value": 4,
       "unit": "ft",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -153,7 +153,7 @@
       "value": 17,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -164,7 +164,7 @@
       "value": 18,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -175,7 +175,7 @@
       "value": 60.5,
       "unit": "ft",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -186,7 +186,7 @@
       "value": 78,
       "unit": "ft",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -197,7 +197,7 @@
       "value": 27,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -208,7 +208,7 @@
       "value": 36,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -219,7 +219,7 @@
       "value": 3,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -230,7 +230,7 @@
       "value": 2.74,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -241,7 +241,7 @@
       "value": 1.525,
       "unit": "m",
       "difficulty": "Hard",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -252,7 +252,7 @@
       "value": 76,
       "unit": "cm",
       "difficulty": "Hard",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -263,7 +263,7 @@
       "value": 6,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -274,7 +274,7 @@
       "value": 2.43,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -285,7 +285,7 @@
       "value": 2.24,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -296,7 +296,7 @@
       "value": 50,
       "unit": "m",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -307,7 +307,7 @@
       "value": 25,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -318,7 +318,7 @@
       "value": 10,
       "unit": "m",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -329,7 +329,7 @@
       "value": 4.25,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -340,7 +340,7 @@
       "value": 4,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -351,7 +351,7 @@
       "value": 2,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -362,7 +362,7 @@
       "value": 6,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -373,7 +373,7 @@
       "value": 1.73,
       "unit": "m",
       "difficulty": "Hard",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -384,7 +384,7 @@
       "value": 2.25,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -395,7 +395,7 @@
       "value": 2.5,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -406,7 +406,7 @@
       "value": 3.5,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -417,7 +417,7 @@
       "value": 120,
       "unit": "mm",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -428,7 +428,7 @@
       "value": 120,
       "unit": "mm",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -439,7 +439,7 @@
       "value": 50.5,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -450,7 +450,7 @@
       "value": 44.5,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs authoritative source verification"
     },
     {
@@ -459,7 +459,7 @@
       "question": "How tall is a bowling pin?",
       "measurement": "Height",
       "value": 15,
-      "unit": "in",
+      "unit": "ft",
       "difficulty": "Medium",
       "status": "Approved",
       "source": "Manufacturing tolerances"
@@ -472,7 +472,7 @@
       "value": 3,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs exact-rule verification"
     },
     {
@@ -483,7 +483,7 @@
       "value": 1,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs exact-rule verification"
     },
     {
@@ -494,7 +494,7 @@
       "value": 24.26,
       "unit": "mm",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs U.S. Mint verification"
     },
     {
@@ -505,7 +505,7 @@
       "value": 17.91,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs U.S. Mint verification"
     },
     {
@@ -516,7 +516,7 @@
       "value": 21.21,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs U.S. Mint verification"
     },
     {
@@ -527,7 +527,7 @@
       "value": 19.05,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs U.S. Mint verification"
     },
     {
@@ -538,7 +538,7 @@
       "value": 8.5,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs standards verification"
     },
     {
@@ -549,7 +549,7 @@
       "value": 11,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs standards verification"
     },
     {
@@ -560,7 +560,7 @@
       "value": 14,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs standards verification"
     },
     {
@@ -571,7 +571,7 @@
       "value": 60,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs standards verification"
     },
     {
@@ -582,7 +582,7 @@
       "value": 80,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs standards verification"
     },
     {
@@ -593,7 +593,7 @@
       "value": 76,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs standards verification"
     },
     {
@@ -604,7 +604,7 @@
       "value": 38,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs standards verification"
     },
     {
@@ -615,7 +615,7 @@
       "value": 3.5,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs lumber-standard verification"
     },
     {
@@ -626,7 +626,7 @@
       "value": 1.5,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs lumber-standard verification"
     },
     {
@@ -637,7 +637,7 @@
       "value": 1435,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs standards verification"
     },
     {
@@ -648,7 +648,7 @@
       "value": 8,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs ISO verification"
     },
     {
@@ -659,7 +659,7 @@
       "value": 400,
       "unit": "m",
       "difficulty": "Easy",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs World Athletics verification"
     },
     {
@@ -670,7 +670,7 @@
       "value": 1.22,
       "unit": "m",
       "difficulty": "Hard",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs World Athletics verification"
     },
     {
@@ -681,7 +681,7 @@
       "value": 13.4,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs BWF verification"
     },
     {
@@ -692,7 +692,7 @@
       "value": 6.1,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs BWF verification"
     },
     {
@@ -703,7 +703,7 @@
       "value": 1.55,
       "unit": "m",
       "difficulty": "Hard",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs BWF verification"
     },
     {
@@ -714,7 +714,7 @@
       "value": 44,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs USA Pickleball verification"
     },
     {
@@ -725,7 +725,7 @@
       "value": 20,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs USA Pickleball verification"
     },
     {
@@ -736,7 +736,7 @@
       "value": 34,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs USA Pickleball verification"
     },
     {
@@ -747,7 +747,7 @@
       "value": 140.5,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs WPBSA verification"
     },
     {
@@ -758,7 +758,7 @@
       "value": 70,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs WPBSA verification"
     },
     {
@@ -769,7 +769,7 @@
       "value": 11,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs IFAB verification"
     },
     {
@@ -780,7 +780,7 @@
       "value": 5.5,
       "unit": "m",
       "difficulty": "Hard",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs IFAB verification"
     },
     {
@@ -791,7 +791,7 @@
       "value": 16.5,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs IFAB verification"
     },
     {
@@ -802,7 +802,7 @@
       "value": 6,
       "unit": "ft",
       "difficulty": "Hard",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs MLB verification"
     },
     {
@@ -813,7 +813,7 @@
       "value": 4,
       "unit": "ft",
       "difficulty": "Hard",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs MLB verification"
     },
     {
@@ -824,7 +824,7 @@
       "value": 6,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs NBA verification"
     },
     {
@@ -835,7 +835,7 @@
       "value": 15,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs NBA verification"
     },
     {
@@ -846,7 +846,7 @@
       "value": 40,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs ITTF exactness verification"
     },
     {
@@ -857,8 +857,558 @@
       "value": 122,
       "unit": "cm",
       "difficulty": "Hard",
-      "status": "Approved",
+      "status": "Candidate",
       "source": "Needs World Archery verification"
+    },
+    {
+      "id": "yb-0101",
+      "item": "€5 Europa-series banknote",
+      "question": "How long is a €5 Europa-series banknote?",
+      "measurement": "Length",
+      "value": 120,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-0102",
+      "item": "€5 Europa-series banknote",
+      "question": "How wide is a €5 Europa-series banknote?",
+      "measurement": "Width",
+      "value": 62,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-0103",
+      "item": "€10 Europa-series banknote",
+      "question": "How long is a €10 Europa-series banknote?",
+      "measurement": "Length",
+      "value": 127,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-0104",
+      "item": "€10 Europa-series banknote",
+      "question": "How wide is a €10 Europa-series banknote?",
+      "measurement": "Width",
+      "value": 67,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-0105",
+      "item": "€20 Europa-series banknote",
+      "question": "How long is a €20 Europa-series banknote?",
+      "measurement": "Length",
+      "value": 133,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-0106",
+      "item": "€20 Europa-series banknote",
+      "question": "How wide is a €20 Europa-series banknote?",
+      "measurement": "Width",
+      "value": 72,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-0107",
+      "item": "€50 Europa-series banknote",
+      "question": "How long is a €50 Europa-series banknote?",
+      "measurement": "Length",
+      "value": 140,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-0108",
+      "item": "€50 Europa-series banknote",
+      "question": "How wide is a €50 Europa-series banknote?",
+      "measurement": "Width",
+      "value": 77,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-0109",
+      "item": "€100 Europa-series banknote",
+      "question": "How long is a €100 Europa-series banknote?",
+      "measurement": "Length",
+      "value": 147,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-0110",
+      "item": "€100 Europa-series banknote",
+      "question": "How wide is a €100 Europa-series banknote?",
+      "measurement": "Width",
+      "value": 77,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-0111",
+      "item": "€200 Europa-series banknote",
+      "question": "How long is a €200 Europa-series banknote?",
+      "measurement": "Length",
+      "value": 153,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-0112",
+      "item": "€200 Europa-series banknote",
+      "question": "How wide is a €200 Europa-series banknote?",
+      "measurement": "Width",
+      "value": 77,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-0113",
+      "item": "Standard-size SD memory card",
+      "question": "How long is a standard-size SD memory card?",
+      "measurement": "Length",
+      "value": 32,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "SD Association — SD standard form-factor size"
+    },
+    {
+      "id": "yb-0114",
+      "item": "Standard-size SD memory card",
+      "question": "How wide is a standard-size SD memory card?",
+      "measurement": "Width",
+      "value": 24,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "SD Association — SD standard form-factor size"
+    },
+    {
+      "id": "yb-0115",
+      "item": "microSD memory card",
+      "question": "How long is a microSD memory card?",
+      "measurement": "Length",
+      "value": 15,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "SD Association — microSD standard form-factor size"
+    },
+    {
+      "id": "yb-0116",
+      "item": "microSD memory card",
+      "question": "How wide is a microSD memory card?",
+      "measurement": "Width",
+      "value": 11,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "SD Association — microSD standard form-factor size"
+    },
+    {
+      "id": "yb-0117",
+      "item": "Apple iPhone 17",
+      "question": "How tall is an Apple iPhone 17?",
+      "measurement": "Height",
+      "value": 149.6,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Apple — iPhone 17 Technical Specifications"
+    },
+    {
+      "id": "yb-0118",
+      "item": "Apple iPhone 17",
+      "question": "How wide is an Apple iPhone 17?",
+      "measurement": "Width",
+      "value": 71.5,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Apple — iPhone 17 Technical Specifications"
+    },
+    {
+      "id": "yb-0119",
+      "item": "Apple iPhone 17",
+      "question": "How thick is an Apple iPhone 17?",
+      "measurement": "Depth",
+      "value": 7.95,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Apple — iPhone 17 Technical Specifications"
+    },
+    {
+      "id": "yb-0120",
+      "item": "Apple AirTag (2nd generation)",
+      "question": "What is the diameter of a second-generation Apple AirTag?",
+      "measurement": "Diameter",
+      "value": 31.9,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Apple Support — AirTag (2nd generation) Tech Specs"
+    },
+    {
+      "id": "yb-0121",
+      "item": "Apple AirTag (2nd generation)",
+      "question": "How thick is a second-generation Apple AirTag?",
+      "measurement": "Height",
+      "value": 8,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Apple Support — AirTag (2nd generation) Tech Specs"
+    },
+    {
+      "id": "yb-0122",
+      "item": "Xbox Series X",
+      "question": "How tall is an Xbox Series X?",
+      "measurement": "Height",
+      "value": 30.1,
+      "unit": "cm",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Xbox/Microsoft — Xbox Series X Technical Specifications"
+    },
+    {
+      "id": "yb-0123",
+      "item": "Xbox Series X",
+      "question": "How wide is an Xbox Series X?",
+      "measurement": "Width",
+      "value": 15.1,
+      "unit": "cm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Xbox/Microsoft — Xbox Series X Technical Specifications"
+    },
+    {
+      "id": "yb-0124",
+      "item": "Fender Standard Stratocaster",
+      "question": "What is the scale length of a Fender Standard Stratocaster?",
+      "measurement": "Scale length",
+      "value": 25.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Fender — Standard Stratocaster specifications"
+    },
+    {
+      "id": "yb-0125",
+      "item": "Gibson Les Paul Standard '50s",
+      "question": "What is the scale length of a Gibson Les Paul Standard '50s?",
+      "measurement": "Scale length",
+      "value": 24.75,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Gibson — Les Paul Standard '50s specifications"
+    },
+    {
+      "id": "yb-0126",
+      "item": "Steinway Model D concert grand",
+      "question": "How long is a Steinway Model D concert grand piano?",
+      "measurement": "Length",
+      "value": 274,
+      "unit": "cm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Steinway & Sons — Model D specifications"
+    },
+    {
+      "id": "yb-0127",
+      "item": "Steinway Model D concert grand",
+      "question": "How wide is a Steinway Model D concert grand piano?",
+      "measurement": "Width",
+      "value": 156,
+      "unit": "cm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Steinway & Sons — Model D specifications"
+    },
+    {
+      "id": "yb-0128",
+      "item": "Gateway Arch",
+      "question": "How high is the Gateway Arch?",
+      "measurement": "Height",
+      "value": 630,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "U.S. National Park Service — Gateway Arch Fact Sheet"
+    },
+    {
+      "id": "yb-0129",
+      "item": "Gateway Arch",
+      "question": "How wide is the Gateway Arch from outer leg to outer leg?",
+      "measurement": "Outer width",
+      "value": 630,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "U.S. National Park Service — Gateway Arch Fact Sheet"
+    },
+    {
+      "id": "yb-0130",
+      "item": "Statue of Liberty",
+      "question": "How high is the Statue of Liberty from the ground to the tip of the torch?",
+      "measurement": "Ground-to-torch height",
+      "value": 305.0833333333,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "U.S. National Park Service — Statue of Liberty Facts; 305 ft 1 in, stored in one unit"
+    },
+    {
+      "id": "yb-0131",
+      "item": "Statue of Liberty",
+      "question": "How long is the Statue of Liberty's index finger?",
+      "measurement": "Index-finger length",
+      "value": 8,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "U.S. National Park Service — Statue Statistics"
+    },
+    {
+      "id": "yb-0132",
+      "item": "Golden Gate Bridge",
+      "question": "How long is the Golden Gate Bridge's main span between the towers?",
+      "measurement": "Main span",
+      "value": 4200,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Golden Gate Bridge Highway & Transportation District — Design & Construction Stats"
+    },
+    {
+      "id": "yb-0133",
+      "item": "Space Needle",
+      "question": "How high is the Space Needle from the ground to its aircraft warning beacon?",
+      "measurement": "Height",
+      "value": 605,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Space Needle — official Facts page"
+    },
+    {
+      "id": "yb-0134",
+      "item": "Saturn V",
+      "question": "How tall was a Saturn V rocket at liftoff?",
+      "measurement": "Height",
+      "value": 363,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "NASA — Saturn V reference"
+    },
+    {
+      "id": "yb-0135",
+      "item": "Saturn V",
+      "question": "What was the diameter of a Saturn V at its base, excluding the fins?",
+      "measurement": "Base diameter",
+      "value": 33,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "NASA/Smithsonian National Air and Space Museum — Saturn V dimensions"
+    },
+    {
+      "id": "yb-0136",
+      "item": "Space Shuttle orbiter",
+      "question": "How long is a Space Shuttle orbiter?",
+      "measurement": "Length",
+      "value": 122,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "NASA — The Space Shuttle reference"
+    },
+    {
+      "id": "yb-0137",
+      "item": "Space Shuttle orbiter",
+      "question": "What is the wingspan of a Space Shuttle orbiter?",
+      "measurement": "Wingspan",
+      "value": 78,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "NASA — The Space Shuttle reference"
+    },
+    {
+      "id": "yb-0138",
+      "item": "Hubble Space Telescope",
+      "question": "How long is the Hubble Space Telescope?",
+      "measurement": "Length",
+      "value": 43.5,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "NASA Science — About Hubble"
+    },
+    {
+      "id": "yb-0139",
+      "item": "Hubble Space Telescope",
+      "question": "How wide is the Hubble Space Telescope at the back?",
+      "measurement": "Width at back",
+      "value": 14,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "NASA Science — Hubble Design"
+    },
+    {
+      "id": "yb-0140",
+      "item": "International Space Station",
+      "question": "How long is the International Space Station end to end?",
+      "measurement": "End-to-end length",
+      "value": 356,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "NASA — International Space Station Facts and Figures"
+    },
+    {
+      "id": "yb-0141",
+      "item": "International Space Station solar arrays",
+      "question": "What is the wingspan of the International Space Station's solar arrays?",
+      "measurement": "Solar-array wingspan",
+      "value": 356,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "NASA — International Space Station Facts and Figures"
+    },
+    {
+      "id": "yb-0142",
+      "item": "Crayola regular-size crayon",
+      "question": "How long is a regular-size Crayola crayon?",
+      "measurement": "Length",
+      "value": 3.625,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Crayola — regular-size crayon dimensions"
+    },
+    {
+      "id": "yb-0143",
+      "item": "Crayola regular-size crayon",
+      "question": "What is the diameter of a regular-size Crayola crayon?",
+      "measurement": "Diameter",
+      "value": 0.3125,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Crayola — regular-size crayon dimensions"
+    },
+    {
+      "id": "yb-0144",
+      "item": "Post-it Notes 654",
+      "question": "How wide is a 3 × 3-inch Post-it Note 654?",
+      "measurement": "Width",
+      "value": 3,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "3M/Post-it — model 654 product specifications"
+    },
+    {
+      "id": "yb-0145",
+      "item": "Post-it Notes 654",
+      "question": "How tall is a 3 × 3-inch Post-it Note 654?",
+      "measurement": "Height",
+      "value": 3,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "3M/Post-it — model 654 product specifications"
+    },
+    {
+      "id": "yb-0146",
+      "item": "VHS cassette",
+      "question": "How wide is a standard VHS cassette?",
+      "measurement": "Width",
+      "value": 187,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "University of Illinois PSAP — VHS cassette physical dimensions"
+    },
+    {
+      "id": "yb-0147",
+      "item": "VHS cassette",
+      "question": "How deep is a standard VHS cassette?",
+      "measurement": "Depth",
+      "value": 103,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "University of Illinois PSAP — VHS cassette physical dimensions"
+    },
+    {
+      "id": "yb-0148",
+      "item": "VHS cassette",
+      "question": "How thick is a standard VHS cassette?",
+      "measurement": "Thickness",
+      "value": 25,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "University of Illinois PSAP — VHS cassette physical dimensions"
+    },
+    {
+      "id": "yb-0149",
+      "item": "Airbus A380",
+      "question": "How long is an Airbus A380?",
+      "measurement": "Length",
+      "value": 73,
+      "unit": "m",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Airbus — A380 characteristics"
+    },
+    {
+      "id": "yb-0150",
+      "item": "Airbus A380",
+      "question": "What is the geometric wingspan of an Airbus A380?",
+      "measurement": "Wingspan",
+      "value": 79.8,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Airbus — A380 facts and figures"
     }
   ]
 }
