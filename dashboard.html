@@ -48,11 +48,12 @@ td input,td select{width:100%}
 <div class="dbtools">
   <button id="exportDb" class="btn">Export questions.json</button>
   <button id="importDb" class="btn secondary">Import questions.json</button>
+  <button id="syncQuestions" class="btn secondary">Sync Question wording</button>
   <button id="reloadPublished" class="btn secondary">Reload published database</button>
   <input id="importFile" type="file" accept=".json,application/json" class="hidden">
 </div>
 
-<p class="note"><b>Data safety:</b> dashboard structure and question content are now separate. Your working edits are stored independently in this browser. Export <b>questions.json</b> when you want to publish them to the game. Replacing or redesigning <b>dashboard.html</b> will not overwrite the saved question content. If an older saved workspace has blank Question fields, the dashboard safely fills only those blanks from the published <b>questions.json</b>.</p>
+<p class="note"><b>Data safety:</b> dashboard structure and question content are now separate. Your working edits are stored independently in this browser. Export <b>questions.json</b> when you want to publish them to the game. Replacing or redesigning <b>dashboard.html</b> will not overwrite the saved question content. If an older saved workspace has blank Question fields, the dashboard safely fills only those blanks from the published <b>questions.json</b>. The <b>Sync Question wording</b> button can also do this manually and reports how many published questions it found.</p>
 
 <div id="stats" class="stats"></div>
 
@@ -151,34 +152,54 @@ function migrateOldWorkspace(){
   }catch(e){console.error(e);return false}
 }
 
-async function backfillQuestionsFromPublished(){
+async function syncQuestionsFromPublished(force=false){
   try{
-    const res=await fetch("questions.json",{cache:"no-store"});
+    const url=`questions.json?v=${Date.now()}`;
+    const res=await fetch(url,{cache:"no-store"});
     if(!res.ok)throw new Error(`questions.json returned ${res.status}`);
     const data=await res.json();
-    if(!data||!Array.isArray(data.questions))return 0;
+    if(!data||!Array.isArray(data.questions))throw new Error("Invalid published database format");
 
-    const publishedById=new Map(
-      data.questions.map(q=>[String(q.id),q])
+    const publishedWithQuestions=data.questions.filter(q=>q.question&&String(q.question).trim());
+    const byId=new Map(data.questions.map(q=>[String(q.id),q]));
+    const byItemMeasurement=new Map(
+      data.questions.map(q=>[
+        `${String(q.item||"").trim().toLowerCase()}|||${String(q.measurement||"").trim().toLowerCase()}`,
+        q
+      ])
     );
 
-    let changed=0;
+    let matched=0, changed=0;
     for(const x of items){
-      const published=publishedById.get(String(x.id));
+      let published=byId.get(String(x.id));
+      if(!published){
+        const key=`${String(x.item||"").trim().toLowerCase()}|||${String(x.measurement||"").trim().toLowerCase()}`;
+        published=byItemMeasurement.get(key);
+      }
       if(!published)continue;
-      if((!x.question||!x.question.trim()) && published.question && String(published.question).trim()){
-        x.question=String(published.question).trim();
-        changed++;
+      matched++;
+
+      const publishedQuestion=String(published.question||"").trim();
+      if(!publishedQuestion)continue;
+
+      if(force || !String(x.question||"").trim()){
+        if(String(x.question||"").trim()!==publishedQuestion){
+          x.question=publishedQuestion;
+          changed++;
+        }
       }
     }
 
-    if(changed){
-      save();
-      updateDbStatus(`Loaded your saved workspace and filled ${changed} blank Question field${changed===1?"":"s"} from the published questions.json.`);
-    }
+    if(changed)save();
+    updateDbStatus(
+      `Published DB: ${data.questions.length} items, ${publishedWithQuestions.length} with Question wording. `+
+      `Matched ${matched} workspace items; ${changed} Question field${changed===1?"":"s"} updated.`
+    );
+    render();
     return changed;
   }catch(e){
-    console.error("Question backfill failed:",e);
+    console.error("Question sync failed:",e);
+    updateDbStatus(`Question sync failed: ${e.message}`);
     return 0;
   }
 }
@@ -186,7 +207,7 @@ async function backfillQuestionsFromPublished(){
 async function loadPublished(confirmFirst=false){
   if(confirmFirst&&!confirm("Replace your current browser workspace with the published questions.json? Export first if you want a backup."))return;
   try{
-    const res=await fetch("questions.json",{cache:"no-store"});
+    const res=await fetch(`questions.json?v=${Date.now()}`,{cache:"no-store"});
     if(!res.ok)throw new Error(`questions.json returned ${res.status}`);
     const data=await res.json();
     if(!data||!Array.isArray(data.questions))throw new Error("Invalid database format");
@@ -290,16 +311,25 @@ $("importFile").onchange=async e=>{
   }catch(err){alert("That file is not a valid Yay Big questions database.");console.error(err)}
   e.target.value="";
 };
+$("syncQuestions").onclick=async()=>{
+  const blanks=items.filter(x=>!String(x.question||"").trim()).length;
+  if(blanks===0){
+    if(!confirm("No Question fields are blank. Replace all current Question wording with the wording from the published questions.json?"))return;
+    await syncQuestionsFromPublished(true);
+  }else{
+    await syncQuestionsFromPublished(false);
+  }
+};
 $("reloadPublished").onclick=()=>loadPublished(true);
 
 (async function init(){
   if(loadWorkspace()){
-    await backfillQuestionsFromPublished();
+    await syncQuestionsFromPublished(false);
     render();
     return;
   }
   if(migrateOldWorkspace()){
-    await backfillQuestionsFromPublished();
+    await syncQuestionsFromPublished(false);
     render();
     return;
   }
