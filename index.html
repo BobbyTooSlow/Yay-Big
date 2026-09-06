@@ -445,3 +445,126 @@ build();show();
   .keypad{gap:5px !important}
 }
 </style>
+
+<style>
+/* vNext10 */
+
+/* Lock in current unit sizing from vNext9 */
+.unit-grid{
+  grid-template-rows:repeat(4,clamp(48px,6.5dvh,58px)) !important;
+}
+@media(max-width:430px){
+  .unit-grid{
+    grid-template-rows:repeat(4,clamp(44px,6dvh,52px)) !important;
+  }
+}
+@media(max-height:720px){
+  .unit-grid{
+    grid-template-rows:repeat(4,42px) !important;
+  }
+}
+
+/* Question area: always reserve two lines; light yellow text */
+.question-wrap{
+  min-height:3.4em !important;
+  display:flex !important;
+  align-items:center !important;
+}
+.question,
+.question-text,
+#question,
+#questionText{
+  color:#fff3a6 !important;
+  line-height:1.35 !important;
+}
+
+/* Make keypad a little shorter to create the permanent 2-line question area */
+#entry{
+  grid-template-rows:auto 14px minmax(0,.88fr) !important;
+}
+.keypad{
+  padding-bottom:0 !important;
+  margin-bottom:0 !important;
+  border-bottom:none !important;
+  box-shadow:none !important;
+}
+.keypad::after{
+  content:none !important;
+}
+.key{
+  border-bottom-width:1px !important;
+}
+
+/* Disabled submit state */
+#submitBtn:disabled,
+.submit-btn:disabled,
+button[type="submit"]:disabled{
+  opacity:.35 !important;
+  cursor:default !important;
+  pointer-events:none !important;
+  filter:saturate(.6) !important;
+}
+</style>
+
+<script>
+(function(){
+  const root = document;
+
+  function getSubmitButton(){
+    return root.querySelector('#submitBtn, .submit-btn, button[type="submit"]');
+  }
+
+  function getGuessValue(){
+    const input = root.querySelector('#guessInput, input[name="guess"], input[type="number"], input[type="text"]');
+    if (input) return (input.value || '').trim();
+
+    const display = root.querySelector('#guessDisplay, .guess-display, .display-input');
+    if (display) {
+      const txt = (display.textContent || '').trim();
+      return txt;
+    }
+
+    return '';
+  }
+
+  function hasSelectedUnit(){
+    return !!root.querySelector('.unit-btn.selected, .unit-btn.active, .unit-btn[aria-pressed="true"], input[name="unit"]:checked');
+  }
+
+  function updateSubmitState(){
+    const btn = getSubmitButton();
+    if (!btn) return;
+
+    const value = getGuessValue();
+    const validValue = value !== '' && !Number.isNaN(Number(value));
+    btn.disabled = !(validValue && hasSelectedUnit());
+  }
+
+  // Keep the submit state synced with all possible custom controls.
+  root.addEventListener('input', updateSubmitState, true);
+  root.addEventListener('change', updateSubmitState, true);
+  root.addEventListener('click', function(e){
+    if (
+      e.target.closest('.unit-btn') ||
+      e.target.closest('.key') ||
+      e.target.closest('.keypad button') ||
+      e.target.closest('[data-key]')
+    ){
+      setTimeout(updateSubmitState, 0);
+    }
+  }, true);
+
+  // Prevent accidental submit while disabled even if legacy JS calls click().
+  root.addEventListener('click', function(e){
+    const btn = e.target.closest('#submitBtn, .submit-btn, button[type="submit"]');
+    if (btn && btn.disabled){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    }
+  }, true);
+
+  // Initialize after existing scripts finish setting up.
+  setTimeout(updateSubmitState, 0);
+  setTimeout(updateSubmitState, 100);
+})();
+</script>
