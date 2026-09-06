@@ -363,3 +363,85 @@ build();show();
   }
 }
 </style>
+
+<style>
+/* vNext9: true no-overflow sizing */
+#entry{
+  height:100% !important;
+  min-height:0 !important;
+  display:grid !important;
+  grid-template-rows:auto 18px minmax(0,1fr) !important;
+  gap:8px !important;
+  overflow:hidden !important;
+}
+
+.control-zone{
+  min-height:0 !important;
+  align-items:stretch !important;
+}
+
+/* Unit section: moderately tall, but no fixed giant container. */
+.unit-side{
+  height:auto !important;
+  min-height:0 !important;
+  display:block !important;
+}
+.unit-grid{
+  height:auto !important;
+  min-height:0 !important;
+  grid-template-rows:repeat(4,clamp(48px,6.5dvh,58px)) !important;
+  gap:7px 12px !important;
+}
+.unit-btn{
+  height:auto !important;
+  min-height:0 !important;
+}
+
+/* Calculator: fill only what remains after the controls above. */
+.keypad{
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  flex:none !important;
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  grid-template-rows:repeat(4,minmax(0,1fr)) !important;
+  gap:7px !important;
+  overflow:hidden !important;
+}
+.key{
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+}
+
+/* Slightly tighten upper controls on phone-height screens so keypad keeps room. */
+@media(max-width:430px){
+  .game-card{padding:13px !important}
+  .question-wrap{padding-bottom:9px !important}
+  .control-zone{gap:10px !important}
+  .guess-field{min-height:64px !important}
+  .btn{height:48px !important}
+  .unit-grid{
+    grid-template-rows:repeat(4,clamp(44px,6dvh,52px)) !important;
+    gap:6px 10px !important;
+  }
+  #entry{
+    grid-template-rows:auto 14px minmax(0,1fr) !important;
+    gap:6px !important;
+  }
+}
+
+@media(max-height:720px){
+  .top{margin-bottom:5px !important}
+  .game-card{padding:10px !important}
+  .question-wrap{padding-bottom:6px !important}
+  .guess-field{min-height:52px !important}
+  .btn{height:42px !important}
+  .unit-grid{
+    grid-template-rows:repeat(4,42px) !important;
+    gap:5px 9px !important;
+  }
+  .keypad{gap:5px !important}
+}
+</style>
