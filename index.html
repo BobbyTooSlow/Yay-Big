@@ -32,6 +32,9 @@ h2{margin:0;font-size:clamp(1.8rem,4.8vw,2.6rem);line-height:1.12}
 .unit-side{display:grid;grid-template-rows:auto 1fr;gap:7px}
 .unit-title{color:var(--muted);font-size:.82rem;font-weight:800}
 .unit-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(4,1fr);gap:8px;min-height:0}
+.unit-grid{position:relative}
+.unit-grid::after{content:"";position:absolute;top:5px;bottom:5px;left:50%;width:1px;background:var(--border);transform:translateX(-.5px);pointer-events:none}
+
 .unit-btn{min-height:48px;border:1px solid var(--border);border-radius:12px;background:#eef0f2;color:#111;font:inherit;font-size:1.05rem;font-weight:800;cursor:pointer;touch-action:manipulation}
 .unit-btn.selected{border-color:var(--blue);background:var(--blue);color:#001018}
 .validation{min-height:18px;margin:0;color:var(--danger);font-size:.84rem}
@@ -40,12 +43,12 @@ h2{margin:0;font-size:clamp(1.8rem,4.8vw,2.6rem);line-height:1.12}
 .key:active{background:#1b2a34}
 .key.utility{color:var(--blue);font-size:1.1rem}
 .result{height:100%;display:flex;flex-direction:column;justify-content:center;padding:8px 2px 0;border-top:1px solid var(--border)}
-.result-layout{display:grid;grid-template-columns:minmax(0,1fr) 126px;gap:18px;align-items:center}
+.result-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(112px,28%);gap:10px;align-items:center}
 .answer-stack{display:grid;gap:16px}
 .lab{display:block;color:var(--muted);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
 .answer-cell strong{display:block;font-size:clamp(1.45rem,4vw,2.1rem);line-height:1.2}
-.score-side{text-align:center;border-left:1px solid #17212a;padding-left:14px}
-.score-percent{color:var(--blue);font-size:clamp(3.5rem,11vw,5.4rem);line-height:.9;font-weight:950}
+.score-side{text-align:center;border-left:1px solid #17212a;padding:0 10px 0 12px;min-width:0;overflow:hidden}
+.score-percent{color:var(--blue);font-size:clamp(2.8rem,9vw,4.6rem);line-height:.9;font-weight:950;white-space:nowrap}
 .score-mult{margin-top:10px;color:var(--muted);font-size:1.05rem;font-weight:900}
 .verdict{margin:18px 0 0;color:var(--muted);font-size:1rem}
 .next{margin-top:18px;align-self:stretch}
@@ -141,3 +144,10 @@ build();show();
 </script>
 </body>
 </html>
+<style>
+@media(max-width:430px){
+  .result-layout{grid-template-columns:minmax(0,1fr) 112px;gap:8px}
+  .score-side{padding-left:8px;padding-right:6px}
+  .score-percent{font-size:clamp(2.7rem,14vw,4rem)}
+}
+</style>
