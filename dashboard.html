@@ -52,7 +52,7 @@ td input,td select{width:100%}
   <input id="importFile" type="file" accept=".json,application/json" class="hidden">
 </div>
 
-<p class="note"><b>Data safety:</b> dashboard structure and question content are now separate. Your working edits are stored independently in this browser. Export <b>questions.json</b> when you want to publish them to the game. Replacing or redesigning <b>dashboard.html</b> will not overwrite the saved question content.</p>
+<p class="note"><b>Data safety:</b> dashboard structure and question content are now separate. Your working edits are stored independently in this browser. Export <b>questions.json</b> when you want to publish them to the game. Replacing or redesigning <b>dashboard.html</b> will not overwrite the saved question content. If an older saved workspace has blank Question fields, the dashboard safely fills only those blanks from the published <b>questions.json</b>.</p>
 
 <div id="stats" class="stats"></div>
 
@@ -150,6 +150,39 @@ function migrateOldWorkspace(){
     return true;
   }catch(e){console.error(e);return false}
 }
+
+async function backfillQuestionsFromPublished(){
+  try{
+    const res=await fetch("questions.json",{cache:"no-store"});
+    if(!res.ok)throw new Error(`questions.json returned ${res.status}`);
+    const data=await res.json();
+    if(!data||!Array.isArray(data.questions))return 0;
+
+    const publishedById=new Map(
+      data.questions.map(q=>[String(q.id),q])
+    );
+
+    let changed=0;
+    for(const x of items){
+      const published=publishedById.get(String(x.id));
+      if(!published)continue;
+      if((!x.question||!x.question.trim()) && published.question && String(published.question).trim()){
+        x.question=String(published.question).trim();
+        changed++;
+      }
+    }
+
+    if(changed){
+      save();
+      updateDbStatus(`Loaded your saved workspace and filled ${changed} blank Question field${changed===1?"":"s"} from the published questions.json.`);
+    }
+    return changed;
+  }catch(e){
+    console.error("Question backfill failed:",e);
+    return 0;
+  }
+}
+
 async function loadPublished(confirmFirst=false){
   if(confirmFirst&&!confirm("Replace your current browser workspace with the published questions.json? Export first if you want a backup."))return;
   try{
@@ -260,8 +293,16 @@ $("importFile").onchange=async e=>{
 $("reloadPublished").onclick=()=>loadPublished(true);
 
 (async function init(){
-  if(loadWorkspace()){render();return}
-  if(migrateOldWorkspace()){render();return}
+  if(loadWorkspace()){
+    await backfillQuestionsFromPublished();
+    render();
+    return;
+  }
+  if(migrateOldWorkspace()){
+    await backfillQuestionsFromPublished();
+    render();
+    return;
+  }
   await loadPublished(false);
 })();
 </script>
