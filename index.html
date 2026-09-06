@@ -77,7 +77,7 @@ h2{margin:0;font-size:clamp(1.8rem,4.8vw,2.6rem);line-height:1.12}
       <div class="control-zone">
         <div class="guess-side">
           <div id="guessField" class="guess-field" aria-live="polite"><span id="guessDisplay" class="guess-placeholder"></span><span class="caret" aria-hidden="true"></span></div>
-          <button id="submit" class="btn" type="button">Submit</button>
+          <button id="submit" class="btn" type="button" disabled>Submit</button>
         </div>
         <div class="unit-side">
           <div id="unitGrid" class="unit-grid" role="group" aria-label="Choose unit">
@@ -133,9 +133,13 @@ function pick(arr,n){return [...arr].sort(()=>Math.random()-.5).slice(0,n)}
 function build(){const usable=FULL.filter(x=>x.status!=="Rejected"&&x.value!=null&&x.unit);round=[...pick(usable.filter(x=>x.difficulty==="Easy"),1),...pick(usable.filter(x=>x.difficulty==="Medium"),3),...pick(usable.filter(x=>x.difficulty==="Hard"),1)]}
 function fmt(n){return Number(n).toLocaleString(undefined,{maximumFractionDigits:4})}
 function updateGuessDisplay(){const el=$("guessDisplay");if(!guessText){el.textContent="";el.className="guess-placeholder"}else{el.textContent=guessText;el.className="guess-value"}}
-function show(){const q=round[i];$("progress").textContent=`${i+1} / 5`;$("diff").textContent=q.difficulty.toUpperCase();$("question").textContent=questionText(q);guessText="";updateGuessDisplay();selectedUnit="";document.querySelectorAll(".unit-btn").forEach(b=>b.classList.remove("selected"));$("validation").textContent="";$("entry").classList.remove("hidden");$("result").classList.add("hidden")}
-document.querySelector(".keypad").addEventListener("click",e=>{const btn=e.target.closest("[data-key]");if(!btn)return;const k=btn.dataset.key;if(k==="back")guessText=guessText.slice(0,-1);else if(k==="."){if(!guessText.includes("."))guessText=guessText?guessText+".":"0."}else{if(guessText.length>=10)return;if(guessText==="0")guessText=k;else guessText+=k}$("validation").textContent="";updateGuessDisplay()});
-$("unitGrid").addEventListener("click",e=>{const btn=e.target.closest("[data-unit]");if(!btn)return;selectedUnit=btn.dataset.unit;document.querySelectorAll(".unit-btn").forEach(b=>b.classList.toggle("selected",b===btn));$("validation").textContent=""});
+function syncSubmitState(){
+  const validValue = guessText.trim() !== "" && Number.isFinite(Number(guessText)) && Number(guessText) > 0;
+  $("submit").disabled = !(validValue && selectedUnit);
+}
+function show(){const q=round[i];$("progress").textContent=`${i+1} / 5`;$("diff").textContent=q.difficulty.toUpperCase();$("question").textContent=questionText(q);guessText="";updateGuessDisplay();selectedUnit="";document.querySelectorAll(".unit-btn").forEach(b=>b.classList.remove("selected"));$("validation").textContent="";syncSubmitState();$("entry").classList.remove("hidden");$("result").classList.add("hidden")}
+document.querySelector(".keypad").addEventListener("click",e=>{const btn=e.target.closest("[data-key]");if(!btn)return;const k=btn.dataset.key;if(k==="back")guessText=guessText.slice(0,-1);else if(k==="."){if(!guessText.includes("."))guessText=guessText?guessText+".":"0."}else{if(guessText.length>=10)return;if(guessText==="0")guessText=k;else guessText+=k}$("validation").textContent="";updateGuessDisplay();syncSubmitState()});
+$("unitGrid").addEventListener("click",e=>{const btn=e.target.closest("[data-unit]");if(!btn)return;selectedUnit=btn.dataset.unit;document.querySelectorAll(".unit-btn").forEach(b=>b.classList.toggle("selected",b===btn));$("validation").textContent="";syncSubmitState()});
 $("submit").onclick=()=>{const q=round[i],g=Number(guessText),u=selectedUnit;if(!guessText||!Number.isFinite(g)||g<=0){$("validation").textContent="Enter a number greater than zero.";return}if(!u){$("validation").textContent="Choose a unit.";return}const officialBase=q.value*factors[q.unit],guessBase=g*factors[u],err=Math.abs(guessBase-officialBase)/officialBase*100,acc=Math.max(0,Math.min(100,Math.round(100-err))),multiplier=mult[q.difficulty],pts=acc*multiplier;total+=pts;$("official").textContent=`${fmt(q.value)} ${q.unit}`;if(u!==q.unit)$("your").textContent=`${fmt(g)} ${u} = ${fmt(guessBase/factors[q.unit])} ${q.unit}`;else $("your").textContent=`${fmt(g)} ${u}`;$("scorePercent").textContent=`${acc}%`;$("scoreMult").textContent=`${multiplier}X`;$("verdict").textContent=acc===100?"Dead on.":acc>=95?"Excellent.":acc>=90?"Very good.":acc>=80?"Respectable.":"Keep calibrating.";$("entry").classList.add("hidden");$("result").classList.remove("hidden");$("next").textContent=i===4?"See results":"Next"};
 $("next").onclick=()=>{if(++i===5){$("game").classList.add("hidden");$("summary").classList.remove("hidden");$("total").textContent=total}else show()};
 $("restart").onclick=()=>{i=0;total=0;build();$("summary").classList.add("hidden");$("game").classList.remove("hidden");show()};
@@ -447,167 +451,28 @@ build();show();
 </style>
 
 <style>
-/* vNext10 */
+/* vNext12 */
 
-/* Lock in current unit sizing from vNext9 */
-.unit-grid{
-  grid-template-rows:repeat(4,clamp(48px,6.5dvh,58px)) !important;
-}
-@media(max-width:430px){
-  .unit-grid{
-    grid-template-rows:repeat(4,clamp(44px,6dvh,52px)) !important;
-  }
-}
-@media(max-height:720px){
-  .unit-grid{
-    grid-template-rows:repeat(4,42px) !important;
-  }
-}
+/* LOCKED: unit sizing from vNext9 — do not alter. */
 
-/* Question area: always reserve two lines; light yellow text */
+/* Reserve a true two-line question area and use light yellow text. */
 .question-wrap{
-  min-height:3.4em !important;
+  min-height:4.6rem !important;
+  padding-bottom:8px !important;
+  position:relative !important;
+  display:flex !important;
+  align-items:center !important;
+  padding-left:25px !important;
+}
+#question{
+  color:#fff2a8 !important;
+  line-height:1.2 !important;
+  min-height:2.4em !important;
   display:flex !important;
   align-items:center !important;
 }
-.question,
-.question-text,
-#question,
-#questionText{
-  color:#fff3a6 !important;
-  line-height:1.35 !important;
-}
 
-/* Make keypad a little shorter to create the permanent 2-line question area */
-#entry{
-  grid-template-rows:auto 14px minmax(0,.88fr) !important;
-}
-.keypad{
-  padding-bottom:0 !important;
-  margin-bottom:0 !important;
-  border-bottom:none !important;
-  box-shadow:none !important;
-}
-.keypad::after{
-  content:none !important;
-}
-.key{
-  border-bottom-width:1px !important;
-}
-
-/* Disabled submit state */
-#submitBtn:disabled,
-.submit-btn:disabled,
-button[type="submit"]:disabled{
-  opacity:.35 !important;
-  cursor:default !important;
-  pointer-events:none !important;
-  filter:saturate(.6) !important;
-}
-</style>
-
-<script>
-(function(){
-  const root = document;
-
-  function getSubmitButton(){
-    return root.querySelector('#submitBtn, .submit-btn, button[type="submit"]');
-  }
-
-  function getGuessValue(){
-    const input = root.querySelector('#guessInput, input[name="guess"], input[type="number"], input[type="text"]');
-    if (input) return (input.value || '').trim();
-
-    const display = root.querySelector('#guessDisplay, .guess-display, .display-input');
-    if (display) {
-      const txt = (display.textContent || '').trim();
-      return txt;
-    }
-
-    return '';
-  }
-
-  function hasSelectedUnit(){
-    return !!root.querySelector('.unit-btn.selected, .unit-btn.active, .unit-btn[aria-pressed="true"], input[name="unit"]:checked');
-  }
-
-  function updateSubmitState(){
-    const btn = getSubmitButton();
-    if (!btn) return;
-
-    const value = getGuessValue();
-    const validValue = value !== '' && !Number.isNaN(Number(value));
-    btn.disabled = !(validValue && hasSelectedUnit());
-  }
-
-  // Keep the submit state synced with all possible custom controls.
-  root.addEventListener('input', updateSubmitState, true);
-  root.addEventListener('change', updateSubmitState, true);
-  root.addEventListener('click', function(e){
-    if (
-      e.target.closest('.unit-btn') ||
-      e.target.closest('.key') ||
-      e.target.closest('.keypad button') ||
-      e.target.closest('[data-key]')
-    ){
-      setTimeout(updateSubmitState, 0);
-    }
-  }, true);
-
-  // Prevent accidental submit while disabled even if legacy JS calls click().
-  root.addEventListener('click', function(e){
-    const btn = e.target.closest('#submitBtn, .submit-btn, button[type="submit"]');
-    if (btn && btn.disabled){
-      e.preventDefault();
-      e.stopImmediatePropagation();
-    }
-  }, true);
-
-  // Initialize after existing scripts finish setting up.
-  setTimeout(updateSubmitState, 0);
-  setTimeout(updateSubmitState, 100);
-})();
-</script>
-
-<style>
-/* vNext11 — targeted corrections */
-
-/* Keep the unit-button sizing exactly as established in vNext9/vNext10. */
-.unit-grid{
-  grid-template-rows:repeat(4,clamp(48px,6.5dvh,58px)) !important;
-}
-@media(max-width:430px){
-  .unit-grid{
-    grid-template-rows:repeat(4,clamp(44px,6dvh,52px)) !important;
-  }
-}
-@media(max-height:720px){
-  .unit-grid{
-    grid-template-rows:repeat(4,42px) !important;
-  }
-}
-
-/* Align the bottom of the left input/submit stack with the bottom of the unit grid. */
-.guess-side{
-  align-self:end !important;
-}
-.unit-side{
-  align-self:end !important;
-}
-
-/* Real disabled styling for the actual Submit button. */
-#submit:disabled{
-  opacity:.32 !important;
-  filter:saturate(.45) !important;
-  cursor:default !important;
-  pointer-events:none !important;
-}
-
-/* Difficulty label rotated 90 degrees counterclockwise without consuming a full text row. */
-.question-wrap{
-  position:relative !important;
-  padding-left:24px !important;
-}
+/* Rotate difficulty 90° counterclockwise so it uses almost no vertical space. */
 #diff{
   position:absolute !important;
   left:1px !important;
@@ -615,73 +480,63 @@ button[type="submit"]:disabled{
   margin:0 !important;
   white-space:nowrap !important;
   transform:translate(-42%,-50%) rotate(-90deg) !important;
-  transform-origin:center !important;
+  transform-origin:center center !important;
   line-height:1 !important;
 }
 
-/* Question stays aligned in the remaining space. */
-#question{
-  margin-left:0 !important;
+/* The unit column determines the control-zone height.
+   The Submit button therefore lands exactly on the same bottom edge. */
+.control-zone{
+  align-items:stretch !important;
+}
+.guess-side{
+  height:100% !important;
+  align-self:stretch !important;
+  grid-template-rows:1fr auto !important;
+}
+.unit-side{
+  align-self:stretch !important;
+}
+
+/* Give the enlarged question area its room by reducing keypad height,
+   while still keeping all four rows visible. */
+#entry{
+  grid-template-rows:auto 12px minmax(0,.84fr) !important;
+}
+.keypad{
+  align-self:stretch !important;
+  border-bottom:none !important;
+  box-shadow:none !important;
+  margin-bottom:0 !important;
+  padding-bottom:0 !important;
+}
+.keypad::after{
+  content:none !important;
+}
+
+/* Remove the extra horizontal rule beneath the calculator. */
+.game-card{
+  border-bottom:none !important;
+}
+
+/* Submit: visibly inactive until BOTH number and unit are present. */
+#submit{
+  transition:opacity .15s ease, filter .15s ease !important;
+}
+#submit:disabled{
+  opacity:.28 !important;
+  filter:saturate(.35) brightness(.8) !important;
+  cursor:default !important;
+  pointer-events:none !important;
+}
+
+@media(max-width:430px){
+  .question-wrap{
+    min-height:4.25rem !important;
+    padding-left:23px !important;
+  }
+  #entry{
+    grid-template-rows:auto 10px minmax(0,.80fr) !important;
+  }
 }
 </style>
-
-<script>
-(function(){
-  const submit = document.getElementById('submit');
-  if (!submit) return;
-
-  function syncSubmit(){
-    const n = Number(guessText);
-    const hasValidValue =
-      typeof guessText === 'string' &&
-      guessText.trim() !== '' &&
-      Number.isFinite(n) &&
-      n > 0;
-
-    const hasUnit =
-      typeof selectedUnit === 'string' &&
-      selectedUnit !== '';
-
-    submit.disabled = !(hasValidValue && hasUnit);
-  }
-
-  /* Start every question disabled. */
-  submit.disabled = true;
-
-  /* The game's existing handlers update guessText/selectedUnit first;
-     these bubble-phase listeners then update the button state. */
-  const keypad = document.querySelector('.keypad');
-  const unitGrid = document.getElementById('unitGrid');
-
-  if (keypad) {
-    keypad.addEventListener('click', function(){
-      syncSubmit();
-    });
-  }
-
-  if (unitGrid) {
-    unitGrid.addEventListener('click', function(){
-      syncSubmit();
-    });
-  }
-
-  /* When Next/Restart loads a fresh question, show() clears both values.
-     Re-disable after those existing click handlers run. */
-  const next = document.getElementById('next');
-  const restart = document.getElementById('restart');
-
-  if (next) {
-    next.addEventListener('click', function(){
-      setTimeout(syncSubmit, 0);
-    });
-  }
-
-  if (restart) {
-    restart.addEventListener('click', function(){
-      setTimeout(syncSubmit, 0);
-    });
-  }
-
-  syncSubmit();
-})();
-</script>
