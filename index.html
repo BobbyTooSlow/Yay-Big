@@ -17,10 +17,8 @@ h2{margin:0 0 8px;font-size:1.22rem;line-height:1.12}.entry-row{display:grid;gri
 .validation{min-height:14px;margin:3px 0 0;color:var(--danger);font-size:.76rem}.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:6px}
 .key{height:36px;border:1px solid var(--border);border-radius:8px;background:var(--panel2);color:#fff;font:inherit;font-size:1.05rem;font-weight:750;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .key:active{background:#1b2a34}.key.utility{color:var(--blue);font-size:.9rem}.result{margin-top:9px;padding-top:9px;border-top:1px solid var(--border)}
-.answer-grid,.convert-row{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}.lab{display:block;color:var(--muted);font-size:.64rem;font-weight:750;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
-.answer-cell strong{display:block;font-size:1.05rem;line-height:1.15}.convert-row{margin-top:9px;padding-top:9px;border-top:1px solid #17212a}
-.score-block{margin-top:9px;padding-top:9px;border-top:1px solid #17212a}.score-calc{color:var(--blue);font-size:1.08rem;font-weight:900}.verdict{margin:3px 0 0;color:var(--muted);font-size:.8rem}.next{margin-top:8px}
-.summary-line{font-size:1.2rem}.score{color:var(--blue)}.hidden{display:none!important}@media(max-width:390px){.app{width:calc(100% - 8px);padding-top:4px}.card{padding:9px}h2{font-size:1.12rem}.entry-row{grid-template-columns:minmax(0,1fr) 88px auto;gap:4px}.btn{padding:0 8px;font-size:.84rem}.key{height:34px}}
+.result-layout{display:grid;grid-template-columns:minmax(0,1fr) 112px;gap:14px;align-items:center}.answer-stack{display:grid;gap:10px}.lab{display:block;color:var(--muted);font-size:.64rem;font-weight:750;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}.answer-cell strong{display:block;font-size:1.08rem;line-height:1.2}.score-side{text-align:center;border-left:1px solid #17212a;padding-left:12px}.score-percent{color:var(--blue);font-size:2.25rem;line-height:.95;font-weight:900}.score-mult{margin-top:5px;color:var(--muted);font-size:.78rem;font-weight:800}.verdict{margin:8px 0 0;color:var(--muted);font-size:.8rem}.next{margin-top:8px}
+.summary-line{font-size:1.2rem}.score{color:var(--blue)}.hidden{display:none!important}@media(max-width:390px){.app{width:calc(100% - 8px);padding-top:4px}.card{padding:9px}h2{font-size:1.12rem}.entry-row{grid-template-columns:minmax(0,1fr) 88px auto;gap:4px}.btn{padding:0 8px;font-size:.84rem}.key{height:34px}.result-layout{grid-template-columns:minmax(0,1fr) 94px;gap:10px}.score-percent{font-size:2rem}.score-side{padding-left:9px}}
 </style>
 </head>
 <body>
@@ -44,15 +42,17 @@ h2{margin:0 0 8px;font-size:1.22rem;line-height:1.12}.entry-row{display:grid;gri
 </div>
 
 <div id="result" class="result hidden">
-<div class="answer-grid">
+<div class="result-layout">
+<div class="answer-stack">
 <div class="answer-cell"><span class="lab">Official</span><strong id="official"></strong></div>
 <div class="answer-cell"><span class="lab">Your guess</span><strong id="your"></strong></div>
 </div>
-<div id="convertRow" class="convert-row hidden">
-<div class="answer-cell"><span id="guessConvertedLabel" class="lab"></span><strong id="guessConverted"></strong></div>
-<div class="answer-cell"><span id="officialConvertedLabel" class="lab"></span><strong id="officialConverted"></strong></div>
+<div class="score-side">
+<div id="scorePercent" class="score-percent"></div>
+<div id="scoreMult" class="score-mult"></div>
 </div>
-<div class="score-block"><div id="score" class="score-calc"></div><p id="verdict" class="verdict"></p></div>
+</div>
+<p id="verdict" class="verdict"></p>
 <button id="next" class="btn next" type="button">Next</button>
 </div>
 </section>
@@ -100,16 +100,18 @@ function questionText(q){
  return `What is the ${m} of ${a} ${item}?`;
 }
 function pick(arr,n){return [...arr].sort(()=>Math.random()-.5).slice(0,n)}
-function build(){const usable=FULL.filter(x=>x.status!=="Rejected"&&x.value!=null&&x.unit);round=[...pick(usable.filter(x=>x.difficulty==="Easy"),1),...pick(usable.filter(x=>x.difficulty==="Medium"),3),...pick(usable.filter(x=>x.difficulty==="Hard"),1)].sort(()=>Math.random()-.5)}
+function build(){const usable=FULL.filter(x=>x.status!=="Rejected"&&x.value!=null&&x.unit);round=[...pick(usable.filter(x=>x.difficulty==="Easy"),1),...pick(usable.filter(x=>x.difficulty==="Medium"),3),...pick(usable.filter(x=>x.difficulty==="Hard"),1)]}
 function fmt(n){return Number(n).toLocaleString(undefined,{maximumFractionDigits:4})}
 function updateGuessDisplay(){const el=$("guessDisplay");if(!guessText){el.textContent="Enter number";el.classList.add("empty")}else{el.textContent=guessText;el.classList.remove("empty")}}
-function show(){const q=round[i];$("progress").textContent=`${i+1} / 5`;$("diff").textContent=q.difficulty.toUpperCase();$("question").textContent=questionText(q);guessText="";updateGuessDisplay();$("unit").value="";$("validation").textContent="";$("entry").classList.remove("hidden");$("result").classList.add("hidden");$("convertRow").classList.add("hidden")}
+function show(){const q=round[i];$("progress").textContent=`${i+1} / 5`;$("diff").textContent=q.difficulty.toUpperCase();$("question").textContent=questionText(q);guessText="";updateGuessDisplay();$("unit").value="";$("validation").textContent="";$("entry").classList.remove("hidden");$("result").classList.add("hidden")}
 document.querySelector(".keypad").addEventListener("click",e=>{const btn=e.target.closest("[data-key]");if(!btn)return;const k=btn.dataset.key;if(k==="back")guessText=guessText.slice(0,-1);else if(k==="."){if(!guessText.includes("."))guessText=guessText?guessText+".":"0."}else{if(guessText.length>=10)return;if(guessText==="0")guessText=k;else guessText+=k}$("validation").textContent="";updateGuessDisplay()});
 $("submit").onclick=()=>{const q=round[i],g=Number(guessText),u=$("unit").value;if(!guessText||!Number.isFinite(g)||g<=0){$("validation").textContent="Enter a number greater than zero.";return}if(!u){$("validation").textContent="Choose a unit.";return}
  const officialBase=q.value*factors[q.unit],guessBase=g*factors[u],err=Math.abs(guessBase-officialBase)/officialBase*100,acc=Math.max(0,Math.min(100,Math.round(100-err))),multiplier=mult[q.difficulty],pts=acc*multiplier;total+=pts;
- $("official").textContent=`${fmt(q.value)} ${q.unit}`;$("your").textContent=`${fmt(g)} ${u}`;
- if(u!==q.unit){$("guessConvertedLabel").textContent=`Your guess in ${q.unit}`;$("guessConverted").textContent=`${fmt(guessBase/factors[q.unit])} ${q.unit}`;$("officialConvertedLabel").textContent=`Official in ${u}`;$("officialConverted").textContent=`${fmt(officialBase/factors[u])} ${u}`;$("convertRow").classList.remove("hidden")}else{$("convertRow").classList.add("hidden")}
- $("score").textContent=`${acc}% × ${multiplier} = ${pts} points`;$("verdict").textContent=acc===100?"Dead on.":acc>=95?"Excellent.":acc>=90?"Very good.":acc>=80?"Respectable.":"Keep calibrating.";$("entry").classList.add("hidden");$("result").classList.remove("hidden");$("next").textContent=i===4?"See results":"Next";
+ $("official").textContent=`${fmt(q.value)} ${q.unit}`;
+ if(u!==q.unit){$("your").textContent=`${fmt(g)} ${u} = ${fmt(guessBase/factors[q.unit])} ${q.unit}`;}else{$("your").textContent=`${fmt(g)} ${u}`;}
+ $("scorePercent").textContent=`${acc}%`;
+ $("scoreMult").textContent=`${multiplier}X`;
+ $("verdict").textContent=acc===100?"Dead on.":acc>=95?"Excellent.":acc>=90?"Very good.":acc>=80?"Respectable.":"Keep calibrating.";$("entry").classList.add("hidden");$("result").classList.remove("hidden");$("next").textContent=i===4?"See results":"Next";
 };
 $("next").onclick=()=>{if(++i===5){$("game").classList.add("hidden");$("summary").classList.remove("hidden");$("total").textContent=total}else show()};
 $("restart").onclick=()=>{i=0;total=0;build();$("summary").classList.add("hidden");$("game").classList.remove("hidden");show()};
