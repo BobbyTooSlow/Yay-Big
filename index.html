@@ -7,25 +7,28 @@
 <style>
 *{box-sizing:border-box}:root{--bg:#000;--panel:#0a0f14;--panel2:#111920;--text:#fff;--blue:#7dd3fc;--muted:#9eabb7;--border:#22303b;--danger:#ff9a9a}
 html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-body{min-height:100dvh;overflow-x:hidden}.app{width:min(680px,calc(100% - 12px));margin:auto;padding:7px 0 18px}.top{display:flex;justify-content:space-between;gap:12px;margin-bottom:7px}
+body{height:100dvh;overflow:hidden}.app{width:min(680px,100%);height:100dvh;margin:auto;padding:calc(env(safe-area-inset-top) + 8px) 10px calc(env(safe-area-inset-bottom) + 8px);display:grid;grid-template-rows:auto minmax(0,1fr)}.top{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px}
 .kick{margin:0;font-size:.82rem}.brand{margin:0;color:var(--blue);font-size:2.15rem;line-height:.9;letter-spacing:-.05em}.progress{color:var(--blue);font-weight:800;font-size:.86rem}
-.card{padding:11px;border:1px solid var(--border);border-radius:12px;background:var(--panel)}.eyebrow{margin:0 0 3px;color:var(--blue);font-size:.65rem;font-weight:800;letter-spacing:.14em}
-h2{margin:0 0 8px;font-size:1.22rem;line-height:1.12}.entry-row{display:grid;grid-template-columns:minmax(0,1fr) 96px auto;gap:6px;align-items:end}
+.card{padding:12px;border:1px solid var(--border);border-radius:14px;background:var(--panel);min-height:0}.game-card{height:100%;display:grid;grid-template-rows:auto auto minmax(0,1fr);overflow:hidden}.eyebrow{margin:0 0 3px;color:var(--blue);font-size:.65rem;font-weight:800;letter-spacing:.14em}
+h2{margin:0;font-size:clamp(1.12rem,2.2vh,1.5rem);line-height:1.12;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.question-wrap{min-height:0;padding-bottom:10px}.entry-row{display:grid;grid-template-columns:minmax(0,1fr) 96px auto;gap:6px;align-items:end}.play-stage{min-height:0;display:grid;grid-template-rows:minmax(0,1fr);gap:6px}.play-stage:has(#entry:not(.hidden)){grid-template-rows:minmax(0,1fr)}#entry{min-height:0;height:100%;display:grid;grid-template-rows:auto auto minmax(0,1fr);gap:4px}
 .field-label{display:block;margin-bottom:3px;color:var(--muted);font-size:.72rem;font-weight:700}.display-input,select{width:100%;height:40px;border:1px solid var(--border);border-radius:8px;background:#030506;color:#fff;font:inherit}
 .display-input{display:flex;align-items:center;padding:0 10px;font-size:1.03rem}.display-input.empty{color:#65727d}select{padding:0 7px}
 .btn{height:40px;padding:0 10px;border:1px solid var(--blue);border-radius:8px;background:var(--blue);color:#001018;font:inherit;font-weight:900;cursor:pointer}
-.validation{min-height:14px;margin:3px 0 0;color:var(--danger);font-size:.76rem}.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-top:6px}
-.key{height:36px;border:1px solid var(--border);border-radius:8px;background:var(--panel2);color:#fff;font:inherit;font-size:1.05rem;font-weight:750;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.key:active{background:#1b2a34}.key.utility{color:var(--blue);font-size:.9rem}.result{margin-top:9px;padding-top:9px;border-top:1px solid var(--border)}
-.result-layout{display:grid;grid-template-columns:minmax(0,1fr) 112px;gap:14px;align-items:center}.answer-stack{display:grid;gap:10px}.lab{display:block;color:var(--muted);font-size:.64rem;font-weight:750;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}.answer-cell strong{display:block;font-size:1.08rem;line-height:1.2}.score-side{text-align:center;border-left:1px solid #17212a;padding-left:12px}.score-percent{color:var(--blue);font-size:2.25rem;line-height:.95;font-weight:900}.score-mult{margin-top:5px;color:var(--muted);font-size:.78rem;font-weight:800}.verdict{margin:8px 0 0;color:var(--muted);font-size:.8rem}.next{margin-top:8px}
-.summary-line{font-size:1.2rem}.score{color:var(--blue)}.hidden{display:none!important}@media(max-width:390px){.app{width:calc(100% - 8px);padding-top:4px}.card{padding:9px}h2{font-size:1.12rem}.entry-row{grid-template-columns:minmax(0,1fr) 88px auto;gap:4px}.btn{padding:0 8px;font-size:.84rem}.key{height:34px}.result-layout{grid-template-columns:minmax(0,1fr) 94px;gap:10px}.score-percent{font-size:2rem}.score-side{padding-left:9px}}
+.validation{min-height:14px;margin:3px 0 0;color:var(--danger);font-size:.76rem}.keypad{min-height:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,minmax(0,1fr));gap:7px;margin-top:0}
+.key{min-height:44px;height:auto;border:1px solid var(--border);border-radius:8px;background:var(--panel2);color:#fff;font:inherit;font-size:1.05rem;font-weight:750;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.key:active{background:#1b2a34}.key.utility{color:var(--blue);font-size:.9rem}.result{min-height:0;height:100%;display:flex;flex-direction:column;justify-content:center;padding:8px 2px 0;border-top:1px solid var(--border)}
+.result-layout{display:grid;grid-template-columns:minmax(0,1fr) 112px;gap:14px;align-items:center}.answer-stack{display:grid;gap:10px}.lab{display:block;color:var(--muted);font-size:.64rem;font-weight:750;text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}.answer-cell strong{display:block;font-size:1.08rem;line-height:1.2}.score-side{text-align:center;border-left:1px solid #17212a;padding-left:12px}.score-percent{color:var(--blue);font-size:2.25rem;line-height:.95;font-weight:900}.score-mult{margin-top:5px;color:var(--muted);font-size:.78rem;font-weight:800}.verdict{margin:8px 0 0;color:var(--muted);font-size:.8rem}.next{margin-top:14px;align-self:stretch}
+.summary-line{font-size:1.2rem}.score{color:var(--blue)}#summary{height:100%;display:flex;flex-direction:column;justify-content:center}.hidden{display:none!important}@media(max-width:390px){.app{padding-left:6px;padding-right:6px}.card{padding:10px}.entry-row{grid-template-columns:minmax(0,1fr) 88px auto;gap:4px}.btn{padding:0 8px;font-size:.84rem}.result-layout{grid-template-columns:minmax(0,1fr) 94px;gap:10px}.score-percent{font-size:2rem}.score-side{padding-left:9px}}.card{padding:9px}h2{font-size:1.12rem}.entry-row{grid-template-columns:minmax(0,1fr) 88px auto;gap:4px}.btn{padding:0 8px;font-size:.84rem}.key{height:34px}.result-layout{grid-template-columns:minmax(0,1fr) 94px;gap:10px}.score-percent{font-size:2rem}.score-side{padding-left:9px}}
+@media(max-height:700px){.app{padding-top:calc(env(safe-area-inset-top) + 4px);padding-bottom:calc(env(safe-area-inset-bottom) + 4px)}.top{margin-bottom:4px}.brand{font-size:1.9rem}.kick{font-size:.75rem}.card{padding:9px}.question-wrap{padding-bottom:6px}.display-input,select,.btn{height:36px}.key{min-height:36px}.validation{min-height:10px;margin:1px 0 0}.result{padding-top:4px}.answer-stack{gap:6px}.next{margin-top:8px}}
+@media(orientation:landscape) and (max-height:500px){.app{max-width:820px}.top{display:none}.card{border-radius:10px}.game-card{grid-template-columns:minmax(0,1fr) minmax(280px,.9fr);grid-template-rows:auto minmax(0,1fr);column-gap:12px}.question-wrap{grid-column:1;grid-row:1 / span 2;padding-right:12px}.play-stage{grid-column:2;grid-row:1 / span 2}.eyebrow{margin-top:2px}h2{-webkit-line-clamp:5}.keypad{gap:5px}}
 </style>
 </head>
 <body>
 <main class="app">
 <header class="top"><div><p class="kick">I'd say it's about...</p><h1 class="brand">Yay Big</h1></div><div id="progress" class="progress"></div></header>
-<section id="game" class="card">
-<p id="diff" class="eyebrow"></p><h2 id="question"></h2>
+<section id="game" class="card game-card">
+<div class="question-wrap"><p id="diff" class="eyebrow"></p><h2 id="question"></h2></div>
+<div class="play-stage">
 <div id="entry">
 <div class="entry-row">
 <label><span class="field-label">Your guess</span><div id="guessDisplay" class="display-input empty">Enter number</div></label>
@@ -54,6 +57,7 @@ h2{margin:0 0 8px;font-size:1.22rem;line-height:1.12}.entry-row{display:grid;gri
 </div>
 <p id="verdict" class="verdict"></p>
 <button id="next" class="btn next" type="button">Next</button>
+</div>
 </div>
 </section>
 <section id="summary" class="card hidden"><p class="eyebrow">ROUND COMPLETE</p><h2>Your results</h2><p class="summary-line"><strong id="total" class="score"></strong> / 1000</p><button id="restart" class="btn" type="button">Play again</button></section>
