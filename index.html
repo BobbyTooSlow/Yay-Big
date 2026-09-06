@@ -456,3 +456,49 @@ build();show();
   }
 }
 </style>
+
+<style>
+/* vNext16 — illustrated Yay Big masthead */
+.top{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) auto !important;
+  align-items:start !important;
+  gap:10px !important;
+  margin-bottom:6px !important;
+}
+.brand-image-wrap{
+  min-width:0 !important;
+  height:178px !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:flex-start !important;
+  overflow:visible !important;
+}
+.brand-image{
+  display:block !important;
+  width:auto !important;
+  max-width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:left bottom !important;
+}
+#progress{
+  align-self:start !important;
+  margin-top:8px !important;
+}
+
+@media(max-width:430px){
+  .brand-image-wrap{
+    height:154px !important;
+  }
+  #progress{
+    margin-top:6px !important;
+  }
+}
+
+@media(max-height:720px){
+  .brand-image-wrap{
+    height:124px !important;
+  }
+}
+</style>
