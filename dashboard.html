@@ -1,1 +1,246 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Yay Big Dashboard</title><style>:root{--bg:#000;--panel:#0a0f14;--panel2:#101820;--text:#fff;--blue:#7dd3fc;--muted:#9aa8b5;--border:#26343f;--red:#ff8f8f}*{box-sizing:border-box}body{margin:0;background:#000;color:#fff;font-family:system-ui,-apple-system,sans-serif}main{width:min(1250px,calc(100% - 18px));margin:auto;padding:14px 0 50px}h1{margin:0;color:var(--blue);font-size:2rem}.sub,.note,.footer{color:var(--muted)}.sub{margin:4px 0 12px}.stats,.tools,.add{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.pill{border:1px solid var(--border);background:var(--panel);padding:7px 10px;border-radius:999px;font-size:.8rem}button,input,select{font:inherit}.btn{border:1px solid var(--blue);background:var(--blue);color:#001018;font-weight:800;padding:8px 11px;border-radius:8px}.secondary{background:transparent;color:var(--blue)}input,select{background:#05080a;color:#fff;border:1px solid var(--border);border-radius:7px;padding:7px}#search{flex:1;min-width:220px}.note{font-size:.82rem;line-height:1.4}.add{padding:10px;border:1px solid var(--border);border-radius:10px;background:var(--panel)}.add input{min-width:125px;flex:1}.tablewrap{overflow:auto;border:1px solid var(--border);border-radius:10px}table{width:100%;border-collapse:collapse;min-width:1120px}th,td{padding:7px;border-bottom:1px solid #17212a;text-align:left;font-size:.82rem}th{position:sticky;top:0;background:var(--panel2);color:var(--blue)}td input,td select{width:100%}.item{min-width:175px}.measure{min-width:165px}.source{min-width:210px}.delete{background:transparent;color:var(--red);border:1px solid #5b2b2b;border-radius:6px;padding:5px 7px}.footer{font-size:.76rem}</style></head><body><main><h1>Yay Big Dashboard</h1><p class="sub">1 Easy + 3 Medium + 1 Hard = 1000 max points</p><div id="stats" class="stats"></div><div class="tools"><input id="search" placeholder="Search…"><select id="statusFilter"><option>All statuses</option><option>Approved</option><option>Candidate</option><option>Rejected</option></select><select id="difficultyFilter"><option>All difficulties</option><option>Easy</option><option>Medium</option><option>Hard</option></select><button id="reset" class="btn secondary">Reset original 100</button></div><p class="note"><b>Rules:</b> one numeric value + one official unit only. Use the unit in which the authoritative measurement is codified, especially when that preserves a clean exact value. Approved items must have one fixed defensible measurement.</p><div class="add"><input id="newItem" placeholder="New item"><input id="newMeasurement" placeholder="Measurement"><input id="newValue" type="number" step="any" placeholder="Value"><select id="newUnit"><option value="">Unit</option><option>mm</option><option>cm</option><option>m</option><option>km</option><option>in</option><option>ft</option><option>yd</option><option>mi</option></select><select id="newDifficulty"><option>Easy</option><option selected>Medium</option><option>Hard</option></select><button id="add" class="btn">Add candidate</button></div><div class="tablewrap"><table><thead><tr><th>#</th><th>Item</th><th>Measurement</th><th>Value</th><th>Unit</th><th>Difficulty</th><th>Status</th><th>Source / note</th><th></th></tr></thead><tbody id="rows"></tbody></table></div><p class="footer">Edits auto-save in this browser.</p><script>const ORIGINAL=[{"id": 1, "item": "U.S. Federal Reserve note", "measurement": "Length", "value": 6.14, "unit": "in", "difficulty": "Easy", "status": "Approved", "source": "U.S. Currency Education Program"}, {"id": 2, "item": "U.S. Federal Reserve note", "measurement": "Width", "value": 2.61, "unit": "in", "difficulty": "Easy", "status": "Approved", "source": "U.S. Currency Education Program"}, {"id": 3, "item": "ISO ID-1 card", "measurement": "Length", "value": 85.6, "unit": "mm", "difficulty": "Easy", "status": "Approved", "source": "ISO/IEC 7810"}, {"id": 4, "item": "ISO ID-1 card", "measurement": "Width", "value": 53.98, "unit": "mm", "difficulty": "Easy", "status": "Approved", "source": "ISO/IEC 7810"}, {"id": 5, "item": "NBA basketball rim", "measurement": "Inside diameter", "value": 18.0, "unit": "in", "difficulty": "Easy", "status": "Approved", "source": "NBA Official Rules"}, {"id": 6, "item": "NBA basketball rim", "measurement": "Height above floor", "value": 10.0, "unit": "ft", "difficulty": "Easy", "status": "Approved", "source": "NBA Official Rules"}, {"id": 7, "item": "NBA court", "measurement": "Length", "value": 94.0, "unit": "ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 8, "item": "NBA court", "measurement": "Width", "value": 50.0, "unit": "ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 9, "item": "NFL field of play", "measurement": "Length", "value": 100.0, "unit": "yd", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 10, "item": "NFL field", "measurement": "Width", "value": 160.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 11, "item": "NFL goalpost crossbar", "measurement": "Height", "value": 10.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 12, "item": "Soccer goal", "measurement": "Width", "value": 7.32, "unit": "m", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 13, "item": "Soccer goal", "measurement": "Height", "value": 2.44, "unit": "m", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 14, "item": "Ice hockey goal", "measurement": "Width", "value": 6.0, "unit": "ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 15, "item": "Ice hockey goal", "measurement": "Height", "value": 4.0, "unit": "ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 16, "item": "Baseball home plate", "measurement": "Front edge width", "value": 17.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 17, "item": "MLB base", "measurement": "Side length", "value": 18.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 18, "item": "MLB pitching distance", "measurement": "Pitcher's plate to rear point of home plate", "value": 60.5, "unit": "ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 19, "item": "Tennis court", "measurement": "Length", "value": 78.0, "unit": "ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 20, "item": "Tennis singles court", "measurement": "Width", "value": 27.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 21, "item": "Tennis doubles court", "measurement": "Width", "value": 36.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 22, "item": "Tennis net", "measurement": "Center height", "value": 3.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 23, "item": "Table-tennis table", "measurement": "Length", "value": 2.74, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 24, "item": "Table-tennis table", "measurement": "Width", "value": 1.525, "unit": "m", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 25, "item": "Table-tennis table", "measurement": "Height", "value": 76.0, "unit": "cm", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 26, "item": "Table-tennis net", "measurement": "Height", "value": 6.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 27, "item": "Men's volleyball net", "measurement": "Height", "value": 2.43, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 28, "item": "Women's volleyball net", "measurement": "Height", "value": 2.24, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 29, "item": "Olympic long-course pool", "measurement": "Length", "value": 50.0, "unit": "m", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 30, "item": "Olympic long-course pool", "measurement": "Width", "value": 25.0, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 31, "item": "Olympic high diving platform", "measurement": "Height", "value": 10.0, "unit": "m", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 32, "item": "Golf hole", "measurement": "Diameter", "value": 4.25, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 33, "item": "Cornhole board", "measurement": "Length", "value": 4.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 34, "item": "Cornhole board", "measurement": "Width", "value": 2.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 35, "item": "Cornhole hole", "measurement": "Diameter", "value": 6.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 36, "item": "Dartboard bullseye", "measurement": "Height from floor", "value": 1.73, "unit": "m", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 37, "item": "Pool ball", "measurement": "Diameter", "value": 2.25, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 38, "item": "Poker-size playing card", "measurement": "Width", "value": 2.5, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 39, "item": "Poker-size playing card", "measurement": "Height", "value": 3.5, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 40, "item": "Compact Disc", "measurement": "Diameter", "value": 120.0, "unit": "mm", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 41, "item": "DVD", "measurement": "Diameter", "value": 120.0, "unit": "mm", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 42, "item": "12-inch LP record", "measurement": "Nominal diameter", "value": 12.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 43, "item": "3.5-inch floppy disk", "measurement": "Nominal width", "value": 3.5, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 44, "item": "AA battery (IEC R6)", "measurement": "Height", "value": 50.5, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 45, "item": "AAA battery (IEC R03)", "measurement": "Height", "value": 44.5, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 46, "item": "Nano-SIM (4FF)", "measurement": "Length", "value": 12.3, "unit": "mm", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 47, "item": "Nano-SIM (4FF)", "measurement": "Width", "value": 8.8, "unit": "mm", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 48, "item": "LEGO minifigure", "measurement": "Height", "value": null, "unit": "", "difficulty": "Medium", "status": "Rejected", "source": "Not one invariant dimension"}, {"id": 49, "item": "Rubik's Cube", "measurement": "Side length", "value": null, "unit": "", "difficulty": "Easy", "status": "Rejected", "source": "Not a universal fixed dimension"}, {"id": 50, "item": "No. 2 pencil", "measurement": "Length", "value": null, "unit": "", "difficulty": "Easy", "status": "Rejected", "source": "No invariant length"}, {"id": 51, "item": "Golf ball", "measurement": "Diameter", "value": 1.68, "unit": "in", "difficulty": "Easy", "status": "Rejected", "source": "Rule sets a minimum, not one exact diameter"}, {"id": 52, "item": "Tennis ball", "measurement": "Diameter", "value": null, "unit": "", "difficulty": "Easy", "status": "Rejected", "source": "Specification permits a range"}, {"id": 53, "item": "Baseball", "measurement": "Diameter", "value": null, "unit": "", "difficulty": "Easy", "status": "Rejected", "source": "Specification permits a range"}, {"id": 54, "item": "Softball", "measurement": "Diameter", "value": null, "unit": "", "difficulty": "Medium", "status": "Rejected", "source": "Specification permits a range"}, {"id": 55, "item": "Basketball", "measurement": "Diameter", "value": null, "unit": "", "difficulty": "Easy", "status": "Rejected", "source": "Specification permits a range"}, {"id": 56, "item": "Soccer ball", "measurement": "Diameter", "value": null, "unit": "", "difficulty": "Easy", "status": "Rejected", "source": "Specification permits a range"}, {"id": 57, "item": "Bowling ball", "measurement": "Diameter", "value": null, "unit": "", "difficulty": "Medium", "status": "Rejected", "source": "Not guaranteed one exact dimension"}, {"id": 58, "item": "Bowling pin", "measurement": "Height", "value": null, "unit": "", "difficulty": "Medium", "status": "Rejected", "source": "Manufacturing tolerances"}, {"id": 59, "item": "Hockey puck", "measurement": "Diameter", "value": 3.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs exact-rule verification"}, {"id": 60, "item": "Hockey puck", "measurement": "Thickness", "value": 1.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs exact-rule verification"}, {"id": 61, "item": "U.S. quarter", "measurement": "Diameter", "value": 24.26, "unit": "mm", "difficulty": "Easy", "status": "Candidate", "source": "Needs U.S. Mint verification"}, {"id": 62, "item": "U.S. dime", "measurement": "Diameter", "value": 17.91, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs U.S. Mint verification"}, {"id": 63, "item": "U.S. nickel", "measurement": "Diameter", "value": 21.21, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs U.S. Mint verification"}, {"id": 64, "item": "U.S. cent", "measurement": "Diameter", "value": 19.05, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs U.S. Mint verification"}, {"id": 65, "item": "U.S. letter paper", "measurement": "Width", "value": 8.5, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 66, "item": "U.S. letter paper", "measurement": "Length", "value": 11.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 67, "item": "U.S. legal paper", "measurement": "Length", "value": 14.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 68, "item": "Queen mattress", "measurement": "Width", "value": 60.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 69, "item": "Queen mattress", "measurement": "Length", "value": 80.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 70, "item": "King mattress", "measurement": "Width", "value": 76.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 71, "item": "Twin mattress", "measurement": "Width", "value": 38.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 72, "item": "2\u00d74 lumber", "measurement": "Actual width", "value": 3.5, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs lumber-standard verification"}, {"id": 73, "item": "2\u00d74 lumber", "measurement": "Actual thickness", "value": 1.5, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs lumber-standard verification"}, {"id": 74, "item": "GMA pallet", "measurement": "Length", "value": 48.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs standards verification"}, {"id": 75, "item": "GMA pallet", "measurement": "Width", "value": 40.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs standards verification"}, {"id": 76, "item": "Standard railroad gauge", "measurement": "Distance between rails", "value": 1435.0, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs standards verification"}, {"id": 77, "item": "20-ft ISO shipping container", "measurement": "External length", "value": 20.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs ISO verification"}, {"id": 78, "item": "20-ft ISO shipping container", "measurement": "External width", "value": 8.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs ISO verification"}, {"id": 79, "item": "40-ft ISO shipping container", "measurement": "External length", "value": 40.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs ISO verification"}, {"id": 80, "item": "40-ft ISO shipping container", "measurement": "External width", "value": 8.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs ISO verification"}, {"id": 81, "item": "Olympic athletics track", "measurement": "One lap, lane 1", "value": 400.0, "unit": "m", "difficulty": "Easy", "status": "Candidate", "source": "Needs World Athletics verification"}, {"id": 82, "item": "Track lane", "measurement": "Standard width", "value": 1.22, "unit": "m", "difficulty": "Hard", "status": "Candidate", "source": "Needs World Athletics verification"}, {"id": 83, "item": "Badminton court", "measurement": "Length", "value": 13.4, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs BWF verification"}, {"id": 84, "item": "Badminton doubles court", "measurement": "Width", "value": 6.1, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs BWF verification"}, {"id": 85, "item": "Badminton net", "measurement": "Height at posts", "value": 1.55, "unit": "m", "difficulty": "Hard", "status": "Candidate", "source": "Needs BWF verification"}, {"id": 86, "item": "Pickleball court", "measurement": "Length", "value": 44.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs USA Pickleball verification"}, {"id": 87, "item": "Pickleball court", "measurement": "Width", "value": 20.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs USA Pickleball verification"}, {"id": 88, "item": "Pickleball net", "measurement": "Center height", "value": 34.0, "unit": "in", "difficulty": "Hard", "status": "Candidate", "source": "Needs USA Pickleball verification"}, {"id": 89, "item": "Snooker table", "measurement": "Playing area length", "value": 140.5, "unit": "in", "difficulty": "Hard", "status": "Candidate", "source": "Needs WPBSA verification"}, {"id": 90, "item": "Snooker table", "measurement": "Playing area width", "value": 70.0, "unit": "in", "difficulty": "Hard", "status": "Candidate", "source": "Needs WPBSA verification"}, {"id": 91, "item": "Soccer penalty mark", "measurement": "Distance from goal line", "value": 11.0, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs IFAB verification"}, {"id": 92, "item": "Soccer goal area", "measurement": "Depth", "value": 5.5, "unit": "m", "difficulty": "Hard", "status": "Candidate", "source": "Needs IFAB verification"}, {"id": 93, "item": "Soccer penalty area", "measurement": "Depth", "value": 16.5, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs IFAB verification"}, {"id": 94, "item": "Baseball batter's box", "measurement": "Length", "value": 6.0, "unit": "ft", "difficulty": "Hard", "status": "Candidate", "source": "Needs MLB verification"}, {"id": 95, "item": "Baseball batter's box", "measurement": "Width", "value": 4.0, "unit": "ft", "difficulty": "Hard", "status": "Candidate", "source": "Needs MLB verification"}, {"id": 96, "item": "NBA backboard", "measurement": "Width", "value": 6.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs NBA verification"}, {"id": 97, "item": "NBA backboard", "measurement": "Height", "value": 3.5, "unit": "ft", "difficulty": "Hard", "status": "Candidate", "source": "Needs NBA verification"}, {"id": 98, "item": "NBA free-throw line", "measurement": "Distance from backboard plane", "value": 15.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs NBA verification"}, {"id": 99, "item": "Table-tennis ball", "measurement": "Diameter", "value": 40.0, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs ITTF exactness verification"}, {"id": 100, "item": "Olympic archery target", "measurement": "Face diameter", "value": 122.0, "unit": "cm", "difficulty": "Hard", "status": "Candidate", "source": "Needs World Archery verification"}],units=["mm","cm","m","km","in","ft","yd","mi"];let items=JSON.parse(localStorage.getItem("yayBigDashboardV2")||"null")||structuredClone(ORIGINAL);const $=x=>document.getElementById(x);function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}function save(){localStorage.setItem("yayBigDashboardV2",JSON.stringify(items))}function render(){const a=items.filter(x=>x.status==="Approved");$("stats").innerHTML=`<span class="pill">${items.length} total</span><span class="pill">${a.length} approved</span><span class="pill">${items.filter(x=>x.status==="Candidate").length} candidates</span><span class="pill">${items.filter(x=>x.status==="Rejected").length} rejected</span><span class="pill">Approved: ${a.filter(x=>x.difficulty==="Easy").length} E · ${a.filter(x=>x.difficulty==="Medium").length} M · ${a.filter(x=>x.difficulty==="Hard").length} H</span>`;const q=$("search").value.toLowerCase(),sf=$("statusFilter").value,df=$("difficultyFilter").value,f=items.filter(x=>(!q||Object.values(x).join(" ").toLowerCase().includes(q))&&(sf==="All statuses"||x.status===sf)&&(df==="All difficulties"||x.difficulty===df));$("rows").innerHTML=f.map(x=>`<tr data-id="${x.id}"><td>${x.id}</td><td><input class="item" data-k="item" value="${esc(x.item)}"></td><td><input class="measure" data-k="measurement" value="${esc(x.measurement)}"></td><td><input type="number" step="any" data-k="value" value="${x.value??""}"></td><td><select data-k="unit"><option value="">—</option>${units.map(u=>`<option ${x.unit===u?"selected":""}>${u}</option>`).join("")}</select></td><td><select data-k="difficulty">${["Easy","Medium","Hard"].map(v=>`<option ${x.difficulty===v?"selected":""}>${v}</option>`).join("")}</select></td><td><select data-k="status">${["Approved","Candidate","Rejected"].map(v=>`<option ${x.status===v?"selected":""}>${v}</option>`).join("")}</select></td><td><input class="source" data-k="source" value="${esc(x.source)}"></td><td><button class="delete">Remove</button></td></tr>`).join("")}$("rows").onchange=e=>{const tr=e.target.closest("tr"),k=e.target.dataset.k;if(!tr||!k)return;const x=items.find(i=>i.id==tr.dataset.id);x[k]=k==="value"?(e.target.value===""?null:Number(e.target.value)):e.target.value;save();render()};$("rows").onclick=e=>{if(!e.target.classList.contains("delete"))return;items=items.filter(x=>x.id!=e.target.closest("tr").dataset.id);save();render()};["search","statusFilter","difficultyFilter"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));$("add").onclick=()=>{const item=$("newItem").value.trim();if(!item)return;items.push({id:Math.max(0,...items.map(x=>x.id))+1,item,measurement:$("newMeasurement").value.trim(),value:$("newValue").value===""?null:Number($("newValue").value),unit:$("newUnit").value,difficulty:$("newDifficulty").value,status:"Candidate",source:"Needs verification"});["newItem","newMeasurement","newValue"].forEach(id=>$(id).value="");$("newUnit").value="";save();render()};$("reset").onclick=()=>{if(confirm("Reset all edits to the original normalized 100-item list?")){items=structuredClone(ORIGINAL);save();render()}};render();</script></main></body></html>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yay Big Dashboard</title>
+<style>
+:root{--bg:#000;--panel:#0a0f14;--panel2:#101820;--text:#fff;--blue:#7dd3fc;--muted:#9aa8b5;--border:#26343f;--red:#ff8f8f;--yellow:#fff2a8;--green:#9be7b1}
+*{box-sizing:border-box}
+body{margin:0;background:#000;color:#fff;font-family:system-ui,-apple-system,sans-serif}
+main{width:min(1280px,calc(100% - 18px));margin:auto;padding:14px 0 50px}
+h1{margin:0;color:var(--blue);font-size:2rem}
+.sub,.note,.footer{color:var(--muted)}
+.sub{margin:4px 0 12px}
+.stats,.tools,.add,.dbtools{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
+.pill{border:1px solid var(--border);background:var(--panel);padding:7px 10px;border-radius:999px;font-size:.8rem}
+button,input,select{font:inherit}
+.btn{border:1px solid var(--blue);background:var(--blue);color:#001018;font-weight:800;padding:8px 11px;border-radius:8px;cursor:pointer}
+.secondary{background:transparent;color:var(--blue)}
+.danger{background:transparent;color:var(--red);border-color:#5b2b2b}
+input,select{background:#05080a;color:#fff;border:1px solid var(--border);border-radius:7px;padding:7px}
+#search{flex:1;min-width:220px}
+.note{font-size:.82rem;line-height:1.4}
+.statusline{padding:9px 11px;border:1px solid var(--border);border-radius:9px;background:var(--panel);font-size:.82rem;color:var(--muted)}
+.statusline strong{color:var(--green)}
+.add{padding:10px;border:1px solid var(--border);border-radius:10px;background:var(--panel)}
+.add input{min-width:125px;flex:1}
+.tablewrap{overflow:auto;border:1px solid var(--border);border-radius:10px}
+table{width:100%;border-collapse:collapse;min-width:1160px}
+th,td{padding:7px;border-bottom:1px solid #17212a;text-align:left;font-size:.82rem}
+th{position:sticky;top:0;background:var(--panel2);color:var(--blue);z-index:1}
+td input,td select{width:100%}
+.id{white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums}
+.item{min-width:175px}.measure{min-width:165px}.source{min-width:210px}
+.delete{background:transparent;color:var(--red);border:1px solid #5b2b2b;border-radius:6px;padding:5px 7px}
+.footer{font-size:.76rem}
+.hidden{display:none!important}
+@media(max-width:700px){h1{font-size:1.6rem}.btn{padding:8px 9px}}
+</style>
+</head>
+<body>
+<main>
+<h1>Yay Big Dashboard</h1>
+<p class="sub">Question database workspace · 1 Easy + 3 Medium + 1 Hard = 1000 max points</p>
+
+<div id="dbStatus" class="statusline">Loading question database…</div>
+
+<div class="dbtools">
+  <button id="exportDb" class="btn">Export questions.json</button>
+  <button id="importDb" class="btn secondary">Import questions.json</button>
+  <button id="reloadPublished" class="btn secondary">Reload published database</button>
+  <input id="importFile" type="file" accept=".json,application/json" class="hidden">
+</div>
+
+<p class="note"><b>Data safety:</b> dashboard structure and question content are now separate. Your working edits are stored independently in this browser. Export <b>questions.json</b> when you want to publish them to the game. Replacing or redesigning <b>dashboard.html</b> will not overwrite the saved question content.</p>
+
+<div id="stats" class="stats"></div>
+
+<div class="tools">
+  <input id="search" placeholder="Search…">
+  <select id="statusFilter"><option>All statuses</option><option>Approved</option><option>Candidate</option><option>Rejected</option></select>
+  <select id="difficultyFilter"><option>All difficulties</option><option>Easy</option><option>Medium</option><option>Hard</option></select>
+</div>
+
+<p class="note"><b>Rules:</b> one numeric value + one official unit only. Use the unit in which the authoritative measurement is codified, especially when that preserves a clean exact value. Approved items must have one fixed defensible measurement.</p>
+
+<div class="add">
+  <input id="newItem" placeholder="New item">
+  <input id="newMeasurement" placeholder="Measurement">
+  <input id="newValue" type="number" step="any" placeholder="Value">
+  <select id="newUnit"><option value="">Unit</option><option>mm</option><option>cm</option><option>m</option><option>km</option><option>in</option><option>ft</option><option>yd</option><option>mi</option></select>
+  <select id="newDifficulty"><option>Easy</option><option selected>Medium</option><option>Hard</option></select>
+  <button id="add" class="btn">Add candidate</button>
+</div>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>ID</th><th>Item</th><th>Measurement</th><th>Value</th><th>Unit</th><th>Difficulty</th><th>Status</th><th>Source / note</th><th></th></tr></thead>
+<tbody id="rows"></tbody>
+</table>
+</div>
+<p class="footer">Edits auto-save in this browser. Export questions.json to create the version consumed by the game.</p>
+</main>
+
+<script>
+const STORAGE_KEY="yayBigQuestionWorkspaceV1";
+const OLD_STORAGE_KEY="yayBigDashboardV2";
+const units=["mm","cm","m","km","in","ft","yd","mi"];
+let items=[];
+const $=id=>document.getElementById(id);
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
+function stableId(n){return `yb-${String(n).padStart(4,"0")}`}
+function normalizeQuestion(x,index=0){
+  let id=x.id;
+  if(typeof id==="number"||/^\d+$/.test(String(id)))id=stableId(Number(id));
+  if(!/^yb-\d{4,}$/.test(String(id||"")))id=nextId();
+  return {
+    id:String(id),
+    item:String(x.item??""),
+    measurement:String(x.measurement??""),
+    value:x.value===""||x.value==null?null:Number(x.value),
+    unit:String(x.unit??""),
+    difficulty:["Easy","Medium","Hard"].includes(x.difficulty)?x.difficulty:"Medium",
+    status:["Approved","Candidate","Rejected"].includes(x.status)?x.status:"Candidate",
+    source:String(x.source??"")
+  };
+}
+function nextId(){
+  const nums=items.map(x=>Number(String(x.id).replace(/\D/g,""))||0);
+  return stableId(Math.max(0,...nums)+1);
+}
+function save(){
+  const payload={schemaVersion:1,database:"Yay Big Questions",questions:items};
+  localStorage.setItem(STORAGE_KEY,JSON.stringify(payload));
+  updateDbStatus("Working edits saved in this browser.");
+}
+function updateDbStatus(text){$("dbStatus").innerHTML=`<strong>Workspace:</strong> ${esc(text)}`}
+function loadWorkspace(){
+  try{
+    const raw=localStorage.getItem(STORAGE_KEY);
+    if(!raw)return false;
+    const data=JSON.parse(raw);
+    if(!data||!Array.isArray(data.questions))return false;
+    items=data.questions.map(normalizeQuestion);
+    updateDbStatus("Loaded your saved question workspace.");
+    return true;
+  }catch(e){console.error(e);return false}
+}
+function migrateOldWorkspace(){
+  try{
+    const raw=localStorage.getItem(OLD_STORAGE_KEY);
+    if(!raw)return false;
+    const old=JSON.parse(raw);
+    if(!Array.isArray(old)||!old.length)return false;
+    items=old.map(normalizeQuestion);
+    save();
+    updateDbStatus("Migrated your edits from the previous dashboard automatically.");
+    return true;
+  }catch(e){console.error(e);return false}
+}
+async function loadPublished(confirmFirst=false){
+  if(confirmFirst&&!confirm("Replace your current browser workspace with the published questions.json? Export first if you want a backup."))return;
+  try{
+    const res=await fetch("questions.json",{cache:"no-store"});
+    if(!res.ok)throw new Error(`questions.json returned ${res.status}`);
+    const data=await res.json();
+    if(!data||!Array.isArray(data.questions))throw new Error("Invalid database format");
+    items=data.questions.map(normalizeQuestion);
+    save();
+    updateDbStatus("Loaded the published questions.json.");
+    render();
+  }catch(e){
+    console.error(e);
+    updateDbStatus("Could not load questions.json. Make sure it is beside dashboard.html on GitHub Pages.");
+  }
+}
+function render(){
+  const a=items.filter(x=>x.status==="Approved");
+  $("stats").innerHTML=
+    `<span class="pill">${items.length} total</span>`+
+    `<span class="pill">${a.length} approved</span>`+
+    `<span class="pill">${items.filter(x=>x.status==="Candidate").length} candidates</span>`+
+    `<span class="pill">${items.filter(x=>x.status==="Rejected").length} rejected</span>`+
+    `<span class="pill">Approved: ${a.filter(x=>x.difficulty==="Easy").length} E · ${a.filter(x=>x.difficulty==="Medium").length} M · ${a.filter(x=>x.difficulty==="Hard").length} H</span>`;
+  const q=$("search").value.toLowerCase(),sf=$("statusFilter").value,df=$("difficultyFilter").value;
+  const filtered=items.filter(x=>
+    (!q||Object.values(x).join(" ").toLowerCase().includes(q))&&
+    (sf==="All statuses"||x.status===sf)&&
+    (df==="All difficulties"||x.difficulty===df)
+  );
+  $("rows").innerHTML=filtered.map(x=>`<tr data-id="${esc(x.id)}">
+    <td class="id">${esc(x.id)}</td>
+    <td><input class="item" data-k="item" value="${esc(x.item)}"></td>
+    <td><input class="measure" data-k="measurement" value="${esc(x.measurement)}"></td>
+    <td><input type="number" step="any" data-k="value" value="${x.value??""}"></td>
+    <td><select data-k="unit"><option value="">—</option>${units.map(u=>`<option value="${u}" ${x.unit===u?"selected":""}>${u}</option>`).join("")}</select></td>
+    <td><select data-k="difficulty">${["Easy","Medium","Hard"].map(v=>`<option ${x.difficulty===v?"selected":""}>${v}</option>`).join("")}</select></td>
+    <td><select data-k="status">${["Approved","Candidate","Rejected"].map(v=>`<option ${x.status===v?"selected":""}>${v}</option>`).join("")}</select></td>
+    <td><input class="source" data-k="source" value="${esc(x.source)}"></td>
+    <td><button class="delete">Remove</button></td>
+  </tr>`).join("");
+}
+$("rows").onchange=e=>{
+  const tr=e.target.closest("tr"),k=e.target.dataset.k;
+  if(!tr||!k)return;
+  const x=items.find(i=>i.id===tr.dataset.id);
+  if(!x)return;
+  x[k]=k==="value"?(e.target.value===""?null:Number(e.target.value)):e.target.value;
+  save();render();
+};
+$("rows").onclick=e=>{
+  if(!e.target.classList.contains("delete"))return;
+  items=items.filter(x=>x.id!==e.target.closest("tr").dataset.id);
+  save();render();
+};
+["search","statusFilter","difficultyFilter"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
+$("add").onclick=()=>{
+  const item=$("newItem").value.trim();
+  if(!item)return;
+  items.push({
+    id:nextId(),
+    item,
+    measurement:$("newMeasurement").value.trim(),
+    value:$("newValue").value===""?null:Number($("newValue").value),
+    unit:$("newUnit").value,
+    difficulty:$("newDifficulty").value,
+    status:"Candidate",
+    source:"Needs verification"
+  });
+  ["newItem","newMeasurement","newValue"].forEach(id=>$(id).value="");
+  $("newUnit").value="";
+  save();render();
+};
+function exportDatabase(){
+  const payload={schemaVersion:1,database:"Yay Big Questions",questions:items};
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;a.download="questions.json";document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+  updateDbStatus("Exported questions.json. Upload that file to GitHub to publish these edits.");
+}
+$("exportDb").onclick=exportDatabase;
+$("importDb").onclick=()=>$("importFile").click();
+$("importFile").onchange=async e=>{
+  const file=e.target.files?.[0]; if(!file)return;
+  try{
+    const data=JSON.parse(await file.text());
+    if(!data||!Array.isArray(data.questions))throw new Error("Invalid database");
+    if(!confirm(`Import ${data.questions.length} questions and replace the current browser workspace?`))return;
+    items=data.questions.map(normalizeQuestion);
+    save();render();
+    updateDbStatus(`Imported ${items.length} questions from ${file.name}.`);
+  }catch(err){alert("That file is not a valid Yay Big questions database.");console.error(err)}
+  e.target.value="";
+};
+$("reloadPublished").onclick=()=>loadPublished(true);
+
+(async function init(){
+  if(loadWorkspace()){render();return}
+  if(migrateOldWorkspace()){render();return}
+  await loadPublished(false);
+})();
+</script>
+</body>
+</html>

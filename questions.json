@@ -1,0 +1,1006 @@
+{
+  "schemaVersion": 1,
+  "database": "Yay Big Questions",
+  "questions": [
+    {
+      "id": "yb-0001",
+      "item": "U.S. Federal Reserve note",
+      "measurement": "Length",
+      "value": 6.14,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Approved",
+      "source": "U.S. Currency Education Program"
+    },
+    {
+      "id": "yb-0002",
+      "item": "U.S. Federal Reserve note",
+      "measurement": "Width",
+      "value": 2.61,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Approved",
+      "source": "U.S. Currency Education Program"
+    },
+    {
+      "id": "yb-0003",
+      "item": "ISO ID-1 card",
+      "measurement": "Length",
+      "value": 85.6,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Approved",
+      "source": "ISO/IEC 7810"
+    },
+    {
+      "id": "yb-0004",
+      "item": "ISO ID-1 card",
+      "measurement": "Width",
+      "value": 53.98,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Approved",
+      "source": "ISO/IEC 7810"
+    },
+    {
+      "id": "yb-0005",
+      "item": "NBA basketball rim",
+      "measurement": "Inside diameter",
+      "value": 18.0,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Approved",
+      "source": "NBA Official Rules"
+    },
+    {
+      "id": "yb-0006",
+      "item": "NBA basketball rim",
+      "measurement": "Height above floor",
+      "value": 10.0,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Approved",
+      "source": "NBA Official Rules"
+    },
+    {
+      "id": "yb-0007",
+      "item": "NBA court",
+      "measurement": "Length",
+      "value": 94.0,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0008",
+      "item": "NBA court",
+      "measurement": "Width",
+      "value": 50.0,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0009",
+      "item": "NFL field of play",
+      "measurement": "Length",
+      "value": 100.0,
+      "unit": "yd",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0010",
+      "item": "NFL field",
+      "measurement": "Width",
+      "value": 160.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0011",
+      "item": "NFL goalpost crossbar",
+      "measurement": "Height",
+      "value": 10.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0012",
+      "item": "Soccer goal",
+      "measurement": "Width",
+      "value": 7.32,
+      "unit": "m",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0013",
+      "item": "Soccer goal",
+      "measurement": "Height",
+      "value": 2.44,
+      "unit": "m",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0014",
+      "item": "Ice hockey goal",
+      "measurement": "Width",
+      "value": 6.0,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0015",
+      "item": "Ice hockey goal",
+      "measurement": "Height",
+      "value": 4.0,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0016",
+      "item": "Baseball home plate",
+      "measurement": "Front edge width",
+      "value": 17.0,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0017",
+      "item": "MLB base",
+      "measurement": "Side length",
+      "value": 18.0,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0018",
+      "item": "MLB pitching distance",
+      "measurement": "Pitcher's plate to rear point of home plate",
+      "value": 60.5,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0019",
+      "item": "Tennis court",
+      "measurement": "Length",
+      "value": 78.0,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0020",
+      "item": "Tennis singles court",
+      "measurement": "Width",
+      "value": 27.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0021",
+      "item": "Tennis doubles court",
+      "measurement": "Width",
+      "value": 36.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0022",
+      "item": "Tennis net",
+      "measurement": "Center height",
+      "value": 3.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0023",
+      "item": "Table-tennis table",
+      "measurement": "Length",
+      "value": 2.74,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0024",
+      "item": "Table-tennis table",
+      "measurement": "Width",
+      "value": 1.525,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0025",
+      "item": "Table-tennis table",
+      "measurement": "Height",
+      "value": 76.0,
+      "unit": "cm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0026",
+      "item": "Table-tennis net",
+      "measurement": "Height",
+      "value": 6.0,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0027",
+      "item": "Men's volleyball net",
+      "measurement": "Height",
+      "value": 2.43,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0028",
+      "item": "Women's volleyball net",
+      "measurement": "Height",
+      "value": 2.24,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0029",
+      "item": "Olympic long-course pool",
+      "measurement": "Length",
+      "value": 50.0,
+      "unit": "m",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0030",
+      "item": "Olympic long-course pool",
+      "measurement": "Width",
+      "value": 25.0,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0031",
+      "item": "Olympic high diving platform",
+      "measurement": "Height",
+      "value": 10.0,
+      "unit": "m",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0032",
+      "item": "Golf hole",
+      "measurement": "Diameter",
+      "value": 4.25,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0033",
+      "item": "Cornhole board",
+      "measurement": "Length",
+      "value": 4.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0034",
+      "item": "Cornhole board",
+      "measurement": "Width",
+      "value": 2.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0035",
+      "item": "Cornhole hole",
+      "measurement": "Diameter",
+      "value": 6.0,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0036",
+      "item": "Dartboard bullseye",
+      "measurement": "Height from floor",
+      "value": 1.73,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0037",
+      "item": "Pool ball",
+      "measurement": "Diameter",
+      "value": 2.25,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0038",
+      "item": "Poker-size playing card",
+      "measurement": "Width",
+      "value": 2.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0039",
+      "item": "Poker-size playing card",
+      "measurement": "Height",
+      "value": 3.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0040",
+      "item": "Compact Disc",
+      "measurement": "Diameter",
+      "value": 120.0,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0041",
+      "item": "DVD",
+      "measurement": "Diameter",
+      "value": 120.0,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0042",
+      "item": "12-inch LP record",
+      "measurement": "Nominal diameter",
+      "value": 12.0,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0043",
+      "item": "3.5-inch floppy disk",
+      "measurement": "Nominal width",
+      "value": 3.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0044",
+      "item": "AA battery (IEC R6)",
+      "measurement": "Height",
+      "value": 50.5,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0045",
+      "item": "AAA battery (IEC R03)",
+      "measurement": "Height",
+      "value": 44.5,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0046",
+      "item": "Nano-SIM (4FF)",
+      "measurement": "Length",
+      "value": 12.3,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0047",
+      "item": "Nano-SIM (4FF)",
+      "measurement": "Width",
+      "value": 8.8,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-0048",
+      "item": "LEGO minifigure",
+      "measurement": "Height",
+      "value": null,
+      "unit": "",
+      "difficulty": "Medium",
+      "status": "Rejected",
+      "source": "Not one invariant dimension"
+    },
+    {
+      "id": "yb-0049",
+      "item": "Rubik's Cube",
+      "measurement": "Side length",
+      "value": null,
+      "unit": "",
+      "difficulty": "Easy",
+      "status": "Rejected",
+      "source": "Not a universal fixed dimension"
+    },
+    {
+      "id": "yb-0050",
+      "item": "No. 2 pencil",
+      "measurement": "Length",
+      "value": null,
+      "unit": "",
+      "difficulty": "Easy",
+      "status": "Rejected",
+      "source": "No invariant length"
+    },
+    {
+      "id": "yb-0051",
+      "item": "Golf ball",
+      "measurement": "Diameter",
+      "value": 1.68,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Rejected",
+      "source": "Rule sets a minimum, not one exact diameter"
+    },
+    {
+      "id": "yb-0052",
+      "item": "Tennis ball",
+      "measurement": "Diameter",
+      "value": null,
+      "unit": "",
+      "difficulty": "Easy",
+      "status": "Rejected",
+      "source": "Specification permits a range"
+    },
+    {
+      "id": "yb-0053",
+      "item": "Baseball",
+      "measurement": "Diameter",
+      "value": null,
+      "unit": "",
+      "difficulty": "Easy",
+      "status": "Rejected",
+      "source": "Specification permits a range"
+    },
+    {
+      "id": "yb-0054",
+      "item": "Softball",
+      "measurement": "Diameter",
+      "value": null,
+      "unit": "",
+      "difficulty": "Medium",
+      "status": "Rejected",
+      "source": "Specification permits a range"
+    },
+    {
+      "id": "yb-0055",
+      "item": "Basketball",
+      "measurement": "Diameter",
+      "value": null,
+      "unit": "",
+      "difficulty": "Easy",
+      "status": "Rejected",
+      "source": "Specification permits a range"
+    },
+    {
+      "id": "yb-0056",
+      "item": "Soccer ball",
+      "measurement": "Diameter",
+      "value": null,
+      "unit": "",
+      "difficulty": "Easy",
+      "status": "Rejected",
+      "source": "Specification permits a range"
+    },
+    {
+      "id": "yb-0057",
+      "item": "Bowling ball",
+      "measurement": "Diameter",
+      "value": null,
+      "unit": "",
+      "difficulty": "Medium",
+      "status": "Rejected",
+      "source": "Not guaranteed one exact dimension"
+    },
+    {
+      "id": "yb-0058",
+      "item": "Bowling pin",
+      "measurement": "Height",
+      "value": null,
+      "unit": "",
+      "difficulty": "Medium",
+      "status": "Rejected",
+      "source": "Manufacturing tolerances"
+    },
+    {
+      "id": "yb-0059",
+      "item": "Hockey puck",
+      "measurement": "Diameter",
+      "value": 3.0,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs exact-rule verification"
+    },
+    {
+      "id": "yb-0060",
+      "item": "Hockey puck",
+      "measurement": "Thickness",
+      "value": 1.0,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs exact-rule verification"
+    },
+    {
+      "id": "yb-0061",
+      "item": "U.S. quarter",
+      "measurement": "Diameter",
+      "value": 24.26,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs U.S. Mint verification"
+    },
+    {
+      "id": "yb-0062",
+      "item": "U.S. dime",
+      "measurement": "Diameter",
+      "value": 17.91,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs U.S. Mint verification"
+    },
+    {
+      "id": "yb-0063",
+      "item": "U.S. nickel",
+      "measurement": "Diameter",
+      "value": 21.21,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs U.S. Mint verification"
+    },
+    {
+      "id": "yb-0064",
+      "item": "U.S. cent",
+      "measurement": "Diameter",
+      "value": 19.05,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs U.S. Mint verification"
+    },
+    {
+      "id": "yb-0065",
+      "item": "U.S. letter paper",
+      "measurement": "Width",
+      "value": 8.5,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-0066",
+      "item": "U.S. letter paper",
+      "measurement": "Length",
+      "value": 11.0,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-0067",
+      "item": "U.S. legal paper",
+      "measurement": "Length",
+      "value": 14.0,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-0068",
+      "item": "Queen mattress",
+      "measurement": "Width",
+      "value": 60.0,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-0069",
+      "item": "Queen mattress",
+      "measurement": "Length",
+      "value": 80.0,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-0070",
+      "item": "King mattress",
+      "measurement": "Width",
+      "value": 76.0,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-0071",
+      "item": "Twin mattress",
+      "measurement": "Width",
+      "value": 38.0,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-0072",
+      "item": "2×4 lumber",
+      "measurement": "Actual width",
+      "value": 3.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs lumber-standard verification"
+    },
+    {
+      "id": "yb-0073",
+      "item": "2×4 lumber",
+      "measurement": "Actual thickness",
+      "value": 1.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs lumber-standard verification"
+    },
+    {
+      "id": "yb-0074",
+      "item": "GMA pallet",
+      "measurement": "Length",
+      "value": 48.0,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-0075",
+      "item": "GMA pallet",
+      "measurement": "Width",
+      "value": 40.0,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-0076",
+      "item": "Standard railroad gauge",
+      "measurement": "Distance between rails",
+      "value": 1435.0,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-0077",
+      "item": "20-ft ISO shipping container",
+      "measurement": "External length",
+      "value": 20.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs ISO verification"
+    },
+    {
+      "id": "yb-0078",
+      "item": "20-ft ISO shipping container",
+      "measurement": "External width",
+      "value": 8.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs ISO verification"
+    },
+    {
+      "id": "yb-0079",
+      "item": "40-ft ISO shipping container",
+      "measurement": "External length",
+      "value": 40.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs ISO verification"
+    },
+    {
+      "id": "yb-0080",
+      "item": "40-ft ISO shipping container",
+      "measurement": "External width",
+      "value": 8.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs ISO verification"
+    },
+    {
+      "id": "yb-0081",
+      "item": "Olympic athletics track",
+      "measurement": "One lap, lane 1",
+      "value": 400.0,
+      "unit": "m",
+      "difficulty": "Easy",
+      "status": "Candidate",
+      "source": "Needs World Athletics verification"
+    },
+    {
+      "id": "yb-0082",
+      "item": "Track lane",
+      "measurement": "Standard width",
+      "value": 1.22,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs World Athletics verification"
+    },
+    {
+      "id": "yb-0083",
+      "item": "Badminton court",
+      "measurement": "Length",
+      "value": 13.4,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs BWF verification"
+    },
+    {
+      "id": "yb-0084",
+      "item": "Badminton doubles court",
+      "measurement": "Width",
+      "value": 6.1,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs BWF verification"
+    },
+    {
+      "id": "yb-0085",
+      "item": "Badminton net",
+      "measurement": "Height at posts",
+      "value": 1.55,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs BWF verification"
+    },
+    {
+      "id": "yb-0086",
+      "item": "Pickleball court",
+      "measurement": "Length",
+      "value": 44.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs USA Pickleball verification"
+    },
+    {
+      "id": "yb-0087",
+      "item": "Pickleball court",
+      "measurement": "Width",
+      "value": 20.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs USA Pickleball verification"
+    },
+    {
+      "id": "yb-0088",
+      "item": "Pickleball net",
+      "measurement": "Center height",
+      "value": 34.0,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs USA Pickleball verification"
+    },
+    {
+      "id": "yb-0089",
+      "item": "Snooker table",
+      "measurement": "Playing area length",
+      "value": 140.5,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs WPBSA verification"
+    },
+    {
+      "id": "yb-0090",
+      "item": "Snooker table",
+      "measurement": "Playing area width",
+      "value": 70.0,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs WPBSA verification"
+    },
+    {
+      "id": "yb-0091",
+      "item": "Soccer penalty mark",
+      "measurement": "Distance from goal line",
+      "value": 11.0,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs IFAB verification"
+    },
+    {
+      "id": "yb-0092",
+      "item": "Soccer goal area",
+      "measurement": "Depth",
+      "value": 5.5,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs IFAB verification"
+    },
+    {
+      "id": "yb-0093",
+      "item": "Soccer penalty area",
+      "measurement": "Depth",
+      "value": 16.5,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs IFAB verification"
+    },
+    {
+      "id": "yb-0094",
+      "item": "Baseball batter's box",
+      "measurement": "Length",
+      "value": 6.0,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs MLB verification"
+    },
+    {
+      "id": "yb-0095",
+      "item": "Baseball batter's box",
+      "measurement": "Width",
+      "value": 4.0,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs MLB verification"
+    },
+    {
+      "id": "yb-0096",
+      "item": "NBA backboard",
+      "measurement": "Width",
+      "value": 6.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs NBA verification"
+    },
+    {
+      "id": "yb-0097",
+      "item": "NBA backboard",
+      "measurement": "Height",
+      "value": 3.5,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs NBA verification"
+    },
+    {
+      "id": "yb-0098",
+      "item": "NBA free-throw line",
+      "measurement": "Distance from backboard plane",
+      "value": 15.0,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs NBA verification"
+    },
+    {
+      "id": "yb-0099",
+      "item": "Table-tennis ball",
+      "measurement": "Diameter",
+      "value": 40.0,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Candidate",
+      "source": "Needs ITTF exactness verification"
+    },
+    {
+      "id": "yb-0100",
+      "item": "Olympic archery target",
+      "measurement": "Face diameter",
+      "value": 122.0,
+      "unit": "cm",
+      "difficulty": "Hard",
+      "status": "Candidate",
+      "source": "Needs World Archery verification"
+    }
+  ]
+}
