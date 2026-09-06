@@ -26,69 +26,41 @@ input,select{background:#05080a;color:#fff;border:1px solid var(--border);border
 .add{padding:10px;border:1px solid var(--border);border-radius:10px;background:var(--panel)}
 .add input{min-width:125px;flex:1}
 .tablewrap{
-  overflow-x:auto;
-  overflow-y:visible;
+  overflow:visible;
   border:1px solid var(--border);
-  border-radius:10px;
-  max-width:100%;
-  -webkit-overflow-scrolling:touch
+  border-radius:10px
 }
 table{
-  width:max-content;
-  min-width:100%;
-  border-collapse:separate;
-  border-spacing:0;
+  width:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+  min-width:0
 }
 th,td{
-  padding:7px;
+  padding:6px;
   border-bottom:1px solid #17212a;
   text-align:left;
-  font-size:.82rem;
-  background:#000;
+  font-size:.76rem;
+  vertical-align:middle
 }
-th{
-  position:sticky;
-  top:0;
-  background:var(--panel2);
-  color:var(--blue);
-  z-index:4;
-}
-td input,td select{width:100%}
-
-/* Readable desktop column widths */
-th:nth-child(1),td:nth-child(1){min-width:88px;width:88px}
-th:nth-child(2),td:nth-child(2){min-width:230px;width:230px}
-th:nth-child(3),td:nth-child(3){min-width:430px;width:430px}
-th:nth-child(4),td:nth-child(4){min-width:190px;width:190px}
-th:nth-child(5),td:nth-child(5){min-width:95px;width:95px}
-th:nth-child(6),td:nth-child(6){min-width:85px;width:85px}
-th:nth-child(7),td:nth-child(7){min-width:120px;width:120px}
-th:nth-child(8),td:nth-child(8){min-width:125px;width:125px}
-th:nth-child(9),td:nth-child(9){min-width:320px;width:320px}
-th:nth-child(10),td:nth-child(10){min-width:92px;width:92px}
-
-/* Keep ID + Item visible while horizontally scrolling */
-th:nth-child(1),td:nth-child(1){
-  position:sticky;
-  left:0;
-  z-index:3;
-  background:#000;
-}
-th:nth-child(2),td:nth-child(2){
-  position:sticky;
-  left:88px;
-  z-index:3;
-  background:#000;
-  box-shadow:8px 0 10px -10px rgba(255,255,255,.45);
-}
-th:nth-child(1),th:nth-child(2){
-  z-index:6;
-  background:var(--panel2);
-}
-
+th{position:sticky;top:0;background:var(--panel2);color:var(--blue);z-index:1}
+td input,td select{width:100%;min-width:0;padding:6px 5px;font-size:.76rem}
 .id{white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* Fit every column into the page; Chrome zoom can then scale the whole dashboard */
+th:nth-child(1),td:nth-child(1){width:6%}
+th:nth-child(2),td:nth-child(2){width:13%}
+th:nth-child(3),td:nth-child(3){width:22%}
+th:nth-child(4),td:nth-child(4){width:11%}
+th:nth-child(5),td:nth-child(5){width:7%}
+th:nth-child(6),td:nth-child(6){width:6%}
+th:nth-child(7),td:nth-child(7){width:8%}
+th:nth-child(8),td:nth-child(8){width:9%}
+th:nth-child(9),td:nth-child(9){width:13%}
+th:nth-child(10),td:nth-child(10){width:5%}
+
 .item,.question,.measure,.source{min-width:0}
-.delete{background:transparent;color:var(--red);border:1px solid #5b2b2b;border-radius:6px;padding:5px 7px}
+.delete{background:transparent;color:var(--red);border:1px solid #5b2b2b;border-radius:6px;padding:5px 6px;font-size:.72rem}
 .footer{font-size:.76rem}
 .hidden{display:none!important}
 @media(max-width:700px){h1{font-size:1.6rem}.btn{padding:8px 9px}}
@@ -130,8 +102,6 @@ th:nth-child(1),th:nth-child(2){
   <select id="newDifficulty"><option>Easy</option><option selected>Medium</option><option>Hard</option></select>
   <button id="add" class="btn">Add candidate</button>
 </div>
-
-<p class="note">Tip: on desktop, scroll horizontally inside the table to reach every column. ID and Item stay pinned on the left.</p>
 
 <div class="tablewrap">
 <table>
