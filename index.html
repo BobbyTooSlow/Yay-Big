@@ -320,6 +320,46 @@ $("next").onclick=()=>{if(++i===5){$("game").classList.add("hidden");$("summary"
 $("restart").onclick=()=>{i=0;total=0;results=[];build();$("summary").classList.add("hidden");$("game").classList.remove("hidden");show()};
 build();show();
 </script>
+
+<script>
+(function(){
+  const q = document.getElementById("question");
+  if (!q) return;
+
+  const MAX_LINES = 2;
+  const START_PX = 28;
+  const MIN_PX = 20;
+  const STEP_PX = 1;
+
+  function fitQuestionToTwoLines(){
+    q.style.fontSize = START_PX + "px";
+    q.style.lineHeight = "1.2";
+
+    const lineHeight = parseFloat(getComputedStyle(q).lineHeight);
+    const maxHeight = lineHeight * MAX_LINES + 0.5;
+
+    let size = START_PX;
+    while (q.scrollHeight > maxHeight && size > MIN_PX){
+      size -= STEP_PX;
+      q.style.fontSize = size + "px";
+      const lh = parseFloat(getComputedStyle(q).lineHeight);
+      if (q.scrollHeight <= lh * MAX_LINES + 0.5) break;
+    }
+
+    q.dataset.twoLineFit = q.scrollHeight <= parseFloat(getComputedStyle(q).lineHeight) * MAX_LINES + 0.5
+      ? "ok"
+      : "rewrite";
+  }
+
+  // Refit whenever the game changes the question text.
+  const observer = new MutationObserver(fitQuestionToTwoLines);
+  observer.observe(q, {childList:true, characterData:true, subtree:true});
+
+  window.addEventListener("resize", fitQuestionToTwoLines);
+  setTimeout(fitQuestionToTwoLines, 0);
+})();
+</script>
+
 </body>
 </html>
 <style>
