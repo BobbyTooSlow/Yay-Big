@@ -267,3 +267,61 @@ build();show();
 </script>
 </body>
 </html>
+<style>
+/* vNext14 — alignment refinement */
+
+/* Keep every button at the current size. Unit sizing remains LOCKED. */
+
+/* Use the space released from the value field for a larger question area. */
+.question-wrap{
+  min-height:8.25rem !important;
+}
+
+/* The unit grid and left stack now have the same total height on iPhone:
+   4 unit rows + gaps = 226px;
+   170px value field + 8px gap + 48px Submit = 226px. */
+.control-zone{
+  align-items:end !important;
+}
+
+.guess-side{
+  height:auto !important;
+  align-self:end !important;
+  display:grid !important;
+  grid-template-rows:170px 48px !important;
+  gap:8px !important;
+}
+
+.guess-field{
+  height:170px !important;
+  min-height:170px !important;
+}
+
+.unit-side{
+  height:auto !important;
+  min-height:0 !important;
+  align-self:end !important;
+  display:block !important;
+}
+
+.unit-grid{
+  width:100% !important;
+}
+
+/* Short-height phones use the locked 42px unit rows:
+   4×42 + 3×5 = 183px total.
+   127px value field + 8px + 48px Submit = 183px. */
+@media(max-height:720px){
+  .question-wrap{
+    min-height:6.6rem !important;
+  }
+  .guess-side{
+    grid-template-rows:127px 48px !important;
+    gap:8px !important;
+  }
+  .guess-field{
+    height:127px !important;
+    min-height:127px !important;
+  }
+}
+</style>
