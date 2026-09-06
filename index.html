@@ -213,18 +213,18 @@ h2{margin:0;font-size:clamp(1.8rem,4.8vw,2.6rem);line-height:1.12}
       </div>
     </div>
     <div id="result" class="result hidden">
-      <div class="result-layout"><div class="answer-stack"><div class="answer-cell"><span class="lab">Official</span><strong id="official"></strong></div><div class="answer-cell"><span class="lab">Your guess</span><strong id="your"></strong></div></div><div class="score-side"><div id="scorePercent" class="score-percent"></div><div id="scoreMult" class="score-mult"></div></div></div>
+      <div class="result-layout"><div class="answer-stack"><div class="answer-cell"><span class="lab">Official</span><strong id="official"></strong></div><div class="answer-cell"><span class="lab">Your guess</span><strong id="your"></strong></div></div><div class="score-side"><div id="scorePercent" class="score-percent"><span id="scoreNumber"></span><span class="percent-sign">%</span></div><div id="scoreMult" class="score-mult"></div></div></div>
       <p id="verdict" class="verdict"></p><button id="next" class="btn next" type="button">Next</button>
     </div>
   </div>
 </section>
-<section id="summary" class="card hidden"><p class="eyebrow">ROUND COMPLETE</p><h2>Your results</h2><p class="summary-line"><strong id="total" class="score"></strong> / 1000</p><button id="restart" class="btn" type="button">Play again</button></section>
+<section id="summary" class="card hidden"><p class="eyebrow">ROUND COMPLETE</p><h2>Your results</h2><p class="summary-line"><strong id="total" class="score"></strong> / 1000</p><div id="roundBreakdown" class="round-breakdown"></div><button id="restart" class="btn" type="button">Play again</button></section>
 </main>
 <script>
 const FULL=[{"id": 1, "item": "U.S. Federal Reserve note", "measurement": "Length", "value": 6.14, "unit": "in", "difficulty": "Easy", "status": "Approved", "source": "U.S. Currency Education Program"}, {"id": 2, "item": "U.S. Federal Reserve note", "measurement": "Width", "value": 2.61, "unit": "in", "difficulty": "Easy", "status": "Approved", "source": "U.S. Currency Education Program"}, {"id": 3, "item": "ISO ID-1 card", "measurement": "Length", "value": 85.6, "unit": "mm", "difficulty": "Easy", "status": "Approved", "source": "ISO/IEC 7810"}, {"id": 4, "item": "ISO ID-1 card", "measurement": "Width", "value": 53.98, "unit": "mm", "difficulty": "Easy", "status": "Approved", "source": "ISO/IEC 7810"}, {"id": 5, "item": "NBA basketball rim", "measurement": "Inside diameter", "value": 18.0, "unit": "in", "difficulty": "Easy", "status": "Approved", "source": "NBA Official Rules"}, {"id": 6, "item": "NBA basketball rim", "measurement": "Height above floor", "value": 10.0, "unit": "ft", "difficulty": "Easy", "status": "Approved", "source": "NBA Official Rules"}, {"id": 7, "item": "NBA court", "measurement": "Length", "value": 94.0, "unit": "ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 8, "item": "NBA court", "measurement": "Width", "value": 50.0, "unit": "ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 9, "item": "NFL field of play", "measurement": "Length", "value": 100.0, "unit": "yd", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 10, "item": "NFL field", "measurement": "Width", "value": 160.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 11, "item": "NFL goalpost crossbar", "measurement": "Height", "value": 10.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 12, "item": "Soccer goal", "measurement": "Width", "value": 7.32, "unit": "m", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 13, "item": "Soccer goal", "measurement": "Height", "value": 2.44, "unit": "m", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 14, "item": "Ice hockey goal", "measurement": "Width", "value": 6.0, "unit": "ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 15, "item": "Ice hockey goal", "measurement": "Height", "value": 4.0, "unit": "ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 16, "item": "Baseball home plate", "measurement": "Front edge width", "value": 17.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 17, "item": "MLB base", "measurement": "Side length", "value": 18.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 18, "item": "MLB pitching distance", "measurement": "Pitcher's plate to rear point of home plate", "value": 60.5, "unit": "ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 19, "item": "Tennis court", "measurement": "Length", "value": 78.0, "unit": "ft", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 20, "item": "Tennis singles court", "measurement": "Width", "value": 27.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 21, "item": "Tennis doubles court", "measurement": "Width", "value": 36.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 22, "item": "Tennis net", "measurement": "Center height", "value": 3.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 23, "item": "Table-tennis table", "measurement": "Length", "value": 2.74, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 24, "item": "Table-tennis table", "measurement": "Width", "value": 1.525, "unit": "m", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 25, "item": "Table-tennis table", "measurement": "Height", "value": 76.0, "unit": "cm", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 26, "item": "Table-tennis net", "measurement": "Height", "value": 6.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 27, "item": "Men's volleyball net", "measurement": "Height", "value": 2.43, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 28, "item": "Women's volleyball net", "measurement": "Height", "value": 2.24, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 29, "item": "Olympic long-course pool", "measurement": "Length", "value": 50.0, "unit": "m", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 30, "item": "Olympic long-course pool", "measurement": "Width", "value": 25.0, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 31, "item": "Olympic high diving platform", "measurement": "Height", "value": 10.0, "unit": "m", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 32, "item": "Golf hole", "measurement": "Diameter", "value": 4.25, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 33, "item": "Cornhole board", "measurement": "Length", "value": 4.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 34, "item": "Cornhole board", "measurement": "Width", "value": 2.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 35, "item": "Cornhole hole", "measurement": "Diameter", "value": 6.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 36, "item": "Dartboard bullseye", "measurement": "Height from floor", "value": 1.73, "unit": "m", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 37, "item": "Pool ball", "measurement": "Diameter", "value": 2.25, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 38, "item": "Poker-size playing card", "measurement": "Width", "value": 2.5, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 39, "item": "Poker-size playing card", "measurement": "Height", "value": 3.5, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 40, "item": "Compact Disc", "measurement": "Diameter", "value": 120.0, "unit": "mm", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 41, "item": "DVD", "measurement": "Diameter", "value": 120.0, "unit": "mm", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 42, "item": "12-inch LP record", "measurement": "Nominal diameter", "value": 12.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 43, "item": "3.5-inch floppy disk", "measurement": "Nominal width", "value": 3.5, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 44, "item": "AA battery (IEC R6)", "measurement": "Height", "value": 50.5, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 45, "item": "AAA battery (IEC R03)", "measurement": "Height", "value": 44.5, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 46, "item": "Nano-SIM (4FF)", "measurement": "Length", "value": 12.3, "unit": "mm", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 47, "item": "Nano-SIM (4FF)", "measurement": "Width", "value": 8.8, "unit": "mm", "difficulty": "Hard", "status": "Candidate", "source": "Needs authoritative source verification"}, {"id": 48, "item": "LEGO minifigure", "measurement": "Height", "value": null, "unit": "", "difficulty": "Medium", "status": "Rejected", "source": "Not one invariant dimension"}, {"id": 49, "item": "Rubik's Cube", "measurement": "Side length", "value": null, "unit": "", "difficulty": "Easy", "status": "Rejected", "source": "Not a universal fixed dimension"}, {"id": 50, "item": "No. 2 pencil", "measurement": "Length", "value": null, "unit": "", "difficulty": "Easy", "status": "Rejected", "source": "No invariant length"}, {"id": 51, "item": "Golf ball", "measurement": "Diameter", "value": 1.68, "unit": "in", "difficulty": "Easy", "status": "Rejected", "source": "Rule sets a minimum, not one exact diameter"}, {"id": 52, "item": "Tennis ball", "measurement": "Diameter", "value": null, "unit": "", "difficulty": "Easy", "status": "Rejected", "source": "Specification permits a range"}, {"id": 53, "item": "Baseball", "measurement": "Diameter", "value": null, "unit": "", "difficulty": "Easy", "status": "Rejected", "source": "Specification permits a range"}, {"id": 54, "item": "Softball", "measurement": "Diameter", "value": null, "unit": "", "difficulty": "Medium", "status": "Rejected", "source": "Specification permits a range"}, {"id": 55, "item": "Basketball", "measurement": "Diameter", "value": null, "unit": "", "difficulty": "Easy", "status": "Rejected", "source": "Specification permits a range"}, {"id": 56, "item": "Soccer ball", "measurement": "Diameter", "value": null, "unit": "", "difficulty": "Easy", "status": "Rejected", "source": "Specification permits a range"}, {"id": 57, "item": "Bowling ball", "measurement": "Diameter", "value": null, "unit": "", "difficulty": "Medium", "status": "Rejected", "source": "Not guaranteed one exact dimension"}, {"id": 58, "item": "Bowling pin", "measurement": "Height", "value": null, "unit": "", "difficulty": "Medium", "status": "Rejected", "source": "Manufacturing tolerances"}, {"id": 59, "item": "Hockey puck", "measurement": "Diameter", "value": 3.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs exact-rule verification"}, {"id": 60, "item": "Hockey puck", "measurement": "Thickness", "value": 1.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs exact-rule verification"}, {"id": 61, "item": "U.S. quarter", "measurement": "Diameter", "value": 24.26, "unit": "mm", "difficulty": "Easy", "status": "Candidate", "source": "Needs U.S. Mint verification"}, {"id": 62, "item": "U.S. dime", "measurement": "Diameter", "value": 17.91, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs U.S. Mint verification"}, {"id": 63, "item": "U.S. nickel", "measurement": "Diameter", "value": 21.21, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs U.S. Mint verification"}, {"id": 64, "item": "U.S. cent", "measurement": "Diameter", "value": 19.05, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs U.S. Mint verification"}, {"id": 65, "item": "U.S. letter paper", "measurement": "Width", "value": 8.5, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 66, "item": "U.S. letter paper", "measurement": "Length", "value": 11.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 67, "item": "U.S. legal paper", "measurement": "Length", "value": 14.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 68, "item": "Queen mattress", "measurement": "Width", "value": 60.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 69, "item": "Queen mattress", "measurement": "Length", "value": 80.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 70, "item": "King mattress", "measurement": "Width", "value": 76.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 71, "item": "Twin mattress", "measurement": "Width", "value": 38.0, "unit": "in", "difficulty": "Easy", "status": "Candidate", "source": "Needs standards verification"}, {"id": 72, "item": "2\u00d74 lumber", "measurement": "Actual width", "value": 3.5, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs lumber-standard verification"}, {"id": 73, "item": "2\u00d74 lumber", "measurement": "Actual thickness", "value": 1.5, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs lumber-standard verification"}, {"id": 74, "item": "GMA pallet", "measurement": "Length", "value": 48.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs standards verification"}, {"id": 75, "item": "GMA pallet", "measurement": "Width", "value": 40.0, "unit": "in", "difficulty": "Medium", "status": "Candidate", "source": "Needs standards verification"}, {"id": 76, "item": "Standard railroad gauge", "measurement": "Distance between rails", "value": 1435.0, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs standards verification"}, {"id": 77, "item": "20-ft ISO shipping container", "measurement": "External length", "value": 20.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs ISO verification"}, {"id": 78, "item": "20-ft ISO shipping container", "measurement": "External width", "value": 8.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs ISO verification"}, {"id": 79, "item": "40-ft ISO shipping container", "measurement": "External length", "value": 40.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs ISO verification"}, {"id": 80, "item": "40-ft ISO shipping container", "measurement": "External width", "value": 8.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs ISO verification"}, {"id": 81, "item": "Olympic athletics track", "measurement": "One lap, lane 1", "value": 400.0, "unit": "m", "difficulty": "Easy", "status": "Candidate", "source": "Needs World Athletics verification"}, {"id": 82, "item": "Track lane", "measurement": "Standard width", "value": 1.22, "unit": "m", "difficulty": "Hard", "status": "Candidate", "source": "Needs World Athletics verification"}, {"id": 83, "item": "Badminton court", "measurement": "Length", "value": 13.4, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs BWF verification"}, {"id": 84, "item": "Badminton doubles court", "measurement": "Width", "value": 6.1, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs BWF verification"}, {"id": 85, "item": "Badminton net", "measurement": "Height at posts", "value": 1.55, "unit": "m", "difficulty": "Hard", "status": "Candidate", "source": "Needs BWF verification"}, {"id": 86, "item": "Pickleball court", "measurement": "Length", "value": 44.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs USA Pickleball verification"}, {"id": 87, "item": "Pickleball court", "measurement": "Width", "value": 20.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs USA Pickleball verification"}, {"id": 88, "item": "Pickleball net", "measurement": "Center height", "value": 34.0, "unit": "in", "difficulty": "Hard", "status": "Candidate", "source": "Needs USA Pickleball verification"}, {"id": 89, "item": "Snooker table", "measurement": "Playing area length", "value": 140.5, "unit": "in", "difficulty": "Hard", "status": "Candidate", "source": "Needs WPBSA verification"}, {"id": 90, "item": "Snooker table", "measurement": "Playing area width", "value": 70.0, "unit": "in", "difficulty": "Hard", "status": "Candidate", "source": "Needs WPBSA verification"}, {"id": 91, "item": "Soccer penalty mark", "measurement": "Distance from goal line", "value": 11.0, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs IFAB verification"}, {"id": 92, "item": "Soccer goal area", "measurement": "Depth", "value": 5.5, "unit": "m", "difficulty": "Hard", "status": "Candidate", "source": "Needs IFAB verification"}, {"id": 93, "item": "Soccer penalty area", "measurement": "Depth", "value": 16.5, "unit": "m", "difficulty": "Medium", "status": "Candidate", "source": "Needs IFAB verification"}, {"id": 94, "item": "Baseball batter's box", "measurement": "Length", "value": 6.0, "unit": "ft", "difficulty": "Hard", "status": "Candidate", "source": "Needs MLB verification"}, {"id": 95, "item": "Baseball batter's box", "measurement": "Width", "value": 4.0, "unit": "ft", "difficulty": "Hard", "status": "Candidate", "source": "Needs MLB verification"}, {"id": 96, "item": "NBA backboard", "measurement": "Width", "value": 6.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs NBA verification"}, {"id": 97, "item": "NBA backboard", "measurement": "Height", "value": 3.5, "unit": "ft", "difficulty": "Hard", "status": "Candidate", "source": "Needs NBA verification"}, {"id": 98, "item": "NBA free-throw line", "measurement": "Distance from backboard plane", "value": 15.0, "unit": "ft", "difficulty": "Medium", "status": "Candidate", "source": "Needs NBA verification"}, {"id": 99, "item": "Table-tennis ball", "measurement": "Diameter", "value": 40.0, "unit": "mm", "difficulty": "Medium", "status": "Candidate", "source": "Needs ITTF exactness verification"}, {"id": 100, "item": "Olympic archery target", "measurement": "Face diameter", "value": 122.0, "unit": "cm", "difficulty": "Hard", "status": "Candidate", "source": "Needs World Archery verification"}];
 const factors={mm:.001,cm:.01,m:1,km:1000,in:.0254,ft:.3048,yd:.9144,mi:1609.344};
 const mult={Easy:1,Medium:2,Hard:3};
-let round=[],i=0,total=0,guessText="",selectedUnit="";
+let round=[],i=0,total=0,guessText="",selectedUnit="",results=[];
 const $=id=>document.getElementById(id);
 const questionOverrides={
 "MLB pitching distance|Pitcher's plate to rear point of home plate":"How far is it from the pitcher's plate to the rear point of home plate?",
@@ -260,9 +260,21 @@ function syncSubmit(){
 function show(){const q=round[i];$("progress").textContent=`${i+1} / 5`;$("diff").textContent=q.difficulty.toUpperCase();$("question").textContent=questionText(q);guessText="";updateGuessDisplay();selectedUnit="";document.querySelectorAll(".unit-btn").forEach(b=>b.classList.remove("selected"));$("validation").textContent="";syncSubmit();$("entry").classList.remove("hidden");$("result").classList.add("hidden")}
 document.querySelector(".keypad").addEventListener("click",e=>{const btn=e.target.closest("[data-key]");if(!btn)return;const k=btn.dataset.key;if(k==="back")guessText=guessText.slice(0,-1);else if(k==="."){if(!guessText.includes("."))guessText=guessText?guessText+".":"0."}else{if(guessText.length>=10)return;if(guessText==="0")guessText=k;else guessText+=k}$("validation").textContent="";updateGuessDisplay();syncSubmit()});
 $("unitGrid").addEventListener("click",e=>{const btn=e.target.closest("[data-unit]");if(!btn)return;selectedUnit=btn.dataset.unit;document.querySelectorAll(".unit-btn").forEach(b=>b.classList.toggle("selected",b===btn));$("validation").textContent="";syncSubmit()});
-$("submit").onclick=()=>{if(!submitReady())return;const q=round[i],g=Number(guessText),u=selectedUnit;const officialBase=q.value*factors[q.unit],guessBase=g*factors[u],err=Math.abs(guessBase-officialBase)/officialBase*100,acc=Math.max(0,Math.min(100,Math.round(100-err))),multiplier=mult[q.difficulty],pts=acc*multiplier;total+=pts;$("official").textContent=`${fmt(q.value)} ${q.unit}`;if(u!==q.unit)$("your").textContent=`${fmt(g)} ${u} = ${fmt(guessBase/factors[q.unit])} ${q.unit}`;else $("your").textContent=`${fmt(g)} ${u}`;$("scorePercent").textContent=`${acc}%`;$("scoreMult").textContent=`${multiplier}X`;$("verdict").textContent=acc===100?"Dead on.":acc>=95?"Excellent.":acc>=90?"Very good.":acc>=80?"Respectable.":"Keep calibrating.";$("entry").classList.add("hidden");$("result").classList.remove("hidden");$("next").textContent=i===4?"See results":"Next"};
-$("next").onclick=()=>{if(++i===5){$("game").classList.add("hidden");$("summary").classList.remove("hidden");$("total").textContent=total}else show()};
-$("restart").onclick=()=>{i=0;total=0;build();$("summary").classList.add("hidden");$("game").classList.remove("hidden");show()};
+$("submit").onclick=()=>{if(!submitReady())return;const q=round[i],g=Number(guessText),u=selectedUnit;const officialBase=q.value*factors[q.unit],guessBase=g*factors[u],err=Math.abs(guessBase-officialBase)/officialBase*100,acc=Math.max(0,Math.min(100,Math.round(100-err))),multiplier=mult[q.difficulty],pts=acc*multiplier;total+=pts;results[i]={item:q.item,measurement:q.measurement,accuracy:acc};$("official").textContent=`${fmt(q.value)} ${q.unit}`;if(u!==q.unit)$("your").textContent=`${fmt(g)} ${u} = ${fmt(guessBase/factors[q.unit])} ${q.unit}`;else $("your").textContent=`${fmt(g)} ${u}`;$("scoreNumber").textContent=acc;$("scoreMult").textContent=`${multiplier}X`;$("verdict").textContent=acc===100?"Dead on.":acc>=95?"Excellent.":acc>=90?"Very good.":acc>=80?"Respectable.":"Keep calibrating.";$("entry").classList.add("hidden");$("result").classList.remove("hidden");$("next").textContent=i===4?"See results":"Next"};
+
+function renderSummary(){
+  $("total").textContent=total;
+  $("roundBreakdown").innerHTML=results.map((r,idx)=>`
+    <div class="summary-item">
+      <div class="summary-item-copy">
+        <span class="summary-item-num">${idx+1}</span>
+        <span class="summary-item-name">${r.item}</span>
+      </div>
+      <strong class="summary-item-score">${r.accuracy}%</strong>
+    </div>`).join("");
+}
+$("next").onclick=()=>{if(++i===5){$("game").classList.add("hidden");$("summary").classList.remove("hidden");renderSummary()}else show()};
+$("restart").onclick=()=>{i=0;total=0;results=[];build();$("summary").classList.add("hidden");$("game").classList.remove("hidden");show()};
 build();show();
 </script>
 </body>
@@ -322,6 +334,125 @@ build();show();
   .guess-field{
     height:127px !important;
     min-height:127px !important;
+  }
+}
+</style>
+
+<style>
+/* vNext15 — result score containment + final breakdown */
+
+/* Explicit score column with a flex score display prevents 100% from escaping right. */
+.result-layout{
+  grid-template-columns:minmax(0,1fr) 112px !important;
+  gap:8px !important;
+}
+.score-side{
+  width:112px !important;
+  min-width:112px !important;
+  max-width:112px !important;
+  padding:0 4px 0 8px !important;
+  box-sizing:border-box !important;
+  overflow:hidden !important;
+}
+.score-percent{
+  width:100% !important;
+  display:flex !important;
+  align-items:flex-start !important;
+  justify-content:center !important;
+  white-space:nowrap !important;
+  font-size:2.8rem !important;
+  line-height:.9 !important;
+  letter-spacing:-.055em !important;
+  overflow:hidden !important;
+  font-variant-numeric:tabular-nums !important;
+}
+.score-percent .percent-sign{
+  font-size:.62em !important;
+  line-height:1 !important;
+  margin-left:.04em !important;
+  letter-spacing:0 !important;
+}
+
+@media(max-width:430px){
+  .result-layout{
+    grid-template-columns:minmax(0,1fr) 104px !important;
+  }
+  .score-side{
+    width:104px !important;
+    min-width:104px !important;
+    max-width:104px !important;
+  }
+  .score-percent{
+    font-size:2.55rem !important;
+  }
+}
+
+/* Five-question final breakdown */
+#summary{
+  justify-content:center !important;
+  gap:10px !important;
+  padding:20px 22px !important;
+}
+#summary h2{
+  margin-bottom:0 !important;
+}
+.summary-line{
+  margin:0 0 4px !important;
+}
+.round-breakdown{
+  display:grid !important;
+  gap:7px !important;
+  margin:2px 0 8px !important;
+}
+.summary-item{
+  min-width:0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:12px !important;
+  padding:9px 11px !important;
+  border:1px solid var(--border) !important;
+  border-radius:11px !important;
+  background:var(--panel2) !important;
+}
+.summary-item-copy{
+  min-width:0 !important;
+  display:flex !important;
+  align-items:center !important;
+  gap:9px !important;
+}
+.summary-item-num{
+  flex:0 0 auto !important;
+  color:var(--muted) !important;
+  font-size:.78rem !important;
+  font-weight:800 !important;
+}
+.summary-item-name{
+  min-width:0 !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  white-space:nowrap !important;
+  font-size:.9rem !important;
+  font-weight:750 !important;
+}
+.summary-item-score{
+  flex:0 0 auto !important;
+  color:var(--blue) !important;
+  font-size:1.05rem !important;
+  font-variant-numeric:tabular-nums !important;
+}
+
+@media(max-height:720px){
+  #summary{
+    padding:14px 18px !important;
+    gap:7px !important;
+  }
+  .round-breakdown{
+    gap:5px !important;
+    margin:0 0 4px !important;
+  }
+  .summary-item{
+    padding:6px 9px !important;
   }
 }
 </style>
