@@ -499,3 +499,139 @@ build();show();
   }
 }
 </style>
+
+<style>
+/* vNext18 — header centering, viewport fit, result score containment */
+
+/* 1) Center the illustrated header horizontally while keeping progress at right. */
+.top{
+  position:relative !important;
+  display:block !important;
+  margin-bottom:4px !important;
+}
+.logo-art-wrap{
+  width:100% !important;
+  height:138px !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important;
+  overflow:visible !important;
+}
+.logo-art{
+  width:auto !important;
+  max-width:88% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center bottom !important;
+}
+#progress{
+  position:absolute !important;
+  right:0 !important;
+  top:5px !important;
+  margin:0 !important;
+  z-index:3 !important;
+}
+
+/* 2) Recover vertical space by reducing the question area's reserved height. */
+.question-wrap{
+  min-height:6.2rem !important;
+  padding-top:0 !important;
+  padding-bottom:5px !important;
+}
+#question{
+  min-height:2.2em !important;
+}
+
+/* Give the keypad the recovered space and guarantee it stays inside the viewport. */
+#entry{
+  grid-template-rows:auto 8px minmax(0,1fr) !important;
+  gap:4px !important;
+  min-height:0 !important;
+  overflow:hidden !important;
+}
+.keypad{
+  min-height:0 !important;
+  height:100% !important;
+  max-height:100% !important;
+  overflow:hidden !important;
+}
+.key{
+  min-height:0 !important;
+  height:auto !important;
+}
+
+/* 3) Make 100% structurally impossible to overflow the result panel. */
+.result-layout{
+  grid-template-columns:minmax(0,1fr) 96px !important;
+  gap:6px !important;
+}
+.score-side{
+  width:96px !important;
+  min-width:96px !important;
+  max-width:96px !important;
+  padding:0 !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  overflow:hidden !important;
+}
+.score-percent{
+  width:92px !important;
+  max-width:92px !important;
+  display:flex !important;
+  align-items:flex-start !important;
+  justify-content:center !important;
+  white-space:nowrap !important;
+  overflow:hidden !important;
+  font-size:2.28rem !important;
+  line-height:.92 !important;
+  letter-spacing:-.075em !important;
+  font-variant-numeric:tabular-nums !important;
+}
+.score-percent #scoreNumber{
+  min-width:0 !important;
+}
+.score-percent .percent-sign{
+  flex:0 0 auto !important;
+  font-size:.55em !important;
+  line-height:1 !important;
+  margin-left:.02em !important;
+  letter-spacing:0 !important;
+}
+
+/* Slightly tighter on narrow phones. */
+@media(max-width:430px){
+  .logo-art-wrap{
+    height:128px !important;
+  }
+  .logo-art{
+    max-width:90% !important;
+  }
+  .question-wrap{
+    min-height:5.7rem !important;
+  }
+  .result-layout{
+    grid-template-columns:minmax(0,1fr) 90px !important;
+  }
+  .score-side{
+    width:90px !important;
+    min-width:90px !important;
+    max-width:90px !important;
+  }
+  .score-percent{
+    width:86px !important;
+    max-width:86px !important;
+    font-size:2.12rem !important;
+  }
+}
+
+@media(max-height:720px){
+  .logo-art-wrap{
+    height:102px !important;
+  }
+  .question-wrap{
+    min-height:4.8rem !important;
+  }
+}
+</style>
