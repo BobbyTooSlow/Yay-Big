@@ -11,7 +11,7 @@
       "difficulty": "Easy",
       "status": "Approved",
       "source": "U.S. Currency Education Program",
-      "question": "How long is the U.S. Federal Reserve note?"
+      "question": "How long is a U.S. Federal Reserve note?"
     },
     {
       "id": "yb-0002",
@@ -22,7 +22,7 @@
       "difficulty": "Easy",
       "status": "Approved",
       "source": "U.S. Currency Education Program",
-      "question": "How wide is the U.S. Federal Reserve note?"
+      "question": "How wide is a U.S. Federal Reserve note?"
     },
     {
       "id": "yb-0003",
@@ -33,7 +33,7 @@
       "difficulty": "Easy",
       "status": "Approved",
       "source": "ISO/IEC 7810",
-      "question": "How long is the ISO ID-1 card?"
+      "question": "How long is an ISO ID-1 card?"
     },
     {
       "id": "yb-0004",
@@ -44,7 +44,7 @@
       "difficulty": "Easy",
       "status": "Approved",
       "source": "ISO/IEC 7810",
-      "question": "How wide is the ISO ID-1 card?"
+      "question": "How wide is an ISO ID-1 card?"
     },
     {
       "id": "yb-0005",
@@ -55,7 +55,7 @@
       "difficulty": "Easy",
       "status": "Approved",
       "source": "NBA Official Rules",
-      "question": "What is the diameter of the NBA basketball rim?"
+      "question": "What is the inside diameter of an NBA basketball rim?"
     },
     {
       "id": "yb-0006",
@@ -66,7 +66,7 @@
       "difficulty": "Easy",
       "status": "Approved",
       "source": "NBA Official Rules",
-      "question": "How high is the NBA basketball rim?"
+      "question": "How high is an NBA basketball rim above the floor?"
     },
     {
       "id": "yb-0007",
@@ -77,7 +77,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How long is the NBA court?"
+      "question": "How long is an NBA court?"
     },
     {
       "id": "yb-0008",
@@ -88,7 +88,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How wide is the NBA court?"
+      "question": "How wide is an NBA court?"
     },
     {
       "id": "yb-0009",
@@ -99,7 +99,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How long is the NFL field of play?"
+      "question": "How long is the field of play on an NFL field?"
     },
     {
       "id": "yb-0010",
@@ -110,7 +110,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How wide is the NFL field?"
+      "question": "How wide is an NFL field?"
     },
     {
       "id": "yb-0011",
@@ -121,7 +121,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How high is the NFL goalpost crossbar?"
+      "question": "How high is the crossbar on an NFL goalpost?"
     },
     {
       "id": "yb-0012",
@@ -132,7 +132,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How wide is the Soccer goal?"
+      "question": "How wide is a regulation soccer goal?"
     },
     {
       "id": "yb-0013",
@@ -143,7 +143,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How high is the Soccer goal?"
+      "question": "How high is a regulation soccer goal?"
     },
     {
       "id": "yb-0014",
@@ -154,7 +154,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How wide is the Ice hockey goal?"
+      "question": "How wide is a regulation ice hockey goal?"
     },
     {
       "id": "yb-0015",
@@ -165,7 +165,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How high is the Ice hockey goal?"
+      "question": "How high is a regulation ice hockey goal?"
     },
     {
       "id": "yb-0016",
@@ -176,7 +176,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How wide is the front edge of home plate?"
+      "question": "How wide is the front edge of baseball home plate?"
     },
     {
       "id": "yb-0017",
@@ -198,7 +198,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "What is the pitcher's plate to rear point of home plate of the MLB pitching distance?"
+      "question": "How far is it from the pitcher's plate to the rear point of home plate?"
     },
     {
       "id": "yb-0019",
@@ -209,7 +209,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How long is the Tennis court?"
+      "question": "How long is a regulation tennis court?"
     },
     {
       "id": "yb-0020",
@@ -220,7 +220,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How wide is the Tennis singles court?"
+      "question": "How wide is a singles tennis court?"
     },
     {
       "id": "yb-0021",
@@ -231,7 +231,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How wide is the Tennis doubles court?"
+      "question": "How wide is a doubles tennis court?"
     },
     {
       "id": "yb-0022",
@@ -242,7 +242,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How high is the Tennis net?"
+      "question": "How high is a tennis net at the center?"
     },
     {
       "id": "yb-0023",
@@ -253,7 +253,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How long is the Table-tennis table?"
+      "question": "How long is a regulation table-tennis table?"
     },
     {
       "id": "yb-0024",
@@ -264,7 +264,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How wide is the Table-tennis table?"
+      "question": "How wide is a regulation table-tennis table?"
     },
     {
       "id": "yb-0025",
@@ -275,7 +275,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How high is the Table-tennis table?"
+      "question": "How high is a regulation table-tennis table?"
     },
     {
       "id": "yb-0026",
@@ -286,7 +286,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How high is the Table-tennis net?"
+      "question": "How high is a table-tennis net?"
     },
     {
       "id": "yb-0027",
@@ -297,7 +297,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How high is the Men's volleyball net?"
+      "question": "How high is a men's volleyball net?"
     },
     {
       "id": "yb-0028",
@@ -308,7 +308,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How high is the Women's volleyball net?"
+      "question": "How high is a women's volleyball net?"
     },
     {
       "id": "yb-0029",
@@ -319,7 +319,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How long is the Olympic long-course pool?"
+      "question": "How long is an Olympic long-course swimming pool?"
     },
     {
       "id": "yb-0030",
@@ -330,7 +330,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How wide is the Olympic long-course pool?"
+      "question": "How wide is an Olympic long-course swimming pool?"
     },
     {
       "id": "yb-0031",
@@ -341,7 +341,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How high is the Olympic high diving platform?"
+      "question": "How high is the highest Olympic diving platform?"
     },
     {
       "id": "yb-0032",
@@ -352,7 +352,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "What is the diameter of the Golf hole?"
+      "question": "What is the diameter of a regulation golf hole?"
     },
     {
       "id": "yb-0033",
@@ -363,7 +363,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How long is the Cornhole board?"
+      "question": "How long is a regulation cornhole board?"
     },
     {
       "id": "yb-0034",
@@ -374,7 +374,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How wide is the Cornhole board?"
+      "question": "How wide is a regulation cornhole board?"
     },
     {
       "id": "yb-0035",
@@ -385,7 +385,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "What is the diameter of the Cornhole hole?"
+      "question": "What is the diameter of the hole in a regulation cornhole board?"
     },
     {
       "id": "yb-0036",
@@ -396,7 +396,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How high is the Dartboard bullseye?"
+      "question": "How high is the center of a regulation dartboard bullseye?"
     },
     {
       "id": "yb-0037",
@@ -407,7 +407,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "What is the diameter of the Pool ball?"
+      "question": "What is the diameter of a regulation pool ball?"
     },
     {
       "id": "yb-0038",
@@ -418,7 +418,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How wide is the Poker-size playing card?"
+      "question": "How wide is a poker-size playing card?"
     },
     {
       "id": "yb-0039",
@@ -429,7 +429,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How high is the Poker-size playing card?"
+      "question": "How tall is a poker-size playing card?"
     },
     {
       "id": "yb-0040",
@@ -440,7 +440,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "What is the diameter of the Compact Disc?"
+      "question": "What is the diameter of a standard compact disc?"
     },
     {
       "id": "yb-0041",
@@ -451,7 +451,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "What is the diameter of the DVD?"
+      "question": "What is the diameter of a standard DVD?"
     },
     {
       "id": "yb-0042",
@@ -462,7 +462,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "What is the diameter of the 12-inch LP record?"
+      "question": "What is the nominal diameter of a 12-inch LP record?"
     },
     {
       "id": "yb-0043",
@@ -473,7 +473,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How wide is the 3.5-inch floppy disk?"
+      "question": "What is the nominal width of a 3.5-inch floppy disk?"
     },
     {
       "id": "yb-0044",
@@ -484,7 +484,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How high is the AA battery (IEC R6)?"
+      "question": "How tall is an IEC R6 AA battery?"
     },
     {
       "id": "yb-0045",
@@ -495,7 +495,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How high is the AAA battery (IEC R03)?"
+      "question": "How tall is an IEC R03 AAA battery?"
     },
     {
       "id": "yb-0046",
@@ -506,7 +506,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How long is the Nano-SIM (4FF)?"
+      "question": "How long is a 4FF nano-SIM card?"
     },
     {
       "id": "yb-0047",
@@ -517,7 +517,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs authoritative source verification",
-      "question": "How wide is the Nano-SIM (4FF)?"
+      "question": "How wide is a 4FF nano-SIM card?"
     },
     {
       "id": "yb-0048",
@@ -528,7 +528,7 @@
       "difficulty": "Medium",
       "status": "Rejected",
       "source": "Not one invariant dimension",
-      "question": "How high is the LEGO minifigure?"
+      "question": "How tall is a LEGO minifigure?"
     },
     {
       "id": "yb-0049",
@@ -539,7 +539,7 @@
       "difficulty": "Easy",
       "status": "Rejected",
       "source": "Not a universal fixed dimension",
-      "question": "How long is the Rubik's Cube?"
+      "question": "How long is one side of a Rubik's Cube?"
     },
     {
       "id": "yb-0050",
@@ -550,7 +550,7 @@
       "difficulty": "Easy",
       "status": "Rejected",
       "source": "No invariant length",
-      "question": "How long is the No. 2 pencil?"
+      "question": "How long is a No. 2 pencil?"
     },
     {
       "id": "yb-0051",
@@ -561,7 +561,7 @@
       "difficulty": "Easy",
       "status": "Rejected",
       "source": "Rule sets a minimum, not one exact diameter",
-      "question": "What is the diameter of the Golf ball?"
+      "question": "What is the diameter of a golf ball?"
     },
     {
       "id": "yb-0052",
@@ -572,7 +572,7 @@
       "difficulty": "Easy",
       "status": "Rejected",
       "source": "Specification permits a range",
-      "question": "What is the diameter of the Tennis ball?"
+      "question": "What is the diameter of a tennis ball?"
     },
     {
       "id": "yb-0053",
@@ -583,7 +583,7 @@
       "difficulty": "Easy",
       "status": "Rejected",
       "source": "Specification permits a range",
-      "question": "What is the diameter of the Baseball?"
+      "question": "What is the diameter of a baseball?"
     },
     {
       "id": "yb-0054",
@@ -594,7 +594,7 @@
       "difficulty": "Medium",
       "status": "Rejected",
       "source": "Specification permits a range",
-      "question": "What is the diameter of the Softball?"
+      "question": "What is the diameter of a softball?"
     },
     {
       "id": "yb-0055",
@@ -605,7 +605,7 @@
       "difficulty": "Easy",
       "status": "Rejected",
       "source": "Specification permits a range",
-      "question": "What is the diameter of the Basketball?"
+      "question": "What is the diameter of a basketball?"
     },
     {
       "id": "yb-0056",
@@ -616,7 +616,7 @@
       "difficulty": "Easy",
       "status": "Rejected",
       "source": "Specification permits a range",
-      "question": "What is the diameter of the Soccer ball?"
+      "question": "What is the diameter of a soccer ball?"
     },
     {
       "id": "yb-0057",
@@ -627,7 +627,7 @@
       "difficulty": "Medium",
       "status": "Rejected",
       "source": "Not guaranteed one exact dimension",
-      "question": "What is the diameter of the Bowling ball?"
+      "question": "What is the diameter of a bowling ball?"
     },
     {
       "id": "yb-0058",
@@ -638,7 +638,7 @@
       "difficulty": "Medium",
       "status": "Rejected",
       "source": "Manufacturing tolerances",
-      "question": "How high is the Bowling pin?"
+      "question": "How tall is a bowling pin?"
     },
     {
       "id": "yb-0059",
@@ -649,7 +649,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs exact-rule verification",
-      "question": "What is the diameter of the Hockey puck?"
+      "question": "What is the diameter of a regulation hockey puck?"
     },
     {
       "id": "yb-0060",
@@ -660,7 +660,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs exact-rule verification",
-      "question": "What is the thickness of the Hockey puck?"
+      "question": "How thick is a regulation hockey puck?"
     },
     {
       "id": "yb-0061",
@@ -671,7 +671,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs U.S. Mint verification",
-      "question": "What is the diameter of the U.S. quarter?"
+      "question": "What is the diameter of a U.S. quarter?"
     },
     {
       "id": "yb-0062",
@@ -682,7 +682,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs U.S. Mint verification",
-      "question": "What is the diameter of the U.S. dime?"
+      "question": "What is the diameter of a U.S. dime?"
     },
     {
       "id": "yb-0063",
@@ -693,7 +693,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs U.S. Mint verification",
-      "question": "What is the diameter of the U.S. nickel?"
+      "question": "What is the diameter of a U.S. nickel?"
     },
     {
       "id": "yb-0064",
@@ -704,7 +704,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs U.S. Mint verification",
-      "question": "What is the diameter of the U.S. cent?"
+      "question": "What is the diameter of a U.S. cent?"
     },
     {
       "id": "yb-0065",
@@ -715,7 +715,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs standards verification",
-      "question": "How wide is the U.S. letter paper?"
+      "question": "How wide is a sheet of U.S. letter paper?"
     },
     {
       "id": "yb-0066",
@@ -726,7 +726,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs standards verification",
-      "question": "How long is the U.S. letter paper?"
+      "question": "How long is a sheet of U.S. letter paper?"
     },
     {
       "id": "yb-0067",
@@ -737,7 +737,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs standards verification",
-      "question": "How long is the U.S. legal paper?"
+      "question": "How long is a sheet of U.S. legal paper?"
     },
     {
       "id": "yb-0068",
@@ -748,7 +748,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs standards verification",
-      "question": "How wide is the Queen mattress?"
+      "question": "How wide is a queen-size mattress?"
     },
     {
       "id": "yb-0069",
@@ -759,7 +759,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs standards verification",
-      "question": "How long is the Queen mattress?"
+      "question": "How long is a queen-size mattress?"
     },
     {
       "id": "yb-0070",
@@ -770,7 +770,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs standards verification",
-      "question": "How wide is the King mattress?"
+      "question": "How wide is a king-size mattress?"
     },
     {
       "id": "yb-0071",
@@ -781,7 +781,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs standards verification",
-      "question": "How wide is the Twin mattress?"
+      "question": "How wide is a twin-size mattress?"
     },
     {
       "id": "yb-0072",
@@ -792,7 +792,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs lumber-standard verification",
-      "question": "How wide is the 2×4 lumber?"
+      "question": "What is the actual width of a nominal 2×4 board?"
     },
     {
       "id": "yb-0073",
@@ -803,7 +803,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs lumber-standard verification",
-      "question": "What is the actual thickness of the 2×4 lumber?"
+      "question": "What is the actual thickness of a nominal 2×4 board?"
     },
     {
       "id": "yb-0074",
@@ -814,7 +814,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs standards verification",
-      "question": "How long is the GMA pallet?"
+      "question": "How long is a standard GMA pallet?"
     },
     {
       "id": "yb-0075",
@@ -825,7 +825,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs standards verification",
-      "question": "How wide is the GMA pallet?"
+      "question": "How wide is a standard GMA pallet?"
     },
     {
       "id": "yb-0076",
@@ -847,7 +847,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs ISO verification",
-      "question": "How long is the 20-ft ISO shipping container?"
+      "question": "What is the exterior length of a 20-foot ISO shipping container?"
     },
     {
       "id": "yb-0078",
@@ -858,7 +858,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs ISO verification",
-      "question": "How wide is the 20-ft ISO shipping container?"
+      "question": "What is the exterior width of a 20-foot ISO shipping container?"
     },
     {
       "id": "yb-0079",
@@ -869,7 +869,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs ISO verification",
-      "question": "How long is the 40-ft ISO shipping container?"
+      "question": "What is the exterior length of a 40-foot ISO shipping container?"
     },
     {
       "id": "yb-0080",
@@ -880,7 +880,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs ISO verification",
-      "question": "How wide is the 40-ft ISO shipping container?"
+      "question": "What is the exterior width of a 40-foot ISO shipping container?"
     },
     {
       "id": "yb-0081",
@@ -891,7 +891,7 @@
       "difficulty": "Easy",
       "status": "Candidate",
       "source": "Needs World Athletics verification",
-      "question": "What is the one lap, lane 1 of the Olympic athletics track?"
+      "question": "How long is one lap of an Olympic athletics track in lane 1?"
     },
     {
       "id": "yb-0082",
@@ -902,7 +902,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs World Athletics verification",
-      "question": "How wide is the Track lane?"
+      "question": "How wide is a standard athletics track lane?"
     },
     {
       "id": "yb-0083",
@@ -913,7 +913,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs BWF verification",
-      "question": "How long is the Badminton court?"
+      "question": "How long is a regulation badminton court?"
     },
     {
       "id": "yb-0084",
@@ -924,7 +924,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs BWF verification",
-      "question": "How wide is the Badminton doubles court?"
+      "question": "How wide is a doubles badminton court?"
     },
     {
       "id": "yb-0085",
@@ -935,7 +935,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs BWF verification",
-      "question": "How high is the Badminton net?"
+      "question": "How high is a badminton net at the posts?"
     },
     {
       "id": "yb-0086",
@@ -946,7 +946,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs USA Pickleball verification",
-      "question": "How long is the Pickleball court?"
+      "question": "How long is a regulation pickleball court?"
     },
     {
       "id": "yb-0087",
@@ -957,7 +957,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs USA Pickleball verification",
-      "question": "How wide is the Pickleball court?"
+      "question": "How wide is a regulation pickleball court?"
     },
     {
       "id": "yb-0088",
@@ -968,7 +968,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs USA Pickleball verification",
-      "question": "How high is the Pickleball net?"
+      "question": "How high is a pickleball net at the center?"
     },
     {
       "id": "yb-0089",
@@ -979,7 +979,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs WPBSA verification",
-      "question": "How long is the Snooker table?"
+      "question": "How long is the playing area of a regulation snooker table?"
     },
     {
       "id": "yb-0090",
@@ -990,7 +990,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs WPBSA verification",
-      "question": "How wide is the Snooker table?"
+      "question": "How wide is the playing area of a regulation snooker table?"
     },
     {
       "id": "yb-0091",
@@ -1012,7 +1012,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs IFAB verification",
-      "question": "What is the depth of the Soccer goal area?"
+      "question": "How deep is the soccer goal area from the goal line?"
     },
     {
       "id": "yb-0093",
@@ -1023,7 +1023,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs IFAB verification",
-      "question": "What is the depth of the Soccer penalty area?"
+      "question": "How deep is the soccer penalty area from the goal line?"
     },
     {
       "id": "yb-0094",
@@ -1034,7 +1034,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs MLB verification",
-      "question": "How long is the Baseball batter's box?"
+      "question": "How long is a regulation baseball batter's box?"
     },
     {
       "id": "yb-0095",
@@ -1045,7 +1045,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs MLB verification",
-      "question": "How wide is the Baseball batter's box?"
+      "question": "How wide is a regulation baseball batter's box?"
     },
     {
       "id": "yb-0096",
@@ -1056,7 +1056,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs NBA verification",
-      "question": "How wide is the NBA backboard?"
+      "question": "How wide is an NBA backboard?"
     },
     {
       "id": "yb-0097",
@@ -1067,7 +1067,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs NBA verification",
-      "question": "How high is the NBA backboard?"
+      "question": "How high is an NBA backboard?"
     },
     {
       "id": "yb-0098",
@@ -1078,7 +1078,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs NBA verification",
-      "question": "What is the distance from backboard plane for the NBA free-throw line?"
+      "question": "How far is the NBA free-throw line from the plane of the backboard?"
     },
     {
       "id": "yb-0099",
@@ -1089,7 +1089,7 @@
       "difficulty": "Medium",
       "status": "Candidate",
       "source": "Needs ITTF exactness verification",
-      "question": "What is the diameter of the Table-tennis ball?"
+      "question": "What is the diameter of a regulation table-tennis ball?"
     },
     {
       "id": "yb-0100",
@@ -1100,7 +1100,7 @@
       "difficulty": "Hard",
       "status": "Candidate",
       "source": "Needs World Archery verification",
-      "question": "What is the diameter of the Olympic archery target?"
+      "question": "What is the diameter of an Olympic archery target face?"
     }
   ]
 }

@@ -62,7 +62,7 @@ td input,td select{width:100%}
   <select id="difficultyFilter"><option>All difficulties</option><option>Easy</option><option>Medium</option><option>Hard</option></select>
 </div>
 
-<p class="note"><b>Rules:</b> question wording is stored and editable for every item. One numeric value + one official unit only. Use the unit in which the authoritative measurement is codified, especially when that preserves a clean exact value. Approved items must have one fixed defensible measurement.</p>
+<p class="note"><b>Rules:</b> question wording is stored and editable for every item. Renaming an item automatically updates that same item name inside its question wording. One numeric value + one official unit only. Use the unit in which the authoritative measurement is codified, especially when that preserves a clean exact value. Approved items must have one fixed defensible measurement.</p>
 
 <div class="add">
   <input id="newItem" placeholder="New item">
@@ -111,6 +111,16 @@ function nextId(){
   const nums=items.map(x=>Number(String(x.id).replace(/\D/g,""))||0);
   return stableId(Math.max(0,...nums)+1);
 }
+
+function escapeRegExp(text){
+  return String(text).replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+}
+function syncItemNameIntoQuestion(question,oldItem,newItem){
+  if(!question||!oldItem||oldItem===newItem)return question;
+  const re=new RegExp(escapeRegExp(oldItem),"gi");
+  return re.test(question)?question.replace(re,newItem):question;
+}
+
 function save(){
   const payload={schemaVersion:1,database:"Yay Big Questions",questions:items};
   localStorage.setItem(STORAGE_KEY,JSON.stringify(payload));
@@ -188,7 +198,16 @@ $("rows").onchange=e=>{
   if(!tr||!k)return;
   const x=items.find(i=>i.id===tr.dataset.id);
   if(!x)return;
-  x[k]=k==="value"?(e.target.value===""?null:Number(e.target.value)):e.target.value;
+
+  if(k==="item"){
+    const oldItem=x.item;
+    const newItem=e.target.value;
+    x.item=newItem;
+    x.question=syncItemNameIntoQuestion(x.question,oldItem,newItem);
+  }else{
+    x[k]=k==="value"?(e.target.value===""?null:Number(e.target.value)):e.target.value;
+  }
+
   save();render();
 };
 $("rows").onclick=e=>{
