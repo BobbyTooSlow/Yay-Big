@@ -31,7 +31,7 @@ th,td{padding:7px;border-bottom:1px solid #17212a;text-align:left;font-size:.82r
 th{position:sticky;top:0;background:var(--panel2);color:var(--blue);z-index:1}
 td input,td select{width:100%}
 .id{white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums}
-.item{min-width:175px}.measure{min-width:165px}.source{min-width:210px}
+.item{min-width:175px}.question{min-width:300px}.measure{min-width:165px}.source{min-width:210px}
 .delete{background:transparent;color:var(--red);border:1px solid #5b2b2b;border-radius:6px;padding:5px 7px}
 .footer{font-size:.76rem}
 .hidden{display:none!important}
@@ -62,10 +62,11 @@ td input,td select{width:100%}
   <select id="difficultyFilter"><option>All difficulties</option><option>Easy</option><option>Medium</option><option>Hard</option></select>
 </div>
 
-<p class="note"><b>Rules:</b> one numeric value + one official unit only. Use the unit in which the authoritative measurement is codified, especially when that preserves a clean exact value. Approved items must have one fixed defensible measurement.</p>
+<p class="note"><b>Rules:</b> question wording is stored and editable for every item. One numeric value + one official unit only. Use the unit in which the authoritative measurement is codified, especially when that preserves a clean exact value. Approved items must have one fixed defensible measurement.</p>
 
 <div class="add">
   <input id="newItem" placeholder="New item">
+  <input id="newQuestion" placeholder="Question wording">
   <input id="newMeasurement" placeholder="Measurement">
   <input id="newValue" type="number" step="any" placeholder="Value">
   <select id="newUnit"><option value="">Unit</option><option>mm</option><option>cm</option><option>m</option><option>km</option><option>in</option><option>ft</option><option>yd</option><option>mi</option></select>
@@ -75,7 +76,7 @@ td input,td select{width:100%}
 
 <div class="tablewrap">
 <table>
-<thead><tr><th>ID</th><th>Item</th><th>Measurement</th><th>Value</th><th>Unit</th><th>Difficulty</th><th>Status</th><th>Source / note</th><th></th></tr></thead>
+<thead><tr><th>ID</th><th>Item</th><th>Question</th><th>Measurement</th><th>Value</th><th>Unit</th><th>Difficulty</th><th>Status</th><th>Source / note</th><th></th></tr></thead>
 <tbody id="rows"></tbody>
 </table>
 </div>
@@ -97,6 +98,7 @@ function normalizeQuestion(x,index=0){
   return {
     id:String(id),
     item:String(x.item??""),
+    question:String(x.question??""),
     measurement:String(x.measurement??""),
     value:x.value===""||x.value==null?null:Number(x.value),
     unit:String(x.unit??""),
@@ -171,6 +173,7 @@ function render(){
   $("rows").innerHTML=filtered.map(x=>`<tr data-id="${esc(x.id)}">
     <td class="id">${esc(x.id)}</td>
     <td><input class="item" data-k="item" value="${esc(x.item)}"></td>
+    <td><input class="question" data-k="question" value="${esc(x.question)}"></td>
     <td><input class="measure" data-k="measurement" value="${esc(x.measurement)}"></td>
     <td><input type="number" step="any" data-k="value" value="${x.value??""}"></td>
     <td><select data-k="unit"><option value="">—</option>${units.map(u=>`<option value="${u}" ${x.unit===u?"selected":""}>${u}</option>`).join("")}</select></td>
@@ -200,6 +203,7 @@ $("add").onclick=()=>{
   items.push({
     id:nextId(),
     item,
+    question:$("newQuestion").value.trim(),
     measurement:$("newMeasurement").value.trim(),
     value:$("newValue").value===""?null:Number($("newValue").value),
     unit:$("newUnit").value,
@@ -207,7 +211,7 @@ $("add").onclick=()=>{
     status:"Candidate",
     source:"Needs verification"
   });
-  ["newItem","newMeasurement","newValue"].forEach(id=>$(id).value="");
+  ["newItem","newQuestion","newMeasurement","newValue"].forEach(id=>$(id).value="");
   $("newUnit").value="";
   save();render();
 };
