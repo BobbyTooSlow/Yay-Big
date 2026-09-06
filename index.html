@@ -568,3 +568,120 @@ button[type="submit"]:disabled{
   setTimeout(updateSubmitState, 100);
 })();
 </script>
+
+<style>
+/* vNext11 — targeted corrections */
+
+/* Keep the unit-button sizing exactly as established in vNext9/vNext10. */
+.unit-grid{
+  grid-template-rows:repeat(4,clamp(48px,6.5dvh,58px)) !important;
+}
+@media(max-width:430px){
+  .unit-grid{
+    grid-template-rows:repeat(4,clamp(44px,6dvh,52px)) !important;
+  }
+}
+@media(max-height:720px){
+  .unit-grid{
+    grid-template-rows:repeat(4,42px) !important;
+  }
+}
+
+/* Align the bottom of the left input/submit stack with the bottom of the unit grid. */
+.guess-side{
+  align-self:end !important;
+}
+.unit-side{
+  align-self:end !important;
+}
+
+/* Real disabled styling for the actual Submit button. */
+#submit:disabled{
+  opacity:.32 !important;
+  filter:saturate(.45) !important;
+  cursor:default !important;
+  pointer-events:none !important;
+}
+
+/* Difficulty label rotated 90 degrees counterclockwise without consuming a full text row. */
+.question-wrap{
+  position:relative !important;
+  padding-left:24px !important;
+}
+#diff{
+  position:absolute !important;
+  left:1px !important;
+  top:50% !important;
+  margin:0 !important;
+  white-space:nowrap !important;
+  transform:translate(-42%,-50%) rotate(-90deg) !important;
+  transform-origin:center !important;
+  line-height:1 !important;
+}
+
+/* Question stays aligned in the remaining space. */
+#question{
+  margin-left:0 !important;
+}
+</style>
+
+<script>
+(function(){
+  const submit = document.getElementById('submit');
+  if (!submit) return;
+
+  function syncSubmit(){
+    const n = Number(guessText);
+    const hasValidValue =
+      typeof guessText === 'string' &&
+      guessText.trim() !== '' &&
+      Number.isFinite(n) &&
+      n > 0;
+
+    const hasUnit =
+      typeof selectedUnit === 'string' &&
+      selectedUnit !== '';
+
+    submit.disabled = !(hasValidValue && hasUnit);
+  }
+
+  /* Start every question disabled. */
+  submit.disabled = true;
+
+  /* The game's existing handlers update guessText/selectedUnit first;
+     these bubble-phase listeners then update the button state. */
+  const keypad = document.querySelector('.keypad');
+  const unitGrid = document.getElementById('unitGrid');
+
+  if (keypad) {
+    keypad.addEventListener('click', function(){
+      syncSubmit();
+    });
+  }
+
+  if (unitGrid) {
+    unitGrid.addEventListener('click', function(){
+      syncSubmit();
+    });
+  }
+
+  /* When Next/Restart loads a fresh question, show() clears both values.
+     Re-disable after those existing click handlers run. */
+  const next = document.getElementById('next');
+  const restart = document.getElementById('restart');
+
+  if (next) {
+    next.addEventListener('click', function(){
+      setTimeout(syncSubmit, 0);
+    });
+  }
+
+  if (restart) {
+    restart.addEventListener('click', function(){
+      setTimeout(syncSubmit, 0);
+    });
+  }
+
+  syncSubmit();
+})();
+</script>
