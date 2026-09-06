@@ -53,7 +53,7 @@ td input,td select{width:100%}
   <input id="importFile" type="file" accept=".json,application/json" class="hidden">
 </div>
 
-<p class="note"><b>Data safety:</b> dashboard structure and question content are now separate. Your working edits are stored independently in this browser. Export <b>questions.json</b> when you want to publish them to the game. Replacing or redesigning <b>dashboard.html</b> will not overwrite the saved question content. If an older saved workspace has blank Question fields, the dashboard safely fills only those blanks from the published <b>questions.json</b>. The <b>Sync Question wording</b> button can also do this manually and reports how many published questions it found.</p>
+<p class="note"><b>Data safety:</b> dashboard structure and question content are now separate. Your working edits are stored independently in this browser. Export <b>questions.json</b> when you want to publish them to the game. Replacing or redesigning <b>dashboard.html</b> will not overwrite the saved question content. If an older saved workspace has blank Question fields, the dashboard safely fills only those blanks from the published <b>questions.json</b>. The <b>Sync Question wording</b> button can also do this manually. This version also contains a one-time migration set for the original yb-0001 through yb-0100 IDs, so blank Question fields can be restored even if the currently published JSON predates the Question field.</p>
 
 <div id="stats" class="stats"></div>
 
@@ -85,6 +85,7 @@ td input,td select{width:100%}
 </main>
 
 <script>
+const QUESTION_SEED={"yb-0001": "How long is a U.S. Federal Reserve note?", "yb-0002": "How wide is a U.S. Federal Reserve note?", "yb-0003": "How long is an ISO ID-1 card?", "yb-0004": "How wide is an ISO ID-1 card?", "yb-0005": "What is the inside diameter of an NBA basketball rim?", "yb-0006": "How high is an NBA basketball rim above the floor?", "yb-0007": "How long is an NBA court?", "yb-0008": "How wide is an NBA court?", "yb-0009": "How long is the field of play on an NFL field?", "yb-0010": "How wide is an NFL field?", "yb-0011": "How high is the crossbar on an NFL goalpost?", "yb-0012": "How wide is a regulation soccer goal?", "yb-0013": "How high is a regulation soccer goal?", "yb-0014": "How wide is a regulation ice hockey goal?", "yb-0015": "How high is a regulation ice hockey goal?", "yb-0016": "How wide is the front edge of baseball home plate?", "yb-0017": "How long is one side of an MLB base?", "yb-0018": "How far is it from the pitcher's plate to the rear point of home plate?", "yb-0019": "How long is a regulation tennis court?", "yb-0020": "How wide is a singles tennis court?", "yb-0021": "How wide is a doubles tennis court?", "yb-0022": "How high is a tennis net at the center?", "yb-0023": "How long is a regulation table-tennis table?", "yb-0024": "How wide is a regulation table-tennis table?", "yb-0025": "How high is a regulation table-tennis table?", "yb-0026": "How high is a table-tennis net?", "yb-0027": "How high is a men's volleyball net?", "yb-0028": "How high is a women's volleyball net?", "yb-0029": "How long is an Olympic long-course swimming pool?", "yb-0030": "How wide is an Olympic long-course swimming pool?", "yb-0031": "How high is the highest Olympic diving platform?", "yb-0032": "What is the diameter of a regulation golf hole?", "yb-0033": "How long is a regulation cornhole board?", "yb-0034": "How wide is a regulation cornhole board?", "yb-0035": "What is the diameter of the hole in a regulation cornhole board?", "yb-0036": "How high is the center of a regulation dartboard bullseye?", "yb-0037": "What is the diameter of a regulation pool ball?", "yb-0038": "How wide is a poker-size playing card?", "yb-0039": "How tall is a poker-size playing card?", "yb-0040": "What is the diameter of a standard compact disc?", "yb-0041": "What is the diameter of a standard DVD?", "yb-0042": "What is the nominal diameter of a 12-inch LP record?", "yb-0043": "What is the nominal width of a 3.5-inch floppy disk?", "yb-0044": "How tall is an IEC R6 AA battery?", "yb-0045": "How tall is an IEC R03 AAA battery?", "yb-0046": "How long is a 4FF nano-SIM card?", "yb-0047": "How wide is a 4FF nano-SIM card?", "yb-0048": "How tall is a LEGO minifigure?", "yb-0049": "How long is one side of a Rubik's Cube?", "yb-0050": "How long is a No. 2 pencil?", "yb-0051": "What is the diameter of a golf ball?", "yb-0052": "What is the diameter of a tennis ball?", "yb-0053": "What is the diameter of a baseball?", "yb-0054": "What is the diameter of a softball?", "yb-0055": "What is the diameter of a basketball?", "yb-0056": "What is the diameter of a soccer ball?", "yb-0057": "What is the diameter of a bowling ball?", "yb-0058": "How tall is a bowling pin?", "yb-0059": "What is the diameter of a regulation hockey puck?", "yb-0060": "How thick is a regulation hockey puck?", "yb-0061": "What is the diameter of a U.S. quarter?", "yb-0062": "What is the diameter of a U.S. dime?", "yb-0063": "What is the diameter of a U.S. nickel?", "yb-0064": "What is the diameter of a U.S. cent?", "yb-0065": "How wide is a sheet of U.S. letter paper?", "yb-0066": "How long is a sheet of U.S. letter paper?", "yb-0067": "How long is a sheet of U.S. legal paper?", "yb-0068": "How wide is a queen-size mattress?", "yb-0069": "How long is a queen-size mattress?", "yb-0070": "How wide is a king-size mattress?", "yb-0071": "How wide is a twin-size mattress?", "yb-0072": "What is the actual width of a nominal 2×4 board?", "yb-0073": "What is the actual thickness of a nominal 2×4 board?", "yb-0074": "How long is a standard GMA pallet?", "yb-0075": "How wide is a standard GMA pallet?", "yb-0076": "How far apart are the rails on standard-gauge railroad track?", "yb-0077": "What is the exterior length of a 20-foot ISO shipping container?", "yb-0078": "What is the exterior width of a 20-foot ISO shipping container?", "yb-0079": "What is the exterior length of a 40-foot ISO shipping container?", "yb-0080": "What is the exterior width of a 40-foot ISO shipping container?", "yb-0081": "How long is one lap of an Olympic athletics track in lane 1?", "yb-0082": "How wide is a standard athletics track lane?", "yb-0083": "How long is a regulation badminton court?", "yb-0084": "How wide is a doubles badminton court?", "yb-0085": "How high is a badminton net at the posts?", "yb-0086": "How long is a regulation pickleball court?", "yb-0087": "How wide is a regulation pickleball court?", "yb-0088": "How high is a pickleball net at the center?", "yb-0089": "How long is the playing area of a regulation snooker table?", "yb-0090": "How wide is the playing area of a regulation snooker table?", "yb-0091": "How far is the soccer penalty mark from the goal line?", "yb-0092": "How deep is the soccer goal area from the goal line?", "yb-0093": "How deep is the soccer penalty area from the goal line?", "yb-0094": "How long is a regulation baseball batter's box?", "yb-0095": "How wide is a regulation baseball batter's box?", "yb-0096": "How wide is an NBA backboard?", "yb-0097": "How high is an NBA backboard?", "yb-0098": "How far is the NBA free-throw line from the plane of the backboard?", "yb-0099": "What is the diameter of a regulation table-tennis ball?", "yb-0100": "What is the diameter of an Olympic archery target face?"};
 const STORAGE_KEY="yayBigQuestionWorkspaceV1";
 const OLD_STORAGE_KEY="yayBigDashboardV2";
 const units=["mm","cm","m","km","in","ft","yd","mi"];
@@ -152,6 +153,21 @@ function migrateOldWorkspace(){
   }catch(e){console.error(e);return false}
 }
 
+
+function fillBlankQuestionsFromSeed(){
+  let changed=0;
+  for(const x of items){
+    if(String(x.question||"").trim())continue;
+    const q=QUESTION_SEED[String(x.id)];
+    if(q){
+      x.question=q;
+      changed++;
+    }
+  }
+  if(changed)save();
+  return changed;
+}
+
 async function syncQuestionsFromPublished(force=false){
   try{
     const url=`questions.json?v=${Date.now()}`;
@@ -191,9 +207,10 @@ async function syncQuestionsFromPublished(force=false){
     }
 
     if(changed)save();
+    const seeded=fillBlankQuestionsFromSeed();
     updateDbStatus(
       `Published DB: ${data.questions.length} items, ${publishedWithQuestions.length} with Question wording. `+
-      `Matched ${matched} workspace items; ${changed} Question field${changed===1?"":"s"} updated.`
+      `Matched ${matched} workspace items; ${changed} loaded from JSON; ${seeded} restored from the built-in migration set.`
     );
     render();
     return changed;
@@ -324,11 +341,13 @@ $("reloadPublished").onclick=()=>loadPublished(true);
 
 (async function init(){
   if(loadWorkspace()){
+    fillBlankQuestionsFromSeed();
     await syncQuestionsFromPublished(false);
     render();
     return;
   }
   if(migrateOldWorkspace()){
+    fillBlankQuestionsFromSeed();
     await syncQuestionsFromPublished(false);
     render();
     return;
