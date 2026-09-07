@@ -47,16 +47,17 @@ th{position:sticky;top:0;background:var(--panel2);color:var(--blue);z-index:1}
 td input,td select{width:100%;min-width:0;padding:6px 5px;font-size:.76rem}
 .id{white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums}
 
-/* Fit every column into the page; Chrome zoom can then scale the whole dashboard */
-th:nth-child(1),td:nth-child(1){width:6%}
-th:nth-child(2),td:nth-child(2){width:13%}
-th:nth-child(3),td:nth-child(3){width:22%}
-th:nth-child(4),td:nth-child(4){width:11%}
-th:nth-child(5),td:nth-child(5){width:7%}
-th:nth-child(6),td:nth-child(6){width:6%}
-th:nth-child(7),td:nth-child(7){width:8%}
-th:nth-child(8),td:nth-child(8){width:9%}
-th:nth-child(9),td:nth-child(9){width:13%}
+/* Fit every column into the page; Chrome zoom can then scale the whole dashboard.
+   Column 0 (#) is dashboard-only and is never written to questions.json. */
+th:nth-child(1),td:nth-child(1){width:4%}
+th:nth-child(2),td:nth-child(2){width:6%}
+th:nth-child(3),td:nth-child(3){width:13%}
+th:nth-child(4),td:nth-child(4){width:24%}
+th:nth-child(5),td:nth-child(5){width:11%}
+th:nth-child(6),td:nth-child(6){width:7%}
+th:nth-child(7),td:nth-child(7){width:6%}
+th:nth-child(8),td:nth-child(8){width:8%}
+th:nth-child(9),td:nth-child(9){width:16%}
 th:nth-child(10),td:nth-child(10){width:5%}
 
 .item,.question,.measure,.source{min-width:0}
@@ -81,17 +82,16 @@ th:nth-child(10),td:nth-child(10){width:5%}
   <input id="importFile" type="file" accept=".json,application/json" class="hidden">
 </div>
 
-<p class="note"><b>Data safety:</b> dashboard structure and question content are now separate. Your working edits are stored independently in this browser. Export <b>questions.json</b> when you want to publish them to the game. Replacing or redesigning <b>dashboard.html</b> will not overwrite the saved question content. If an older saved workspace has blank Question fields, the dashboard safely fills only those blanks from the published <b>questions.json</b>. The <b>Sync Question wording</b> button can also do this manually. This version also contains a one-time migration set for the original yb-0001 through yb-0100 IDs, so blank Question fields can be restored even if the currently published JSON predates the Question field.</p>
+<p class="note"><b>Data safety:</b> dashboard structure and question content are now separate. Your working edits are stored independently in this browser. Export <b>questions.json</b> when you want to publish them to the game. The dashboard no longer uses Candidate/Rejected states: anything kept here is treated as approved. The exported JSON still carries <b>status: "Approved"</b> for compatibility with the current game code. Replacing or redesigning <b>dashboard.html</b> will not overwrite the saved question content. If an older saved workspace has blank Question fields, the dashboard safely fills only those blanks from the published <b>questions.json</b>. The <b>Sync Question wording</b> button can also do this manually. This version also contains a one-time migration set for the original yb-0001 through yb-0100 IDs, so blank Question fields can be restored even if the currently published JSON predates the Question field.</p>
 
 <div id="stats" class="stats"></div>
 
 <div class="tools">
   <input id="search" placeholder="Search…">
-  <select id="statusFilter"><option>All statuses</option><option>Approved</option><option>Candidate</option><option>Rejected</option></select>
   <select id="difficultyFilter"><option>All difficulties</option><option>Easy</option><option>Medium</option><option>Hard</option></select>
 </div>
 
-<p class="note"><b>Rules:</b> question wording is stored and editable for every item. Renaming an item automatically updates that same item name inside its question wording. One numeric value + one official unit only. Use the unit in which the authoritative measurement is codified, especially when that preserves a clean exact value. Approved items must have one fixed defensible measurement.</p>
+<p class="note"><b>Rules:</b> question wording is stored and editable for every item. Renaming an item automatically updates that same item name inside its question wording. One numeric value + one official unit only. Use the unit in which the authoritative measurement is codified, especially when that preserves a clean exact value. Every question kept in the dashboard is treated as approved; remove anything you do not want published.</p>
 
 <div class="add">
   <input id="newItem" placeholder="New item">
@@ -100,12 +100,12 @@ th:nth-child(10),td:nth-child(10){width:5%}
   <input id="newValue" type="number" step="any" placeholder="Value">
   <select id="newUnit"><option value="">Unit</option><option>mm</option><option>cm</option><option>m</option><option>km</option><option>in</option><option>ft</option><option>yd</option><option>mi</option></select>
   <select id="newDifficulty"><option>Easy</option><option selected>Medium</option><option>Hard</option></select>
-  <button id="add" class="btn">Add candidate</button>
+  <button id="add" class="btn">Add question</button>
 </div>
 
 <div class="tablewrap">
 <table>
-<thead><tr><th>ID</th><th>Item</th><th>Question</th><th>Measurement</th><th>Value</th><th>Unit</th><th>Difficulty</th><th>Status</th><th>Source / note</th><th></th></tr></thead>
+<thead><tr><th>#</th><th>ID</th><th>Item</th><th>Question</th><th>Measurement</th><th>Value</th><th>Unit</th><th>Difficulty</th><th>Source / note</th><th></th></tr></thead>
 <tbody id="rows"></tbody>
 </table>
 </div>
@@ -133,7 +133,7 @@ function normalizeQuestion(x,index=0){
     value:x.value===""||x.value==null?null:Number(x.value),
     unit:String(x.unit??""),
     difficulty:["Easy","Medium","Hard"].includes(x.difficulty)?x.difficulty:"Medium",
-    status:["Approved","Candidate","Rejected"].includes(x.status)?x.status:"Candidate",
+    status:"Approved",
     source:String(x.source??"")
   };
 }
@@ -152,6 +152,7 @@ function syncItemNameIntoQuestion(question,oldItem,newItem){
 }
 
 function save(){
+  items.forEach(x=>x.status="Approved");
   const payload={schemaVersion:1,database:"Yay Big Questions",questions:items};
   localStorage.setItem(STORAGE_KEY,JSON.stringify(payload));
   updateDbStatus("Working edits saved in this browser.");
@@ -266,20 +267,18 @@ async function loadPublished(confirmFirst=false){
   }
 }
 function render(){
-  const a=items.filter(x=>x.status==="Approved");
   $("stats").innerHTML=
     `<span class="pill">${items.length} total</span>`+
-    `<span class="pill">${a.length} approved</span>`+
-    `<span class="pill">${items.filter(x=>x.status==="Candidate").length} candidates</span>`+
-    `<span class="pill">${items.filter(x=>x.status==="Rejected").length} rejected</span>`+
-    `<span class="pill">Approved: ${a.filter(x=>x.difficulty==="Easy").length} E · ${a.filter(x=>x.difficulty==="Medium").length} M · ${a.filter(x=>x.difficulty==="Hard").length} H</span>`;
-  const q=$("search").value.toLowerCase(),sf=$("statusFilter").value,df=$("difficultyFilter").value;
+    `<span class="pill">${items.filter(x=>x.difficulty==="Easy").length} Easy</span>`+
+    `<span class="pill">${items.filter(x=>x.difficulty==="Medium").length} Medium</span>`+
+    `<span class="pill">${items.filter(x=>x.difficulty==="Hard").length} Hard</span>`;
+  const q=$("search").value.toLowerCase(),df=$("difficultyFilter").value;
   const filtered=items.filter(x=>
     (!q||Object.values(x).join(" ").toLowerCase().includes(q))&&
-    (sf==="All statuses"||x.status===sf)&&
     (df==="All difficulties"||x.difficulty===df)
   );
   $("rows").innerHTML=filtered.map(x=>`<tr data-id="${esc(x.id)}">
+    <td class="id">${items.indexOf(x)+1}</td>
     <td class="id">${esc(x.id)}</td>
     <td><input class="item" data-k="item" value="${esc(x.item)}"></td>
     <td><input class="question" data-k="question" value="${esc(x.question)}"></td>
@@ -287,7 +286,6 @@ function render(){
     <td><input type="number" step="any" data-k="value" value="${x.value??""}"></td>
     <td><select data-k="unit"><option value="">—</option>${units.map(u=>`<option value="${u}" ${x.unit===u?"selected":""}>${u}</option>`).join("")}</select></td>
     <td><select data-k="difficulty">${["Easy","Medium","Hard"].map(v=>`<option ${x.difficulty===v?"selected":""}>${v}</option>`).join("")}</select></td>
-    <td><select data-k="status">${["Approved","Candidate","Rejected"].map(v=>`<option ${x.status===v?"selected":""}>${v}</option>`).join("")}</select></td>
     <td><input class="source" data-k="source" value="${esc(x.source)}"></td>
     <td><button class="delete">Remove</button></td>
   </tr>`).join("");
@@ -314,7 +312,7 @@ $("rows").onclick=e=>{
   items=items.filter(x=>x.id!==e.target.closest("tr").dataset.id);
   save();render();
 };
-["search","statusFilter","difficultyFilter"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
+["search","difficultyFilter"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
 $("add").onclick=()=>{
   const item=$("newItem").value.trim();
   if(!item)return;
@@ -326,7 +324,7 @@ $("add").onclick=()=>{
     value:$("newValue").value===""?null:Number($("newValue").value),
     unit:$("newUnit").value,
     difficulty:$("newDifficulty").value,
-    status:"Candidate",
+    status:"Approved",
     source:"Needs verification"
   });
   ["newItem","newQuestion","newMeasurement","newValue"].forEach(id=>$(id).value="");
@@ -334,6 +332,7 @@ $("add").onclick=()=>{
   save();render();
 };
 function exportDatabase(){
+  items.forEach(x=>x.status="Approved");
   const payload={schemaVersion:1,database:"Yay Big Questions",questions:items};
   const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
   const url=URL.createObjectURL(blob);
