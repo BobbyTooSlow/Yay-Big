@@ -312,9 +312,22 @@ function questionFitsGameTwoLines(text){
   const m=$("questionMeasure");
   if(!m)return true;
   m.textContent=(text||"").trim();
-  // 2 lines × 24px line-height. Width is calibrated to the phone game question area.
-  const maxHeight=48.5;
-  return m.scrollHeight<=maxHeight && m.scrollWidth<=324.5;
+
+  /* Count rendered lines instead of comparing total scrollHeight.
+     Browser font metrics can make a true two-line question a fraction of a
+     pixel taller than 2 × line-height, which caused false red warnings. */
+  const range=document.createRange();
+  range.selectNodeContents(m);
+  const rects=[...range.getClientRects()].filter(r=>r.width>0 && r.height>0);
+
+  // Group text fragments by their vertical position; <=2 distinct rows is valid.
+  const rows=[];
+  rects.forEach(r=>{
+    const y=Math.round(r.top*2)/2;
+    if(!rows.some(existing=>Math.abs(existing-y)<2)) rows.push(y);
+  });
+
+  return rows.length<=2;
 }
 function markQuestionLength(el){
   if(!el||!el.classList.contains("question"))return;
