@@ -622,6 +622,75 @@ loadQuestionDatabase();
 })();
 </script>
 
+
+<style>
+/* FINAL OVERRIDE — visible header artwork at 90% of viewport width.
+   Placed at the end because vNext18 appears later in this file and was
+   overriding earlier logo sizing rules. */
+.logo-art-wrap{
+  width:100% !important;
+  height:164px !important;
+  margin-bottom:-14px !important;
+  display:flex !important;
+  align-items:flex-end !important;
+  justify-content:center !important;
+  overflow:visible !important;
+  position:relative !important;
+  z-index:4 !important;
+}
+.logo-art{
+  width:90vw !important;
+  max-width:90vw !important;
+  height:auto !important;
+  max-height:none !important;
+  object-fit:contain !important;
+  object-position:center bottom !important;
+  position:absolute !important;
+  left:50% !important;
+  bottom:0 !important;
+  transform:translateX(-50%) !important;
+}
+.game-card{
+  position:relative !important;
+  z-index:1 !important;
+}
+#entry{
+  grid-template-rows:auto 6px minmax(0,.82fr) !important;
+}
+.key{
+  max-height:44px !important;
+}
+
+@media(max-width:430px){
+  .logo-art-wrap{
+    height:154px !important;
+    margin-bottom:-14px !important;
+  }
+  .logo-art{
+    width:90vw !important;
+    max-width:90vw !important;
+    height:auto !important;
+  }
+  .key{
+    max-height:40px !important;
+  }
+}
+@media(max-height:720px){
+  .logo-art-wrap{
+    height:126px !important;
+    margin-bottom:-10px !important;
+  }
+  .logo-art{
+    width:90vw !important;
+    max-width:90vw !important;
+    height:auto !important;
+  }
+  .key{
+    max-height:36px !important;
+  }
+}
+</style>
+
 </body>
 </html>
 <style>
