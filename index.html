@@ -223,52 +223,43 @@ h2{margin:0;font-size:clamp(1.8rem,4.8vw,2.6rem);line-height:1.12}
 </style>
 
 
+
+
 <style>
-/* vNext19 — larger illustrated header + shorter calculator */
+/* Larger YAY BIG header: 90% of viewport width */
 .logo-art-wrap{
   width:100% !important;
-  height:158px !important;
-  margin-bottom:-10px !important;
+  height:154px !important;
+  margin-bottom:-12px !important;
   position:relative !important;
   z-index:4 !important;
+  overflow:visible !important;
 }
 .logo-art{
   width:90vw !important;
-  max-width:90vw !important;
-  height:100% !important;
+  max-width:none !important;
+  height:auto !important;
+  max-height:none !important;
   object-fit:contain !important;
-  object-position:center bottom !important;
+  position:absolute !important;
+  left:50% !important;
+  bottom:0 !important;
+  transform:translateX(-50%) !important;
 }
-.game-card{
-  position:relative !important;
-  z-index:1 !important;
-}
-#entry{
-  grid-template-rows:auto 8px minmax(0,.84fr) !important;
-}
-.keypad{
-  align-self:start !important;
-}
-.key{
-  max-height:48px !important;
-}
+.game-card{position:relative !important;z-index:1 !important}
+
+/* Recover vertical room from the larger logo */
+#entry{grid-template-rows:auto 8px minmax(0,.84fr) !important}
+.keypad{align-self:start !important}
+.key{max-height:48px !important}
+
 @media(max-width:430px){
-  .logo-art-wrap{
-    height:150px !important;
-    margin-bottom:-11px !important;
-  }
-  .key{
-    max-height:44px !important;
-  }
+  .logo-art-wrap{height:146px !important;margin-bottom:-12px !important}
+  .key{max-height:44px !important}
 }
 @media(max-height:720px){
-  .logo-art-wrap{
-    height:128px !important;
-    margin-bottom:-9px !important;
-  }
-  .key{
-    max-height:40px !important;
-  }
+  .logo-art-wrap{height:124px !important;margin-bottom:-10px !important}
+  .key{max-height:40px !important}
 }
 </style>
 
