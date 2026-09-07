@@ -288,8 +288,157 @@ const questionOverrides={
 "Olympic archery target|Face diameter":"What is the diameter of an Olympic archery target face?"};
 function articleFor(s){return /^[aeiou]/i.test(s)?"an":"a"}
 function questionText(q){if(q.question&&q.question.trim())return q.question.trim();const key=`${q.item}|${q.measurement}`;if(questionOverrides[key])return questionOverrides[key];const m=q.measurement.toLowerCase(),item=q.item,a=articleFor(item);if(["length","external length","playing area length"].includes(m))return `How long is ${a} ${item}?`;if(["width","external width","playing area width","standard width","actual width","nominal width"].includes(m))return `How wide is ${a} ${item}?`;if(["height","height above floor","height at posts","center height"].includes(m))return `How high is ${a} ${item}?`;if(["thickness","actual thickness"].includes(m))return `How thick is ${a} ${item}?`;if(["diameter","nominal diameter","face diameter"].includes(m))return `What is the diameter of ${a} ${item}?`;if(m==="inside diameter")return `What is the inside diameter of ${a} ${item}?`;if(m==="side length")return `How long is one side of ${a} ${item}?`;if(m==="depth")return `How deep is ${a} ${item}?`;return `What is the ${m} of ${a} ${item}?`}
-function pick(arr,n){return [...arr].sort(()=>Math.random()-.5).slice(0,n)}
 const PROTOTYPE_ALLOW_CANDIDATES=true;
+
+/*
+  Shuffle-bag question selection:
+  - Easy, Medium, and Hard each keep their own shuffled queue.
+  - A question is removed from its queue when selected and is not eligible
+    again until that difficulty's queue has been exhausted and reshuffled.
+  - Queue state is saved in localStorage, so reloads do not reset the cycle.
+  - New database questions are mixed into the current queue automatically.
+  - When possible, two measurements of the same item are not used in one round.
+*/
+const QUESTION_BAG_STORAGE_KEY="yayBigQuestionBagsV1";
+const DIFFICULTIES=["Easy","Medium","Hard"];
+
+function shuffle(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function blankBagState(){
+  return {
+    version:1,
+    bags:{Easy:[],Medium:[],Hard:[]},
+    known:{Easy:[],Medium:[],Hard:[]},
+    last:{Easy:null,Medium:null,Hard:null}
+  };
+}
+
+function loadBagState(){
+  try{
+    const raw=localStorage.getItem(QUESTION_BAG_STORAGE_KEY);
+    if(!raw)return blankBagState();
+    const parsed=JSON.parse(raw);
+    const state=blankBagState();
+    for(const d of DIFFICULTIES){
+      state.bags[d]=Array.isArray(parsed?.bags?.[d])?parsed.bags[d].map(String):[];
+      state.known[d]=Array.isArray(parsed?.known?.[d])?parsed.known[d].map(String):[];
+      state.last[d]=parsed?.last?.[d]?String(parsed.last[d]):null;
+    }
+    return state;
+  }catch(err){
+    console.warn("Could not load question shuffle bags; starting fresh.",err);
+    return blankBagState();
+  }
+}
+
+function saveBagState(state){
+  try{
+    localStorage.setItem(QUESTION_BAG_STORAGE_KEY,JSON.stringify(state));
+  }catch(err){
+    console.warn("Could not save question shuffle bags.",err);
+  }
+}
+
+function insertRandomly(target,ids){
+  for(const id of shuffle(ids)){
+    const pos=Math.floor(Math.random()*(target.length+1));
+    target.splice(pos,0,id);
+  }
+}
+
+function syncBagWithPool(state,difficulty,pool){
+  const eligibleIds=pool.map(q=>String(q.id));
+  const eligibleSet=new Set(eligibleIds);
+
+  // Drop questions that were deleted, rejected, or moved to another difficulty.
+  state.bags[difficulty]=state.bags[difficulty].filter(id=>eligibleSet.has(id));
+
+  // Preserve the current cycle, but mix newly-added database questions into it.
+  const previouslyKnown=new Set(state.known[difficulty]);
+  const newIds=eligibleIds.filter(id=>!previouslyKnown.has(id));
+  if(newIds.length)insertRandomly(state.bags[difficulty],newIds);
+
+  state.known[difficulty]=eligibleIds;
+  if(state.last[difficulty]&&!eligibleSet.has(state.last[difficulty])){
+    state.last[difficulty]=null;
+  }
+}
+
+function refillBag(state,difficulty,pool,avoidIds=new Set(),avoidItems=new Set()){
+  let ids=shuffle(pool.map(q=>String(q.id)));
+  const byId=new Map(pool.map(q=>[String(q.id),q]));
+  const lastId=state.last[difficulty];
+
+  // Keep the final question from the previous cycle from immediately repeating
+  // at the start of the new cycle, whenever there is another choice.
+  if(ids.length>1 && ids[0]===lastId){
+    const swapIndex=ids.findIndex((id,idx)=>idx>0 && id!==lastId);
+    if(swapIndex>0)[ids[0],ids[swapIndex]]=[ids[swapIndex],ids[0]];
+  }
+
+  // If a refill happens mid-round, prefer a first choice that is not already
+  // represented in this round.
+  if(ids.length>1){
+    const preferredIndex=ids.findIndex(id=>{
+      const q=byId.get(id);
+      return q && !avoidIds.has(id) && !avoidItems.has(q.item);
+    });
+    if(preferredIndex>0)[ids[0],ids[preferredIndex]]=[ids[preferredIndex],ids[0]];
+  }
+
+  state.bags[difficulty]=ids;
+}
+
+function drawFromBag(state,difficulty,pool,avoidIds=new Set(),avoidItems=new Set()){
+  const byId=new Map(pool.map(q=>[String(q.id),q]));
+  if(!state.bags[difficulty].length){
+    refillBag(state,difficulty,pool,avoidIds,avoidItems);
+  }
+
+  let bag=state.bags[difficulty];
+
+  // First choice: a question whose item is not already in this round.
+  let index=bag.findIndex(id=>{
+    const q=byId.get(id);
+    return q && !avoidIds.has(id) && !avoidItems.has(q.item);
+  });
+
+  // Second choice: at least avoid the exact same question.
+  if(index<0){
+    index=bag.findIndex(id=>byId.has(id)&&!avoidIds.has(id));
+  }
+
+  // If the difficulty pool is too small to avoid duplication, take the next
+  // valid entry rather than failing to build a round.
+  if(index<0)index=bag.findIndex(id=>byId.has(id));
+
+  // A stale/empty bag can occur after a database edit. Refill once and retry.
+  if(index<0){
+    refillBag(state,difficulty,pool,avoidIds,avoidItems);
+    bag=state.bags[difficulty];
+    index=bag.findIndex(id=>{
+      const q=byId.get(id);
+      return q && !avoidIds.has(id) && !avoidItems.has(q.item);
+    });
+    if(index<0)index=bag.findIndex(id=>byId.has(id)&&!avoidIds.has(id));
+    if(index<0)index=bag.findIndex(id=>byId.has(id));
+  }
+
+  if(index<0)throw new Error(`Could not draw a ${difficulty} question.`);
+
+  const [id]=bag.splice(index,1);
+  const q=byId.get(id);
+  state.last[difficulty]=id;
+  return q;
+}
+
 function eligiblePool(){
   const approved=FULL.filter(x=>x.status==="Approved"&&x.value!=null&&x.unit);
   const enough=
@@ -299,13 +448,32 @@ function eligiblePool(){
   if(enough||!PROTOTYPE_ALLOW_CANDIDATES)return approved;
   return FULL.filter(x=>x.status!=="Rejected"&&x.value!=null&&x.unit);
 }
+
 function build(){
   const usable=eligiblePool();
-  const easy=usable.filter(x=>x.difficulty==="Easy");
-  const medium=usable.filter(x=>x.difficulty==="Medium");
-  const hard=usable.filter(x=>x.difficulty==="Hard");
-  if(easy.length<1||medium.length<3||hard.length<1)throw new Error("Not enough eligible questions for a 1 Easy + 3 Medium + 1 Hard round.");
-  round=[...pick(easy,1),...pick(medium,3),...pick(hard,1)];
+  const pools={
+    Easy:usable.filter(x=>x.difficulty==="Easy"),
+    Medium:usable.filter(x=>x.difficulty==="Medium"),
+    Hard:usable.filter(x=>x.difficulty==="Hard")
+  };
+  if(pools.Easy.length<1||pools.Medium.length<3||pools.Hard.length<1){
+    throw new Error("Not enough eligible questions for a 1 Easy + 3 Medium + 1 Hard round.");
+  }
+
+  const state=loadBagState();
+  for(const d of DIFFICULTIES)syncBagWithPool(state,d,pools[d]);
+
+  const usedIds=new Set();
+  const usedItems=new Set();
+  const take=difficulty=>{
+    const q=drawFromBag(state,difficulty,pools[difficulty],usedIds,usedItems);
+    usedIds.add(String(q.id));
+    usedItems.add(q.item);
+    return q;
+  };
+
+  round=[take("Easy"),take("Medium"),take("Medium"),take("Medium"),take("Hard")];
+  saveBagState(state);
 }
 function fmt(n){return Number(n).toLocaleString(undefined,{maximumFractionDigits:4})}
 function updateGuessDisplay(){const el=$("guessDisplay");if(!guessText){el.textContent="";el.className="guess-placeholder"}else{el.textContent=guessText+(selectedUnit?" "+selectedUnit:"");el.className="guess-value"}}
