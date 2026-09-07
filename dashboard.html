@@ -65,9 +65,50 @@ th:nth-child(10),td:nth-child(10){width:5%}
 .footer{font-size:.76rem}
 .hidden{display:none!important}
 @media(max-width:700px){h1{font-size:1.6rem}.btn{padding:8px 9px}}
+
+/* Question-length guide:
+   The game can shrink question text to 20px and allows two lines.
+   At a typical iPhone-width game card, that is about 324px of usable text width.
+   This dashboard textarea is a proportional 65% preview: 210px wide at 13px. */
+.question{
+  width:210px !important;
+  max-width:100% !important;
+  height:36px !important;
+  min-height:36px !important;
+  padding:2px 5px !important;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
+  font-size:13px !important;
+  line-height:16px !important;
+  resize:none !important;
+  overflow:hidden !important;
+  white-space:pre-wrap !important;
+}
+.question.too-long{
+  border:2px solid #ff3b30 !important;
+  background:#2a0808 !important;
+  color:#ffd2d2 !important;
+  outline:1px solid #ff3b30 !important;
+}
+#questionMeasure{
+  position:absolute;
+  visibility:hidden;
+  pointer-events:none;
+  left:-10000px;
+  top:-10000px;
+  width:324px;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:20px;
+  line-height:24px;
+  font-weight:700;
+  white-space:normal;
+  overflow-wrap:normal;
+  word-break:normal;
+}
+
 </style>
 </head>
 <body>
+<div id="questionMeasure" aria-hidden="true"></div>
 <main>
 <h1>Yay Big Dashboard</h1>
 <p class="sub">Question database workspace · 1 Easy + 3 Medium + 1 Hard = 1000 max points</p>
@@ -91,7 +132,7 @@ th:nth-child(10),td:nth-child(10){width:5%}
   <select id="difficultyFilter"><option>All difficulties</option><option>Easy</option><option>Medium</option><option>Hard</option></select>
 </div>
 
-<p class="note"><b>Rules:</b> question wording is stored and editable for every item. Renaming an item automatically updates that same item name inside its question wording. One numeric value + one official unit only. Use the unit in which the authoritative measurement is codified, especially when that preserves a clean exact value. Every question kept in the dashboard is treated as approved; remove anything you do not want published.</p>
+<p class="note"><b>Rules:</b> question wording is stored and editable for every item. Renaming an item automatically updates that same item name inside its question wording. One numeric value + one official unit only. Use the unit in which the authoritative measurement is codified, especially when that preserves a clean exact value. Every question kept in the dashboard is treated as approved; remove anything you do not want published. Question boxes represent the game’s two-line text limit; a red box means the wording is too long and should be shortened.</p>
 
 <div class="add">
   <input id="newItem" placeholder="New item">
@@ -266,6 +307,27 @@ async function loadPublished(confirmFirst=false){
     updateDbStatus("Could not load questions.json. Make sure it is beside dashboard.html on GitHub Pages.");
   }
 }
+
+function questionFitsGameTwoLines(text){
+  const m=$("questionMeasure");
+  if(!m)return true;
+  m.textContent=(text||"").trim();
+  // 2 lines × 24px line-height. Width is calibrated to the phone game question area.
+  const maxHeight=48.5;
+  return m.scrollHeight<=maxHeight && m.scrollWidth<=324.5;
+}
+function markQuestionLength(el){
+  if(!el||!el.classList.contains("question"))return;
+  const ok=questionFitsGameTwoLines(el.value);
+  el.classList.toggle("too-long",!ok);
+  el.title=ok
+    ?"Fits the game's two-line question limit."
+    :"Too long: this would exceed two lines in the game, even at the minimum question font size.";
+}
+function markAllQuestionLengths(){
+  document.querySelectorAll("textarea.question").forEach(markQuestionLength);
+}
+
 function render(){
   $("stats").innerHTML=
     `<span class="pill">${items.length} total</span>`+
@@ -281,7 +343,7 @@ function render(){
     <td class="id">${items.indexOf(x)+1}</td>
     <td class="id">${esc(x.id)}</td>
     <td><input class="item" data-k="item" value="${esc(x.item)}"></td>
-    <td><input class="question" data-k="question" value="${esc(x.question)}"></td>
+    <td><textarea class="question" data-k="question" aria-label="Question wording">${esc(x.question)}</textarea></td>
     <td><input class="measure" data-k="measurement" value="${esc(x.measurement)}"></td>
     <td><input type="number" step="any" data-k="value" value="${x.value??""}"></td>
     <td><select data-k="unit"><option value="">—</option>${units.map(u=>`<option value="${u}" ${x.unit===u?"selected":""}>${u}</option>`).join("")}</select></td>
@@ -289,7 +351,11 @@ function render(){
     <td><input class="source" data-k="source" value="${esc(x.source)}"></td>
     <td><button class="delete">Remove</button></td>
   </tr>`).join("");
+  markAllQuestionLengths();
 }
+$("rows").oninput=e=>{
+  if(e.target.classList.contains("question"))markQuestionLength(e.target);
+};
 $("rows").onchange=e=>{
   const tr=e.target.closest("tr"),k=e.target.dataset.k;
   if(!tr||!k)return;
