@@ -1022,3 +1022,81 @@ loadQuestionDatabase();
 }
 </style>
 
+<style>
+/* FINAL VISUAL TWEAKS — larger keypad + outlined unit buttons */
+
+/* Enlarge calculator buttons again now that the logo sizing is settled. */
+#entry{
+  grid-template-rows:auto 8px minmax(0,1fr) !important;
+}
+.keypad{
+  gap:8px !important;
+}
+.key{
+  min-height:46px !important;
+  height:auto !important;
+  max-height:50px !important;
+  font-size:1.55rem !important;
+}
+
+/* Unit buttons: black with light-blue outline/text; solid light blue when selected. */
+.unit-btn{
+  background:#000 !important;
+  color:var(--blue) !important;
+  border:2px solid var(--blue) !important;
+}
+.unit-btn.selected{
+  background:var(--blue) !important;
+  color:#001018 !important;
+  border-color:var(--blue) !important;
+}
+
+@media(max-width:430px){
+  .keypad{
+    gap:7px !important;
+  }
+  .key{
+    min-height:44px !important;
+    max-height:48px !important;
+    font-size:1.5rem !important;
+  }
+}
+@media(max-height:720px){
+  .key{
+    min-height:40px !important;
+    max-height:44px !important;
+    font-size:1.35rem !important;
+  }
+}
+</style>
+
+<style>
+/* FINAL UNIT COLOR TWEAKS — imperial red, metric blue */
+
+/* Make the divider between imperial and metric columns more pronounced. */
+.units::after{
+  width:3px !important;
+  opacity:1 !important;
+  background:#344854 !important;
+}
+
+/* Imperial units: IN, FT, YD, MI */
+.unit-btn[data-unit="in"],
+.unit-btn[data-unit="ft"],
+.unit-btn[data-unit="yd"],
+.unit-btn[data-unit="mi"]{
+  background:#000 !important;
+  color:#ff3b30 !important;
+  border-color:#ff3b30 !important;
+}
+
+.unit-btn[data-unit="in"].selected,
+.unit-btn[data-unit="ft"].selected,
+.unit-btn[data-unit="yd"].selected,
+.unit-btn[data-unit="mi"].selected{
+  background:#ff3b30 !important;
+  color:#000 !important;
+  border-color:#ff3b30 !important;
+}
+</style>
+
