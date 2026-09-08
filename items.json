@@ -1,0 +1,6034 @@
+{
+  "schemaVersion": 2,
+  "database": "Yay Big Items",
+  "items": [
+    {
+      "id": "yb-00001",
+      "item": "U.S. $20 bill",
+      "question": "How long is a U.S. $20 bill?",
+      "measurement": "Length",
+      "value": 6.14,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Currency Education Program"
+    },
+    {
+      "id": "yb-00005",
+      "item": "NBA basketball rim",
+      "question": "What is the inside diameter of an NBA basketball rim?",
+      "measurement": "Inside diameter",
+      "value": 18,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NBA Official Rules"
+    },
+    {
+      "id": "yb-00006",
+      "item": "NBA basketball rim",
+      "question": "How high is an NBA basketball rim above the floor?",
+      "measurement": "Height above floor",
+      "value": 10,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NBA Official Rules"
+    },
+    {
+      "id": "yb-00007",
+      "item": "NBA court",
+      "question": "How long is an NBA court?",
+      "measurement": "Length",
+      "value": 94,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00008",
+      "item": "NBA court",
+      "question": "How wide is an NBA court?",
+      "measurement": "Width",
+      "value": 50,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00009",
+      "item": "NFL field of play",
+      "question": "How long is an NFL field goal-line to goal-line?",
+      "measurement": "Length",
+      "value": 100,
+      "unit": "yd",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00010",
+      "item": "NFL field",
+      "question": "How wide is an NFL field?",
+      "measurement": "Width",
+      "value": 160,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00011",
+      "item": "NFL goalpost crossbar",
+      "question": "How high is the crossbar on an NFL goalpost?",
+      "measurement": "Height",
+      "value": 10,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00012",
+      "item": "Soccer goal",
+      "question": "How wide is a regulation soccer goal?",
+      "measurement": "Width",
+      "value": 7.32,
+      "unit": "m",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00013",
+      "item": "Soccer goal",
+      "question": "How high is a regulation soccer goal?",
+      "measurement": "Height",
+      "value": 2.44,
+      "unit": "m",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00014",
+      "item": "Ice hockey goal",
+      "question": "How wide is a regulation ice hockey goal?",
+      "measurement": "Width",
+      "value": 6,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00015",
+      "item": "Ice hockey goal",
+      "question": "How tall is a regulation ice hockey goal?",
+      "measurement": "Height",
+      "value": 4,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00016",
+      "item": "Baseball home plate",
+      "question": "How wide is the front edge of baseball home plate?",
+      "measurement": "Front edge width",
+      "value": 17,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00017",
+      "item": "MLB base",
+      "question": "How long is one side of an MLB base?",
+      "measurement": "Side length",
+      "value": 18,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00018",
+      "item": "MLB pitching distance",
+      "question": "How far from the MLB pitching rubber to the home plate point?",
+      "measurement": "Rubber to home plate point",
+      "value": 60.5,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00019",
+      "item": "Tennis court",
+      "question": "How long is a regulation tennis court?",
+      "measurement": "Length",
+      "value": 78,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00020",
+      "item": "Tennis singles court",
+      "question": "How wide is a singles tennis court?",
+      "measurement": "Width",
+      "value": 27,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00021",
+      "item": "Tennis doubles court",
+      "question": "How wide is a doubles tennis court?",
+      "measurement": "Width",
+      "value": 36,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00022",
+      "item": "Tennis net",
+      "question": "How high is a tennis net at the center?",
+      "measurement": "Center height",
+      "value": 3,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00023",
+      "item": "Table-tennis table",
+      "question": "How long is a regulation table-tennis table?",
+      "measurement": "Length",
+      "value": 2.74,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00024",
+      "item": "Table-tennis table",
+      "question": "How wide is a regulation table-tennis table?",
+      "measurement": "Width",
+      "value": 1.525,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00025",
+      "item": "Table-tennis table",
+      "question": "How high is a regulation table-tennis table?",
+      "measurement": "Height",
+      "value": 76,
+      "unit": "cm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00026",
+      "item": "Table-tennis net",
+      "question": "How high is a table-tennis net?",
+      "measurement": "Height",
+      "value": 6,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00027",
+      "item": "Men's volleyball net",
+      "question": "How high is a men's volleyball net?",
+      "measurement": "Height",
+      "value": 2.43,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00028",
+      "item": "Women's volleyball net",
+      "question": "How high is a women's volleyball net?",
+      "measurement": "Height",
+      "value": 2.24,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00029",
+      "item": "Olympic long-course pool",
+      "question": "How long is an Olympic long-course swimming pool?",
+      "measurement": "Length",
+      "value": 50,
+      "unit": "m",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00030",
+      "item": "Olympic long-course pool",
+      "question": "How wide is an Olympic long-course swimming pool?",
+      "measurement": "Width",
+      "value": 25,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00031",
+      "item": "Olympic high diving platform",
+      "question": "How high is the highest Olympic diving platform?",
+      "measurement": "Height",
+      "value": 10,
+      "unit": "m",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00032",
+      "item": "Golf hole",
+      "question": "What is the diameter of a regulation golf hole?",
+      "measurement": "Diameter",
+      "value": 4.25,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00033",
+      "item": "Cornhole board",
+      "question": "How long is a regulation cornhole board?",
+      "measurement": "Length",
+      "value": 4,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00034",
+      "item": "Cornhole board",
+      "question": "How wide is a regulation cornhole board?",
+      "measurement": "Width",
+      "value": 2,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00035",
+      "item": "Cornhole hole",
+      "question": "What is the diameter of the hole in a regulation cornhole board?",
+      "measurement": "Diameter",
+      "value": 6,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00036",
+      "item": "Dartboard bullseye",
+      "question": "How high is the center of a regulation dartboard bullseye?",
+      "measurement": "Height from floor",
+      "value": 1.73,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00037",
+      "item": "Pool ball",
+      "question": "What is the diameter of a regulation pool ball?",
+      "measurement": "Diameter",
+      "value": 2.25,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00038",
+      "item": "Poker-size playing card",
+      "question": "What's the short dimension of a poker-size playing card?",
+      "measurement": "Width",
+      "value": 2.5,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00039",
+      "item": "Poker-size playing card",
+      "question": "What's the long dimension of a poker-size playing card?",
+      "measurement": "Height",
+      "value": 3.5,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00040",
+      "item": "Compact Disc",
+      "question": "What is the diameter of a standard compact disc?",
+      "measurement": "Diameter",
+      "value": 120,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00041",
+      "item": "DVD",
+      "question": "What is the diameter of a standard DVD?",
+      "measurement": "Diameter",
+      "value": 120,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00044",
+      "item": "AA battery",
+      "question": "How tall is a AA battery?",
+      "measurement": "Height",
+      "value": 50.5,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00045",
+      "item": "AAA battery",
+      "question": "How tall is a AAA battery?",
+      "measurement": "Height",
+      "value": 44.5,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs authoritative source verification"
+    },
+    {
+      "id": "yb-00058",
+      "item": "Bowling pin",
+      "question": "How tall is a standard U.S. bowling pin?",
+      "measurement": "Height",
+      "value": 15,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Manufacturing tolerances"
+    },
+    {
+      "id": "yb-00059",
+      "item": "Hockey puck",
+      "question": "What is the diameter of a regulation hockey puck?",
+      "measurement": "Diameter",
+      "value": 3,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs exact-rule verification"
+    },
+    {
+      "id": "yb-00060",
+      "item": "Hockey puck",
+      "question": "How thick is a regulation hockey puck?",
+      "measurement": "Thickness",
+      "value": 1,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs exact-rule verification"
+    },
+    {
+      "id": "yb-00061",
+      "item": "U.S. quarter",
+      "question": "What is the diameter of a U.S. quarter?",
+      "measurement": "Diameter",
+      "value": 24.26,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs U.S. Mint verification"
+    },
+    {
+      "id": "yb-00062",
+      "item": "U.S. dime",
+      "question": "What is the diameter of a U.S. dime?",
+      "measurement": "Diameter",
+      "value": 17.91,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs U.S. Mint verification"
+    },
+    {
+      "id": "yb-00063",
+      "item": "U.S. nickel",
+      "question": "What is the diameter of a U.S. nickel?",
+      "measurement": "Diameter",
+      "value": 21.21,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs U.S. Mint verification"
+    },
+    {
+      "id": "yb-00064",
+      "item": "U.S. penny",
+      "question": "What is the diameter of a U.S. penny?",
+      "measurement": "Diameter",
+      "value": 19.05,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs U.S. Mint verification"
+    },
+    {
+      "id": "yb-00065",
+      "item": "U.S. letter paper",
+      "question": "How wide is a sheet of U.S. letter paper?",
+      "measurement": "Width",
+      "value": 8.5,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-00066",
+      "item": "U.S. letter paper",
+      "question": "How long is a sheet of U.S. letter paper?",
+      "measurement": "Length",
+      "value": 11,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-00067",
+      "item": "U.S. legal paper",
+      "question": "How long is a sheet of U.S. legal paper?",
+      "measurement": "Length",
+      "value": 14,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-00068",
+      "item": "Queen mattress",
+      "question": "How wide is a queen-size mattress?",
+      "measurement": "Width",
+      "value": 60,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-00069",
+      "item": "Queen mattress",
+      "question": "How long is a queen-size mattress?",
+      "measurement": "Length",
+      "value": 80,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-00070",
+      "item": "King mattress",
+      "question": "How wide is a king-size mattress?",
+      "measurement": "Width",
+      "value": 76,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-00071",
+      "item": "Twin mattress",
+      "question": "How wide is a twin-size mattress?",
+      "measurement": "Width",
+      "value": 38,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-00072",
+      "item": "2×4 lumber",
+      "question": "What is the actual width of a nominal 2×4 board?",
+      "measurement": "Actual width",
+      "value": 3.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs lumber-standard verification"
+    },
+    {
+      "id": "yb-00073",
+      "item": "2×4 lumber",
+      "question": "What is the actual thickness of a nominal 2×4 board?",
+      "measurement": "Actual thickness",
+      "value": 1.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs lumber-standard verification"
+    },
+    {
+      "id": "yb-00076",
+      "item": "Standard railroad gauge",
+      "question": "How far apart are the rails on standard-gauge railroad track?",
+      "measurement": "Distance between rails",
+      "value": 1435,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs standards verification"
+    },
+    {
+      "id": "yb-00080",
+      "item": "40-ft ISO shipping container",
+      "question": "What is the exterior width of a 40-foot ISO shipping container?",
+      "measurement": "External width",
+      "value": 8,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs ISO verification"
+    },
+    {
+      "id": "yb-00081",
+      "item": "Olympic athletics track",
+      "question": "How long is one lap of an Olympic athletics track in lane 1?",
+      "measurement": "One lap, lane 1",
+      "value": 400,
+      "unit": "m",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs World Athletics verification"
+    },
+    {
+      "id": "yb-00082",
+      "item": "Track lane",
+      "question": "How wide is a standard athletics track lane?",
+      "measurement": "Standard width",
+      "value": 1.22,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs World Athletics verification"
+    },
+    {
+      "id": "yb-00083",
+      "item": "Badminton court",
+      "question": "How long is a regulation badminton court?",
+      "measurement": "Length",
+      "value": 13.4,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs BWF verification"
+    },
+    {
+      "id": "yb-00084",
+      "item": "Badminton doubles court",
+      "question": "How wide is a doubles badminton court?",
+      "measurement": "Width",
+      "value": 6.1,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs BWF verification"
+    },
+    {
+      "id": "yb-00085",
+      "item": "Badminton net",
+      "question": "How high is a badminton net at the posts?",
+      "measurement": "Height at posts",
+      "value": 1.55,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs BWF verification"
+    },
+    {
+      "id": "yb-00086",
+      "item": "Pickleball court",
+      "question": "How long is a regulation pickleball court?",
+      "measurement": "Length",
+      "value": 44,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs USA Pickleball verification"
+    },
+    {
+      "id": "yb-00087",
+      "item": "Pickleball court",
+      "question": "How wide is a regulation pickleball court?",
+      "measurement": "Width",
+      "value": 20,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs USA Pickleball verification"
+    },
+    {
+      "id": "yb-00088",
+      "item": "Pickleball net",
+      "question": "How high is a pickleball net at the center?",
+      "measurement": "Center height",
+      "value": 34,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs USA Pickleball verification"
+    },
+    {
+      "id": "yb-00089",
+      "item": "Snooker table",
+      "question": "How long is the playing area of a regulation snooker table?",
+      "measurement": "Playing area length",
+      "value": 140.5,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs WPBSA verification"
+    },
+    {
+      "id": "yb-00090",
+      "item": "Snooker table",
+      "question": "How wide is the playing area of a regulation snooker table?",
+      "measurement": "Playing area width",
+      "value": 70,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs WPBSA verification"
+    },
+    {
+      "id": "yb-00091",
+      "item": "Soccer penalty mark",
+      "question": "How far is the soccer penalty mark from the goal line?",
+      "measurement": "Distance from goal line",
+      "value": 11,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs IFAB verification"
+    },
+    {
+      "id": "yb-00092",
+      "item": "Soccer goal area",
+      "question": "How far is the soccer goalkeeper's area front line from the goal line?",
+      "measurement": "Depth",
+      "value": 5.5,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs IFAB verification"
+    },
+    {
+      "id": "yb-00093",
+      "item": "Soccer penalty area",
+      "question": "How deep is the soccer penalty area from the goal line?",
+      "measurement": "Depth",
+      "value": 16.5,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs IFAB verification"
+    },
+    {
+      "id": "yb-00094",
+      "item": "Baseball batter's box",
+      "question": "How long is a regulation baseball batter's box?",
+      "measurement": "Length",
+      "value": 6,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs MLB verification"
+    },
+    {
+      "id": "yb-00095",
+      "item": "Baseball batter's box",
+      "question": "How wide is a regulation baseball batter's box?",
+      "measurement": "Width",
+      "value": 4,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs MLB verification"
+    },
+    {
+      "id": "yb-00096",
+      "item": "NBA backboard",
+      "question": "How wide is an NBA backboard?",
+      "measurement": "Width",
+      "value": 6,
+      "unit": "ft",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs NBA verification"
+    },
+    {
+      "id": "yb-00098",
+      "item": "NBA free-throw line",
+      "question": "How far is the NBA free-throw line from the backboard?",
+      "measurement": "Distance from backboard plane",
+      "value": 15,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs NBA verification"
+    },
+    {
+      "id": "yb-00099",
+      "item": "Table-tennis ball",
+      "question": "What is the diameter of a regulation table-tennis ball?",
+      "measurement": "Diameter",
+      "value": 40,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs ITTF exactness verification"
+    },
+    {
+      "id": "yb-00100",
+      "item": "Olympic archery target",
+      "question": "What is the diameter of an Olympic archery target face?",
+      "measurement": "Face diameter",
+      "value": 122,
+      "unit": "cm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Needs World Archery verification"
+    },
+    {
+      "id": "yb-00101",
+      "item": "€5 Europa-series banknote",
+      "question": "What's the long dimension of a €5 Euro banknote?",
+      "measurement": "Length",
+      "value": 120,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-00109",
+      "item": "€100 Europa-series banknote",
+      "question": "What's the long dimension of a €100 Euro banknote?",
+      "measurement": "Length",
+      "value": 147,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "European Central Bank — Europa-series banknote specifications"
+    },
+    {
+      "id": "yb-00113",
+      "item": "Standard-size SD memory card",
+      "question": "What's the long dimension of an SD memory card?",
+      "measurement": "Length",
+      "value": 32,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "SD Association — SD standard form-factor size"
+    },
+    {
+      "id": "yb-00114",
+      "item": "Standard-size SD memory card",
+      "question": "What's the short dimension of an SD memory card?",
+      "measurement": "Width",
+      "value": 24,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "SD Association — SD standard form-factor size"
+    },
+    {
+      "id": "yb-00115",
+      "item": "microSD memory card",
+      "question": "What's the long dimension of a microSD card?",
+      "measurement": "Length",
+      "value": 15,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "SD Association — microSD standard form-factor size"
+    },
+    {
+      "id": "yb-00116",
+      "item": "microSD memory card",
+      "question": "What's the short dimension of a microSD card?",
+      "measurement": "Width",
+      "value": 11,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "SD Association — microSD standard form-factor size"
+    },
+    {
+      "id": "yb-00117",
+      "item": "Apple iPhone 17",
+      "question": "How tall is an Apple iPhone 17?",
+      "measurement": "Height",
+      "value": 149.6,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple — iPhone 17 Technical Specifications"
+    },
+    {
+      "id": "yb-00118",
+      "item": "Apple iPhone 17",
+      "question": "How wide is an Apple iPhone 17?",
+      "measurement": "Width",
+      "value": 71.5,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple — iPhone 17 Technical Specifications"
+    },
+    {
+      "id": "yb-00119",
+      "item": "Apple iPhone 17",
+      "question": "How thick is an Apple iPhone 17?",
+      "measurement": "Depth",
+      "value": 7.95,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple — iPhone 17 Technical Specifications"
+    },
+    {
+      "id": "yb-00124",
+      "item": "Fender Standard Stratocaster",
+      "question": "What is the scale length of a Fender Standard Stratocaster?",
+      "measurement": "Scale length",
+      "value": 25.5,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Fender — Standard Stratocaster specifications"
+    },
+    {
+      "id": "yb-00125",
+      "item": "Gibson Les Paul Standard '50s",
+      "question": "What is the scale length of a Gibson Les Paul Standard?",
+      "measurement": "Scale length",
+      "value": 24.75,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Gibson — Les Paul Standard '50s specifications"
+    },
+    {
+      "id": "yb-00128",
+      "item": "Gateway Arch",
+      "question": "How tall is St. Louis' Gateway Arch?",
+      "measurement": "Height",
+      "value": 630,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — Gateway Arch Fact Sheet"
+    },
+    {
+      "id": "yb-00129",
+      "item": "Gateway Arch",
+      "question": "How wide is St. Louis' Gateway Arch, outer leg to outer leg?",
+      "measurement": "Outer width",
+      "value": 630,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — Gateway Arch Fact Sheet"
+    },
+    {
+      "id": "yb-00130",
+      "item": "Statue of Liberty",
+      "question": "How tall is the Statue of Liberty, ground to tip of the torch?",
+      "measurement": "Ground-to-torch height",
+      "value": 305.0833333333,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — Statue of Liberty Facts; 305 ft 1 in, stored in one unit"
+    },
+    {
+      "id": "yb-00132",
+      "item": "Golden Gate Bridge",
+      "question": "How long is the Golden Gate Bridge span between the towers?",
+      "measurement": "Main span",
+      "value": 4200,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Golden Gate Bridge Highway & Transportation District — Design & Construction Stats"
+    },
+    {
+      "id": "yb-00133",
+      "item": "Space Needle",
+      "question": "How tall is Seattle's Space Needle from ground to aircraft beacon?",
+      "measurement": "Height",
+      "value": 605,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Space Needle — official Facts page"
+    },
+    {
+      "id": "yb-00134",
+      "item": "Saturn V",
+      "question": "How tall was a Saturn V rocket at liftoff?",
+      "measurement": "Height",
+      "value": 363,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA — Saturn V reference"
+    },
+    {
+      "id": "yb-00135",
+      "item": "Saturn V",
+      "question": "What was the diameter of a Saturn V rocket at its base?",
+      "measurement": "Base diameter",
+      "value": 33,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA/Smithsonian National Air and Space Museum — Saturn V dimensions"
+    },
+    {
+      "id": "yb-00136",
+      "item": "U.S. Space Shuttle",
+      "question": "How long is the U.S. Space Shuttle?",
+      "measurement": "Length",
+      "value": 122,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA — The Space Shuttle reference"
+    },
+    {
+      "id": "yb-00137",
+      "item": "U.S. Space Shuttle",
+      "question": "What is the wingspan of the U.S. Space Shuttle?",
+      "measurement": "Wingspan",
+      "value": 78,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA — The Space Shuttle reference"
+    },
+    {
+      "id": "yb-00138",
+      "item": "Hubble Space Telescope",
+      "question": "How long is the Hubble Space Telescope?",
+      "measurement": "Length",
+      "value": 43.5,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA Science — About Hubble"
+    },
+    {
+      "id": "yb-00140",
+      "item": "International Space Station",
+      "question": "How long is the International Space Station end to end?",
+      "measurement": "End-to-end length",
+      "value": 356,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA — International Space Station Facts and Figures"
+    },
+    {
+      "id": "yb-00142",
+      "item": "Crayola regular-size crayon",
+      "question": "How long is a regular-size Crayola crayon?",
+      "measurement": "Length",
+      "value": 3.625,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Crayola — regular-size crayon dimensions"
+    },
+    {
+      "id": "yb-00143",
+      "item": "Crayola regular-size crayon",
+      "question": "What is the diameter of a regular-size Crayola crayon?",
+      "measurement": "Diameter",
+      "value": 0.3125,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Crayola — regular-size crayon dimensions"
+    },
+    {
+      "id": "yb-00144",
+      "item": "Post-it Notes 654",
+      "question": "How wide is a standard Post-it Note 654?",
+      "measurement": "Width",
+      "value": 3,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "3M/Post-it — model 654 product specifications"
+    },
+    {
+      "id": "yb-00145",
+      "item": "Post-it Notes 654",
+      "question": "How tall is a standard Post-it Note 654?",
+      "measurement": "Height",
+      "value": 3,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "3M/Post-it — model 654 product specifications"
+    },
+    {
+      "id": "yb-00146",
+      "item": "VHS cassette",
+      "question": "How wide is a standard VHS cassette?",
+      "measurement": "Width",
+      "value": 187,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "University of Illinois PSAP — VHS cassette physical dimensions"
+    },
+    {
+      "id": "yb-00149",
+      "item": "Airbus A380",
+      "question": "How long is an Airbus A380 airplane?",
+      "measurement": "Length",
+      "value": 73,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Airbus — A380 characteristics"
+    },
+    {
+      "id": "yb-00150",
+      "item": "Airbus A380",
+      "question": "What is the straight-line wingspan of an Airbus A380 airplane?",
+      "measurement": "Wingspan",
+      "value": 79.8,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Airbus — A380 facts and figures"
+    },
+    {
+      "id": "yb-00175",
+      "item": "U.S. half dollar",
+      "question": "What is the diameter of a U.S. half dollar coin?",
+      "measurement": "Diameter",
+      "value": 30.61,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "United States Mint — Coin Specifications"
+    },
+    {
+      "id": "yb-00176",
+      "item": "U.S. dollar coin",
+      "question": "What is the diameter of a current U.S. dollar coin?",
+      "measurement": "Diameter",
+      "value": 26.49,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "United States Mint — Coin Specifications"
+    },
+    {
+      "id": "yb-00178",
+      "item": "Washington Monument",
+      "question": "How tall is the Washington Monument?",
+      "measurement": "Height",
+      "value": 555.4270833333,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — Washington Monument FAQ; 555 ft 5 1/8 in"
+    },
+    {
+      "id": "yb-00179",
+      "item": "Washington Monument",
+      "question": "How wide is the Washington Monument at its base?",
+      "measurement": "Base width",
+      "value": 55,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — Washington Monument FAQ"
+    },
+    {
+      "id": "yb-00182",
+      "item": "Lincoln Memorial statue",
+      "question": "How tall is the seated Lincoln statue in the Lincoln Memorial?",
+      "measurement": "Statue height",
+      "value": 19,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — Lincoln Memorial Building Statistics"
+    },
+    {
+      "id": "yb-00183",
+      "item": "Lincoln Memorial Doric column",
+      "question": "How tall are the Lincoln Memorial's exterior columns?",
+      "measurement": "Column height",
+      "value": 44,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — Lincoln Memorial Building Statistics"
+    },
+    {
+      "id": "yb-00185",
+      "item": "Mount Rushmore — George Washington's head",
+      "question": "How tall is George Washington's head on Mount Rushmore?",
+      "measurement": "Head height",
+      "value": 60,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — Mount Rushmore, How Big Are The Heads?"
+    },
+    {
+      "id": "yb-00200",
+      "item": "Boeing 787-9 Dreamliner",
+      "question": "How long is a Boeing 787-9 Dreamliner airplane?",
+      "measurement": "Length",
+      "value": 62.8,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Boeing — 787 Dreamliner Technical Specifications"
+    },
+    {
+      "id": "yb-00205",
+      "item": "Machine-readable passport",
+      "question": "What's the long dimension of a closed U.S. passport book?",
+      "measurement": "Long dimension",
+      "value": 125,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ICAO Doc 9303 — TD3 passport format"
+    },
+    {
+      "id": "yb-00208",
+      "item": "Compact cassette",
+      "question": "What's the long dimension of a standard cassette tape?",
+      "measurement": "Long dimension",
+      "value": 100.4,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "IEC 60094 / Compact Cassette dimensional standard"
+    },
+    {
+      "id": "yb-00210",
+      "item": "Blu-ray Disc",
+      "question": "How thick is a standard Blu-ray Disc?",
+      "measurement": "Thickness",
+      "value": 1.2,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Blu-ray Disc Association — physical format specification"
+    },
+    {
+      "id": "yb-00216",
+      "item": "ISO shipping container",
+      "question": "What's the external height of a standard ISO shipping container?",
+      "measurement": "External height",
+      "value": 8.5,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ISO 668 — Series 1 freight container dimensions"
+    },
+    {
+      "id": "yb-00217",
+      "item": "ISO high-cube shipping container",
+      "question": "What's the external height of an ISO high-cube shipping container?",
+      "measurement": "External height",
+      "value": 9.5,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ISO 668 — Series 1 freight container dimensions"
+    },
+    {
+      "id": "yb-00218",
+      "item": "U.S. conventional-road STOP sign",
+      "question": "How wide is a standard STOP sign on a conventional U.S. road?",
+      "measurement": "Width",
+      "value": 30,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "FHWA MUTCD Table 2B-1 — R1-1 conventional-road size"
+    },
+    {
+      "id": "yb-00219",
+      "item": "U.S. conventional-road speed-limit sign",
+      "question": "What's the long dimension of a standard U.S. speed-limit sign?",
+      "measurement": "Height",
+      "value": 30,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "FHWA MUTCD Table 2B-1 — R2-1 conventional-road size"
+    },
+    {
+      "id": "yb-00220",
+      "item": "U.S. railroad crossbuck sign",
+      "question": "How long is each full diagonal of a U.S. railroad crossbuck sign?",
+      "measurement": "Blade length",
+      "value": 48,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "FHWA MUTCD — R15-1 crossbuck sign size"
+    },
+    {
+      "id": "yb-00221",
+      "item": "Original Nintendo Game Boy",
+      "question": "What's the long dimension of the original Nintendo Game Boy?",
+      "measurement": "Long dimension",
+      "value": 148,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Nintendo — original Game Boy technical specifications"
+    },
+    {
+      "id": "yb-00223",
+      "item": "Original iPhone (2007)",
+      "question": "What's the long dimension of the original 2007 iPhone?",
+      "measurement": "Long dimension",
+      "value": 115,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple — original iPhone technical specifications"
+    },
+    {
+      "id": "yb-00224",
+      "item": "Original iPhone (2007)",
+      "question": "How thick was the original 2007 iPhone?",
+      "measurement": "Thickness",
+      "value": 11.6,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple — original iPhone technical specifications"
+    },
+    {
+      "id": "yb-00225",
+      "item": "First-generation iPod",
+      "question": "What's the long dimension of the first-generation iPod?",
+      "measurement": "Long dimension",
+      "value": 4.02,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple — original iPod technical specifications"
+    },
+    {
+      "id": "yb-00226",
+      "item": "First-generation iPod",
+      "question": "How thick was the first-generation iPod?",
+      "measurement": "Thickness",
+      "value": 0.78,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple — original iPod technical specifications"
+    },
+    {
+      "id": "yb-00227",
+      "item": "First-generation iPad",
+      "question": "What's the long dimension of the first-generation iPad?",
+      "measurement": "Long dimension",
+      "value": 9.56,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple — iPad (1st generation) technical specifications"
+    },
+    {
+      "id": "yb-00228",
+      "item": "First-generation iPad",
+      "question": "How thick was the first-generation iPad?",
+      "measurement": "Thickness",
+      "value": 0.5,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple — iPad (1st generation) technical specifications"
+    },
+    {
+      "id": "yb-00232",
+      "item": "Rubik's Cube",
+      "question": "How long is one edge of the classic Rubik's Cube?",
+      "measurement": "Edge length",
+      "value": 57,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Rubik's — classic 3×3 Cube product specification"
+    },
+    {
+      "id": "yb-00233",
+      "item": "LEGO 2×4 brick",
+      "question": "What's the long dimension of a standard LEGO 2×4 brick?",
+      "measurement": "Long dimension",
+      "value": 31.8,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "LEGO System brick dimensional standard"
+    },
+    {
+      "id": "yb-00234",
+      "item": "LEGO 2×4 brick",
+      "question": "How tall is a standard LEGO brick without the studs?",
+      "measurement": "Body height",
+      "value": 9.6,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "LEGO System brick dimensional standard"
+    },
+    {
+      "id": "yb-00237",
+      "item": "Shure SM58 microphone",
+      "question": "How long is a Shure SM58 microphone?",
+      "measurement": "Length",
+      "value": 162,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Shure — SM58 product specifications"
+    },
+    {
+      "id": "yb-00238",
+      "item": "Zippo classic lighter",
+      "question": "How tall is a classic Zippo windproof lighter?",
+      "measurement": "Height",
+      "value": 2.25,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Zippo — classic case dimensions"
+    },
+    {
+      "id": "yb-00239",
+      "item": "Victorinox Classic SD Swiss Army Knife",
+      "question": "How long is a Victorinox Classic SD Swiss Army knife when closed?",
+      "measurement": "Closed length",
+      "value": 58,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Victorinox — Classic SD product specifications"
+    },
+    {
+      "id": "yb-00241",
+      "item": "Eiffel Tower",
+      "question": "How tall is the Eiffel Tower to the top of its antenna?",
+      "measurement": "Height",
+      "value": 1083,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Official Eiffel Tower site — key figures"
+    },
+    {
+      "id": "yb-00242",
+      "item": "CN Tower",
+      "question": "How tall is Toronto's CN Tower?",
+      "measurement": "Height",
+      "value": 553.33,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "CN Tower — official facts"
+    },
+    {
+      "id": "yb-00243",
+      "item": "Chrysler Building",
+      "question": "How tall is NYC's Chrysler Building including its spire?",
+      "measurement": "Height",
+      "value": 1048,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Chrysler Building — official history"
+    },
+    {
+      "id": "yb-00244",
+      "item": "Empire State Building",
+      "question": "How tall is the Empire State Building to the tip of its antenna?",
+      "measurement": "Height",
+      "value": 1454,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Empire State Building — official building facts"
+    },
+    {
+      "id": "yb-00245",
+      "item": "One World Trade Center",
+      "question": "How tall is NYC's One World Trade Center to its architectural top?",
+      "measurement": "Height",
+      "value": 1776,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "One World Trade Center — official building facts"
+    },
+    {
+      "id": "yb-00246",
+      "item": "Burj Khalifa",
+      "question": "How tall is Dubai's Burj Khalifa?",
+      "measurement": "Height",
+      "value": 828,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Burj Khalifa — official facts"
+    },
+    {
+      "id": "yb-00247",
+      "item": "Hoover Dam",
+      "question": "How tall is Hoover Dam from foundation rock to its crest?",
+      "measurement": "Structural height",
+      "value": 726.4,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Bureau of Reclamation — Hoover Dam dimensions"
+    },
+    {
+      "id": "yb-00248",
+      "item": "Hoover Dam",
+      "question": "How long is Hoover Dam along its crest?",
+      "measurement": "Crest length",
+      "value": 1244,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Bureau of Reclamation — Hoover Dam dimensions"
+    },
+    {
+      "id": "yb-00249",
+      "item": "Brooklyn Bridge",
+      "question": "How long is the main span of the Brooklyn Bridge?",
+      "measurement": "Main span",
+      "value": 1595.5,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NYC DOT / National Historic Landmark documentation — Brooklyn Bridge dimensions"
+    },
+    {
+      "id": "yb-00250",
+      "item": "Elizabeth Tower (Big Ben)",
+      "question": "How tall is London's Elizabeth Tower, home of Big Ben?",
+      "measurement": "Height",
+      "value": 96,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "UK Parliament — Elizabeth Tower facts"
+    },
+    {
+      "id": "yb-00253",
+      "item": "Devils Tower National Monument",
+      "question": "How tall is Wyoming's Devils Tower from base to summit?",
+      "measurement": "Height",
+      "value": 867,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — Devils Tower dimensions"
+    },
+    {
+      "id": "yb-00254",
+      "item": "Liberty Bell",
+      "question": "How tall is the Liberty Bell from lip to crown?",
+      "measurement": "Lip-to-crown height",
+      "value": 3,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "National Park Service — Liberty Bell measurements"
+    },
+    {
+      "id": "yb-00256",
+      "item": "Mount Rushmore — Abraham Lincoln's head",
+      "question": "How tall is Abraham Lincoln's head on Mount Rushmore?",
+      "measurement": "Head height",
+      "value": 60,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — Mount Rushmore head dimensions"
+    },
+    {
+      "id": "yb-00257",
+      "item": "Alcatraz lighthouse",
+      "question": "How tall is the Alcatraz lighthouse tower?",
+      "measurement": "Tower height",
+      "value": 84,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — Alcatraz lighthouse facts"
+    },
+    {
+      "id": "yb-00259",
+      "item": "Arc de Triomphe",
+      "question": "How tall is the Arc de Triomphe in Paris?",
+      "measurement": "Height",
+      "value": 49.54,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Centre des monuments nationaux — Arc de Triomphe dimensions"
+    },
+    {
+      "id": "yb-00260",
+      "item": "Leaning Tower of Pisa",
+      "question": "How tall is the Leaning Tower of Pisa on its higher side?",
+      "measurement": "Height",
+      "value": 56.67,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Opera della Primaziale Pisana — Tower of Pisa dimensions"
+    },
+    {
+      "id": "yb-00261",
+      "item": "Mona Lisa",
+      "question": "What's the long dimension of Leonardo da Vinci's Mona Lisa?",
+      "measurement": "Long dimension",
+      "value": 77,
+      "unit": "cm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Musée du Louvre — Mona Lisa dimensions"
+    },
+    {
+      "id": "yb-00262",
+      "item": "The Starry Night",
+      "question": "What's the long dimension of Van Gogh's The Starry Night?",
+      "measurement": "Long dimension",
+      "value": 92.1,
+      "unit": "cm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Museum of Modern Art — The Starry Night dimensions"
+    },
+    {
+      "id": "yb-00263",
+      "item": "Venus de Milo",
+      "question": "How tall is the Venus de Milo?",
+      "measurement": "Height",
+      "value": 204,
+      "unit": "cm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Musée du Louvre — Venus de Milo collection record"
+    },
+    {
+      "id": "yb-00266",
+      "item": "Hope Diamond",
+      "question": "What's the long dimension of the Hope Diamond?",
+      "measurement": "Length",
+      "value": 25.6,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Smithsonian Institution — Hope Diamond data"
+    },
+    {
+      "id": "yb-00268",
+      "item": "Michelangelo's David",
+      "question": "How tall is Michelangelo's David, excluding its pedestal?",
+      "measurement": "Height",
+      "value": 5.17,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Galleria dell'Accademia di Firenze — David dimensions"
+    },
+    {
+      "id": "yb-00269",
+      "item": "The Thinker at Musée Rodin",
+      "question": "How tall is Rodin's statue The Thinker?",
+      "measurement": "Height",
+      "value": 180,
+      "unit": "cm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Musée Rodin — monumental Thinker dimensions"
+    },
+    {
+      "id": "yb-00271",
+      "item": "1903 Wright Flyer",
+      "question": "What was the wingspan of the Wright Bros. 1903 Wright Flyer?",
+      "measurement": "Wingspan",
+      "value": 40.3333333333,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Smithsonian National Air and Space Museum — 1903 Wright Flyer dimensions; 40 ft 4 in"
+    },
+    {
+      "id": "yb-00272",
+      "item": "Spirit of St. Louis",
+      "question": "What was the wingspan of Lindbergh's Spirit of St. Louis?",
+      "measurement": "Wingspan",
+      "value": 46,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Smithsonian National Air and Space Museum — Spirit of St. Louis dimensions"
+    },
+    {
+      "id": "yb-00273",
+      "item": "Apollo command module",
+      "question": "What is the base diameter of an Apollo command module?",
+      "measurement": "Base diameter",
+      "value": 12.8333333333,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA History — Apollo spacecraft dimensions; 12 ft 10 in"
+    },
+    {
+      "id": "yb-00274",
+      "item": "Apollo lunar module",
+      "question": "How wide was an Apollo lunar module across its landing gear?",
+      "measurement": "Landing-gear span",
+      "value": 31,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA History — Apollo spacecraft dimensions"
+    },
+    {
+      "id": "yb-00278",
+      "item": "B-2 Spirit",
+      "question": "What is the wingspan of a B-2 Spirit stealth bomber?",
+      "measurement": "Wingspan",
+      "value": 172,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Air Force — B-2 Spirit fact sheet"
+    },
+    {
+      "id": "yb-00279",
+      "item": "B-52H Stratofortress",
+      "question": "What is the wingspan of a B-52H Stratofortress?",
+      "measurement": "Wingspan",
+      "value": 185,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Air Force — B-52H fact sheet"
+    },
+    {
+      "id": "yb-00280",
+      "item": "SR-71 Blackbird",
+      "question": "How long is an SR-71 Blackbird?",
+      "measurement": "Length",
+      "value": 107.4166666667,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Air Force / Lockheed Martin — SR-71 dimensions; 107 ft 5 in"
+    },
+    {
+      "id": "yb-00281",
+      "item": "Boeing 747-8 Intercontinental",
+      "question": "How long is a Boeing 747-8 Intercontinental?",
+      "measurement": "Length",
+      "value": 76.3,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Boeing — 747-8 airplane characteristics"
+    },
+    {
+      "id": "yb-00282",
+      "item": "Concorde",
+      "question": "How long is a Concorde supersonic airliner?",
+      "measurement": "Length",
+      "value": 61.66,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Airbus heritage / British Airways — Concorde dimensions"
+    },
+    {
+      "id": "yb-00283",
+      "item": "USS Gerald R. Ford",
+      "question": "How long is the aircraft carrier USS Gerald R. Ford?",
+      "measurement": "Length",
+      "value": 1092,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Navy — Gerald R. Ford-class fact file"
+    },
+    {
+      "id": "yb-00284",
+      "item": "USS Constitution",
+      "question": "How long is USS Constitution ship from billet head to taffrail?",
+      "measurement": "Length",
+      "value": 204,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "USS Constitution Museum / U.S. Navy — ship dimensions"
+    },
+    {
+      "id": "yb-00285",
+      "item": "RMS Titanic",
+      "question": "How long was RMS Titanic?",
+      "measurement": "Length",
+      "value": 882.75,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Titanic Belfast / Harland & Wolff historical specifications"
+    },
+    {
+      "id": "yb-00286",
+      "item": "1965 Ford Mustang",
+      "question": "How long is a 1965 Ford Mustang?",
+      "measurement": "Overall length",
+      "value": 181.6,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Ford historical specifications — 1965 Mustang"
+    },
+    {
+      "id": "yb-00287",
+      "item": "Ford Model T",
+      "question": "What is the wheelbase of a Ford Model T?",
+      "measurement": "Wheelbase",
+      "value": 100,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Ford Heritage — Model T specifications"
+    },
+    {
+      "id": "yb-00288",
+      "item": "Volkswagen Beetle Type 1",
+      "question": "How long is a classic Volkswagen Beetle Type 1?",
+      "measurement": "Overall length",
+      "value": 4.07,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Volkswagen heritage specifications — Type 1"
+    },
+    {
+      "id": "yb-00289",
+      "item": "1959 Mini",
+      "question": "How long is an original 1959 Mini?",
+      "measurement": "Overall length",
+      "value": 3.05,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "British Motor Museum / MINI heritage specifications"
+    },
+    {
+      "id": "yb-00290",
+      "item": "DeLorean DMC-12",
+      "question": "How long is a DeLorean DMC-12?",
+      "measurement": "Overall length",
+      "value": 4.267,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "DeLorean Motor Company historical specifications"
+    },
+    {
+      "id": "yb-00291",
+      "item": "Tesla Cybertruck",
+      "question": "How long is a Tesla Cybertruck?",
+      "measurement": "Overall length",
+      "value": 5682.9,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Tesla Cybertruck Owner's Manual — exterior dimensions"
+    },
+    {
+      "id": "yb-00292",
+      "item": "Volkswagen Type 2 Microbus",
+      "question": "How long is a first-generation Volkswagen Type 2 Microbus?",
+      "measurement": "Overall length",
+      "value": 4.28,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Volkswagen heritage — Type 2 dimensions"
+    },
+    {
+      "id": "yb-00294",
+      "item": "New York City R160 subway car",
+      "question": "How long is one standard R160 New York City subway car?",
+      "measurement": "Car length",
+      "value": 60.21,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "MTA New York City Transit — R160 car specifications"
+    },
+    {
+      "id": "yb-00300",
+      "item": "Hollywood Sign",
+      "question": "How tall is each letter of the Hollywood Sign?",
+      "measurement": "Letter height",
+      "value": 45,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Hollywood Sign Trust — official sign facts"
+    },
+    {
+      "id": "yb-00305",
+      "item": "Queen Mary 2",
+      "question": "How long is the ocean liner Queen Mary 2?",
+      "measurement": "Length",
+      "value": 1132,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Cunard — Queen Mary 2 ship facts"
+    },
+    {
+      "id": "yb-00306",
+      "item": "Stonehenge Stone 56",
+      "question": "How long is Stonehenge's tallest standing stone, incl buried rock?",
+      "measurement": "Total length",
+      "value": 8.71,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "English Heritage — Stonehenge facts"
+    },
+    {
+      "id": "yb-00307",
+      "item": "Boeing 737-800",
+      "question": "How long is a Boeing 737-800?",
+      "measurement": "Length",
+      "value": 39.5,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Boeing — 737NG Design Highlights"
+    },
+    {
+      "id": "yb-00308",
+      "item": "Airbus BelugaXL",
+      "question": "How long is an Airbus BelugaXL?",
+      "measurement": "Length",
+      "value": 63,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Airbus — BelugaXL specifications"
+    },
+    {
+      "id": "yb-00309",
+      "item": "C-5M Super Galaxy",
+      "question": "What is the wingspan of a C-5M Super Galaxy?",
+      "measurement": "Wingspan",
+      "value": 222.75,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Air Force — C-5M Super Galaxy Fact Sheet"
+    },
+    {
+      "id": "yb-00310",
+      "item": "C-130 Hercules",
+      "question": "What is the wingspan of a C-130 Hercules?",
+      "measurement": "Wingspan",
+      "value": 132.5833333333,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Air Force — C-130 Fact Sheet"
+    },
+    {
+      "id": "yb-00312",
+      "item": "F-22 Raptor",
+      "question": "What is the wingspan of an F-22 Raptor?",
+      "measurement": "Wingspan",
+      "value": 44.5,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Air Force — F-22 Raptor Fact Sheet"
+    },
+    {
+      "id": "yb-00313",
+      "item": "F-35A Lightning II",
+      "question": "How long is an F-35A Lightning II?",
+      "measurement": "Length",
+      "value": 51.4,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Lockheed Martin — F-35A specifications"
+    },
+    {
+      "id": "yb-00314",
+      "item": "A-10 Thunderbolt II",
+      "question": "What is the wingspan of an A-10 Thunderbolt II?",
+      "measurement": "Wingspan",
+      "value": 57.5,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Air Force — A-10 Thunderbolt II Fact Sheet"
+    },
+    {
+      "id": "yb-00315",
+      "item": "Bell X-1",
+      "question": "How long was the Bell X-1 rocket plane?",
+      "measurement": "Length",
+      "value": 31,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Smithsonian National Air and Space Museum — Bell X-1 dimensions"
+    },
+    {
+      "id": "yb-00317",
+      "item": "Lockheed U-2",
+      "question": "What is the wingspan of a U-2 reconnaissance plane?",
+      "measurement": "Wingspan",
+      "value": 105,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Air Force — U-2 Fact Sheet"
+    },
+    {
+      "id": "yb-00318",
+      "item": "Boeing B-29 Enola Gay",
+      "question": "What was the wingspan of the Enola Gay B-29?",
+      "measurement": "Wingspan",
+      "value": 141.25,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Smithsonian National Air and Space Museum — Enola Gay dimensions"
+    },
+    {
+      "id": "yb-00320",
+      "item": "Lockheed Vega 5B",
+      "question": "What was the wingspan of Amelia Earhart's Lockheed Vega 5B?",
+      "measurement": "Wingspan",
+      "value": 41,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Smithsonian National Air and Space Museum — Lockheed Vega 5B dimensions"
+    },
+    {
+      "id": "yb-00334",
+      "item": "Space Shuttle external tank",
+      "question": "How long was a Space Shuttle external fuel tank?",
+      "measurement": "Length",
+      "value": 153.8,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA — Space Shuttle external tank facts"
+    },
+    {
+      "id": "yb-00335",
+      "item": "Space Shuttle solid rocket booster",
+      "question": "How long was a Space Shuttle solid rocket booster?",
+      "measurement": "Length",
+      "value": 149.2,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA — Space Shuttle solid rocket booster facts"
+    },
+    {
+      "id": "yb-00344",
+      "item": "Supreme Court Building",
+      "question": "How tall is the U.S. Supreme Court Building?",
+      "measurement": "Height",
+      "value": 92,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Supreme Court of the United States — Building Features"
+    },
+    {
+      "id": "yb-00345",
+      "item": "Pentagon",
+      "question": "How long is one exterior side of the Pentagon?",
+      "measurement": "Side length",
+      "value": 921,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Department of Defense — Pentagon facts"
+    },
+    {
+      "id": "yb-00346",
+      "item": "Independence Hall",
+      "question": "How tall is Philly's Independence Hall to the top of its steeple?",
+      "measurement": "Height",
+      "value": 168.5833333333,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — Independence Hall facts"
+    },
+    {
+      "id": "yb-00347",
+      "item": "Bunker Hill Monument",
+      "question": "How tall is the Boston's Bunker Hill Monument?",
+      "measurement": "Height",
+      "value": 221,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — Bunker Hill Monument facts"
+    },
+    {
+      "id": "yb-00350",
+      "item": "Christ the Redeemer",
+      "question": "How tall is Rio's Christ the Redeemer statue (incl pedestal)?",
+      "measurement": "Total height",
+      "value": 38,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Sanctuary of Christ the Redeemer — monument facts"
+    },
+    {
+      "id": "yb-00351",
+      "item": "Great Pyramid of Giza",
+      "question": "How long is one side of Egypt's Great Pyramid's base?",
+      "measurement": "Base side",
+      "value": 230.33,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "UNESCO / Egyptian Ministry of Tourism and Antiquities — Great Pyramid dimensions"
+    },
+    {
+      "id": "yb-00352",
+      "item": "Great Sphinx of Giza",
+      "question": "How long is the Great Sphinx of Giza?",
+      "measurement": "Length",
+      "value": 73.5,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Egyptian Ministry of Tourism and Antiquities — Great Sphinx dimensions"
+    },
+    {
+      "id": "yb-00353",
+      "item": "Colosseum",
+      "question": "What's the long dimension of Rome's Colosseum?",
+      "measurement": "Long axis",
+      "value": 189,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Parco archeologico del Colosseo — Colosseum dimensions"
+    },
+    {
+      "id": "yb-00357",
+      "item": "Louvre Pyramid",
+      "question": "How tall is Paris' Louvre Pyramid?",
+      "measurement": "Height",
+      "value": 21.64,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Musée du Louvre — Pyramid facts"
+    },
+    {
+      "id": "yb-00358",
+      "item": "Notre-Dame de Paris",
+      "question": "How tall are Notre-Dame de Paris' two western towers?",
+      "measurement": "Tower height",
+      "value": 69,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Cathédrale Notre-Dame de Paris — architecture facts"
+    },
+    {
+      "id": "yb-00359",
+      "item": "Tower Bridge",
+      "question": "How long is London's Tower Bridge?",
+      "measurement": "Length",
+      "value": 244,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "City of London — Tower Bridge facts"
+    },
+    {
+      "id": "yb-00360",
+      "item": "Golden Gate Bridge tower",
+      "question": "How tall is a Golden Gate Bridge tower above the water?",
+      "measurement": "Tower height",
+      "value": 746,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Golden Gate Bridge Highway & Transportation District — Bridge Facts"
+    },
+    {
+      "id": "yb-00361",
+      "item": "Mackinac Bridge",
+      "question": "How long is suspension portion of the Michigan's Mackinac Bridge?",
+      "measurement": "Length",
+      "value": 8614,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Mackinac Bridge Authority — bridge facts"
+    },
+    {
+      "id": "yb-00362",
+      "item": "George Washington Bridge",
+      "question": "How long is the main span of NYC's George Washington Bridge?",
+      "measurement": "Main span",
+      "value": 3500,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Port Authority of New York and New Jersey — bridge facts"
+    },
+    {
+      "id": "yb-00364",
+      "item": "Channel Tunnel",
+      "question": "How long is the Channel Tunnel (France/England)?",
+      "measurement": "Length",
+      "value": 50.45,
+      "unit": "km",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Getlink — Channel Tunnel key figures"
+    },
+    {
+      "id": "yb-00365",
+      "item": "Gotthard Base Tunnel",
+      "question": "How long is Switzerland's Gotthard Base Tunnel?",
+      "measurement": "Length",
+      "value": 57.1,
+      "unit": "km",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Swiss Federal Railways — Gotthard Base Tunnel facts"
+    },
+    {
+      "id": "yb-00366",
+      "item": "Panama Canal lock chamber",
+      "question": "How long is a chamber in the original Panama Canal locks?",
+      "measurement": "Usable length",
+      "value": 1000,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Panama Canal Authority — original lock dimensions"
+    },
+    {
+      "id": "yb-00367",
+      "item": "USS Missouri",
+      "question": "How long is the battleship USS Missouri?",
+      "measurement": "Length",
+      "value": 887.25,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Naval History and Heritage Command — USS Missouri characteristics"
+    },
+    {
+      "id": "yb-00368",
+      "item": "USS Arizona",
+      "question": "How long was the battleship USS Arizona?",
+      "measurement": "Length",
+      "value": 608,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. National Park Service — USS Arizona facts"
+    },
+    {
+      "id": "yb-00369",
+      "item": "USS Nautilus",
+      "question": "How long is the nuclear submarine USS Nautilus?",
+      "measurement": "Length",
+      "value": 319,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Naval History and Heritage Command — USS Nautilus characteristics"
+    },
+    {
+      "id": "yb-00370",
+      "item": "USS Enterprise CVN-65",
+      "question": "How long was the aircraft carrier USS Enterprise?",
+      "measurement": "Length",
+      "value": 1123,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Navy — USS Enterprise characteristics"
+    },
+    {
+      "id": "yb-00371",
+      "item": "HMS Victory",
+      "question": "How long is HMS Victory on the gun deck?",
+      "measurement": "Gun-deck length",
+      "value": 186,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "National Museum of the Royal Navy — HMS Victory specifications"
+    },
+    {
+      "id": "yb-00372",
+      "item": "Cutty Sark",
+      "question": "How long is the Cutty Sark's hull?",
+      "measurement": "Hull length",
+      "value": 212.5,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Royal Museums Greenwich — Cutty Sark facts"
+    },
+    {
+      "id": "yb-00375",
+      "item": "Union Pacific Big Boy 4014",
+      "question": "How long is Big Boy locomotive No. 4014 with its tender?",
+      "measurement": "Length",
+      "value": 132.75,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Union Pacific — Big Boy No. 4014 facts"
+    },
+    {
+      "id": "yb-00380",
+      "item": "1957 Chevrolet Bel Air",
+      "question": "How long is a 1957 Chevrolet Bel Air?",
+      "measurement": "Overall length",
+      "value": 200,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "GM Heritage Center — 1957 Chevrolet specifications"
+    },
+    {
+      "id": "yb-00381",
+      "item": "1963 Chevrolet Corvette Sting Ray",
+      "question": "How long is a 1963 Corvette Sting Ray?",
+      "measurement": "Overall length",
+      "value": 175.3,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "GM Heritage Center — 1963 Corvette specifications"
+    },
+    {
+      "id": "yb-00382",
+      "item": "1961 Jaguar E-Type",
+      "question": "How long is a 1961 Jaguar E-Type roadster?",
+      "measurement": "Overall length",
+      "value": 175.3,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Jaguar Daimler Heritage Trust — E-Type specifications"
+    },
+    {
+      "id": "yb-00383",
+      "item": "Porsche 911 (1964)",
+      "question": "How long was the original 1964 Porsche 911?",
+      "measurement": "Overall length",
+      "value": 4163,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Porsche Museum — original 911 specifications"
+    },
+    {
+      "id": "yb-00385",
+      "item": "Fiat 500 (1957)",
+      "question": "How long was the original 1957 Fiat 500?",
+      "measurement": "Overall length",
+      "value": 2.97,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Stellantis Heritage — Fiat 500 specifications"
+    },
+    {
+      "id": "yb-00386",
+      "item": "Lamborghini Countach LP400",
+      "question": "How long is a Lamborghini Countach LP400?",
+      "measurement": "Overall length",
+      "value": 4.14,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Lamborghini — Countach LP400 technical data"
+    },
+    {
+      "id": "yb-00387",
+      "item": "Ferrari F40",
+      "question": "How long is a Ferrari F40?",
+      "measurement": "Overall length",
+      "value": 4430,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Ferrari — F40 technical specifications"
+    },
+    {
+      "id": "yb-00388",
+      "item": "McLaren F1",
+      "question": "How long is a McLaren F1 road car?",
+      "measurement": "Overall length",
+      "value": 4.287,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "McLaren Automotive — F1 specifications"
+    },
+    {
+      "id": "yb-00389",
+      "item": "Jeep Willys MB",
+      "question": "How long is a WW2 Willys MB Jeep?",
+      "measurement": "Overall length",
+      "value": 132.25,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Army / Smithsonian — Willys MB specifications"
+    },
+    {
+      "id": "yb-00391",
+      "item": "Oscar statuette",
+      "question": "How tall is an Academy Award Oscar statuette?",
+      "measurement": "Height",
+      "value": 13.5,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Academy of Motion Picture Arts and Sciences — Oscar statuette facts"
+    },
+    {
+      "id": "yb-00392",
+      "item": "Emmy statuette",
+      "question": "How tall is a Primetime Emmy statuette?",
+      "measurement": "Height",
+      "value": 15.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Television Academy — Emmy statuette facts"
+    },
+    {
+      "id": "yb-00393",
+      "item": "Grammy trophy",
+      "question": "How tall is a Grammy trophy?",
+      "measurement": "Height",
+      "value": 8.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Recording Academy — Grammy trophy facts"
+    },
+    {
+      "id": "yb-00394",
+      "item": "Pulitzer Prize medal",
+      "question": "What is the diameter of a Pulitzer Prize medal?",
+      "measurement": "Diameter",
+      "value": 2.75,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Pulitzer Prizes — medal specifications"
+    },
+    {
+      "id": "yb-00395",
+      "item": "Nobel Prize medal",
+      "question": "What is the diameter of a Nobel Prize medal?",
+      "measurement": "Diameter",
+      "value": 66,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Nobel Prize Museum — medal specifications"
+    },
+    {
+      "id": "yb-00401",
+      "item": "Vince Lombardi Trophy",
+      "question": "How tall is the Super Bowl's Vince Lombardi Trophy?",
+      "measurement": "Height",
+      "value": 20.75,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Pro Football Hall of Fame"
+    },
+    {
+      "id": "yb-00402",
+      "item": "Stanley Cup",
+      "question": "How tall is the NHL's Stanley Cup?",
+      "measurement": "Height",
+      "value": 35.25,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NHL"
+    },
+    {
+      "id": "yb-00403",
+      "item": "FIFA World Cup Trophy",
+      "question": "How tall is the FIFA World Cup Trophy?",
+      "measurement": "Height",
+      "value": 36.8,
+      "unit": "cm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "FIFA"
+    },
+    {
+      "id": "yb-00404",
+      "item": "MLB Commissioner's Trophy",
+      "question": "How tall is the MLB World Series Commissioner's Trophy?",
+      "measurement": "Height",
+      "value": 24,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "MLB"
+    },
+    {
+      "id": "yb-00405",
+      "item": "MLB Commissioner's Trophy",
+      "question": "What is the diameter of the World Series trophy?",
+      "measurement": "Diameter",
+      "value": 11,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "BadItem",
+      "regionTags": [],
+      "source": "MLB"
+    },
+    {
+      "id": "yb-00406",
+      "item": "Larry O'Brien Trophy",
+      "question": "How tall is the NBA's Larry O'Brien Trophy?",
+      "measurement": "Height",
+      "value": 25.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NBA"
+    },
+    {
+      "id": "yb-00407",
+      "item": "Heisman Trophy",
+      "question": "How tall is college football's Heisman Trophy?",
+      "measurement": "Height",
+      "value": 13,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Heisman Trophy Trust"
+    },
+    {
+      "id": "yb-00408",
+      "item": "Heisman Trophy",
+      "question": "How long is the Heisman Trophy?",
+      "measurement": "Length",
+      "value": 14,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "BadItem",
+      "regionTags": [],
+      "source": "Heisman Trophy Trust"
+    },
+    {
+      "id": "yb-00409",
+      "item": "Heisman Trophy",
+      "question": "How wide is the Heisman Trophy?",
+      "measurement": "Width",
+      "value": 6,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "BadItem",
+      "regionTags": [],
+      "source": "Heisman Trophy Trust"
+    },
+    {
+      "id": "yb-00410",
+      "item": "Wimbledon men's singles trophy",
+      "question": "How tall is the Wimbledon men's singles trophy?",
+      "measurement": "Height",
+      "value": 17.5,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Wimbledon"
+    },
+    {
+      "id": "yb-00411",
+      "item": "U.S. Open golf trophy",
+      "question": "How tall is the U.S. Open golf trophy?",
+      "measurement": "Height",
+      "value": 18,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "USGA"
+    },
+    {
+      "id": "yb-00412",
+      "item": "Paris 2024 Olympic medal",
+      "question": "What is the diameter of a Paris 2024 Olympic medal?",
+      "measurement": "Diameter",
+      "value": 85,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "IOC / Paris 2024"
+    },
+    {
+      "id": "yb-00413",
+      "item": "Paris 2024 Olympic medal",
+      "question": "How thick is a Paris 2024 Olympic medal?",
+      "measurement": "Thickness",
+      "value": 9.2,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "IOC / Paris 2024"
+    },
+    {
+      "id": "yb-00414",
+      "item": "Oscar statuette",
+      "question": "What is the diameter of an Oscar statuette's base?",
+      "measurement": "Base diameter",
+      "value": 5.25,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Academy of Motion Picture Arts and Sciences"
+    },
+    {
+      "id": "yb-00415",
+      "item": "FIFA Women's World Cup Trophy",
+      "question": "How tall is the FIFA Women's World Cup Trophy?",
+      "measurement": "Height",
+      "value": 47,
+      "unit": "cm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "FIFA"
+    },
+    {
+      "id": "yb-00416",
+      "item": "UEFA Champions League trophy",
+      "question": "How tall is the UEFA Champions League trophy?",
+      "measurement": "Height",
+      "value": 73.5,
+      "unit": "cm",
+      "difficulty": "Medium",
+      "status": "Keep",
+      "regionTags": [
+        "Unassigned"
+      ],
+      "source": "UEFA"
+    },
+    {
+      "id": "yb-00417",
+      "item": "UEFA Europa League trophy",
+      "question": "How tall is the UEFA Europa League trophy?",
+      "measurement": "Height",
+      "value": 65,
+      "unit": "cm",
+      "difficulty": "Hard",
+      "status": "Keep",
+      "regionTags": [
+        "Unassigned"
+      ],
+      "source": "UEFA"
+    },
+    {
+      "id": "yb-00418",
+      "item": "Borg-Warner Trophy",
+      "question": "How tall is the Indianapolis 500's Borg-Warner Trophy?",
+      "measurement": "Height",
+      "value": 64.75,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Indianapolis Motor Speedway"
+    },
+    {
+      "id": "yb-00419",
+      "item": "Claret Jug",
+      "question": "How tall is golf's Open Championship Claret Jug?",
+      "measurement": "Height",
+      "value": 20.75,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "The R&A"
+    },
+    {
+      "id": "yb-00420",
+      "item": "Ryder Cup",
+      "question": "How tall is the Ryder Cup trophy?",
+      "measurement": "Height",
+      "value": 17,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Ryder Cup"
+    },
+    {
+      "id": "yb-00421",
+      "item": "U.S. penny",
+      "question": "How thick is a U.S. penny?",
+      "measurement": "Thickness",
+      "value": 1.52,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "United States Mint"
+    },
+    {
+      "id": "yb-00422",
+      "item": "U.S. nickel",
+      "question": "How thick is a U.S. nickel?",
+      "measurement": "Thickness",
+      "value": 1.95,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "United States Mint"
+    },
+    {
+      "id": "yb-00423",
+      "item": "U.S. dime",
+      "question": "How thick is a U.S. dime?",
+      "measurement": "Thickness",
+      "value": 1.35,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "United States Mint"
+    },
+    {
+      "id": "yb-00424",
+      "item": "U.S. quarter",
+      "question": "How thick is a U.S. quarter?",
+      "measurement": "Thickness",
+      "value": 1.75,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "United States Mint"
+    },
+    {
+      "id": "yb-00425",
+      "item": "U.S. half dollar",
+      "question": "How thick is a U.S. half dollar?",
+      "measurement": "Thickness",
+      "value": 2.15,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "United States Mint"
+    },
+    {
+      "id": "yb-00426",
+      "item": "U.S. dollar coin",
+      "question": "How thick is a current U.S. dollar coin?",
+      "measurement": "Thickness",
+      "value": 2,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "United States Mint"
+    },
+    {
+      "id": "yb-00427",
+      "item": "U.S. banknote",
+      "question": "How thick is a U.S. paper bill?",
+      "measurement": "Thickness",
+      "value": 0.0043,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Bureau of Engraving and Printing"
+    },
+    {
+      "id": "yb-00428",
+      "item": "ISO credit card",
+      "question": "How thick is a standard credit card?",
+      "measurement": "Thickness",
+      "value": 0.76,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ISO/IEC 7810"
+    },
+    {
+      "id": "yb-00429",
+      "item": "SD memory card",
+      "question": "How thick is a standard SD memory card?",
+      "measurement": "Thickness",
+      "value": 2.1,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "SD Association"
+    },
+    {
+      "id": "yb-00430",
+      "item": "microSD memory card",
+      "question": "How thick is a microSD memory card?",
+      "measurement": "Thickness",
+      "value": 1,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "SD Association"
+    },
+    {
+      "id": "yb-00431",
+      "item": "nano-SIM card",
+      "question": "How thick is a nano-SIM card?",
+      "measurement": "Thickness",
+      "value": 0.67,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ETSI"
+    },
+    {
+      "id": "yb-00432",
+      "item": "Compact Disc",
+      "question": "How thick is a standard compact disc?",
+      "measurement": "Thickness",
+      "value": 1.2,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "IEC 60908"
+    },
+    {
+      "id": "yb-00433",
+      "item": "DVD",
+      "question": "How thick is a standard DVD?",
+      "measurement": "Thickness",
+      "value": 1.2,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "DVD Forum"
+    },
+    {
+      "id": "yb-00434",
+      "item": "3.5-inch floppy disk",
+      "question": "How thick is a 3.5-inch floppy disk?",
+      "measurement": "Thickness",
+      "value": 3.3,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ISO/IEC 9529"
+    },
+    {
+      "id": "yb-00435",
+      "item": "VHS cassette",
+      "question": "How thick is a standard VHS cassette?",
+      "measurement": "Thickness",
+      "value": 25,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "VHS format specification"
+    },
+    {
+      "id": "yb-00436",
+      "item": "Compact cassette",
+      "question": "How thick is a standard cassette tape?",
+      "measurement": "Thickness",
+      "value": 12,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "IEC 60094"
+    },
+    {
+      "id": "yb-00437",
+      "item": "LEGO plate",
+      "question": "How thick is a standard LEGO plate without studs?",
+      "measurement": "Body thickness",
+      "value": 3.2,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "LEGO System dimensions"
+    },
+    {
+      "id": "yb-00438",
+      "item": "Jenga block",
+      "question": "How thick is a classic Jenga block?",
+      "measurement": "Thickness",
+      "value": 15,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Hasbro"
+    },
+    {
+      "id": "yb-00439",
+      "item": "Apple AirTag",
+      "question": "How thick is an Apple AirTag?",
+      "measurement": "Thickness",
+      "value": 8,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple"
+    },
+    {
+      "id": "yb-00440",
+      "item": "Nintendo Switch game card",
+      "question": "How thick is a Nintendo Switch game card?",
+      "measurement": "Thickness",
+      "value": 3.3,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Nintendo"
+    },
+    {
+      "id": "yb-00441",
+      "item": "PlayStation 5 console",
+      "question": "How thick is an original PlayStation 5 console?",
+      "measurement": "Thickness",
+      "value": 104,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Sony"
+    },
+    {
+      "id": "yb-00442",
+      "item": "Nintendo Switch console",
+      "question": "How thick is a Nintendo Switch console without Joy-Cons?",
+      "measurement": "Thickness",
+      "value": 13.9,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Nintendo"
+    },
+    {
+      "id": "yb-00443",
+      "item": "Google Pixel 9",
+      "question": "How thick is a Google Pixel 9?",
+      "measurement": "Thickness",
+      "value": 8.5,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Google"
+    },
+    {
+      "id": "yb-00444",
+      "item": "Samsung Galaxy S24",
+      "question": "How thick is a Samsung Galaxy S24?",
+      "measurement": "Thickness",
+      "value": 7.6,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Samsung"
+    },
+    {
+      "id": "yb-00445",
+      "item": "Apple Watch Series 10 46mm",
+      "question": "How thick is a 46 mm Apple Watch Series 10?",
+      "measurement": "Thickness",
+      "value": 9.7,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple"
+    },
+    {
+      "id": "yb-00446",
+      "item": "MacBook Air 13-inch M4",
+      "question": "How thick is a 13-inch M4 MacBook Air when closed?",
+      "measurement": "Thickness",
+      "value": 11.3,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple"
+    },
+    {
+      "id": "yb-00447",
+      "item": "iPad Pro 13-inch M4",
+      "question": "How thick is the 13-inch M4 iPad Pro?",
+      "measurement": "Thickness",
+      "value": 5.1,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple"
+    },
+    {
+      "id": "yb-00448",
+      "item": "Guitar pick — Fender Medium",
+      "question": "How thick is a Fender Medium guitar pick?",
+      "measurement": "Thickness",
+      "value": 0.71,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Fender"
+    },
+    {
+      "id": "yb-00449",
+      "item": "Guitar pick — Fender Heavy",
+      "question": "How thick is a Fender Heavy guitar pick?",
+      "measurement": "Thickness",
+      "value": 0.96,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Fender"
+    },
+    {
+      "id": "yb-00450",
+      "item": "Double-edge safety razor blade",
+      "question": "How thick is a double-edge safety razor blade?",
+      "measurement": "Thickness",
+      "value": 0.1,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Razor blade dimensional specification"
+    },
+    {
+      "id": "yb-00451",
+      "item": "Stanley utility knife blade",
+      "question": "How thick is a Stanley heavy-duty utility blade?",
+      "measurement": "Thickness",
+      "value": 0.025,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Stanley"
+    },
+    {
+      "id": "yb-00452",
+      "item": "Aluminum soda can wall",
+      "question": "About how thick is the wall of an aluminum soda can?",
+      "measurement": "Wall thickness",
+      "value": 0.1,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Can Manufacturers Institute"
+    },
+    {
+      "id": "yb-00453",
+      "item": "Ziploc freezer bag",
+      "question": "How thick is the plastic in a Ziploc Freezer Bag?",
+      "measurement": "Film thickness",
+      "value": 2.7,
+      "unit": "mil",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "SC Johnson"
+    },
+    {
+      "id": "yb-00454",
+      "item": "Q-tips cotton swab",
+      "question": "How long is a standard Q-tips cotton swab?",
+      "measurement": "Length",
+      "value": 3,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Unilever"
+    },
+    {
+      "id": "yb-00455",
+      "item": "BAND-AID regular strip",
+      "question": "How long is a standard 3/4-inch BAND-AID strip?",
+      "measurement": "Length",
+      "value": 3,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "BAND-AID Brand"
+    },
+    {
+      "id": "yb-00456",
+      "item": "BAND-AID regular strip",
+      "question": "How wide is a standard 3/4-inch BAND-AID strip?",
+      "measurement": "Width",
+      "value": 0.75,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "BAND-AID Brand"
+    },
+    {
+      "id": "yb-00457",
+      "item": "BAND-AID Clear Spot",
+      "question": "What is the diameter of a BAND-AID Clear Spot?",
+      "measurement": "Diameter",
+      "value": 0.875,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "BAND-AID Brand"
+    },
+    {
+      "id": "yb-00458",
+      "item": "Dove Beauty Bar",
+      "question": "What's the long dimension of a Dove Beauty Bar?",
+      "measurement": "Long dimension",
+      "value": 3.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Dove"
+    },
+    {
+      "id": "yb-00459",
+      "item": "Dove Beauty Bar",
+      "question": "How thick is a Dove Beauty Bar?",
+      "measurement": "Thickness",
+      "value": 1.25,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Dove"
+    },
+    {
+      "id": "yb-00460",
+      "item": "ChapStick tube",
+      "question": "How tall is a classic ChapStick tube with the cap on?",
+      "measurement": "Height",
+      "value": 2.6,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ChapStick"
+    },
+    {
+      "id": "yb-00461",
+      "item": "ChapStick tube",
+      "question": "What is the diameter of a classic ChapStick tube?",
+      "measurement": "Diameter",
+      "value": 0.625,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ChapStick"
+    },
+    {
+      "id": "yb-00462",
+      "item": "Old Spice deodorant stick",
+      "question": "How tall is a standard Old Spice deodorant container?",
+      "measurement": "Height",
+      "value": 5.2,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Procter & Gamble"
+    },
+    {
+      "id": "yb-00463",
+      "item": "Secret deodorant stick",
+      "question": "How tall is a standard Secret deodorant container?",
+      "measurement": "Height",
+      "value": 5.3,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Procter & Gamble"
+    },
+    {
+      "id": "yb-00464",
+      "item": "Crest toothpaste tube — 5.7 oz",
+      "question": "How long is a 5.7-oz Crest toothpaste tube?",
+      "measurement": "Length",
+      "value": 7.75,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Procter & Gamble"
+    },
+    {
+      "id": "yb-00465",
+      "item": "Colgate toothpaste tube — 6 oz",
+      "question": "How long is a 6-oz Colgate toothpaste tube?",
+      "measurement": "Length",
+      "value": 7.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Colgate-Palmolive"
+    },
+    {
+      "id": "yb-00466",
+      "item": "Listerine 1 L bottle",
+      "question": "How tall is a 1-liter Listerine bottle?",
+      "measurement": "Height",
+      "value": 10.3,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Kenvue"
+    },
+    {
+      "id": "yb-00467",
+      "item": "Vaseline Original 13 oz jar",
+      "question": "How tall is a 13-oz jar of Vaseline petroleum jelly?",
+      "measurement": "Height",
+      "value": 4.4,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Unilever"
+    },
+    {
+      "id": "yb-00468",
+      "item": "Nivea Creme 150 ml tin",
+      "question": "What is the diameter of a 150 ml Nivea Creme tin?",
+      "measurement": "Diameter",
+      "value": 3.75,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Beiersdorf"
+    },
+    {
+      "id": "yb-00469",
+      "item": "Kleenex Ultra Soft flat box",
+      "question": "What's the long dimension of a Kleenex Ultra Soft flat box?",
+      "measurement": "Length",
+      "value": 8.875,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Kleenex"
+    },
+    {
+      "id": "yb-00470",
+      "item": "Kleenex Ultra Soft flat box",
+      "question": "How tall is a 120-count Kleenex Ultra Soft flat box?",
+      "measurement": "Height",
+      "value": 3.4675,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Kleenex"
+    },
+    {
+      "id": "yb-00471",
+      "item": "Cotton round",
+      "question": "What is the diameter of a standard cotton round?",
+      "measurement": "Diameter",
+      "value": 2.25,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Swisspers"
+    },
+    {
+      "id": "yb-00472",
+      "item": "Tweezerman Slant Tweezer",
+      "question": "How long is a Tweezerman Slant Tweezer?",
+      "measurement": "Length",
+      "value": 3.75,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Tweezerman"
+    },
+    {
+      "id": "yb-00473",
+      "item": "Braun Series 9 shaver",
+      "question": "How long is a Braun Series 9 electric shaver?",
+      "measurement": "Length",
+      "value": 6.5,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Braun"
+    },
+    {
+      "id": "yb-00474",
+      "item": "Philips Norelco OneBlade",
+      "question": "How long is a Philips Norelco OneBlade handle?",
+      "measurement": "Length",
+      "value": 6.3,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Philips"
+    },
+    {
+      "id": "yb-00475",
+      "item": "Gillette Fusion5 cartridge",
+      "question": "How wide is a Gillette Fusion5 razor cartridge?",
+      "measurement": "Width",
+      "value": 40,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Gillette"
+    },
+    {
+      "id": "yb-00476",
+      "item": "Gillette Mach3 cartridge",
+      "question": "How wide is a Gillette Mach3 razor cartridge?",
+      "measurement": "Width",
+      "value": 35,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Gillette"
+    },
+    {
+      "id": "yb-00477",
+      "item": "Oral-B CrossAction brush head",
+      "question": "How long is an Oral-B CrossAction brush head?",
+      "measurement": "Head length",
+      "value": 18.5,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Oral-B"
+    },
+    {
+      "id": "yb-00478",
+      "item": "Philips Sonicare brush head",
+      "question": "How long is a standard Philips Sonicare brush head?",
+      "measurement": "Head length",
+      "value": 31.8,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Philips"
+    },
+    {
+      "id": "yb-00479",
+      "item": "U.S. soda can — 12 oz",
+      "question": "How tall is a standard 12-oz U.S. soda can?",
+      "measurement": "Height",
+      "value": 4.83,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Can Manufacturers Institute"
+    },
+    {
+      "id": "yb-00480",
+      "item": "U.S. soda can — 12 oz",
+      "question": "What is the diameter of a standard 12-oz U.S. soda can?",
+      "measurement": "Diameter",
+      "value": 2.6,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Can Manufacturers Institute"
+    },
+    {
+      "id": "yb-00481",
+      "item": "Red Bull can — 8.4 oz",
+      "question": "How tall is an 8.4-oz Red Bull can?",
+      "measurement": "Height",
+      "value": 5.3,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Red Bull"
+    },
+    {
+      "id": "yb-00482",
+      "item": "Campbell's soup can — 10.5 oz",
+      "question": "How tall is a classic 10.5-oz Campbell's soup can?",
+      "measurement": "Height",
+      "value": 4,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Campbell Soup Company"
+    },
+    {
+      "id": "yb-00483",
+      "item": "Campbell's soup can — 10.5 oz",
+      "question": "What is the diameter of a classic Campbell's soup can?",
+      "measurement": "Diameter",
+      "value": 2.625,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Campbell Soup Company"
+    },
+    {
+      "id": "yb-00484",
+      "item": "Pringles can — 5.2 oz",
+      "question": "How tall is a 5.2-oz Pringles can?",
+      "measurement": "Height",
+      "value": 10.5,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Pringles"
+    },
+    {
+      "id": "yb-00485",
+      "item": "Pringles can — 5.2 oz",
+      "question": "What is the diameter of a standard Pringles can?",
+      "measurement": "Diameter",
+      "value": 3.125,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Pringles"
+    },
+    {
+      "id": "yb-00486",
+      "item": "Morton Salt — 26 oz",
+      "question": "How tall is a 26-oz Morton Salt container?",
+      "measurement": "Height",
+      "value": 5.75,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Morton Salt"
+    },
+    {
+      "id": "yb-00487",
+      "item": "Morton Salt — 26 oz",
+      "question": "What is the diameter of a 26-oz Morton Salt container?",
+      "measurement": "Diameter",
+      "value": 4,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Morton Salt"
+    },
+    {
+      "id": "yb-00488",
+      "item": "Tabasco bottle — 2 oz",
+      "question": "How tall is a classic 2-oz Tabasco bottle?",
+      "measurement": "Height",
+      "value": 5.25,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "McIlhenny Company"
+    },
+    {
+      "id": "yb-00489",
+      "item": "Coca-Cola glass contour bottle — 8 oz",
+      "question": "How tall is an 8-oz glass Coca-Cola contour bottle?",
+      "measurement": "Height",
+      "value": 7.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "The Coca-Cola Company"
+    },
+    {
+      "id": "yb-00490",
+      "item": "Ball pint Mason jar",
+      "question": "How tall is a Ball regular-mouth pint Mason jar?",
+      "measurement": "Height",
+      "value": 5.2,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Ball"
+    },
+    {
+      "id": "yb-00491",
+      "item": "Ball quart Mason jar",
+      "question": "How tall is a Ball regular-mouth quart Mason jar?",
+      "measurement": "Height",
+      "value": 6.9,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Ball"
+    },
+    {
+      "id": "yb-00492",
+      "item": "Corelle dinner plate",
+      "question": "What is the diameter of a classic Corelle dinner plate?",
+      "measurement": "Diameter",
+      "value": 10.25,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Corelle"
+    },
+    {
+      "id": "yb-00493",
+      "item": "Lodge cast-iron skillet",
+      "question": "What is the top diameter of a Lodge 10.25-inch skillet?",
+      "measurement": "Diameter",
+      "value": 10.25,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Lodge"
+    },
+    {
+      "id": "yb-00494",
+      "item": "KitchenAid Artisan stand mixer",
+      "question": "How tall is a KitchenAid Artisan stand mixer?",
+      "measurement": "Height",
+      "value": 13.9,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "KitchenAid"
+    },
+    {
+      "id": "yb-00495",
+      "item": "KitchenAid Artisan stand mixer",
+      "question": "How deep is a KitchenAid Artisan stand mixer?",
+      "measurement": "Depth",
+      "value": 14.1,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "KitchenAid"
+    },
+    {
+      "id": "yb-00496",
+      "item": "Vitamix 5200",
+      "question": "How tall is a Vitamix 5200 with its jar in place?",
+      "measurement": "Height",
+      "value": 20.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Vitamix"
+    },
+    {
+      "id": "yb-00497",
+      "item": "Instant Pot Duo 6-quart",
+      "question": "How tall is a 6-qt Instant Pot Duo?",
+      "measurement": "Height",
+      "value": 12.6,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Instant Brands"
+    },
+    {
+      "id": "yb-00498",
+      "item": "Keurig K-Classic",
+      "question": "How tall is a Keurig K-Classic coffee maker?",
+      "measurement": "Height",
+      "value": 13.3,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Keurig"
+    },
+    {
+      "id": "yb-00499",
+      "item": "Chemex 6-cup",
+      "question": "How tall is a classic 6-cup Chemex coffeemaker?",
+      "measurement": "Height",
+      "value": 8.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Chemex"
+    },
+    {
+      "id": "yb-00500",
+      "item": "Nalgene 32 oz wide-mouth bottle",
+      "question": "How tall is a 32-oz Nalgene wide-mouth bottle?",
+      "measurement": "Height",
+      "value": 8.25,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Nalgene"
+    },
+    {
+      "id": "yb-00501",
+      "item": "Hydro Flask 32 oz Wide Mouth",
+      "question": "How tall is a 32-oz Hydro Flask Wide Mouth bottle?",
+      "measurement": "Height",
+      "value": 9.4,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Hydro Flask"
+    },
+    {
+      "id": "yb-00502",
+      "item": "YETI Rambler 20 oz",
+      "question": "How tall is a 20-oz YETI Rambler tumbler?",
+      "measurement": "Height",
+      "value": 6.875,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "YETI"
+    },
+    {
+      "id": "yb-00503",
+      "item": "Solo red party cup — 18 oz",
+      "question": "How tall is a classic 18-oz red Solo cup?",
+      "measurement": "Height",
+      "value": 4.75,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Solo"
+    },
+    {
+      "id": "yb-00504",
+      "item": "Solo red party cup — 18 oz",
+      "question": "What is the top diameter of an 18-oz red Solo cup?",
+      "measurement": "Top diameter",
+      "value": 3.75,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Solo"
+    },
+    {
+      "id": "yb-00505",
+      "item": "Bounty Select-A-Size sheet",
+      "question": "What's the long dimension of a Bounty Select-A-Size sheet?",
+      "measurement": "Long dimension",
+      "value": 11,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Procter & Gamble"
+    },
+    {
+      "id": "yb-00506",
+      "item": "Bounty Select-A-Size sheet",
+      "question": "What's the short dimension of a Bounty Select-A-Size sheet?",
+      "measurement": "Short dimension",
+      "value": 5.9,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Procter & Gamble"
+    },
+    {
+      "id": "yb-00507",
+      "item": "Kleenex facial tissue sheet",
+      "question": "What's the long dimension of a Kleenex facial tissue sheet?",
+      "measurement": "Long dimension",
+      "value": 8.4,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Kleenex"
+    },
+    {
+      "id": "yb-00508",
+      "item": "Kleenex facial tissue sheet",
+      "question": "What's the short dimension of a Kleenex facial tissue sheet?",
+      "measurement": "Short dimension",
+      "value": 8.2,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Kleenex"
+    },
+    {
+      "id": "yb-00509",
+      "item": "Reynolds Wrap",
+      "question": "How wide is a standard roll of Reynolds Wrap aluminum foil?",
+      "measurement": "Roll width",
+      "value": 12,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Reynolds"
+    },
+    {
+      "id": "yb-00510",
+      "item": "Scotch Magic Tape",
+      "question": "How wide is standard Scotch Magic Tape?",
+      "measurement": "Tape width",
+      "value": 0.75,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "3M"
+    },
+    {
+      "id": "yb-00511",
+      "item": "Sharpie Fine Point marker",
+      "question": "How long is a capped Sharpie Fine Point marker?",
+      "measurement": "Length",
+      "value": 5.5,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Newell Brands"
+    },
+    {
+      "id": "yb-00512",
+      "item": "BIC Cristal pen",
+      "question": "How long is a BIC Cristal ballpoint pen?",
+      "measurement": "Length",
+      "value": 5.875,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "BIC"
+    },
+    {
+      "id": "yb-00513",
+      "item": "Nintendo Switch game card",
+      "question": "What's the long dimension of a Nintendo Switch game card?",
+      "measurement": "Long dimension",
+      "value": 35,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Nintendo"
+    },
+    {
+      "id": "yb-00514",
+      "item": "Nintendo Switch game card",
+      "question": "What's the short dimension of a Nintendo Switch game card?",
+      "measurement": "Short dimension",
+      "value": 21,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Nintendo"
+    },
+    {
+      "id": "yb-00515",
+      "item": "Apple AirTag",
+      "question": "What is the diameter of an Apple AirTag?",
+      "measurement": "Diameter",
+      "value": 31.9,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple"
+    },
+    {
+      "id": "yb-00516",
+      "item": "Apple Pencil 2nd generation",
+      "question": "How long is a 2nd-generation Apple Pencil?",
+      "measurement": "Length",
+      "value": 166,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple"
+    },
+    {
+      "id": "yb-00517",
+      "item": "Apple Pencil 2nd generation",
+      "question": "What is the diameter of a 2nd-generation Apple Pencil?",
+      "measurement": "Diameter",
+      "value": 8.9,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Apple"
+    },
+    {
+      "id": "yb-00518",
+      "item": "Amazon Echo Dot 5th gen",
+      "question": "What is the diameter of a 5th-generation Echo Dot?",
+      "measurement": "Diameter",
+      "value": 3.9,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Amazon"
+    },
+    {
+      "id": "yb-00519",
+      "item": "Google Nest Mini",
+      "question": "What is the diameter of a Google Nest Mini?",
+      "measurement": "Diameter",
+      "value": 3.85,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Google"
+    },
+    {
+      "id": "yb-00520",
+      "item": "PlayStation DualSense controller",
+      "question": "How wide is a PlayStation 5 DualSense controller?",
+      "measurement": "Width",
+      "value": 160,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Sony"
+    },
+    {
+      "id": "yb-00521",
+      "item": "Xbox Wireless Controller",
+      "question": "How wide is an Xbox Wireless Controller?",
+      "measurement": "Width",
+      "value": 152,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Microsoft"
+    },
+    {
+      "id": "yb-00522",
+      "item": "Nintendo Switch Joy-Con",
+      "question": "How long is one Nintendo Switch Joy-Con controller?",
+      "measurement": "Length",
+      "value": 102,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Nintendo"
+    },
+    {
+      "id": "yb-00523",
+      "item": "LEGO minifigure",
+      "question": "How tall is a standard LEGO minifigure without a hat?",
+      "measurement": "Height",
+      "value": 40,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "LEGO"
+    },
+    {
+      "id": "yb-00524",
+      "item": "Barbie doll",
+      "question": "How tall is a standard Barbie fashion doll?",
+      "measurement": "Height",
+      "value": 11.5,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Mattel"
+    },
+    {
+      "id": "yb-00525",
+      "item": "American Girl doll",
+      "question": "How tall is a classic American Girl doll?",
+      "measurement": "Height",
+      "value": 18,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "American Girl"
+    },
+    {
+      "id": "yb-00526",
+      "item": "Slinky",
+      "question": "What is the diameter of a classic metal Slinky?",
+      "measurement": "Diameter",
+      "value": 2.75,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Slinky"
+    },
+    {
+      "id": "yb-00527",
+      "item": "Magic 8 Ball",
+      "question": "What is the diameter of a classic Magic 8 Ball?",
+      "measurement": "Diameter",
+      "value": 3.75,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Mattel"
+    },
+    {
+      "id": "yb-00528",
+      "item": "View-Master reel",
+      "question": "What is the diameter of a classic View-Master reel?",
+      "measurement": "Diameter",
+      "value": 3.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Mattel"
+    },
+    {
+      "id": "yb-00529",
+      "item": "Crayola colored pencil",
+      "question": "How long is a full-size Crayola colored pencil?",
+      "measurement": "Length",
+      "value": 7,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Crayola"
+    },
+    {
+      "id": "yb-00530",
+      "item": "EXPO dry-erase marker",
+      "question": "How long is a capped EXPO chisel-tip marker?",
+      "measurement": "Length",
+      "value": 5.6,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Newell Brands"
+    },
+    {
+      "id": "yb-00531",
+      "item": "Elmer's School Glue — 4 oz",
+      "question": "How tall is a 4-oz bottle of Elmer's School Glue?",
+      "measurement": "Height",
+      "value": 5.75,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Elmer's"
+    },
+    {
+      "id": "yb-00532",
+      "item": "Leatherman Wave+",
+      "question": "How long is a Leatherman Wave+ when closed?",
+      "measurement": "Closed length",
+      "value": 4,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Leatherman"
+    },
+    {
+      "id": "yb-00533",
+      "item": "Victorinox Spartan",
+      "question": "How long is a Victorinox Spartan knife when closed?",
+      "measurement": "Closed length",
+      "value": 91,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Victorinox"
+    },
+    {
+      "id": "yb-00534",
+      "item": "White House",
+      "question": "How long is the White House Executive Residence?",
+      "measurement": "Length",
+      "value": 168,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "White House Historical Association"
+    },
+    {
+      "id": "yb-00535",
+      "item": "U.S. Capitol",
+      "question": "How tall is the U.S. Capitol to the Statue of Freedom?",
+      "measurement": "Height",
+      "value": 288,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Architect of the Capitol"
+    },
+    {
+      "id": "yb-00536",
+      "item": "Mount Rushmore",
+      "question": "How tall are the presidential faces on Mount Rushmore?",
+      "measurement": "Face height",
+      "value": 60,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "National Park Service"
+    },
+    {
+      "id": "yb-00537",
+      "item": "Niagara Falls — Horseshoe Falls",
+      "question": "How tall is Horseshoe Falls at Niagara Falls?",
+      "measurement": "Height",
+      "value": 167,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Niagara Parks"
+    },
+    {
+      "id": "yb-00538",
+      "item": "Niagara Falls — Horseshoe Falls",
+      "question": "How wide is Horseshoe Falls at Niagara Falls?",
+      "measurement": "Width",
+      "value": 2200,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Niagara Parks"
+    },
+    {
+      "id": "yb-00539",
+      "item": "Grand Canyon",
+      "question": "How deep is the Grand Canyon at its deepest point?",
+      "measurement": "Maximum depth",
+      "value": 6000,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "National Park Service"
+    },
+    {
+      "id": "yb-00540",
+      "item": "Mount Everest",
+      "question": "How tall is Mount Everest above sea level?",
+      "measurement": "Elevation",
+      "value": 8848.86,
+      "unit": "m",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Nepal Department of Survey / China"
+    },
+    {
+      "id": "yb-00541",
+      "item": "Golden Gate Bridge roadway",
+      "question": "How high is the Golden Gate Bridge roadway above the water?",
+      "measurement": "Roadway clearance",
+      "value": 220,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Golden Gate Bridge District"
+    },
+    {
+      "id": "yb-00542",
+      "item": "Statue of Liberty tablet",
+      "question": "How long is the tablet held by the Statue of Liberty?",
+      "measurement": "Tablet length",
+      "value": 23.5833333333,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "National Park Service"
+    },
+    {
+      "id": "yb-00543",
+      "item": "Eiffel Tower first floor",
+      "question": "How high is the Eiffel Tower's first floor?",
+      "measurement": "Height",
+      "value": 57,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Official Eiffel Tower site"
+    },
+    {
+      "id": "yb-00544",
+      "item": "Hollywood Sign",
+      "question": "How wide is the entire Hollywood Sign?",
+      "measurement": "Overall width",
+      "value": 350,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Hollywood Sign Trust"
+    },
+    {
+      "id": "yb-00545",
+      "item": "Great Pyramid of Giza",
+      "question": "How tall was the Great Pyramid when completed?",
+      "measurement": "Original height",
+      "value": 146.6,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Egyptian Ministry of Tourism and Antiquities"
+    },
+    {
+      "id": "yb-00546",
+      "item": "Great Sphinx of Giza",
+      "question": "How tall is the Great Sphinx from base to head?",
+      "measurement": "Height",
+      "value": 20,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Egyptian Ministry of Tourism and Antiquities"
+    },
+    {
+      "id": "yb-00547",
+      "item": "Colosseum",
+      "question": "What's the short dimension of Rome's Colosseum?",
+      "measurement": "Short axis",
+      "value": 156,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Parco archeologico del Colosseo"
+    },
+    {
+      "id": "yb-00548",
+      "item": "Tower Bridge",
+      "question": "How tall are London's Tower Bridge towers?",
+      "measurement": "Tower height",
+      "value": 65,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "City of London"
+    },
+    {
+      "id": "yb-00549",
+      "item": "Brooklyn Bridge",
+      "question": "How high are the Brooklyn Bridge towers above the water?",
+      "measurement": "Tower height",
+      "value": 276.5,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NYC DOT"
+    },
+    {
+      "id": "yb-00550",
+      "item": "Hoover Dam",
+      "question": "How thick is Hoover Dam at its base?",
+      "measurement": "Base thickness",
+      "value": 660,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Bureau of Reclamation"
+    },
+    {
+      "id": "yb-00551",
+      "item": "Hoover Dam",
+      "question": "How thick is Hoover Dam at its crest?",
+      "measurement": "Crest thickness",
+      "value": 45,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Bureau of Reclamation"
+    },
+    {
+      "id": "yb-00552",
+      "item": "Panama Canal original lock",
+      "question": "How wide is a chamber in the original Panama Canal locks?",
+      "measurement": "Usable width",
+      "value": 110,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Panama Canal Authority"
+    },
+    {
+      "id": "yb-00553",
+      "item": "Boeing 747-8",
+      "question": "What is the wingspan of a Boeing 747-8?",
+      "measurement": "Wingspan",
+      "value": 68.4,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Boeing"
+    },
+    {
+      "id": "yb-00554",
+      "item": "Boeing 737-800",
+      "question": "What is the wingspan of a Boeing 737-800?",
+      "measurement": "Wingspan",
+      "value": 35.8,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Boeing"
+    },
+    {
+      "id": "yb-00555",
+      "item": "Airbus A380",
+      "question": "How tall is an Airbus A380?",
+      "measurement": "Height",
+      "value": 24.1,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Airbus"
+    },
+    {
+      "id": "yb-00556",
+      "item": "Concorde",
+      "question": "What was the wingspan of Concorde?",
+      "measurement": "Wingspan",
+      "value": 25.56,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Airbus Heritage"
+    },
+    {
+      "id": "yb-00557",
+      "item": "SR-71 Blackbird",
+      "question": "What was the wingspan of an SR-71 Blackbird?",
+      "measurement": "Wingspan",
+      "value": 55.5833333333,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Air Force"
+    },
+    {
+      "id": "yb-00558",
+      "item": "B-2 Spirit",
+      "question": "How long is a B-2 Spirit stealth bomber?",
+      "measurement": "Length",
+      "value": 69,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Air Force"
+    },
+    {
+      "id": "yb-00559",
+      "item": "Space Shuttle",
+      "question": "How tall was the Space Shuttle stack at launch?",
+      "measurement": "Launch height",
+      "value": 184.2,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA"
+    },
+    {
+      "id": "yb-00560",
+      "item": "Hubble Space Telescope",
+      "question": "What is the diameter of Hubble's main mirror?",
+      "measurement": "Mirror diameter",
+      "value": 2.4,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA"
+    },
+    {
+      "id": "yb-00561",
+      "item": "International Space Station",
+      "question": "How wide is the ISS across its solar arrays?",
+      "measurement": "Width",
+      "value": 356,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA"
+    },
+    {
+      "id": "yb-00562",
+      "item": "Saturn V",
+      "question": "How wide was the Saturn V at its widest point?",
+      "measurement": "Maximum diameter",
+      "value": 33,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NASA"
+    },
+    {
+      "id": "yb-00563",
+      "item": "Titanic",
+      "question": "How wide was RMS Titanic at its widest point?",
+      "measurement": "Beam",
+      "value": 92.5,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Titanic Belfast"
+    },
+    {
+      "id": "yb-00564",
+      "item": "Queen Mary 2",
+      "question": "How wide is the Queen Mary 2?",
+      "measurement": "Beam",
+      "value": 135,
+      "unit": "ft",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Cunard"
+    },
+    {
+      "id": "yb-00565",
+      "item": "USS Gerald R. Ford",
+      "question": "How wide is the USS Gerald R. Ford's flight deck?",
+      "measurement": "Flight deck width",
+      "value": 256,
+      "unit": "ft",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. Navy"
+    },
+    {
+      "id": "yb-00566",
+      "item": "Ford Model T",
+      "question": "How long is a Ford Model T?",
+      "measurement": "Overall length",
+      "value": 134,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Ford Heritage"
+    },
+    {
+      "id": "yb-00567",
+      "item": "Tesla Cybertruck",
+      "question": "How wide is a Cybertruck with mirrors folded?",
+      "measurement": "Width",
+      "value": 95,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Tesla"
+    },
+    {
+      "id": "yb-00568",
+      "item": "DeLorean DMC-12",
+      "question": "How tall is a DeLorean DMC-12?",
+      "measurement": "Height",
+      "value": 44.88,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "DeLorean"
+    },
+    {
+      "id": "yb-00569",
+      "item": "1959 Mini",
+      "question": "How wide is an original 1959 Mini?",
+      "measurement": "Width",
+      "value": 1.41,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "British Motor Museum"
+    },
+    {
+      "id": "yb-00570",
+      "item": "1965 Ford Mustang",
+      "question": "How wide is a 1965 Ford Mustang?",
+      "measurement": "Width",
+      "value": 68.2,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Ford Heritage"
+    },
+    {
+      "id": "yb-00571",
+      "item": "Volkswagen Beetle",
+      "question": "How tall is a classic Volkswagen Beetle?",
+      "measurement": "Height",
+      "value": 1.5,
+      "unit": "m",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Volkswagen Heritage"
+    },
+    {
+      "id": "yb-00572",
+      "item": "Ferrari F40",
+      "question": "How tall is a Ferrari F40?",
+      "measurement": "Height",
+      "value": 1124,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Ferrari"
+    },
+    {
+      "id": "yb-00573",
+      "item": "Lamborghini Countach LP400",
+      "question": "How tall is a Lamborghini Countach LP400?",
+      "measurement": "Height",
+      "value": 1.07,
+      "unit": "m",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Lamborghini"
+    },
+    {
+      "id": "yb-00574",
+      "item": "Rubik's Cube",
+      "question": "How long is a classic Rubik's Cube edge?",
+      "measurement": "Edge length",
+      "value": 57,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Rubik's"
+    },
+    {
+      "id": "yb-00575",
+      "item": "LEGO 2×4 brick",
+      "question": "What's the short dimension of a LEGO 2×4 brick?",
+      "measurement": "Short dimension",
+      "value": 15.8,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "LEGO System dimensions"
+    },
+    {
+      "id": "yb-00576",
+      "item": "Crayola crayon",
+      "question": "How long is a regular-size Crayola crayon?",
+      "measurement": "Length",
+      "value": 3.625,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Crayola"
+    },
+    {
+      "id": "yb-00577",
+      "item": "Post-it Note",
+      "question": "How long is one side of a standard square Post-it Note?",
+      "measurement": "Side length",
+      "value": 3,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "3M"
+    },
+    {
+      "id": "yb-00578",
+      "item": "AA battery",
+      "question": "What is the diameter of an AA battery?",
+      "measurement": "Diameter",
+      "value": 14.5,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "IEC 60086"
+    },
+    {
+      "id": "yb-00579",
+      "item": "AAA battery",
+      "question": "What is the diameter of an AAA battery?",
+      "measurement": "Diameter",
+      "value": 10.5,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "IEC 60086"
+    },
+    {
+      "id": "yb-00580",
+      "item": "9-volt battery",
+      "question": "How tall is a standard 9-volt battery?",
+      "measurement": "Height",
+      "value": 48.5,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "IEC 60086"
+    },
+    {
+      "id": "yb-00581",
+      "item": "9-volt battery",
+      "question": "What's the long dimension across the base of a 9-volt battery?",
+      "measurement": "Long base dimension",
+      "value": 26.5,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "IEC 60086"
+    },
+    {
+      "id": "yb-00582",
+      "item": "C battery",
+      "question": "How tall is a standard C battery?",
+      "measurement": "Height",
+      "value": 50,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "IEC 60086"
+    },
+    {
+      "id": "yb-00583",
+      "item": "D battery",
+      "question": "How tall is a standard D battery?",
+      "measurement": "Height",
+      "value": 61.5,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "IEC 60086"
+    },
+    {
+      "id": "yb-00584",
+      "item": "D battery",
+      "question": "What is the diameter of a standard D battery?",
+      "measurement": "Diameter",
+      "value": 34.2,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "IEC 60086"
+    },
+    {
+      "id": "yb-00585",
+      "item": "Golf pencil",
+      "question": "How long is a standard golf pencil?",
+      "measurement": "Length",
+      "value": 3.5,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Dixon Ticonderoga product specification"
+    },
+    {
+      "id": "yb-00586",
+      "item": "No. 2 pencil",
+      "question": "How long is a new standard No. 2 pencil?",
+      "measurement": "Length",
+      "value": 7.5,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Dixon Ticonderoga"
+    },
+    {
+      "id": "yb-00587",
+      "item": "U.S. passport book",
+      "question": "What's the short dimension of a closed U.S. passport book?",
+      "measurement": "Short dimension",
+      "value": 88,
+      "unit": "mm",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ICAO TD3 passport format"
+    },
+    {
+      "id": "yb-00588",
+      "item": "A4 paper",
+      "question": "What's the long dimension of a sheet of A4 paper?",
+      "measurement": "Long dimension",
+      "value": 297,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ISO 216"
+    },
+    {
+      "id": "yb-00589",
+      "item": "A4 paper",
+      "question": "What's the short dimension of a sheet of A4 paper?",
+      "measurement": "Short dimension",
+      "value": 210,
+      "unit": "mm",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ISO 216"
+    },
+    {
+      "id": "yb-00590",
+      "item": "A3 paper",
+      "question": "What's the long dimension of a sheet of A3 paper?",
+      "measurement": "Long dimension",
+      "value": 420,
+      "unit": "mm",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ISO 216"
+    },
+    {
+      "id": "yb-00591",
+      "item": "Business card — U.S. standard",
+      "question": "What's the long dimension of a standard U.S. business card?",
+      "measurement": "Long dimension",
+      "value": 3.5,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. printing industry standard"
+    },
+    {
+      "id": "yb-00592",
+      "item": "Business card — U.S. standard",
+      "question": "What's the short dimension of a standard U.S. business card?",
+      "measurement": "Short dimension",
+      "value": 2,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "U.S. printing industry standard"
+    },
+    {
+      "id": "yb-00593",
+      "item": "Standard door hinge",
+      "question": "How tall is a common residential 3.5-inch door hinge?",
+      "measurement": "Height",
+      "value": 3.5,
+      "unit": "in",
+      "difficulty": "Easy",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ANSI/BHMA hinge size"
+    },
+    {
+      "id": "yb-00594",
+      "item": "Standard electrical wall plate",
+      "question": "How tall is a standard single-gang wall plate?",
+      "measurement": "Height",
+      "value": 4.5,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NEMA device plate dimensions"
+    },
+    {
+      "id": "yb-00595",
+      "item": "Standard electrical wall plate",
+      "question": "How wide is a standard single-gang wall plate?",
+      "measurement": "Width",
+      "value": 2.75,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NEMA device plate dimensions"
+    },
+    {
+      "id": "yb-00596",
+      "item": "U.S. outlet box — single gang",
+      "question": "How wide is a standard single-gang electrical box?",
+      "measurement": "Width",
+      "value": 2,
+      "unit": "in",
+      "difficulty": "Hard",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "NEMA electrical box dimensions"
+    },
+    {
+      "id": "yb-00597",
+      "item": "Standard brick — U.S. modular",
+      "question": "How long is a U.S. modular brick?",
+      "measurement": "Length",
+      "value": 7.625,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Brick Industry Association"
+    },
+    {
+      "id": "yb-00598",
+      "item": "Standard brick — U.S. modular",
+      "question": "How tall is a U.S. modular brick?",
+      "measurement": "Height",
+      "value": 2.25,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Brick Industry Association"
+    },
+    {
+      "id": "yb-00599",
+      "item": "Standard brick — U.S. modular",
+      "question": "How thick is a U.S. modular brick?",
+      "measurement": "Thickness",
+      "value": 3.625,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "Brick Industry Association"
+    },
+    {
+      "id": "yb-00600",
+      "item": "Concrete masonry block",
+      "question": "How long is a nominal 8×8×16 concrete block actually?",
+      "measurement": "Actual length",
+      "value": 15.625,
+      "unit": "in",
+      "difficulty": "Medium",
+      "status": "Review",
+      "regionTags": [
+        "USCanada"
+      ],
+      "source": "ASTM C90"
+    }
+  ]
+}

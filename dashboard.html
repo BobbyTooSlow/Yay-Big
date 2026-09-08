@@ -20,6 +20,8 @@ button,input,select{font:inherit}
 .danger{background:transparent;color:var(--red);border-color:#5b2b2b}
 input,select{background:#05080a;color:#fff;border:1px solid var(--border);border-radius:7px;padding:7px}
 #search{flex:1;min-width:220px}
+.checkfilter{display:flex;align-items:center;gap:6px;white-space:nowrap;padding:0 4px;font-size:.86rem;color:var(--text)}
+.checkfilter input{width:auto;margin:0}
 .note{font-size:.82rem;line-height:1.4}
 .statusline{padding:9px 11px;border:1px solid var(--border);border-radius:9px;background:var(--panel);font-size:.82rem;color:var(--muted)}
 .statusline strong{color:var(--green)}
@@ -130,6 +132,8 @@ th:nth-child(10),td:nth-child(10){width:5%}
 <div class="tools">
   <input id="search" placeholder="Search…">
   <select id="difficultyFilter"><option>All difficulties</option><option>Easy</option><option>Medium</option><option>Hard</option></select>
+  <select id="statusFilter"><option>All statuses</option><option>Review</option><option>Keep</option><option>BadItem</option></select>
+  <label class="checkfilter"><input id="hideClassified" type="checkbox"> Hide BadItem / Not US</label>
 </div>
 
 <p class="note"><b>Rules:</b> Item = the complete database record; Question = the wording shown to the player. Region tags may contain multiple comma-separated values. Current launch tag: <b>USCanada</b>. <b>Global</b> is eligible everywhere. <b>Unassigned</b> means a good Item whose future regional home has not yet been decided. Do not delete rejected Items from the master file.</p>
@@ -357,10 +361,21 @@ function render(){
     `<span class="pill">${items.filter(x=>x.difficulty==="Easy").length} Easy</span>`+
     `<span class="pill">${items.filter(x=>x.difficulty==="Medium").length} Medium</span>`+
     `<span class="pill">${items.filter(x=>x.difficulty==="Hard").length} Hard</span>`;
-  const q=$("search").value.toLowerCase(),df=$("difficultyFilter").value;
+  const q=$("search").value.toLowerCase(),
+        df=$("difficultyFilter").value,
+        sf=$("statusFilter").value,
+        hideClassified=$("hideClassified").checked;
   const filtered=items.filter(x=>
     (!q||Object.values(x).join(" ").toLowerCase().includes(q))&&
-    (df==="All difficulties"||x.difficulty===df)
+    (df==="All difficulties"||x.difficulty===df)&&
+    (sf==="All statuses"||x.status===sf)&&
+    (!hideClassified||(
+      x.status!=="BadItem" &&
+      !(x.status==="Keep" &&
+        Array.isArray(x.regionTags) &&
+        !x.regionTags.includes("USCanada") &&
+        !x.regionTags.includes("Global"))
+    ))
   );
   $("rows").innerHTML=filtered.map(x=>`<tr data-id="${esc(x.id)}">
     <td class="id">${items.indexOf(x)+1}</td>
@@ -423,7 +438,7 @@ $("rows").onclick=e=>{
   }else return;
   save();render();
 };
-["search","difficultyFilter"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
+["search","difficultyFilter","statusFilter","hideClassified"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
 $("add").onclick=()=>{
   const item=$("newItem").value.trim();
   if(!item)return;
