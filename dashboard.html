@@ -286,7 +286,7 @@ async function syncQuestionsFromPublished(force=false){
     if(changed)save();
     const seeded=fillBlankQuestionsFromSeed();
     updateDbStatus(
-      `Published DB: ${data.questions.length} items, ${publishedWithQuestions.length} with Question wording. `+
+      `Published DB: ${data.items.length} items, ${publishedWithQuestions.length} with Question wording. `+
       `Matched ${matched} workspace items; ${changed} loaded from JSON; ${seeded} restored from the built-in migration set.`
     );
     render();
@@ -460,11 +460,11 @@ $("importFile").onchange=async e=>{
   try{
     const data=JSON.parse(await file.text());
     if(!data||!Array.isArray(data.items))throw new Error("Invalid database");
-    if(!confirm(`Import ${data.questions.length} questions and replace the current browser workspace?`))return;
+    if(!confirm(`Import ${data.items.length} Items and replace the current browser workspace?`))return;
     items=data.items.map(normalizeQuestion);
     save();render();
-    updateDbStatus(`Imported ${items.length} questions from ${file.name}.`);
-  }catch(err){alert("That file is not a valid Yay Big questions database.");console.error(err)}
+    updateDbStatus(`Imported ${items.length} Items from ${file.name}.`);
+  }catch(err){alert("That file is not a valid Yay Big Items database.");console.error(err)}
   e.target.value="";
 };
 $("syncQuestions").onclick=async()=>{
