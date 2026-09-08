@@ -375,8 +375,6 @@ const questionOverrides={
 "Olympic archery target|Face diameter":"What is the diameter of an Olympic archery target face?"};
 function articleFor(s){return /^[aeiou]/i.test(s)?"an":"a"}
 function questionText(q){if(q.question&&q.question.trim())return q.question.trim();const key=`${q.item}|${q.measurement}`;if(questionOverrides[key])return questionOverrides[key];const m=q.measurement.toLowerCase(),item=q.item,a=articleFor(item);if(["length","external length","playing area length"].includes(m))return `How long is ${a} ${item}?`;if(["width","external width","playing area width","standard width","actual width","nominal width"].includes(m))return `How wide is ${a} ${item}?`;if(["height","height above floor","height at posts","center height"].includes(m))return `How high is ${a} ${item}?`;if(["thickness","actual thickness"].includes(m))return `How thick is ${a} ${item}?`;if(["diameter","nominal diameter","face diameter"].includes(m))return `What is the diameter of ${a} ${item}?`;if(m==="inside diameter")return `What is the inside diameter of ${a} ${item}?`;if(m==="side length")return `How long is one side of ${a} ${item}?`;if(m==="depth")return `How deep is ${a} ${item}?`;return `What is the ${m} of ${a} ${item}?`}
-const PROTOTYPE_ALLOW_CANDIDATES=true;
-
 /*
   Shuffle-bag question selection:
   - Easy, Medium, and Hard each keep their own shuffled queue.
@@ -386,7 +384,7 @@ const PROTOTYPE_ALLOW_CANDIDATES=true;
   - New database questions are mixed into the current queue automatically.
   - When possible, two measurements of the same item are not used in one round.
 */
-const QUESTION_BAG_STORAGE_KEY="yayBigQuestionBagsV1";
+const QUESTION_BAG_STORAGE_KEY="yayBigItemBagsV2";
 const DIFFICULTIES=["Easy","Medium","Hard"];
 
 function shuffle(arr){
@@ -527,7 +525,14 @@ function drawFromBag(state,difficulty,pool,avoidIds=new Set(),avoidItems=new Set
 }
 
 function eligiblePool(){
-  const approved=FULL.filter(x=>x.status==="Approved"&&x.value!=null&&x.unit);
+  const EFFECTIVE_REGION="USCanada";
+  const approved=FULL.filter(x=>
+    x.status==="Keep" &&
+    x.value!=null &&
+    x.unit &&
+    Array.isArray(x.regionTags) &&
+    (x.regionTags.includes(EFFECTIVE_REGION)||x.regionTags.includes("Global"))
+  );
   const enough=
     approved.filter(x=>x.difficulty==="Easy").length>=2 &&
     approved.filter(x=>x.difficulty==="Medium").length>=4 &&
@@ -592,17 +597,17 @@ $("next").onclick=()=>{if(++i===8){$("game").classList.add("hidden");$("summary"
 $("restart").onclick=()=>{i=0;total=0;results=[];build();$("summary").classList.add("hidden");$("game").classList.remove("hidden");show()};
 async function loadQuestionDatabase(){
   try{
-    const response=await fetch("questions.json",{cache:"no-store"});
-    if(!response.ok)throw new Error(`questions.json returned ${response.status}`);
+    const response=await fetch("items.json",{cache:"no-store"});
+    if(!response.ok)throw new Error(`items.json returned ${response.status}`);
     const data=await response.json();
-    if(!data||!Array.isArray(data.questions))throw new Error("questions.json has an invalid format.");
-    FULL=data.questions;
+    if(!data||!Array.isArray(data.items))throw new Error("items.json has an invalid format.");
+    FULL=data.items.map(x=>({...x,id:(/^yb-\d+$/.test(String(x.id))?`yb-${String(parseInt(String(x.id).split("-")[1],10)).padStart(5,"0")}`:x.id)}));
     build();
     show();
   }catch(err){
     console.error(err);
     const card=document.querySelector("#game .game-card");
-    if(card)card.innerHTML=`<div style="padding:24px;text-align:center"><strong style="color:#fff2a8">Question database could not be loaded.</strong><p style="color:#9aa8b5;line-height:1.45">Make sure <code>questions.json</code> is in the same GitHub folder as <code>index.html</code>.</p></div>`;
+    if(card)card.innerHTML=`<div style="padding:24px;text-align:center"><strong style="color:#fff2a8">Item database could not be loaded.</strong><p style="color:#9aa8b5;line-height:1.45">Make sure <code>items.json</code> is in the same GitHub folder as <code>index.html</code>.</p></div>`;
   }
 }
 loadQuestionDatabase();

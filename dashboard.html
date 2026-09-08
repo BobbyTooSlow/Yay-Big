@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Yay Big Dashboard</title>
+<title>Yay Big Item Dashboard</title>
 <style>
 :root{--bg:#000;--panel:#0a0f14;--panel2:#101820;--text:#fff;--blue:#7dd3fc;--muted:#9aa8b5;--border:#26343f;--red:#ff8f8f;--yellow:#fff2a8;--green:#9be7b1}
 *{box-sizing:border-box}
@@ -48,7 +48,7 @@ td input,td select{width:100%;min-width:0;padding:6px 5px;font-size:.76rem}
 .id{white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums}
 
 /* Fit every column into the page; Chrome zoom can then scale the whole dashboard.
-   Column 0 (#) is dashboard-only and is never written to questions.json. */
+   Column 0 (#) is dashboard-only and is never written to items.json. */
 th:nth-child(1),td:nth-child(1){width:4%}
 th:nth-child(2),td:nth-child(2){width:6%}
 th:nth-child(3),td:nth-child(3){width:13%}
@@ -110,20 +110,20 @@ th:nth-child(10),td:nth-child(10){width:5%}
 <body>
 <div id="questionMeasure" aria-hidden="true"></div>
 <main>
-<h1>Yay Big Dashboard</h1>
-<p class="sub">Question database workspace · 1 Easy + 3 Medium + 1 Hard = 1000 max points</p>
+<h1>Yay Big Item Dashboard</h1>
+<p class="sub">Item database workspace · 1 Easy + 3 Medium + 1 Hard = 1000 max points</p>
 
-<div id="dbStatus" class="statusline">Loading question database…</div>
+<div id="dbStatus" class="statusline">Loading item database…</div>
 
 <div class="dbtools">
-  <button id="exportDb" class="btn">Export questions.json</button>
-  <button id="importDb" class="btn secondary">Import questions.json</button>
+  <button id="exportDb" class="btn">Export items.json</button>
+  <button id="importDb" class="btn secondary">Import items.json</button>
   <button id="syncQuestions" class="btn secondary">Sync Question wording</button>
   <button id="reloadPublished" class="btn secondary">Reload published database</button>
   <input id="importFile" type="file" accept=".json,application/json" class="hidden">
 </div>
 
-<p class="note"><b>Data safety:</b> dashboard structure and question content are now separate. Your working edits are stored independently in this browser. Export <b>questions.json</b> when you want to publish them to the game. The dashboard no longer uses Candidate/Rejected states: anything kept here is treated as approved. The exported JSON still carries <b>status: "Approved"</b> for compatibility with the current game code. Replacing or redesigning <b>dashboard.html</b> will not overwrite the saved question content. If an older saved workspace has blank Question fields, the dashboard safely fills only those blanks from the published <b>questions.json</b>. The <b>Sync Question wording</b> button can also do this manually. This version also contains a one-time migration set for the original yb-0001 through yb-0100 IDs, so blank Question fields can be restored even if the currently published JSON predates the Question field.</p>
+<p class="note"><b>Master Item database:</b> <b>items.json</b> now keeps every Item permanently. <b>Review</b> means the Item has not been vetted yet and is not playable. <b>Keep</b> means the Item is good. <b>Not US</b> keeps it as a good Item but removes it from the US/Canada pool and marks it Unassigned if no other region is known. <b>Bad Item</b> preserves the Item as rejected so it is never accidentally generated again. The game only uses eligible Keep Items; Review, rejected, and other-region Items remain in the master file but are not playable.</p>
 
 <div id="stats" class="stats"></div>
 
@@ -132,7 +132,7 @@ th:nth-child(10),td:nth-child(10){width:5%}
   <select id="difficultyFilter"><option>All difficulties</option><option>Easy</option><option>Medium</option><option>Hard</option></select>
 </div>
 
-<p class="note"><b>Rules:</b> question wording is stored and editable for every item. Renaming an item automatically updates that same item name inside its question wording. One numeric value + one official unit only. Use the unit in which the authoritative measurement is codified, especially when that preserves a clean exact value. Every question kept in the dashboard is treated as approved; remove anything you do not want published. Question boxes represent the game’s two-line text limit; a red box means the wording is too long and should be shortened.</p>
+<p class="note"><b>Rules:</b> Item = the complete database record; Question = the wording shown to the player. Region tags may contain multiple comma-separated values. Current launch tag: <b>USCanada</b>. <b>Global</b> is eligible everywhere. <b>Unassigned</b> means a good Item whose future regional home has not yet been decided. Do not delete rejected Items from the master file.</p>
 
 <div class="add">
   <input id="newItem" placeholder="New item">
@@ -150,18 +150,24 @@ th:nth-child(10),td:nth-child(10){width:5%}
 <tbody id="rows"></tbody>
 </table>
 </div>
-<p class="footer">Edits auto-save in this browser. Export questions.json to create the version consumed by the game.</p>
+<p class="footer">Edits auto-save in this browser. Export items.json to update the master Item database used by the game and future Item generation.</p>
 </main>
 
 <script>
-const QUESTION_SEED={"yb-0001": "How long is a U.S. Federal Reserve note?", "yb-0002": "How wide is a U.S. Federal Reserve note?", "yb-0003": "How long is an ISO ID-1 card?", "yb-0004": "How wide is an ISO ID-1 card?", "yb-0005": "What is the inside diameter of an NBA basketball rim?", "yb-0006": "How high is an NBA basketball rim above the floor?", "yb-0007": "How long is an NBA court?", "yb-0008": "How wide is an NBA court?", "yb-0009": "How long is the field of play on an NFL field?", "yb-0010": "How wide is an NFL field?", "yb-0011": "How high is the crossbar on an NFL goalpost?", "yb-0012": "How wide is a regulation soccer goal?", "yb-0013": "How high is a regulation soccer goal?", "yb-0014": "How wide is a regulation ice hockey goal?", "yb-0015": "How high is a regulation ice hockey goal?", "yb-0016": "How wide is the front edge of baseball home plate?", "yb-0017": "How long is one side of an MLB base?", "yb-0018": "How far is it from the pitcher's plate to the rear point of home plate?", "yb-0019": "How long is a regulation tennis court?", "yb-0020": "How wide is a singles tennis court?", "yb-0021": "How wide is a doubles tennis court?", "yb-0022": "How high is a tennis net at the center?", "yb-0023": "How long is a regulation table-tennis table?", "yb-0024": "How wide is a regulation table-tennis table?", "yb-0025": "How high is a regulation table-tennis table?", "yb-0026": "How high is a table-tennis net?", "yb-0027": "How high is a men's volleyball net?", "yb-0028": "How high is a women's volleyball net?", "yb-0029": "How long is an Olympic long-course swimming pool?", "yb-0030": "How wide is an Olympic long-course swimming pool?", "yb-0031": "How high is the highest Olympic diving platform?", "yb-0032": "What is the diameter of a regulation golf hole?", "yb-0033": "How long is a regulation cornhole board?", "yb-0034": "How wide is a regulation cornhole board?", "yb-0035": "What is the diameter of the hole in a regulation cornhole board?", "yb-0036": "How high is the center of a regulation dartboard bullseye?", "yb-0037": "What is the diameter of a regulation pool ball?", "yb-0038": "How wide is a poker-size playing card?", "yb-0039": "How tall is a poker-size playing card?", "yb-0040": "What is the diameter of a standard compact disc?", "yb-0041": "What is the diameter of a standard DVD?", "yb-0042": "What is the nominal diameter of a 12-inch LP record?", "yb-0043": "What is the nominal width of a 3.5-inch floppy disk?", "yb-0044": "How tall is an IEC R6 AA battery?", "yb-0045": "How tall is an IEC R03 AAA battery?", "yb-0046": "How long is a 4FF nano-SIM card?", "yb-0047": "How wide is a 4FF nano-SIM card?", "yb-0048": "How tall is a LEGO minifigure?", "yb-0049": "How long is one side of a Rubik's Cube?", "yb-0050": "How long is a No. 2 pencil?", "yb-0051": "What is the diameter of a golf ball?", "yb-0052": "What is the diameter of a tennis ball?", "yb-0053": "What is the diameter of a baseball?", "yb-0054": "What is the diameter of a softball?", "yb-0055": "What is the diameter of a basketball?", "yb-0056": "What is the diameter of a soccer ball?", "yb-0057": "What is the diameter of a bowling ball?", "yb-0058": "How tall is a bowling pin?", "yb-0059": "What is the diameter of a regulation hockey puck?", "yb-0060": "How thick is a regulation hockey puck?", "yb-0061": "What is the diameter of a U.S. quarter?", "yb-0062": "What is the diameter of a U.S. dime?", "yb-0063": "What is the diameter of a U.S. nickel?", "yb-0064": "What is the diameter of a U.S. cent?", "yb-0065": "How wide is a sheet of U.S. letter paper?", "yb-0066": "How long is a sheet of U.S. letter paper?", "yb-0067": "How long is a sheet of U.S. legal paper?", "yb-0068": "How wide is a queen-size mattress?", "yb-0069": "How long is a queen-size mattress?", "yb-0070": "How wide is a king-size mattress?", "yb-0071": "How wide is a twin-size mattress?", "yb-0072": "What is the actual width of a nominal 2×4 board?", "yb-0073": "What is the actual thickness of a nominal 2×4 board?", "yb-0074": "How long is a standard GMA pallet?", "yb-0075": "How wide is a standard GMA pallet?", "yb-0076": "How far apart are the rails on standard-gauge railroad track?", "yb-0077": "What is the exterior length of a 20-foot ISO shipping container?", "yb-0078": "What is the exterior width of a 20-foot ISO shipping container?", "yb-0079": "What is the exterior length of a 40-foot ISO shipping container?", "yb-0080": "What is the exterior width of a 40-foot ISO shipping container?", "yb-0081": "How long is one lap of an Olympic athletics track in lane 1?", "yb-0082": "How wide is a standard athletics track lane?", "yb-0083": "How long is a regulation badminton court?", "yb-0084": "How wide is a doubles badminton court?", "yb-0085": "How high is a badminton net at the posts?", "yb-0086": "How long is a regulation pickleball court?", "yb-0087": "How wide is a regulation pickleball court?", "yb-0088": "How high is a pickleball net at the center?", "yb-0089": "How long is the playing area of a regulation snooker table?", "yb-0090": "How wide is the playing area of a regulation snooker table?", "yb-0091": "How far is the soccer penalty mark from the goal line?", "yb-0092": "How deep is the soccer goal area from the goal line?", "yb-0093": "How deep is the soccer penalty area from the goal line?", "yb-0094": "How long is a regulation baseball batter's box?", "yb-0095": "How wide is a regulation baseball batter's box?", "yb-0096": "How wide is an NBA backboard?", "yb-0097": "How high is an NBA backboard?", "yb-0098": "How far is the NBA free-throw line from the plane of the backboard?", "yb-0099": "What is the diameter of a regulation table-tennis ball?", "yb-0100": "What is the diameter of an Olympic archery target face?"};
-const STORAGE_KEY="yayBigQuestionWorkspaceV1";
+const QUESTION_SEED={"yb-00001": "How long is a U.S. Federal Reserve note?", "yb-00002": "How wide is a U.S. Federal Reserve note?", "yb-00003": "How long is an ISO ID-1 card?", "yb-00004": "How wide is an ISO ID-1 card?", "yb-00005": "What is the inside diameter of an NBA basketball rim?", "yb-00006": "How high is an NBA basketball rim above the floor?", "yb-00007": "How long is an NBA court?", "yb-00008": "How wide is an NBA court?", "yb-00009": "How long is the field of play on an NFL field?", "yb-00010": "How wide is an NFL field?", "yb-00011": "How high is the crossbar on an NFL goalpost?", "yb-00012": "How wide is a regulation soccer goal?", "yb-00013": "How high is a regulation soccer goal?", "yb-00014": "How wide is a regulation ice hockey goal?", "yb-00015": "How high is a regulation ice hockey goal?", "yb-00016": "How wide is the front edge of baseball home plate?", "yb-00017": "How long is one side of an MLB base?", "yb-00018": "How far is it from the pitcher's plate to the rear point of home plate?", "yb-00019": "How long is a regulation tennis court?", "yb-00020": "How wide is a singles tennis court?", "yb-00021": "How wide is a doubles tennis court?", "yb-00022": "How high is a tennis net at the center?", "yb-00023": "How long is a regulation table-tennis table?", "yb-00024": "How wide is a regulation table-tennis table?", "yb-00025": "How high is a regulation table-tennis table?", "yb-00026": "How high is a table-tennis net?", "yb-00027": "How high is a men's volleyball net?", "yb-00028": "How high is a women's volleyball net?", "yb-00029": "How long is an Olympic long-course swimming pool?", "yb-00030": "How wide is an Olympic long-course swimming pool?", "yb-00031": "How high is the highest Olympic diving platform?", "yb-00032": "What is the diameter of a regulation golf hole?", "yb-00033": "How long is a regulation cornhole board?", "yb-00034": "How wide is a regulation cornhole board?", "yb-00035": "What is the diameter of the hole in a regulation cornhole board?", "yb-00036": "How high is the center of a regulation dartboard bullseye?", "yb-00037": "What is the diameter of a regulation pool ball?", "yb-00038": "How wide is a poker-size playing card?", "yb-00039": "How tall is a poker-size playing card?", "yb-00040": "What is the diameter of a standard compact disc?", "yb-00041": "What is the diameter of a standard DVD?", "yb-00042": "What is the nominal diameter of a 12-inch LP record?", "yb-00043": "What is the nominal width of a 3.5-inch floppy disk?", "yb-00044": "How tall is an IEC R6 AA battery?", "yb-00045": "How tall is an IEC R03 AAA battery?", "yb-00046": "How long is a 4FF nano-SIM card?", "yb-00047": "How wide is a 4FF nano-SIM card?", "yb-00048": "How tall is a LEGO minifigure?", "yb-00049": "How long is one side of a Rubik's Cube?", "yb-00050": "How long is a No. 2 pencil?", "yb-00051": "What is the diameter of a golf ball?", "yb-00052": "What is the diameter of a tennis ball?", "yb-00053": "What is the diameter of a baseball?", "yb-00054": "What is the diameter of a softball?", "yb-00055": "What is the diameter of a basketball?", "yb-00056": "What is the diameter of a soccer ball?", "yb-00057": "What is the diameter of a bowling ball?", "yb-00058": "How tall is a bowling pin?", "yb-00059": "What is the diameter of a regulation hockey puck?", "yb-00060": "How thick is a regulation hockey puck?", "yb-00061": "What is the diameter of a U.S. quarter?", "yb-00062": "What is the diameter of a U.S. dime?", "yb-00063": "What is the diameter of a U.S. nickel?", "yb-00064": "What is the diameter of a U.S. cent?", "yb-00065": "How wide is a sheet of U.S. letter paper?", "yb-00066": "How long is a sheet of U.S. letter paper?", "yb-00067": "How long is a sheet of U.S. legal paper?", "yb-00068": "How wide is a queen-size mattress?", "yb-00069": "How long is a queen-size mattress?", "yb-00070": "How wide is a king-size mattress?", "yb-00071": "How wide is a twin-size mattress?", "yb-00072": "What is the actual width of a nominal 2×4 board?", "yb-00073": "What is the actual thickness of a nominal 2×4 board?", "yb-00074": "How long is a standard GMA pallet?", "yb-00075": "How wide is a standard GMA pallet?", "yb-00076": "How far apart are the rails on standard-gauge railroad track?", "yb-00077": "What is the exterior length of a 20-foot ISO shipping container?", "yb-00078": "What is the exterior width of a 20-foot ISO shipping container?", "yb-00079": "What is the exterior length of a 40-foot ISO shipping container?", "yb-00080": "What is the exterior width of a 40-foot ISO shipping container?", "yb-00081": "How long is one lap of an Olympic athletics track in lane 1?", "yb-00082": "How wide is a standard athletics track lane?", "yb-00083": "How long is a regulation badminton court?", "yb-00084": "How wide is a doubles badminton court?", "yb-00085": "How high is a badminton net at the posts?", "yb-00086": "How long is a regulation pickleball court?", "yb-00087": "How wide is a regulation pickleball court?", "yb-00088": "How high is a pickleball net at the center?", "yb-00089": "How long is the playing area of a regulation snooker table?", "yb-00090": "How wide is the playing area of a regulation snooker table?", "yb-00091": "How far is the soccer penalty mark from the goal line?", "yb-00092": "How deep is the soccer goal area from the goal line?", "yb-00093": "How deep is the soccer penalty area from the goal line?", "yb-00094": "How long is a regulation baseball batter's box?", "yb-00095": "How wide is a regulation baseball batter's box?", "yb-00096": "How wide is an NBA backboard?", "yb-00097": "How high is an NBA backboard?", "yb-00098": "How far is the NBA free-throw line from the plane of the backboard?", "yb-00099": "What is the diameter of a regulation table-tennis ball?", "yb-00100": "What is the diameter of an Olympic archery target face?"};
+const STORAGE_KEY="yayBigItemWorkspaceV3";
 const OLD_STORAGE_KEY="yayBigDashboardV2";
 const units=["mm","cm","m","km","in","ft","yd","mi"];
 let items=[];
 const $=id=>document.getElementById(id);
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
-function stableId(n){return `yb-${String(n).padStart(4,"0")}`}
+function stableId(n){return `yb-${String(n).padStart(5,"0")}`}
+
+function canonicalItemId(id){
+  const m=String(id??"").match(/^yb-(\d+)$/i);
+  return m?`yb-${String(parseInt(m[1],10)).padStart(5,"0")}`:String(id??"");
+}
+
 function normalizeQuestion(x,index=0){
   let id=x.id;
   if(typeof id==="number"||/^\d+$/.test(String(id)))id=stableId(Number(id));
@@ -174,7 +180,8 @@ function normalizeQuestion(x,index=0){
     value:x.value===""||x.value==null?null:Number(x.value),
     unit:String(x.unit??""),
     difficulty:["Easy","Medium","Hard"].includes(x.difficulty)?x.difficulty:"Medium",
-    status:"Approved",
+    status:["Keep","Review","BadItem"].includes(x.status)?x.status:(x.status==="Approved"?"Keep":"Review"),
+    regionTags:Array.isArray(x.regionTags)?[...x.regionTags]:["USCanada"],
     source:String(x.source??"")
   };
 }
@@ -193,8 +200,8 @@ function syncItemNameIntoQuestion(question,oldItem,newItem){
 }
 
 function save(){
-  items.forEach(x=>x.status="Approved");
-  const payload={schemaVersion:1,database:"Yay Big Questions",questions:items};
+  
+  const payload={schemaVersion:2,database:"Yay Big Items",items:items};
   localStorage.setItem(STORAGE_KEY,JSON.stringify(payload));
   updateDbStatus("Working edits saved in this browser.");
 }
@@ -204,9 +211,9 @@ function loadWorkspace(){
     const raw=localStorage.getItem(STORAGE_KEY);
     if(!raw)return false;
     const data=JSON.parse(raw);
-    if(!data||!Array.isArray(data.questions))return false;
-    items=data.questions.map(normalizeQuestion);
-    updateDbStatus("Loaded your saved question workspace.");
+    if(!data||!Array.isArray(data.items))return false;
+    items=data.items.map(normalizeQuestion);
+    updateDbStatus("Loaded your saved item workspace.");
     return true;
   }catch(e){console.error(e);return false}
 }
@@ -240,16 +247,16 @@ function fillBlankQuestionsFromSeed(){
 
 async function syncQuestionsFromPublished(force=false){
   try{
-    const url=`questions.json?v=${Date.now()}`;
+    const url=`items.json?v=${Date.now()}`;
     const res=await fetch(url,{cache:"no-store"});
-    if(!res.ok)throw new Error(`questions.json returned ${res.status}`);
+    if(!res.ok)throw new Error(`items.json returned ${res.status}`);
     const data=await res.json();
-    if(!data||!Array.isArray(data.questions))throw new Error("Invalid published database format");
+    if(!data||!Array.isArray(data.items))throw new Error("Invalid published database format");
 
-    const publishedWithQuestions=data.questions.filter(q=>q.question&&String(q.question).trim());
-    const byId=new Map(data.questions.map(q=>[String(q.id),q]));
+    const publishedWithQuestions=data.items.filter(q=>q.question&&String(q.question).trim());
+    const byId=new Map(data.items.map(q=>[String(q.id),q]));
     const byItemMeasurement=new Map(
-      data.questions.map(q=>[
+      data.items.map(q=>[
         `${String(q.item||"").trim().toLowerCase()}|||${String(q.measurement||"").trim().toLowerCase()}`,
         q
       ])
@@ -292,19 +299,19 @@ async function syncQuestionsFromPublished(force=false){
 }
 
 async function loadPublished(confirmFirst=false){
-  if(confirmFirst&&!confirm("Replace your current browser workspace with the published questions.json? Export first if you want a backup."))return;
+  if(confirmFirst&&!confirm("Replace your current browser workspace with the published items.json? Export first if you want a backup."))return;
   try{
-    const res=await fetch(`questions.json?v=${Date.now()}`,{cache:"no-store"});
-    if(!res.ok)throw new Error(`questions.json returned ${res.status}`);
+    const res=await fetch(`items.json?v=${Date.now()}`,{cache:"no-store"});
+    if(!res.ok)throw new Error(`items.json returned ${res.status}`);
     const data=await res.json();
-    if(!data||!Array.isArray(data.questions))throw new Error("Invalid database format");
-    items=data.questions.map(normalizeQuestion);
+    if(!data||!Array.isArray(data.items))throw new Error("Invalid database format");
+    items=data.items.map(normalizeQuestion);
     save();
-    updateDbStatus("Loaded the published questions.json.");
+    updateDbStatus("Loaded the published items.json.");
     render();
   }catch(e){
     console.error(e);
-    updateDbStatus("Could not load questions.json. Make sure it is beside dashboard.html on GitHub Pages.");
+    updateDbStatus("Could not load items.json. Make sure it is beside dashboard.html on GitHub Pages.");
   }
 }
 
@@ -344,6 +351,9 @@ function markAllQuestionLengths(){
 function render(){
   $("stats").innerHTML=
     `<span class="pill">${items.length} total</span>`+
+    `<span class="pill">${items.filter(x=>x.status==="Keep").length} Keep</span>`+
+    `<span class="pill">${items.filter(x=>x.status==="Review").length} Review</span>`+
+    `<span class="pill">${items.filter(x=>x.status==="BadItem").length} Bad Item</span>`+
     `<span class="pill">${items.filter(x=>x.difficulty==="Easy").length} Easy</span>`+
     `<span class="pill">${items.filter(x=>x.difficulty==="Medium").length} Medium</span>`+
     `<span class="pill">${items.filter(x=>x.difficulty==="Hard").length} Hard</span>`;
@@ -362,7 +372,13 @@ function render(){
     <td><select data-k="unit"><option value="">—</option>${units.map(u=>`<option value="${u}" ${x.unit===u?"selected":""}>${u}</option>`).join("")}</select></td>
     <td><select data-k="difficulty">${["Easy","Medium","Hard"].map(v=>`<option ${x.difficulty===v?"selected":""}>${v}</option>`).join("")}</select></td>
     <td><input class="source" data-k="source" value="${esc(x.source)}"></td>
-    <td><button class="delete">Remove</button></td>
+    <td class="id">${esc(x.status||"Keep")}</td>
+    <td><input class="regions" data-k="regionTags" value="${esc((x.regionTags||[]).join(", "))}" placeholder="USCanada, Global"></td>
+    <td class="item-actions">
+      <button class="keep" title="Keep in the US/Canada pool">Keep</button>
+      <button class="notus" title="Good Item, but not for the US/Canada pool">Not US</button>
+      <button class="baditem" title="Reject permanently">Bad Item</button>
+    </td>
   </tr>`).join("");
   markAllQuestionLengths();
 }
@@ -375,7 +391,9 @@ $("rows").onchange=e=>{
   const x=items.find(i=>i.id===tr.dataset.id);
   if(!x)return;
 
-  if(k==="item"){
+  if(k==="regionTags"){
+    x.regionTags=e.target.value.split(",").map(v=>v.trim()).filter(Boolean);
+  }else if(k==="item"){
     const oldItem=x.item;
     const newItem=e.target.value;
     x.item=newItem;
@@ -387,8 +405,22 @@ $("rows").onchange=e=>{
   save();render();
 };
 $("rows").onclick=e=>{
-  if(!e.target.classList.contains("delete"))return;
-  items=items.filter(x=>x.id!==e.target.closest("tr").dataset.id);
+  const tr=e.target.closest("tr");
+  if(!tr)return;
+  const x=items.find(i=>i.id===tr.dataset.id);
+  if(!x)return;
+  if(e.target.classList.contains("keep")){
+    x.status="Keep";
+    x.regionTags=Array.isArray(x.regionTags)?x.regionTags:[];
+    if(!x.regionTags.includes("USCanada")&&!x.regionTags.includes("Global"))x.regionTags.push("USCanada");
+  }else if(e.target.classList.contains("notus")){
+    x.status="Keep";
+    x.regionTags=(Array.isArray(x.regionTags)?x.regionTags:[]).filter(t=>t!=="USCanada");
+    if(!x.regionTags.length)x.regionTags=["Unassigned"];
+  }else if(e.target.classList.contains("baditem")){
+    x.status="BadItem";
+    x.regionTags=[];
+  }else return;
   save();render();
 };
 ["search","difficultyFilter"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
@@ -403,7 +435,8 @@ $("add").onclick=()=>{
     value:$("newValue").value===""?null:Number($("newValue").value),
     unit:$("newUnit").value,
     difficulty:$("newDifficulty").value,
-    status:"Approved",
+    status:"Review",
+    regionTags:["USCanada"],
     source:"Needs verification"
   });
   ["newItem","newQuestion","newMeasurement","newValue"].forEach(id=>$(id).value="");
@@ -411,14 +444,14 @@ $("add").onclick=()=>{
   save();render();
 };
 function exportDatabase(){
-  items.forEach(x=>x.status="Approved");
-  const payload={schemaVersion:1,database:"Yay Big Questions",questions:items};
+  
+  const payload={schemaVersion:2,database:"Yay Big Items",items:items};
   const blob=new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
   const url=URL.createObjectURL(blob);
   const a=document.createElement("a");
-  a.href=url;a.download="questions.json";document.body.appendChild(a);a.click();a.remove();
+  a.href=url;a.download="items.json";document.body.appendChild(a);a.click();a.remove();
   setTimeout(()=>URL.revokeObjectURL(url),1000);
-  updateDbStatus("Exported questions.json. Upload that file to GitHub to publish these edits.");
+  updateDbStatus("Exported the master items.json. Upload it to GitHub to publish these edits.");
 }
 $("exportDb").onclick=exportDatabase;
 $("importDb").onclick=()=>$("importFile").click();
@@ -426,9 +459,9 @@ $("importFile").onchange=async e=>{
   const file=e.target.files?.[0]; if(!file)return;
   try{
     const data=JSON.parse(await file.text());
-    if(!data||!Array.isArray(data.questions))throw new Error("Invalid database");
+    if(!data||!Array.isArray(data.items))throw new Error("Invalid database");
     if(!confirm(`Import ${data.questions.length} questions and replace the current browser workspace?`))return;
-    items=data.questions.map(normalizeQuestion);
+    items=data.items.map(normalizeQuestion);
     save();render();
     updateDbStatus(`Imported ${items.length} questions from ${file.name}.`);
   }catch(err){alert("That file is not a valid Yay Big questions database.");console.error(err)}
@@ -437,7 +470,7 @@ $("importFile").onchange=async e=>{
 $("syncQuestions").onclick=async()=>{
   const blanks=items.filter(x=>!String(x.question||"").trim()).length;
   if(blanks===0){
-    if(!confirm("No Question fields are blank. Replace all current Question wording with the wording from the published questions.json?"))return;
+    if(!confirm("No Question fields are blank. Replace all current Question wording with the wording from the published items.json?"))return;
     await syncQuestionsFromPublished(true);
   }else{
     await syncQuestionsFromPublished(false);
@@ -463,3 +496,13 @@ $("reloadPublished").onclick=()=>loadPublished(true);
 </script>
 </body>
 </html>
+
+<style>
+/* Master Item database v2 */
+.item-actions{white-space:nowrap}
+.item-actions button{font:inherit;font-size:.72rem;font-weight:800;padding:5px 6px;border-radius:6px;cursor:pointer;margin:1px}
+.keep{border:1px solid var(--green);background:transparent;color:var(--green)}
+.notus{border:1px solid var(--yellow);background:transparent;color:var(--yellow)}
+.baditem{border:1px solid var(--red);background:transparent;color:var(--red)}
+.regions{font-size:.75rem}
+</style>
