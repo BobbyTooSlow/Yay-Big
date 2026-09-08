@@ -3476,21 +3476,19 @@
       "value": 64.75,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Indianapolis Motor Speedway"
     },
     {
       "id": "yb-00419",
       "item": "Claret Jug",
-      "question": "How tall is golf's Open Championship Claret Jug?",
+      "question": "How tall is golf's British Open Championship Claret Jug?",
       "measurement": "Height",
       "value": 20.75,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3499,12 +3497,12 @@
     {
       "id": "yb-00420",
       "item": "Ryder Cup",
-      "question": "How tall is the Ryder Cup trophy?",
+      "question": "How tall is golf's Ryder Cup trophy?",
       "measurement": "Height",
       "value": 17,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3518,7 +3516,7 @@
       "value": 1.52,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3532,7 +3530,7 @@
       "value": 1.95,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3546,7 +3544,7 @@
       "value": 1.35,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3560,7 +3558,7 @@
       "value": 1.75,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3574,10 +3572,8 @@
       "value": 2.15,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "United States Mint"
     },
     {
@@ -3588,10 +3584,8 @@
       "value": 2,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "United States Mint"
     },
     {
@@ -3602,10 +3596,8 @@
       "value": 0.0043,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "U.S. Bureau of Engraving and Printing"
     },
     {
@@ -3616,7 +3608,7 @@
       "value": 0.76,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3630,7 +3622,7 @@
       "value": 2.1,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3644,10 +3636,8 @@
       "value": 1,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "SD Association"
     },
     {
@@ -3658,10 +3648,8 @@
       "value": 0.67,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "ETSI"
     },
     {
@@ -3672,7 +3660,7 @@
       "value": 1.2,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3686,7 +3674,7 @@
       "value": 1.2,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3700,10 +3688,8 @@
       "value": 3.3,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "ISO/IEC 9529"
     },
     {
@@ -3714,10 +3700,8 @@
       "value": 25,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "VHS format specification"
     },
     {
@@ -3728,10 +3712,8 @@
       "value": 12,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "IEC 60094"
     },
     {
@@ -3742,10 +3724,8 @@
       "value": 3.2,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "LEGO System dimensions"
     },
     {
@@ -3756,7 +3736,7 @@
       "value": 15,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3770,7 +3750,7 @@
       "value": 8,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3784,10 +3764,8 @@
       "value": 3.3,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Nintendo"
     },
     {
@@ -3798,10 +3776,8 @@
       "value": 104,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Sony"
     },
     {
@@ -3812,10 +3788,8 @@
       "value": 13.9,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Nintendo"
     },
     {
@@ -3826,10 +3800,8 @@
       "value": 8.5,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Google"
     },
     {
@@ -3840,10 +3812,8 @@
       "value": 7.6,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Samsung"
     },
     {
@@ -3854,10 +3824,8 @@
       "value": 9.7,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Apple"
     },
     {
@@ -3868,10 +3836,8 @@
       "value": 11.3,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Apple"
     },
     {
@@ -3882,10 +3848,8 @@
       "value": 5.1,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Apple"
     },
     {
@@ -3896,10 +3860,8 @@
       "value": 0.71,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Fender"
     },
     {
@@ -3910,7 +3872,7 @@
       "value": 0.96,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3924,10 +3886,8 @@
       "value": 0.1,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Razor blade dimensional specification"
     },
     {
@@ -3938,10 +3898,8 @@
       "value": 0.025,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Stanley"
     },
     {
@@ -3952,7 +3910,7 @@
       "value": 0.1,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3966,10 +3924,8 @@
       "value": 2.7,
       "unit": "mil",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "SC Johnson"
     },
     {
@@ -3980,7 +3936,7 @@
       "value": 3,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -3994,7 +3950,7 @@
       "value": 3,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4008,10 +3964,8 @@
       "value": 0.75,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "BAND-AID Brand"
     },
     {
@@ -4022,10 +3976,8 @@
       "value": 0.875,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "BAND-AID Brand"
     },
     {
@@ -4036,7 +3988,7 @@
       "value": 3.5,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4050,10 +4002,8 @@
       "value": 1.25,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Dove"
     },
     {
@@ -4064,7 +4014,7 @@
       "value": 2.6,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4078,7 +4028,7 @@
       "value": 0.625,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4092,10 +4042,8 @@
       "value": 5.2,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Procter & Gamble"
     },
     {
@@ -4106,10 +4054,8 @@
       "value": 5.3,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Procter & Gamble"
     },
     {
@@ -4120,10 +4066,8 @@
       "value": 7.75,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Procter & Gamble"
     },
     {
@@ -4134,10 +4078,8 @@
       "value": 7.5,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Colgate-Palmolive"
     },
     {
@@ -4148,7 +4090,7 @@
       "value": 10.3,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4162,10 +4104,8 @@
       "value": 4.4,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Unilever"
     },
     {
@@ -4176,10 +4116,8 @@
       "value": 3.75,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Beiersdorf"
     },
     {
@@ -4190,7 +4128,7 @@
       "value": 8.875,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4204,21 +4142,19 @@
       "value": 3.4675,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Kleenex"
     },
     {
       "id": "yb-00471",
       "item": "Cotton round",
-      "question": "What is the diameter of a standard cotton round?",
+      "question": "What is the diameter of a standard cotton round pad?",
       "measurement": "Diameter",
       "value": 2.25,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4232,10 +4168,8 @@
       "value": 3.75,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Tweezerman"
     },
     {
@@ -4246,10 +4180,8 @@
       "value": 6.5,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Braun"
     },
     {
@@ -4260,10 +4192,8 @@
       "value": 6.3,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Philips"
     },
     {
@@ -4274,10 +4204,8 @@
       "value": 40,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Gillette"
     },
     {
@@ -4288,10 +4216,8 @@
       "value": 35,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Gillette"
     },
     {
@@ -4302,10 +4228,8 @@
       "value": 18.5,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Oral-B"
     },
     {
@@ -4316,10 +4240,8 @@
       "value": 31.8,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Philips"
     },
     {
@@ -4330,7 +4252,7 @@
       "value": 4.83,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4344,7 +4266,7 @@
       "value": 2.6,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4358,7 +4280,7 @@
       "value": 5.3,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4372,7 +4294,7 @@
       "value": 4,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4386,7 +4308,7 @@
       "value": 2.625,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4395,12 +4317,12 @@
     {
       "id": "yb-00484",
       "item": "Pringles can — 5.2 oz",
-      "question": "How tall is a 5.2-oz Pringles can?",
+      "question": "How tall is a standard full-size (5.2-oz) Pringles can?",
       "measurement": "Height",
       "value": 10.5,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4414,7 +4336,7 @@
       "value": 3.125,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4423,12 +4345,12 @@
     {
       "id": "yb-00486",
       "item": "Morton Salt — 26 oz",
-      "question": "How tall is a 26-oz Morton Salt container?",
+      "question": "How tall is a standard round (26-oz) Morton Salt container?",
       "measurement": "Height",
       "value": 5.75,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4437,12 +4359,12 @@
     {
       "id": "yb-00487",
       "item": "Morton Salt — 26 oz",
-      "question": "What is the diameter of a 26-oz Morton Salt container?",
+      "question": "What's the diameter of a standard 26-oz Morton Salt container?",
       "measurement": "Diameter",
       "value": 4,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4456,7 +4378,7 @@
       "value": 5.25,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4470,7 +4392,7 @@
       "value": 7.5,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4484,7 +4406,7 @@
       "value": 5.2,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4498,7 +4420,7 @@
       "value": 6.9,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4512,10 +4434,8 @@
       "value": 10.25,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Corelle"
     },
     {
@@ -4526,10 +4446,8 @@
       "value": 10.25,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Lodge"
     },
     {
@@ -4540,7 +4458,7 @@
       "value": 13.9,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4554,10 +4472,8 @@
       "value": 14.1,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "KitchenAid"
     },
     {
@@ -4568,10 +4484,8 @@
       "value": 20.5,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Vitamix"
     },
     {
@@ -4582,10 +4496,8 @@
       "value": 12.6,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Instant Brands"
     },
     {
@@ -4596,10 +4508,8 @@
       "value": 13.3,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Keurig"
     },
     {
@@ -4610,10 +4520,8 @@
       "value": 8.5,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Chemex"
     },
     {
@@ -4624,7 +4532,7 @@
       "value": 8.25,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4638,10 +4546,8 @@
       "value": 9.4,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Hydro Flask"
     },
     {
@@ -4652,10 +4558,8 @@
       "value": 6.875,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "YETI"
     },
     {
@@ -4666,7 +4570,7 @@
       "value": 4.75,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4675,12 +4579,12 @@
     {
       "id": "yb-00504",
       "item": "Solo red party cup — 18 oz",
-      "question": "What is the top diameter of an 18-oz red Solo cup?",
+      "question": "What is the top diameter of a classic 18-oz red Solo cup?",
       "measurement": "Top diameter",
       "value": 3.75,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4694,10 +4598,8 @@
       "value": 11,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Procter & Gamble"
     },
     {
@@ -4708,10 +4610,8 @@
       "value": 5.9,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Procter & Gamble"
     },
     {
@@ -4722,10 +4622,8 @@
       "value": 8.4,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Kleenex"
     },
     {
@@ -4736,10 +4634,8 @@
       "value": 8.2,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Kleenex"
     },
     {
@@ -4750,7 +4646,7 @@
       "value": 12,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4764,7 +4660,7 @@
       "value": 0.75,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4773,12 +4669,12 @@
     {
       "id": "yb-00511",
       "item": "Sharpie Fine Point marker",
-      "question": "How long is a capped Sharpie Fine Point marker?",
+      "question": "How long is a capped standard Sharpie (\"Fine Point\") marker?",
       "measurement": "Length",
       "value": 5.5,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4787,12 +4683,12 @@
     {
       "id": "yb-00512",
       "item": "BIC Cristal pen",
-      "question": "How long is a BIC Cristal ballpoint pen?",
+      "question": "How long is a BIC Cristal ballpoint pen (with cap on)?",
       "measurement": "Length",
       "value": 5.875,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4806,7 +4702,7 @@
       "value": 35,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4820,7 +4716,7 @@
       "value": 21,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4834,7 +4730,7 @@
       "value": 31.9,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4848,10 +4744,8 @@
       "value": 166,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Apple"
     },
     {
@@ -4862,10 +4756,8 @@
       "value": 8.9,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Apple"
     },
     {
@@ -4876,10 +4768,8 @@
       "value": 3.9,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Amazon"
     },
     {
@@ -4890,10 +4780,8 @@
       "value": 3.85,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Google"
     },
     {
@@ -4904,10 +4792,8 @@
       "value": 160,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Sony"
     },
     {
@@ -4918,10 +4804,8 @@
       "value": 152,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Microsoft"
     },
     {
@@ -4932,10 +4816,8 @@
       "value": 102,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Nintendo"
     },
     {
@@ -4946,7 +4828,7 @@
       "value": 40,
       "unit": "mm",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4960,7 +4842,7 @@
       "value": 11.5,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4974,7 +4856,7 @@
       "value": 18,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -4988,7 +4870,7 @@
       "value": 2.75,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5002,7 +4884,7 @@
       "value": 3.75,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5011,12 +4893,12 @@
     {
       "id": "yb-00528",
       "item": "View-Master reel",
-      "question": "What is the diameter of a classic View-Master reel?",
+      "question": "What is the diameter of a classic View-Master reel disc?",
       "measurement": "Diameter",
       "value": 3.5,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5030,7 +4912,7 @@
       "value": 7,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5044,10 +4926,8 @@
       "value": 5.6,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Newell Brands"
     },
     {
@@ -5058,10 +4938,8 @@
       "value": 5.75,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Elmer's"
     },
     {
@@ -5072,10 +4950,8 @@
       "value": 4,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Leatherman"
     },
     {
@@ -5086,10 +4962,8 @@
       "value": 91,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Victorinox"
     },
     {
@@ -5100,10 +4974,8 @@
       "value": 168,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "White House Historical Association"
     },
     {
@@ -5114,7 +4986,7 @@
       "value": 288,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5128,7 +5000,7 @@
       "value": 60,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5142,7 +5014,7 @@
       "value": 167,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5156,10 +5028,8 @@
       "value": 2200,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Niagara Parks"
     },
     {
@@ -5170,7 +5040,7 @@
       "value": 6000,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5184,7 +5054,7 @@
       "value": 8848.86,
       "unit": "m",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5198,7 +5068,7 @@
       "value": 220,
       "unit": "ft",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5212,10 +5082,8 @@
       "value": 23.5833333333,
       "unit": "ft",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "National Park Service"
     },
     {
@@ -5226,9 +5094,9 @@
       "value": 57,
       "unit": "m",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
-        "USCanada"
+        "Unassigned"
       ],
       "source": "Official Eiffel Tower site"
     },
@@ -5240,7 +5108,7 @@
       "value": 350,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5249,12 +5117,12 @@
     {
       "id": "yb-00545",
       "item": "Great Pyramid of Giza",
-      "question": "How tall was the Great Pyramid when completed?",
+      "question": "How tall was Egypt's Great Pyramid when completed?",
       "measurement": "Original height",
       "value": 146.6,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5263,12 +5131,12 @@
     {
       "id": "yb-00546",
       "item": "Great Sphinx of Giza",
-      "question": "How tall is the Great Sphinx from base to head?",
+      "question": "How tall is Egypt's Great Sphinx from base to head?",
       "measurement": "Height",
       "value": 20,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5282,9 +5150,9 @@
       "value": 156,
       "unit": "m",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
-        "USCanada"
+        "Unassigned"
       ],
       "source": "Parco archeologico del Colosseo"
     },
@@ -5296,7 +5164,7 @@
       "value": 65,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5305,12 +5173,12 @@
     {
       "id": "yb-00549",
       "item": "Brooklyn Bridge",
-      "question": "How high are the Brooklyn Bridge towers above the water?",
+      "question": "How high are NYC's Brooklyn Bridge towers above the water?",
       "measurement": "Tower height",
       "value": 276.5,
       "unit": "ft",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5324,10 +5192,8 @@
       "value": 660,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "U.S. Bureau of Reclamation"
     },
     {
@@ -5338,10 +5204,8 @@
       "value": 45,
       "unit": "ft",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "U.S. Bureau of Reclamation"
     },
     {
@@ -5351,8 +5215,8 @@
       "measurement": "Usable width",
       "value": 110,
       "unit": "ft",
-      "difficulty": "Medium",
-      "status": "Review",
+      "difficulty": "Hard",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5366,7 +5230,7 @@
       "value": 68.4,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5380,7 +5244,7 @@
       "value": 35.8,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5394,21 +5258,19 @@
       "value": 24.1,
       "unit": "m",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Airbus"
     },
     {
       "id": "yb-00556",
       "item": "Concorde",
-      "question": "What was the wingspan of Concorde?",
+      "question": "What was the wingspan of the Concorde plane?",
       "measurement": "Wingspan",
       "value": 25.56,
       "unit": "m",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5417,12 +5279,12 @@
     {
       "id": "yb-00557",
       "item": "SR-71 Blackbird",
-      "question": "What was the wingspan of an SR-71 Blackbird?",
+      "question": "What was the wingspan of an SR-71 Blackbird military plane?",
       "measurement": "Wingspan",
       "value": 55.5833333333,
       "unit": "ft",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5436,7 +5298,7 @@
       "value": 69,
       "unit": "ft",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5450,21 +5312,19 @@
       "value": 184.2,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "NASA"
     },
     {
       "id": "yb-00560",
       "item": "Hubble Space Telescope",
-      "question": "What is the diameter of Hubble's main mirror?",
+      "question": "What is the diameter of the Hubble telescope's main mirror?",
       "measurement": "Mirror diameter",
       "value": 2.4,
       "unit": "m",
-      "difficulty": "Medium",
-      "status": "Review",
+      "difficulty": "Hard",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5478,10 +5338,8 @@
       "value": 356,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "NASA"
     },
     {
@@ -5492,10 +5350,8 @@
       "value": 33,
       "unit": "ft",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "NASA"
     },
     {
@@ -5506,10 +5362,8 @@
       "value": 92.5,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Titanic Belfast"
     },
     {
@@ -5520,10 +5374,8 @@
       "value": 135,
       "unit": "ft",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Cunard"
     },
     {
@@ -5534,7 +5386,7 @@
       "value": 256,
       "unit": "ft",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5543,12 +5395,12 @@
     {
       "id": "yb-00566",
       "item": "Ford Model T",
-      "question": "How long is a Ford Model T?",
+      "question": "What's the overall length of a Ford Model T?",
       "measurement": "Overall length",
       "value": 134,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5562,10 +5414,8 @@
       "value": 95,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Tesla"
     },
     {
@@ -5576,10 +5426,8 @@
       "value": 44.88,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "DeLorean"
     },
     {
@@ -5590,9 +5438,9 @@
       "value": 1.41,
       "unit": "m",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
-        "USCanada"
+        "Unassigned"
       ],
       "source": "British Motor Museum"
     },
@@ -5604,7 +5452,7 @@
       "value": 68.2,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5618,7 +5466,7 @@
       "value": 1.5,
       "unit": "m",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5632,10 +5480,8 @@
       "value": 1124,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Ferrari"
     },
     {
@@ -5646,10 +5492,8 @@
       "value": 1.07,
       "unit": "m",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Lamborghini"
     },
     {
@@ -5660,7 +5504,7 @@
       "value": 57,
       "unit": "mm",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5674,10 +5518,8 @@
       "value": 15.8,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "LEGO System dimensions"
     },
     {
@@ -5688,10 +5530,8 @@
       "value": 3.625,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Crayola"
     },
     {
@@ -5702,21 +5542,19 @@
       "value": 3,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "3M"
     },
     {
       "id": "yb-00578",
       "item": "AA battery",
-      "question": "What is the diameter of an AA battery?",
+      "question": "What is the diameter of a AA battery?",
       "measurement": "Diameter",
       "value": 14.5,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5725,12 +5563,12 @@
     {
       "id": "yb-00579",
       "item": "AAA battery",
-      "question": "What is the diameter of an AAA battery?",
+      "question": "What is the diameter of a AAA battery?",
       "measurement": "Diameter",
       "value": 10.5,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5744,7 +5582,7 @@
       "value": 48.5,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5758,10 +5596,8 @@
       "value": 26.5,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "IEC 60086"
     },
     {
@@ -5772,7 +5608,7 @@
       "value": 50,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5786,7 +5622,7 @@
       "value": 61.5,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5800,7 +5636,7 @@
       "value": 34.2,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5814,7 +5650,7 @@
       "value": 3.5,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5823,12 +5659,12 @@
     {
       "id": "yb-00586",
       "item": "No. 2 pencil",
-      "question": "How long is a new standard No. 2 pencil?",
+      "question": "How long is a new standard Dixon Ticonderoga No. 2 pencil?",
       "measurement": "Length",
       "value": 7.5,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5842,7 +5678,7 @@
       "value": 88,
       "unit": "mm",
       "difficulty": "Hard",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5856,9 +5692,9 @@
       "value": 297,
       "unit": "mm",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
-        "USCanada"
+        "Unassigned"
       ],
       "source": "ISO 216"
     },
@@ -5870,9 +5706,9 @@
       "value": 210,
       "unit": "mm",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
-        "USCanada"
+        "Unassigned"
       ],
       "source": "ISO 216"
     },
@@ -5884,9 +5720,9 @@
       "value": 420,
       "unit": "mm",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
-        "USCanada"
+        "Unassigned"
       ],
       "source": "ISO 216"
     },
@@ -5898,7 +5734,7 @@
       "value": 3.5,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5912,7 +5748,7 @@
       "value": 2,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5926,10 +5762,8 @@
       "value": 3.5,
       "unit": "in",
       "difficulty": "Easy",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "ANSI/BHMA hinge size"
     },
     {
@@ -5940,10 +5774,8 @@
       "value": 4.5,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "NEMA device plate dimensions"
     },
     {
@@ -5954,10 +5786,8 @@
       "value": 2.75,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "NEMA device plate dimensions"
     },
     {
@@ -5968,21 +5798,19 @@
       "value": 2,
       "unit": "in",
       "difficulty": "Hard",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "NEMA electrical box dimensions"
     },
     {
       "id": "yb-00597",
       "item": "Standard brick — U.S. modular",
-      "question": "How long is a U.S. modular brick?",
+      "question": "What's the long dimension of a U.S. modular brick?",
       "measurement": "Length",
       "value": 7.625,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
@@ -5996,10 +5824,8 @@
       "value": 2.25,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Brick Industry Association"
     },
     {
@@ -6010,10 +5836,8 @@
       "value": 3.625,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
-      "regionTags": [
-        "USCanada"
-      ],
+      "status": "BadItem",
+      "regionTags": [],
       "source": "Brick Industry Association"
     },
     {
@@ -6024,7 +5848,7 @@
       "value": 15.625,
       "unit": "in",
       "difficulty": "Medium",
-      "status": "Review",
+      "status": "Keep",
       "regionTags": [
         "USCanada"
       ],
