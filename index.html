@@ -284,6 +284,24 @@ h2{margin:0;font-size:clamp(1.8rem,4.8vw,2.6rem);line-height:1.12}
 }
 </style>
 
+
+<style>
+/* Player feedback + Mulligan */
+.feedback-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:18px}
+.feedback-btn{min-width:0;height:58px;border-radius:13px;border:1px solid currentColor;font:inherit;font-weight:900;font-size:clamp(.78rem,3vw,1rem);cursor:pointer;padding:0 7px}
+.feedback-bad{background:#ff4747;color:#140000;border-color:#ff4747}
+.feedback-continue{background:var(--blue);color:#001018;border-color:var(--blue)}
+.feedback-good{background:#52d273;color:#001507;border-color:#52d273}
+.feedback-btn:active{transform:translateY(1px)}
+.mulligan-modal{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:20px}
+.mulligan-panel{width:min(520px,100%);background:#0a0f14;border:1px solid var(--blue);border-radius:20px;padding:24px;text-align:center}
+.mulligan-panel h2{color:#fff2a8;margin-bottom:12px}.mulligan-panel p{color:#dce6ed;line-height:1.45}.mulligan-note{font-size:.88rem!important;color:var(--muted)!important}
+.mulligan-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.mulligan-choice{height:56px;border-radius:13px;font:inherit;font-weight:900;cursor:pointer}
+.mulligan-keep{background:#171f26;color:#fff;border:1px solid var(--border)}
+.mulligan-retry{background:var(--blue);color:#001018;border:1px solid var(--blue)}
+@media(max-width:430px){.feedback-actions{gap:6px}.feedback-btn{height:54px;font-size:.78rem;padding:0 4px}.mulligan-panel{padding:20px 16px}}
+</style>
 </head>
 <body>
 <main class="app">
@@ -320,15 +338,29 @@ h2{margin:0;font-size:clamp(1.8rem,4.8vw,2.6rem);line-height:1.12}
     </div>
     <div id="result" class="result hidden">
       <div class="result-layout"><div class="answer-stack"><div class="answer-cell"><span class="lab">Official</span><strong id="official"></strong></div><div class="answer-cell"><span class="lab">Your guess</span><strong id="your"></strong></div></div><div class="score-side"><div id="scorePercent" class="score-percent"><span id="scoreNumber"></span><span class="percent-sign">%</span></div><div id="scoreMult" class="score-mult"></div></div></div>
-      <p id="verdict" class="verdict"></p><button id="next" class="btn next" type="button">Next</button>
+      <p id="verdict" class="verdict"></p>
+      <div class="feedback-actions" aria-label="Item feedback">
+        <button id="feedbackBad" class="feedback-btn feedback-bad" type="button">Bad Item</button>
+        <button id="next" class="feedback-btn feedback-continue" type="button">Continue</button>
+        <button id="feedbackGood" class="feedback-btn feedback-good" type="button">Good Item</button>
+      </div>
     </div>
   </div>
 </section>
 <section id="summary" class="card hidden"><p class="eyebrow">ROUND COMPLETE</p><h2>Your results</h2><p class="summary-line"><strong id="total" class="score"></strong> / 1000</p><div id="roundBreakdown" class="round-breakdown"></div><button id="restart" class="btn" type="button">Play again</button></section>
 </main>
-
-<button id="ybDebugToggle" type="button" aria-expanded="false" style="position:fixed;left:8px;bottom:8px;z-index:100000;border:1px solid #7dd3fc;border-radius:9px;background:rgba(0,0,0,.88);color:#7dd3fc;padding:7px 10px;font:700 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em;cursor:pointer">DEBUG</button>
-<div id="ybDebug" hidden style="position:fixed;left:6px;right:6px;bottom:46px;z-index:99999;background:rgba(0,0,0,.94);color:#d7f3ff;border:1px solid #7dd3fc;border-radius:10px;padding:7px 9px;font:11px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;max-height:31vh;overflow:auto">DEBUG: waiting for items.json…</div>
+<div id="mulliganModal" class="mulligan-modal hidden" role="dialog" aria-modal="true" aria-labelledby="mulliganTitle">
+  <div class="mulligan-panel">
+    <p class="eyebrow">MULLIGAN</p>
+    <h2 id="mulliganTitle">Want another shot?</h2>
+    <p id="mulliganCopy">That guess was way off. You can try this question one more time.</p>
+    <p class="mulligan-note">You only get one Mulligan offer per game.</p>
+    <div class="mulligan-actions">
+      <button id="mulliganKeep" class="mulligan-choice mulligan-keep" type="button">Keep Score</button>
+      <button id="mulliganRetry" class="mulligan-choice mulligan-retry" type="button">Try Again</button>
+    </div>
+  </div>
+</div>
 <div id="helpModal" class="help-modal hidden" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
   <div class="help-panel">
     <button id="helpClose" class="help-close" type="button" aria-label="Close">×</button>
@@ -349,6 +381,38 @@ h2{margin:0;font-size:clamp(1.8rem,4.8vw,2.6rem);line-height:1.12}
 let FULL=[];
 const factors={mm:.001,cm:.01,m:1,km:1000,in:.0254,ft:.3048,yd:.9144,mi:1609.344};
 const mult={Easy:1,Medium:1.25,Hard:1.5};
+
+// Shared player feedback configuration. Paste your Supabase project values here after setup.
+const FEEDBACK_CONFIG={
+  supabaseUrl:"",
+  supabaseAnonKey:""
+};
+const FEEDBACK_TABLE="item_feedback";
+const FEEDBACK_VOTER_KEY="yayBigFeedbackVoterV1";
+function feedbackVoterId(){
+  let id=localStorage.getItem(FEEDBACK_VOTER_KEY);
+  if(!id){id=(crypto.randomUUID?crypto.randomUUID():`yb-${Date.now()}-${Math.random().toString(36).slice(2)}`);localStorage.setItem(FEEDBACK_VOTER_KEY,id)}
+  return id;
+}
+async function submitPlayerFeedback(itemId,vote){
+  // Save the latest choice locally even before the shared backend is configured.
+  try{localStorage.setItem(`yayBigFeedback:${itemId}`,vote)}catch(e){}
+  if(!FEEDBACK_CONFIG.supabaseUrl||!FEEDBACK_CONFIG.supabaseAnonKey)return;
+  const url=`${FEEDBACK_CONFIG.supabaseUrl.replace(/\/$/,"")}/rest/v1/${FEEDBACK_TABLE}?on_conflict=voter_id,item_id`;
+  try{
+    const r=await fetch(url,{method:"POST",headers:{
+      "apikey":FEEDBACK_CONFIG.supabaseAnonKey,
+      "Authorization":`Bearer ${FEEDBACK_CONFIG.supabaseAnonKey}`,
+      "Content-Type":"application/json",
+      "Prefer":"resolution=merge-duplicates,return=minimal"
+    },body:JSON.stringify({voter_id:feedbackVoterId(),item_id:String(itemId),vote})});
+    if(!r.ok)console.warn("Feedback save failed",r.status,await r.text());
+  }catch(err){console.warn("Feedback save failed",err)}
+}
+
+let mulliganOffered=false;
+let mulliganRetrying=false;
+let pendingAttempt=null;
 let round=[],i=0,total=0,guessText="",selectedUnit="",results=[];
 const $=id=>document.getElementById(id);
 function openHelp(){ $("helpModal").classList.remove("hidden"); }
@@ -544,38 +608,6 @@ function eligiblePool(){
   return FULL.filter(x=>x.status!=="Rejected"&&x.value!=null&&x.unit);
 }
 
-
-const ybDebugToggle=document.getElementById("ybDebugToggle");
-const ybDebugPanel=document.getElementById("ybDebug");
-if(ybDebugToggle&&ybDebugPanel){
-  ybDebugToggle.addEventListener("click",()=>{
-    const opening=ybDebugPanel.hidden;
-    ybDebugPanel.hidden=!opening;
-    ybDebugToggle.setAttribute("aria-expanded",String(opening));
-    ybDebugToggle.textContent=opening?"CLOSE DEBUG":"DEBUG";
-  });
-}
-
-function renderYBDebug(pools,state){
-  const el=document.getElementById("ybDebug");
-  if(!el)return;
-  const counts=DIFFICULTIES.map(d=>`${d[0]} ${pools[d].length}`).join(" | ");
-  const remaining=DIFFICULTIES.map(d=>`${d[0]} ${state.bags[d].length}`).join(" | ");
-  const known=DIFFICULTIES.map(d=>`${d[0]} ${state.known[d].length}`).join(" | ");
-  const roundIds=round.map(q=>`${q.id}(${q.difficulty[0]})`).join(" ");
-  const next=d=>state.bags[d].slice(0,10).join(" ")||"—";
-  const watch=["yb-00524","yb-00525","yb-00526","yb-00527","yb-00574"];
-  const whereabouts=watch.map(id=>{
-    const q=FULL.find(x=>String(x.id)===id);
-    if(!q)return `${id}: NOT LOADED`;
-    const inRound=round.some(x=>String(x.id)===id);
-    const inBag=state.bags[q.difficulty]?.includes(id);
-    const inKnown=state.known[q.difficulty]?.includes(id);
-    return `${id}: ${q.difficulty} ${inRound?"ROUND":inBag?"BAG":inKnown?"KNOWN/not in bag":"MISSING"}`;
-  }).join(" | ");
-  el.textContent=`YAY BIG DEBUG\nPlayable: ${counts}\nBag remaining: ${remaining}\nKnown: ${known}\nRound: ${roundIds}\nNext Easy: ${next("Easy")}\nNext Medium: ${next("Medium")}\nNext Hard: ${next("Hard")}\nWatch: ${whereabouts}`;
-}
-
 function build(){
   const usable=eligiblePool();
   const pools={
@@ -601,7 +633,6 @@ function build(){
 
   round=[take("Easy"),take("Easy"),take("Medium"),take("Medium"),take("Medium"),take("Medium"),take("Hard"),take("Hard")];
   saveBagState(state);
-  renderYBDebug(pools,state);
 }
 function fmt(n){return Number(n).toLocaleString(undefined,{maximumFractionDigits:4})}
 function updateGuessDisplay(){const el=$("guessDisplay");if(!guessText){el.textContent="";el.className="guess-placeholder"}else{el.textContent=guessText+(selectedUnit?" "+selectedUnit:"");el.className="guess-value"}}
@@ -616,7 +647,59 @@ function syncSubmit(){
 function show(){const q=round[i];$("progress").textContent=`${i+1} / 8`;$("diff").textContent=q.difficulty.toUpperCase();$("question").textContent=questionText(q);guessText="";updateGuessDisplay();selectedUnit="";document.querySelectorAll(".unit-btn").forEach(b=>b.classList.remove("selected"));$("validation").textContent="";syncSubmit();$("entry").classList.remove("hidden");$("result").classList.add("hidden")}
 document.querySelector(".keypad").addEventListener("click",e=>{const btn=e.target.closest("[data-key]");if(!btn)return;const k=btn.dataset.key;if(k==="back")guessText=guessText.slice(0,-1);else if(k==="."){if(!guessText.includes("."))guessText=guessText?guessText+".":"0."}else{if(guessText.length>=10)return;if(guessText==="0")guessText=k;else guessText+=k}$("validation").textContent="";updateGuessDisplay();syncSubmit()});
 $("unitGrid").addEventListener("click",e=>{const btn=e.target.closest("[data-unit]");if(!btn)return;selectedUnit=btn.dataset.unit;document.querySelectorAll(".unit-btn").forEach(b=>b.classList.toggle("selected",b===btn));$("validation").textContent="";updateGuessDisplay();syncSubmit()});
-$("submit").onclick=()=>{if(!submitReady())return;const q=round[i],g=Number(guessText),u=selectedUnit;const officialBase=q.value*factors[q.unit],guessBase=g*factors[u],acc=Math.round(Math.min(officialBase,guessBase)/Math.max(officialBase,guessBase)*100),multiplier=mult[q.difficulty],pts=acc*multiplier;total+=pts;results[i]={item:q.item,measurement:q.measurement,accuracy:acc,points:pts,multiplier};$("official").textContent=`${fmt(q.value)} ${q.unit}`;if(u!==q.unit)$("your").textContent=`${fmt(g)} ${u} = ${fmt(guessBase/factors[q.unit])} ${q.unit}`;else $("your").textContent=`${fmt(g)} ${u}`;$("scoreNumber").textContent=acc;$("scoreMult").textContent=`${multiplier}X`;$("verdict").textContent=acc===100?"Dead on.":acc>=95?"Excellent.":acc>=90?"Very good.":acc>=80?"Respectable.":"Keep calibrating.";$("entry").classList.add("hidden");$("result").classList.remove("hidden");$("next").textContent=i===7?"See results":"Next"};
+$("submit").onclick=()=>{
+  if(!submitReady())return;
+  const q=round[i],g=Number(guessText),u=selectedUnit;
+  const officialBase=q.value*factors[q.unit],guessBase=g*factors[u];
+  const acc=Math.round(Math.min(officialBase,guessBase)/Math.max(officialBase,guessBase)*100);
+  const attempt={q,g,u,officialBase,guessBase,acc};
+
+  // Offer exactly one Mulligan per game, only on a first attempt below 10% accuracy.
+  if(acc<10 && !mulliganOffered && !mulliganRetrying){
+    mulliganOffered=true;
+    pendingAttempt=attempt;
+    $("mulliganCopy").textContent=`That guess scored ${acc}% accuracy. Want to try this same question one more time?`;
+    $("mulliganModal").classList.remove("hidden");
+    return;
+  }
+  finalizeAttempt(attempt);
+};
+
+function finalizeAttempt({q,g,u,guessBase,acc}){
+  const multiplier=mult[q.difficulty],pts=acc*multiplier;
+  total+=pts;
+  results[i]={item:q.item,measurement:q.measurement,accuracy:acc,points:pts,multiplier};
+  $("official").textContent=`${fmt(q.value)} ${q.unit}`;
+  if(u!==q.unit)$("your").textContent=`${fmt(g)} ${u} = ${fmt(guessBase/factors[q.unit])} ${q.unit}`;
+  else $("your").textContent=`${fmt(g)} ${u}`;
+  $("scoreNumber").textContent=acc;
+  $("scoreMult").textContent=`${multiplier}X`;
+  $("verdict").textContent=acc===100?"Dead on.":acc>=95?"Excellent.":acc>=90?"Very good.":acc>=80?"Respectable.":"Keep calibrating.";
+  $("entry").classList.add("hidden");
+  $("result").classList.remove("hidden");
+  $("next").textContent=i===7?"Results":"Continue";
+  mulliganRetrying=false;
+  pendingAttempt=null;
+}
+
+$("mulliganRetry").onclick=()=>{
+  if(!pendingAttempt)return;
+  $("mulliganModal").classList.add("hidden");
+  pendingAttempt=null;
+  mulliganRetrying=true;
+  guessText=""; selectedUnit="";
+  updateGuessDisplay();
+  document.querySelectorAll(".unit-btn").forEach(b=>b.classList.remove("selected"));
+  $("validation").textContent="Mulligan: try this one again.";
+  syncSubmit();
+};
+$("mulliganKeep").onclick=()=>{
+  if(!pendingAttempt)return;
+  const attempt=pendingAttempt;
+  $("mulliganModal").classList.add("hidden");
+  pendingAttempt=null;
+  finalizeAttempt(attempt);
+};
 
 function renderSummary(){
   $("total").textContent=Math.round(total);
@@ -629,8 +712,11 @@ function renderSummary(){
       <strong class="summary-item-score">${r.accuracy}%</strong>
     </div>`).join("");
 }
-$("next").onclick=()=>{if(++i===8){$("game").classList.add("hidden");$("summary").classList.remove("hidden");renderSummary()}else show()};
-$("restart").onclick=()=>{i=0;total=0;results=[];build();$("summary").classList.add("hidden");$("game").classList.remove("hidden");show()};
+function advanceFromResult(){if(++i===8){$("game").classList.add("hidden");$("summary").classList.remove("hidden");renderSummary()}else show()}
+$("next").onclick=advanceFromResult;
+$("feedbackBad").onclick=()=>{const q=round[i];submitPlayerFeedback(q.id,"bad");advanceFromResult()};
+$("feedbackGood").onclick=()=>{const q=round[i];submitPlayerFeedback(q.id,"good");advanceFromResult()};
+$("restart").onclick=()=>{i=0;total=0;results=[];mulliganOffered=false;mulliganRetrying=false;pendingAttempt=null;build();$("summary").classList.add("hidden");$("game").classList.remove("hidden");show()};
 async function loadQuestionDatabase(){
   try{
     const response=await fetch("items.json",{cache:"no-store"});

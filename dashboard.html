@@ -134,6 +134,7 @@ th:nth-child(10),td:nth-child(10){width:5%}
   <select id="difficultyFilter"><option>All difficulties</option><option>Easy</option><option>Medium</option><option>Hard</option></select>
   <select id="statusFilter"><option>All statuses</option><option>Review</option><option>Keep</option><option>BadItem</option></select>
   <label class="checkfilter"><input id="hideClassified" type="checkbox"> Hide BadItem / Not US</label>
+  <button id="refreshFeedback" class="btn secondary" type="button">Refresh Feedback</button>
 </div>
 
 <p class="note"><b>Rules:</b> Item = the complete database record; Question = the wording shown to the player. Region tags may contain multiple comma-separated values. Current launch tag: <b>USCanada</b>. <b>Global</b> is eligible everywhere. <b>Unassigned</b> means a good Item whose future regional home has not yet been decided. Do not delete rejected Items from the master file.</p>
@@ -150,7 +151,7 @@ th:nth-child(10),td:nth-child(10){width:5%}
 
 <div class="tablewrap">
 <table>
-<thead><tr><th>#</th><th>ID</th><th>Item</th><th>Question</th><th>Measurement</th><th>Value</th><th>Unit</th><th>Difficulty</th><th>Source / note</th><th></th></tr></thead>
+<thead><tr><th>#</th><th>ID</th><th>Item</th><th>Question</th><th>Measurement</th><th>Value</th><th>Unit</th><th>Difficulty</th><th>Source / note</th><th>Status</th><th>Regions</th><th>Good</th><th>Bad</th><th>Positive</th><th></th></tr></thead>
 <tbody id="rows"></tbody>
 </table>
 </div>
@@ -162,6 +163,30 @@ const QUESTION_SEED={"yb-00001": "How long is a U.S. Federal Reserve note?", "yb
 const STORAGE_KEY="yayBigItemWorkspaceV3";
 const OLD_STORAGE_KEY="yayBigDashboardV2";
 const units=["mm","cm","m","km","in","ft","yd","mi"];
+
+// Shared player-feedback configuration. Use the same values as index.html.
+const FEEDBACK_CONFIG={supabaseUrl:"",supabaseAnonKey:""};
+const FEEDBACK_TABLE="item_feedback";
+let feedbackCounts=new Map();
+let feedbackStatus="not configured";
+async function loadPlayerFeedback(){
+  if(!FEEDBACK_CONFIG.supabaseUrl||!FEEDBACK_CONFIG.supabaseAnonKey){feedbackStatus="not configured";render();return}
+  feedbackStatus="loading";render();
+  try{
+    const url=`${FEEDBACK_CONFIG.supabaseUrl.replace(/\/$/,"")}/rest/v1/${FEEDBACK_TABLE}?select=item_id,vote`;
+    const r=await fetch(url,{headers:{apikey:FEEDBACK_CONFIG.supabaseAnonKey,Authorization:`Bearer ${FEEDBACK_CONFIG.supabaseAnonKey}`}});
+    if(!r.ok)throw new Error(`${r.status} ${await r.text()}`);
+    const rows=await r.json();
+    const m=new Map();
+    for(const row of rows){
+      const c=m.get(row.item_id)||{good:0,bad:0};
+      if(row.vote==="good")c.good++; else if(row.vote==="bad")c.bad++;
+      m.set(row.item_id,c);
+    }
+    feedbackCounts=m; feedbackStatus=`${rows.length} votes`; render();
+  }catch(err){console.error(err);feedbackStatus="load failed";render()}
+}
+function feedbackFor(id){return feedbackCounts.get(String(id))||{good:0,bad:0}}
 let items=[];
 const $=id=>document.getElementById(id);
 function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
@@ -360,7 +385,8 @@ function render(){
     `<span class="pill">${items.filter(x=>x.status==="BadItem").length} Bad Item</span>`+
     `<span class="pill">${items.filter(x=>x.difficulty==="Easy").length} Easy</span>`+
     `<span class="pill">${items.filter(x=>x.difficulty==="Medium").length} Medium</span>`+
-    `<span class="pill">${items.filter(x=>x.difficulty==="Hard").length} Hard</span>`;
+    `<span class="pill">${items.filter(x=>x.difficulty==="Hard").length} Hard</span>`+
+    `<span class="pill">Feedback: ${esc(feedbackStatus)}</span>`;
   const q=$("search").value.toLowerCase(),
         df=$("difficultyFilter").value,
         sf=$("statusFilter").value,
@@ -389,6 +415,7 @@ function render(){
     <td><input class="source" data-k="source" value="${esc(x.source)}"></td>
     <td class="id">${esc(x.status||"Keep")}</td>
     <td><input class="regions" data-k="regionTags" value="${esc((x.regionTags||[]).join(", "))}" placeholder="USCanada, Global"></td>
+    ${(()=>{const f=feedbackFor(x.id),n=f.good+f.bad,p=n?Math.round(f.good/n*100):null;return `<td class="id">${f.good}</td><td class="id">${f.bad}</td><td class="id">${p===null?"—":p+"%"}</td>`})()}
     <td class="item-actions">
       <button class="keep" title="Keep in the US/Canada pool">Keep</button>
       <button class="notus" title="Good Item, but not for the US/Canada pool">Not US</button>
@@ -439,6 +466,7 @@ $("rows").onclick=e=>{
   save();render();
 };
 ["search","difficultyFilter","statusFilter","hideClassified"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
+$("refreshFeedback").addEventListener("click",loadPlayerFeedback);
 $("add").onclick=()=>{
   const item=$("newItem").value.trim();
   if(!item)return;
