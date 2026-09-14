@@ -20,8 +20,9 @@ input,select,textarea{width:100%;font-size:16px;color:#fff;background:#05080a;bo
 .card{min-height:0;border:1px solid var(--border);background:var(--panel);border-radius:15px;overflow:hidden;display:grid;grid-template-rows:auto minmax(0,1fr)}
 .cardtop{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:7px;padding:7px 8px;border-bottom:1px solid var(--border);background:var(--panel2)}
 .id{font-variant-numeric:tabular-nums;color:var(--blue);font-weight:900;letter-spacing:.02em;font-size:.86rem}.position{color:var(--muted);font-size:.7rem;text-align:center}.navbtn{min-height:30px;min-width:42px;padding:3px 7px;font-size:.72rem}.navbtn:disabled{opacity:.35;cursor:default}
-.form{min-height:0;padding:8px;display:grid;grid-template-rows:auto minmax(58px,1fr) auto auto auto;gap:7px;overflow:hidden}.field{display:grid;gap:3px;min-width:0}.field label{font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:850}
-textarea{resize:none;line-height:1.22;min-height:0}.question{height:100%;color:var(--yellow);font-weight:750}.grid3{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:7px}.meta{display:flex;gap:5px;flex-wrap:nowrap;overflow:hidden}.pill{white-space:nowrap;font-size:.62rem;border:1px solid var(--border);padding:3px 6px;border-radius:999px;color:var(--muted);overflow:hidden;text-overflow:ellipsis}.pill.review{color:var(--orange)}.pill.keep{color:var(--green)}.pill.bad{color:var(--red)}
+.form{min-height:0;padding:8px;display:grid;grid-template-rows:auto minmax(58px,1fr) auto auto auto;gap:7px;overflow:hidden}.field{display:grid;gap:3px;min-width:0;align-content:start}.field label{font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:850}
+.question-field{display:flex;flex-direction:column;min-height:0;gap:3px}.question-labelrow{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:14px}.feedback{font-size:.62rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}.feedback strong{color:var(--blue)}
+textarea{resize:none;line-height:1.22;min-height:0}.question{flex:1;min-height:0;color:var(--yellow);font-weight:750}.grid3{display:grid;grid-template-columns:1.15fr .85fr 1fr;gap:7px}.meta{display:flex;gap:5px;flex-wrap:nowrap;overflow:hidden}.pill{white-space:nowrap;font-size:.62rem;border:1px solid var(--border);padding:3px 6px;border-radius:999px;color:var(--muted);overflow:hidden;text-overflow:ellipsis}.pill.review{color:var(--orange)}.pill.keep{color:var(--green)}.pill.bad{color:var(--red)}
 .empty{display:block;padding:24px 14px;text-align:center;color:var(--muted)}.empty strong{display:block;color:var(--green);font-size:1rem;margin-bottom:4px}
 .bottom{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(0,0,0,.97);border-top:1px solid var(--border);padding:7px 8px calc(7px + env(safe-area-inset-bottom));backdrop-filter:blur(10px)}
 .bottom-inner{width:min(680px,100%);margin:auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}.decision{min-height:54px;border-radius:12px;font-size:.84rem;font-weight:950;cursor:pointer}.keepbtn{border:1px solid #4d8c61;background:#173522;color:#bdf4ca}.notusbtn{border:1px solid #8b6f32;background:#352b14;color:#ffe4a2}.badbtn{border:1px solid #713737;background:#351717;color:#ffb2b2}
@@ -62,7 +63,7 @@ textarea{resize:none;line-height:1.22;min-height:0}.question{height:100%;color:v
     </div>
     <div class="form">
       <div class="field"><label for="item">Item</label><input id="item"></div>
-      <div class="field"><label for="question">Question</label><textarea id="question" class="question"></textarea></div>
+      <div class="question-field"><div class="question-labelrow"><label for="question">Question</label><div id="playerFeedback" class="feedback">Feedback: loading…</div></div><textarea id="question" class="question"></textarea></div>
       <div class="grid3">
         <div class="field"><label for="value">Value</label><input id="value" type="number" step="any" inputmode="decimal"></div>
         <div class="field"><label for="unit">Unit</label><select id="unit"><option value="">—</option><option>mm</option><option>cm</option><option>m</option><option>km</option><option>in</option><option>ft</option><option>yd</option><option>mi</option><option>mil</option></select></div>
@@ -86,12 +87,40 @@ textarea{resize:none;line-height:1.22;min-height:0}.question{height:100%;color:v
 
 <script>
 const STORAGE_KEY="yayBigItemWorkspaceV3";
+const FEEDBACK_CONFIG={supabaseUrl:"https://zvfyrtmaxobzkoqztcdt.supabase.co",supabaseAnonKey:"sb_publishable_CknpcK9WGbIDDyyOd7S56A_-z8mW0_O"};
+const FEEDBACK_TABLE="item_feedback";
 const $=id=>document.getElementById(id);
 let items=[];
 let queue=[];
 let queueIndex=0;
 let currentId=null;
+let feedbackCounts=new Map();
+let feedbackState="loading";
 
+async function loadPlayerFeedback(){
+  try{
+    const url=`${FEEDBACK_CONFIG.supabaseUrl.replace(/\/$/,"")}/rest/v1/${FEEDBACK_TABLE}?select=item_id,vote`;
+    const r=await fetch(url,{headers:{apikey:FEEDBACK_CONFIG.supabaseAnonKey,Authorization:`Bearer ${FEEDBACK_CONFIG.supabaseAnonKey}`}});
+    if(!r.ok)throw new Error(`${r.status} ${await r.text()}`);
+    const rows=await r.json();
+    const m=new Map();
+    for(const row of rows){
+      const c=m.get(String(row.item_id))||{good:0,bad:0};
+      if(row.vote==="good")c.good++; else if(row.vote==="bad")c.bad++;
+      m.set(String(row.item_id),c);
+    }
+    feedbackCounts=m; feedbackState="ready"; render();
+  }catch(err){console.error("Feedback load failed",err);feedbackState="failed";render()}
+}
+function feedbackText(id){
+  if(feedbackState==="loading")return "Feedback: loading…";
+  if(feedbackState==="failed")return "Feedback unavailable";
+  const c=feedbackCounts.get(String(id))||{good:0,bad:0};
+  const total=c.good+c.bad;
+  if(!total)return "👍 0  👎 0  · no votes";
+  const pct=Math.round(c.good/total*100);
+  return `👍 ${c.good}  👎 ${c.bad}  · ${pct}% positive`;
+}
 function stableId(n){return `yb-${String(n).padStart(5,"0")}`}
 function canonicalItemId(id){const m=String(id??"").match(/^yb-(\d+)$/i);return m?`yb-${String(parseInt(m[1],10)).padStart(5,"0")}`:String(id??"")}
 function normalizeItem(x){
@@ -140,6 +169,7 @@ function render(){
   $("item").value=x.item;$("question").value=x.question;
   $("value").value=x.value==null?"":x.value;$("unit").value=x.unit;$("difficulty").value=x.difficulty;
   $("regionTags").value=(x.regionTags||[]).join(", ");
+  $("playerFeedback").innerHTML=feedbackText(x.id).replace(/(\d+% positive)/,'<strong>$1</strong>');
   const statusClass=x.status==="Review"?"review":x.status==="BadItem"?"bad":"keep";
   const playable=x.status==="Keep"&&(x.regionTags.includes("USCanada")||x.regionTags.includes("Global"));
   $("meta").innerHTML=`<span class="pill ${statusClass}">${escapeHtml(x.status)}</span><span class="pill">${playable?"US/Canada playable":isNotUS(x)?"Not US / Unassigned":"Not playable"}</span>`;
@@ -213,6 +243,7 @@ $("exportBtn").addEventListener("click",exportDb);
 $("importBtn").addEventListener("click",()=>$("importFile").click());
 $("importFile").addEventListener("change",()=>{const f=$("importFile").files[0];if(f)importDb(f);$("importFile").value=""});
 loadInitial();
+loadPlayerFeedback();
 </script>
 </body>
 </html>
