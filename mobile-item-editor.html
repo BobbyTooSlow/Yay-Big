@@ -15,7 +15,7 @@ button,input,select,textarea{font:inherit}button{touch-action:manipulation}
 .brand{display:flex;align-items:baseline;gap:8px;white-space:nowrap}.brand h1{margin:0;color:var(--blue);font-size:1.32rem;line-height:1}.brand p{margin:0;color:var(--muted);font-size:.72rem}
 .header-actions{display:flex;gap:6px}.btn{min-height:34px;border:1px solid var(--blue);border-radius:9px;background:var(--blue);color:#001018;font-weight:850;padding:5px 9px;cursor:pointer;font-size:.78rem}.btn.secondary{background:transparent;color:var(--blue)}.btn.muted{border-color:var(--border);background:var(--panel2);color:var(--text)}
 .status{border:1px solid var(--border);border-radius:9px;background:var(--panel);padding:5px 8px;color:var(--muted);font-size:.68rem;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.status strong{color:var(--green)}
-.queuebar{display:grid;grid-template-columns:1fr;gap:6px}.queuebar select{height:35px}
+.queuebar{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}.filter-select{position:relative;min-width:0}.filter-select::after{content:"▼";position:absolute;right:8px;top:50%;transform:translateY(-52%);font-size:.58rem;color:var(--blue);pointer-events:none}.queuebar select{height:35px;appearance:none;-webkit-appearance:none;padding-right:24px;font-size:.72rem;font-weight:750;white-space:nowrap;text-overflow:ellipsis}
 input,select,textarea{width:100%;font-size:16px;color:#fff;background:#05080a;border:1px solid var(--border);border-radius:9px;padding:7px 9px;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
 .card{min-height:0;border:1px solid var(--border);background:var(--panel);border-radius:15px;overflow:hidden;display:grid;grid-template-rows:auto minmax(0,1fr)}
 .cardtop{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:7px;padding:7px 8px;border-bottom:1px solid var(--border);background:var(--panel2)}
@@ -28,7 +28,7 @@ textarea{resize:none;min-height:0}.question{height:58px;min-height:58px;max-heig
 .bottom-inner{width:min(680px,100%);margin:auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}.decision{min-height:54px;border-radius:12px;font-size:.84rem;font-weight:950;cursor:pointer}.keepbtn{border:1px solid #4d8c61;background:#173522;color:#bdf4ca}.notusbtn{border:1px solid #8b6f32;background:#352b14;color:#ffe4a2}.badbtn{border:1px solid #713737;background:#351717;color:#ffb2b2}
 .hidden{display:none!important}.fileinput{display:none}
 @media(max-height:720px){.app{padding-top:calc(4px + env(safe-area-inset-top));gap:5px}.header{min-height:32px}.brand p{display:none}.status{padding:4px 7px}.queuebar select{height:32px}.cardtop{padding:5px 7px}.form{padding:6px;gap:5px;grid-template-rows:auto auto auto auto auto auto}.question{height:54px;min-height:54px;max-height:54px}.feedback-row{min-height:40px}.feedback{font-size:1.02rem}.decision{min-height:48px}.bottom{padding-top:5px;padding-bottom:calc(5px + env(safe-area-inset-bottom))}}
-@media(max-width:380px){.brand p{display:none}.header-actions .btn{padding:5px 7px}.grid3{grid-template-columns:1fr .72fr .95fr}.decision{font-size:.76rem}}
+@media(max-width:380px){.brand p{display:none}.header-actions .btn{padding:5px 7px}.queuebar{gap:4px}.queuebar select{font-size:.66rem;padding-left:6px;padding-right:18px}.filter-select::after{right:5px;font-size:.5rem}.grid3{grid-template-columns:1fr .72fr .95fr}.decision{font-size:.76rem}}
 </style>
 </head>
 <body>
@@ -45,13 +45,31 @@ textarea{resize:none;min-height:0}.question{height:58px;min-height:58px;max-heig
   <div id="workspaceStatus" class="status">Loading item database…</div>
 
   <div class="queuebar">
-    <select id="queueFilter" aria-label="Item queue">
-      <option value="Review" selected>Review queue</option>
-      <option value="Keep">Keep items</option>
-      <option value="NotUS">Not US items</option>
-      <option value="BadItem">Bad Items</option>
-      <option value="All">All items</option>
-    </select>
+    <div class="filter-select">
+      <select id="queueFilter" aria-label="Item status filter">
+        <option value="Review" selected>Review queue</option>
+        <option value="Keep">Keep items</option>
+        <option value="NotUS">Not US items</option>
+        <option value="BadItem">Bad Items</option>
+        <option value="All">All items</option>
+      </select>
+    </div>
+    <div class="filter-select">
+      <select id="difficultyFilter" aria-label="Difficulty filter">
+        <option value="All" selected>All difficulty</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+    </div>
+    <div class="filter-select">
+      <select id="feedbackFilter" aria-label="Feedback filter">
+        <option value="All" selected>All feedback</option>
+        <option value="Positive">Positive</option>
+        <option value="Neutral">Neutral</option>
+        <option value="Negative">Negative</option>
+      </select>
+    </div>
   </div>
 
   <section id="editorCard" class="card hidden">
@@ -111,7 +129,7 @@ async function loadPlayerFeedback(){
       if(row.vote==="good")c.good++; else if(row.vote==="bad")c.bad++;
       m.set(String(row.item_id),c);
     }
-    feedbackCounts=m; feedbackState="ready"; render();
+    feedbackCounts=m; feedbackState="ready"; rebuildQueue(currentId);
   }catch(err){console.error("Feedback load failed",err);feedbackState="failed";render()}
 }
 function feedbackText(id){
@@ -147,10 +165,24 @@ function setStatus(msg){$("workspaceStatus").innerHTML=`<strong>Workspace:</stro
 function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]))}
 function isNotUS(x){return x.status==="Keep" && Array.isArray(x.regionTags) && !x.regionTags.includes("USCanada") && !x.regionTags.includes("Global")}
 function matchesFilter(x,f){if(f==="All")return true;if(f==="NotUS")return isNotUS(x);return x.status===f}
+function matchesDifficulty(x,f){return f==="All" || x.difficulty===f}
+function feedbackCategory(id){
+  const c=feedbackCounts.get(String(id))||{good:0,bad:0};
+  if(c.good>c.bad)return "Positive";
+  if(c.bad>c.good)return "Negative";
+  return "Neutral"; // includes ties and items with no votes
+}
+function matchesFeedback(x,f){
+  if(f==="All")return true;
+  if(feedbackState!=="ready")return true;
+  return feedbackCategory(x.id)===f;
+}
 function getCurrent(){return items.find(x=>x.id===currentId)||null}
 function rebuildQueue(preferId=currentId){
   const f=$("queueFilter").value;
-  queue=items.filter(x=>matchesFilter(x,f));
+  const d=$("difficultyFilter").value;
+  const fb=$("feedbackFilter").value;
+  queue=items.filter(x=>matchesFilter(x,f)&&matchesDifficulty(x,d)&&matchesFeedback(x,fb));
   let idx=queue.findIndex(x=>x.id===preferId);
   if(idx<0) idx=Math.min(queueIndex,Math.max(0,queue.length-1));
   queueIndex=idx<0?0:idx;
@@ -224,7 +256,9 @@ function classify(kind){
 
   // Every classification advances. Prefer the item that was next in the visible queue.
   const f=$("queueFilter").value;
-  queue=items.filter(item=>matchesFilter(item,f));
+  const d=$("difficultyFilter").value;
+  const fb=$("feedbackFilter").value;
+  queue=items.filter(item=>matchesFilter(item,f)&&matchesDifficulty(item,d)&&matchesFeedback(item,fb));
   if(!queue.length){currentId=null;queueIndex=0;render();return}
 
   let idx=nextId?queue.findIndex(item=>item.id===nextId):-1;
@@ -263,6 +297,8 @@ $("unit").addEventListener("change",()=>writeField("unit",$("unit").value));
 $("difficulty").addEventListener("change",()=>writeField("difficulty",$("difficulty").value));
 $("regionTags").addEventListener("change",()=>{writeField("regionTags",parseTags($("regionTags").value));render()});
 $("queueFilter").addEventListener("change",()=>{queueIndex=0;currentId=null;rebuildQueue(null)});
+$("difficultyFilter").addEventListener("change",()=>{queueIndex=0;currentId=null;rebuildQueue(null)});
+$("feedbackFilter").addEventListener("change",()=>{queueIndex=0;currentId=null;rebuildQueue(null)});
 $("prevBtn").addEventListener("click",()=>{if(queueIndex>0){queueIndex--;currentId=queue[queueIndex].id;render()}});
 $("nextBtn").addEventListener("click",()=>{if(queueIndex<queue.length-1){queueIndex++;currentId=queue[queueIndex].id;render()}});
 $("keepBtn").addEventListener("click",()=>classify("Keep"));
